@@ -15,7 +15,7 @@ final class Rules
     /**
      * @var string $HOSTED_RULES_PATH
      */
-    private static $HOSTED_RULES_PATH = 'https://www.developerdan.com/rules-v1.json';
+    private static $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
 
     /**
      * @param /stdCalss $rules
