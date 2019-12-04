@@ -48,7 +48,8 @@ class Cli
 
         try {
             $auditDetails = $app->getAllAuditDetails();
-            echo("\n" . json_encode($auditDetails, JSON_PRETTY_PRINT) . "\n");
+            $output = json_encode($auditDetails, JSON_PRETTY_PRINT);
+            fwrite(STDOUT, "\n$output\n");
 
             if ($args[self::$FAIL_SECURITY] && ($auditDetails->hasVulnerabilities || !$auditDetails->hasSecuritySupport)) {
                 return self::$FAIL_SECURITY_CODE;

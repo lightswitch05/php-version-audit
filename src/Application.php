@@ -142,14 +142,7 @@ final class Application
      */
     public function getSecuritySupportEndDate(): ?string
     {
-        if ($this->auditVersion->isPreRelease()) {
-            return null;
-        }
-        $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
-        if (!isset($this->rules->supportEndDates->$majorAndMinor)) {
-            throw UnknownVersionException::fromString((string)$this->auditVersion);
-        }
-        return DateHelpers::toISO8601($this->rules->supportEndDates->$majorAndMinor->security);
+        return $this->getSupportEndDate('security');
     }
 
     /**
@@ -173,6 +166,11 @@ final class Application
      */
     public function getActiveSupportEndDate(): ?string
     {
+        return $this->getSupportEndDate('active');
+    }
+
+    private function getSupportEndDate(string $supportType): ?string
+    {
         if ($this->auditVersion->isPreRelease()) {
             return null;
         }
@@ -180,7 +178,7 @@ final class Application
         if (!isset($this->rules->supportEndDates->$majorAndMinor)) {
             throw UnknownVersionException::fromString((string)$this->auditVersion);
         }
-        return DateHelpers::toISO8601($this->rules->supportEndDates->$majorAndMinor->security);
+        return DateHelpers::toISO8601($this->rules->supportEndDates->$majorAndMinor->$supportType);
     }
 
     /**

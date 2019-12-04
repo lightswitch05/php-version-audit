@@ -6,11 +6,6 @@ namespace lightswitch05\PhpVersionAudit\Exceptions;
 
 final class UnknownVersionException extends StaleRulesException
 {
-    private function __construct($message = "", $code = 0, \Throwable $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
-
     /**
      * @param string|null $version
      * @return UnknownVersionException
