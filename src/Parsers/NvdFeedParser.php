@@ -93,8 +93,6 @@ final class NvdFeedParser
 
     private static function doFullUpdate(?\DateTimeImmutable $lastUpdate): bool
     {
-        // TODO REMOVE THIS
-        return true;
         if (!$lastUpdate) {
             return true;
         }
