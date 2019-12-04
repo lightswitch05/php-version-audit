@@ -18,17 +18,14 @@ final class NvdFeedParser
      * @param \DateTimeImmutable|null $lastUpdate
      * @return array
      */
-    public static function run(array $cveIds, ?\DateTimeImmutable $lastUpdate = null): array
+    public static function run(array $cveIds): array
     {
         ini_set('memory_limit', '1024M');
         $feeds = ['modified', 'recent'];
         $cvesById = array_flip($cveIds);
-        if (self::doFullUpdate($lastUpdate)) {
-            // include entire database feed update
-            $currentYear = date("Y");
-            for($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
-                $feeds[] = (string)$cveYear;
-            }
+        $currentYear = date("Y");
+        for($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
+            $feeds[] = (string)$cveYear;
         }
 
         $cveDetails = [];
@@ -89,14 +86,5 @@ final class NvdFeedParser
             $baseScore = $cveItem->impact->baseMetricV2->cvssV2->baseScore;
         }
         return new CveDetails($id, $baseScore, $publishedDate, $lastModifiedDate, $description);
-    }
-
-    private static function doFullUpdate(?\DateTimeImmutable $lastUpdate): bool
-    {
-        if (!$lastUpdate) {
-            return true;
-        }
-        $elapsedTime = DateHelpers::nowTimestamp() - $lastUpdate->getTimestamp();
-        return $elapsedTime > 259200; // do a full update if the last update is older then 3 days
     }
 }

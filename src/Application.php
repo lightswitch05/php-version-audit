@@ -256,6 +256,6 @@ final class Application
                 $cves[] = $cveId->getId();
             }
         }
-        return NvdFeedParser::run($cves, $this->rules->lastUpdatedDate);
+        return NvdFeedParser::run($cves);
     }
 }
