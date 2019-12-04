@@ -1,0 +1,21 @@
+{
+    "name": "lightswitch05/php-version-audit",
+    "bin": "php-version-audit",
+    "license": "Apache-2.0",
+    "description": "A convenience tool to easily check a given PHP version against a regularly updated list of CVE exploits, new releases, and end of life dates",
+    "autoload": {
+        "psr-4": {
+            "lightswitch05\\PhpVersionAudit\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "ext-libxml": "*",
+        "ext-dom": "*",
+        "ext-zlib": "*",
+        "codeception/codeception": "^3.1"
+    }
+}

@@ -1,0 +1,21 @@
+version: '3.7'
+
+x-common: &common
+  volumes:
+    - "${PWD}:/opt/php-version-audit"
+  working_dir: /opt/php-version-audit
+
+services:
+  composer:
+    <<: *common
+    image: composer:1.9
+
+  php:
+    <<: *common
+    image: php:7.4-cli
+
+  build:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    image: lightswitch05/php-version-audit
