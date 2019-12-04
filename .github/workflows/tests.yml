@@ -23,6 +23,9 @@ jobs:
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: ${{ runner.os }}-composer-
 
+    - name: Work in workspace
+      run: cd $GITHUB_WORKSPACE
+
     - name: Validate composer.json and composer.lock
       run: composer validate
 
