@@ -30,13 +30,13 @@ jobs:
       run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
 
     - name: Run Tests
-      run: cd "${GITHUB_WORKSPACE}"; vendor/bin/codecept run --coverage --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
+      run: vendor/bin/codecept run --coverage --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
 
-    #- name: fix code coverage paths
-    #  working-directory: ./tests/_output
-    #  run: |
-    #    sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' test-results.xml
-    #    sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' coverage.xml
+    - name: fix code coverage paths
+      working-directory: ./tests/_output
+      run: |
+        sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' test-results.xml
+        sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' coverage.xml
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
