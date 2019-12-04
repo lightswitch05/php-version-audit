@@ -30,14 +30,14 @@ jobs:
     - name: Run Tests
       run: vendor/bin/codecept run --coverage --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
 
-    - name: fix code coverage paths
-      working-directory: ./tests/_output
-      run: |
-        sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' test-results.xml
-        sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' coverage.xml
+    #- name: fix code coverage paths
+    #  working-directory: ./tests/_output
+    #  run: |
+    #    sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' test-results.xml
+    #    sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' coverage.xml
 
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: lightswitch05/sonarcloud-github-action@feature/preserve-report-paths
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
