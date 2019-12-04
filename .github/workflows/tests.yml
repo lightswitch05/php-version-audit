@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2-beta
+      with:
+        fetch-depth: 0
 
     - name: Get composer cache directory
       id: composer-cache
@@ -37,7 +39,7 @@ jobs:
     #    sed -i 's/\/home\/runner\/work\/php-version-audit\/php-version-audit\//\/github\/workspace\//g' coverage.xml
 
     - name: SonarCloud Scan
-      uses: lightswitch05/sonarcloud-github-action@feature/preserve-report-paths
+      uses: sonarsource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
