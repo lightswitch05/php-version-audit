@@ -37,24 +37,33 @@ final class Application
     }
 
     /**
-     * @return string[]
+     * @return \stdClass
      */
-    public function getVulnerabilities(): array
+    public function getVulnerabilities(): \stdClass
     {
-        $vulnerabilities = [];
+        $cves = [];
         $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
         $maxVersion = PhpVersion::fromString($majorAndMinor . ".9999");
         foreach($this->rules->releases as $versionString => $release) {
+            /** @var PhpRelease $release */
             $releaseVersion = PhpVersion::fromString($versionString);
             if ($releaseVersion->compareTo($this->auditVersion) <= 0 ||
                 $releaseVersion->compareTo($maxVersion) > 0) {
                 continue;
             }
-            $vulnerabilities = array_merge($vulnerabilities, $release->getPatchedCveIds());
+            $cves = array_merge($cves, $release->getPatchedCveIds());
         }
-        return array_map(function($cveId){
-            return (string)$cveId;
-        }, $vulnerabilities);
+        $vulnerabilities = new \stdClass();
+        foreach ($cves as $cve) {
+            /** @var CveId $cve */
+            $cveDetails = null;
+            $cveString = (string)$cve->getId();
+            if (isset($this->rules->cves->$cveString)) {
+                $cveDetails = $this->rules->cves->$cveString;
+            }
+            $vulnerabilities->$cveString = $cveDetails;
+        }
+        return $vulnerabilities;
     }
 
     /**

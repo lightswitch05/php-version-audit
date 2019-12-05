@@ -49,7 +49,7 @@ class Cli
         try {
             $auditDetails = $app->getAllAuditDetails();
             $output = json_encode($auditDetails, JSON_PRETTY_PRINT);
-            fwrite(STDOUT, "\n$output\n");
+            fwrite(STDOUT, "$output\n");
 
             if ($args[self::$FAIL_SECURITY] && ($auditDetails->hasVulnerabilities || !$auditDetails->hasSecuritySupport)) {
                 return self::$FAIL_SECURITY_CODE;
@@ -118,7 +118,7 @@ class Cli
 
     private static function getVersion(array $options): string
     {
-        if (isset($options[self::$PHP_VERSION])) {
+        if (isset($options[self::$PHP_VERSION]) && !empty($options[self::$PHP_VERSION])) {
             return $options[self::$PHP_VERSION];
         }
         return phpversion();

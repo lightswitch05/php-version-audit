@@ -45,7 +45,7 @@ final class Rules
     private static function getRulesStdObject(bool $noUpdate): \stdClass
     {
         if ($noUpdate) {
-            if(!$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
+            if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
                 throw StaleRulesException::fromString("Unable to load rules");
             }
             return json_decode($rulesString);
@@ -79,6 +79,15 @@ final class Rules
             $phpVersion = PhpVersion::fromString($versionString);
             $phpRelease = PhpRelease::fromReleaseDescription($phpVersion, $release->releaseDate, json_encode($release->patchedCves));
             $rules->releases->$versionString = $phpRelease;
+        }
+        foreach ($rules->cves as $cveString => $cveDetails) {
+            $rules->cves->$cveString = new CveDetails(
+                CveId::fromString($cveDetails->id),
+                (float)$cveDetails->baseScore,
+                $cveDetails->publishedDate,
+                $cveDetails->lastModifiedDate,
+                $cveDetails->description
+            );
         }
         return $rules;
     }

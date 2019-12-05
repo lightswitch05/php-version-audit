@@ -32,7 +32,10 @@ final class NvdFeedParser
         foreach ($feeds as $feed) {
             $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feed));
         }
-        return CveDetails::sort($cveDetails);
+        uksort($cveDetails, function(string $first, string $second) {
+            return CveId::fromString($first)->compareTo(CveId::fromString($second));
+        });
+        return $cveDetails;
     }
 
     /**
@@ -49,7 +52,7 @@ final class NvdFeedParser
         foreach($cveItems as $cveItem) {
             $cve = self::parseCveItem($cveItem);
             if ($cve && isset($cveIds[(string)$cve->getId()])) {
-                $cveDetails[] = $cve;
+                $cveDetails[(string)$cve->getId()] = $cve;
             }
         }
         return $cveDetails;

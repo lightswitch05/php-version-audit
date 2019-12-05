@@ -48,20 +48,6 @@ final class CveDetails implements \JsonSerializable
     }
 
     /**
-     * @param CveDetails[] $cveDetails
-     * @return CveDetails[]
-     */
-    public static function sort(array $cveDetails): array
-    {
-        $sortedCveDetails = array_merge([], $cveDetails);
-        usort($sortedCveDetails, function($first, $second) {
-            /** @var CveDetails $first, @var CveDetails $second */
-            return $first->compareTo($second);
-        });
-        return $sortedCveDetails;
-    }
-
-    /**
      * @return CveId
      */
     public function getId(): CveId
@@ -81,14 +67,5 @@ final class CveDetails implements \JsonSerializable
             "lastModifiedDate" => $this->lastModifiedDate,
             "description" => $this->description
         ];
-    }
-
-    /**
-     * @param CveDetails $otherCve
-     * @return int
-     */
-    public function compareTo(CveDetails $otherCve): int
-    {
-        return $this->id->compareTo($otherCve->getId());
     }
 }

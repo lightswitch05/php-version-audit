@@ -49,22 +49,4 @@ class CveDetailsTest extends \Codeception\Test\Unit
             "description" => 'description'
         ]), json_encode($cve));
     }
-
-    public function testItComparesIds()
-    {
-        $lessCve = new CveDetails(CveId::fromString('CVE-2010-1010'), null, null, null, null);
-        $greaterCve = new CveDetails(CveId::fromString('CVE-2019-1001'), null, null, null, null);
-        $this->assertLessThan(0, $lessCve->compareTo($greaterCve));
-        $this->assertGreaterThan(0, $greaterCve->compareTo($lessCve));
-    }
-
-    public function testItSortsDetails()
-    {
-        $lessCve = new CveDetails(CveId::fromString('CVE-2010-1010'), null, null, null, null);
-        $greaterCve = new CveDetails(CveId::fromString('CVE-2019-1001'), null, null, null, null);
-        $sorted = CveDetails::sort([$greaterCve, $lessCve]);
-        $this->assertEquals(2, count($sorted));
-        $this->assertEquals($sorted[0], $lessCve);
-        $this->assertEquals($sorted[1], $greaterCve);
-    }
 }
