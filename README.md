@@ -54,35 +54,35 @@ staying informed on PHP releases and security exploits.
 
 ### Docker
 
-> Running with docker is the preferred and easiest way to use PHP Version Audit
+Running with docker is the preferred and easiest way to use PHP Version Audit.
 
-Check a specific version of PHP using Docker
+Check a specific version of PHP using Docker:
 
     docker run --rm lightswitch05/php-version-audit:latest --version=7.3.12
 
-Check the host's PHP version using Docker
+Check the host's PHP version using Docker:
 
     docker run --rm lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')
 
 ### CLI
 
-> Not using docker? Not a problem. It is a couple more steps, but it is just as easy to run directly.
+Not using docker? Not a problem. It is a couple more steps, but it is just as easy to run directly.
 
-Install the package via composer
+Install the package via composer:
 
     composer require lightswitch05/php-version-audit:~1.0
     
-Execute the PHP script, checking the run-time version of PHP
+Execute the PHP script, checking the run-time version of PHP:
 
     ./vendor/bin/php-version-audit
 
-Produce an exit code if any CVEs are found
+Produce an exit code if any CVEs are found:
 
     ./vendor/bin/php-version-audit --fail-security
 
 ### Direct invocation
 
-> Want to integrate with PHP Version Audit? That's certainly possible. A word caution, this is a very early release. I do not have any plans for breaking changes, but I'm also not committed to keeping the interface as-is if there are new features to implement. Docker/CLI is certainly the preferred method over direct invocation.
+Want to integrate with PHP Version Audit? That's certainly possible. A word caution, this is a very early release. I do not have any plans for breaking changes, but I'm also not committed to keeping the interface as-is if there are new features to implement. Docker/CLI is certainly the preferred method over direct invocation.
 
     $phpVersionAudit = new lightswitch05\PhpVersionAudit\Application(phpversion(), false);
     $phpVersionAudit->hasVulnerabilities(); #=> true
@@ -90,9 +90,9 @@ Produce an exit code if any CVEs are found
 
 ### JSON Rules
 
-> The data used to drive PHP Version Audit is automatically updated on a regular basis and is hosted on GitHub pages. This is the real meat-and-potatoes of PHP Version Audit, and you can consume it directly for use in other tools. If you choose to do this, please respect the project license by giving proper attribution notices. Also, I ask any implementations to read the `lastUpdatedDate` and fail if it has become out of date (2+ weeks). This should not happen since it is automatically updated... but we all know how fragile software is.
+The data used to drive PHP Version Audit is automatically updated on a regular basis and is hosted on GitHub pages. This is the real meat-and-potatoes of PHP Version Audit, and you can consume it directly for use in other tools. If you choose to do this, please respect the project license by giving proper attribution notices. Also, I ask any implementations to read the `lastUpdatedDate` and fail if it has become out of date (2+ weeks). This should not happen since it is automatically updated... but we all know how fragile software is.
 
-Get the latest PHP 7.3 release version directly from the rules using [curl](https://curl.haxx.se/) and [jq](https://stedolan.github.io/jq/)
+Get the latest PHP 7.3 release version directly from the rules using [curl](https://curl.haxx.se/) and [jq](https://stedolan.github.io/jq/):
 
     curl -s https://www.github.developerdan.com/php-version-audit/rules-v1.json | jq '.latestVersions["7.3"]'
 
