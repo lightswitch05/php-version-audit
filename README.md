@@ -10,6 +10,18 @@ list of CVE exploits, new releases, and end of life dates.
 **PHP Version Audit is not:** exploit detection/mitigation, vendor-specific version tracking, a replacement for
 staying informed on PHP releases and security exploits.
 
+
+> * [Features](#features)
+> * [Example](#example)
+> * [Usage](#usage)
+>   * [Docker](#docker)
+>   * [CLI](#cli)
+>   * [Direct Invocation](#direct-invocation)
+>   * [JSON Rules](#json-rules)
+>   * [Options](#options)
+> * [Output](#output)
+> * [Project Goals](#project-goals)
+
 ## Features:
 * List known CVEs for a given version of PHP
 * Check either the runtime version of PHP, or a supplied version
@@ -80,7 +92,7 @@ Produce an exit code if any CVEs are found:
 
     ./vendor/bin/php-version-audit --fail-security
 
-### Direct invocation
+### Direct Invocation
 
 Want to integrate with PHP Version Audit? That's certainly possible. A word caution, this is a very early release. I do not have any plans for breaking changes, but I'm also not committed to keeping the interface as-is if there are new features to implement. Docker/CLI is certainly the preferred method over direct invocation.
 
