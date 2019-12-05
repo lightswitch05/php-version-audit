@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace lightswitch05\PhpVersionAudit;
 
 use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
+use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class CachedDownload
 {
@@ -50,9 +51,16 @@ final class CachedDownload
         }
         $modifiedDate = self::getServerLastModifiedDate($url);
         if (substr($url, -2) === 'gz') {
-            $data = stream_get_contents(gzopen($url, 'rb'));
+            if (($stream = gzopen($url, 'rb')) === false){
+                throw StaleRulesException::fromString("Unable to download: $url");
+            }
+            if (($data = stream_get_contents($stream)) === false) {
+                throw StaleRulesException::fromString("Unable to download: $url");
+            }
         } else {
-            $data = file_get_contents($url);
+            if(($data = file_get_contents($url)) === false) {
+                throw StaleRulesException::fromString("Unable to download: $url");
+            }
         }
         self::writeCacheFile($url, $data, $modifiedDate);
         return $data;
@@ -66,7 +74,13 @@ final class CachedDownload
     {
         $filename = self::urlToFileName($url);
         $fullPath = self::getCachePath($filename);
-        return file_get_contents($fullPath);
+        if (!is_file($fullPath)) {
+            throw StaleRulesException::fromString("Cached file not found: $fullPath");
+        }
+        if(($contents = file_get_contents($fullPath)) === false) {
+            throw StaleRulesException::fromString("Unable to read cached file: $fullPath");
+        }
+        return $contents;
     }
 
     /**
