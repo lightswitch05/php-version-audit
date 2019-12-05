@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>PHP Version Audit</title>
-    <meta name="description" content="Hostfile blocklist for ads and tracking">
+    <meta name="description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated
+            list of CVE exploits, new releases, and end of life dates.">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" href="favicon.ico">
@@ -14,6 +15,18 @@
     <main>
         <h1>PHP Version Audit: <small><a href="https://github.com/lightswitch05/php-version-audit">Source on Github</a></small></h1>
         <p>
+            <a href="https://github.com/lightswitch05/php-version-audit/actions?query=workflow%3A%22Auto+Updates%22">
+                <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/lightswitch05/php-version-audit/Auto Updates" style="max-width:100%;">
+            </a>
+            <a href="https://packagist.org/packages/lightswitch05/php-version-audit">
+                <img alt="Packagist Version" src="https://img.shields.io/packagist/v/lightswitch05/php-version-audit" style="max-width:100%;">
+            </a>
+            <a href="https://hub.docker.com/r/lightswitch05/php-version-audit">
+                <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/lightswitch05/php-version-audit" style="max-width:100%;">
+            </a>
+            <a href="https://sonarcloud.io/dashboard?id=lightswitch05_php-version-audit">
+                <img src="https://sonarcloud.io/api/project_badges/measure?project=lightswitch05_php-version-audit&metric=alert_status" alt="Quality Gate Status" style="max-width:100%;">
+            </a>
             <a href="https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE">
                 <img alt="license" src="https://img.shields.io/github/license/lightswitch05/php-version-audit.svg" style="max-width:100%;">
             </a>
@@ -32,6 +45,26 @@
             <strong>PHP Version Audit is not:</strong> exploit detection/mitigation, vendor-specific version tracking, a replacement for
             staying informed on PHP releases and security exploits.
         </p>
+
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#example">Example</a></li>
+                    <li><a href="#usage">Usage</a>
+                        <ul>
+                            <li><a href="#docker">Docker</a></li>
+                            <li><a href="#cli">CLI</a></li>
+                            <li><a href="#direct-invocation">Direct Invocation</a></li>
+                            <li><a href="#json-rules">JSON Rules</a></li>
+                            <li><a href="#options">Options</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#output">Output</a></li>
+                    <li><a href="#project-goals">Project Goals</a></li>
+                </ul>
+            </nav>
+        </section>
 
 
         <section id="features">
@@ -53,33 +86,104 @@
                 <li>Configurable exit conditions. Use CLI flags like `--fail-security` to set a failure exit code if the given version of PHP has a known CVE or is no longer receiving security updates.</li>
             </ul>
         </section>
+
+        <section id="example">
+            <h2><a href="#usage">Example</a></h2>
+            <code>
+<pre>docker run --rm lightswitch05/php-version-audit:latest --version=7.3.10
+{
+    "auditVersion": "7.3.10",
+    "hasVulnerabilities": true,
+    "hasSecuritySupport": true,
+    "hasActiveSupport": true,
+    "isLatestPatchVersion": false,
+    "isLatestMinorVersion": false,
+    "isLatestVersion": false,
+    "latestPatchVersion": "7.3.12",
+    "latestMinorVersion": "7.4.0",
+    "latestVersion": "7.4.0",
+    "activeSupportEndDate": "2020-12-06T00:00:00+0000",
+    "securitySupportEndDate": "2021-12-06T00:00:00+0000",
+    "vulnerabilities": {
+        "CVE-2019-11043": {
+            "id": "CVE-2019-11043",
+            "baseScore": 9.8,
+            "publishedDate": "2019-10-28T15:15:00+0000",
+            "lastModifiedDate": "2019-10-30T20:15:00+0000",
+            "description": "In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24 and 7.3.x below 7.3.11 in certain configurations of FPM setup it is possible to cause FPM module to write past allocated buffers into the space reserved for FCGI protocol data, thus opening the possibility of remote code execution."
+        }
+    }
+}</pre>
+            </code>
+        </section>
+
         <section id="usage">
             <h2><a href="#usage">Usage</a></h2>
-            <h3>Docker</h3>
+
+            <h3 id="docker"><a href="#docker">Docker</a></h3>
             <hr/>
             <p>
-                Check a specific version of PHP using Docker
+                Running with docker is the preferred and easiest way to use PHP Version Audit.
+            </p>
+            <p>
+                Check a specific version of PHP using Docker:
                 <code>docker run --rm lightswitch05/php-version-audit:latest --version=7.3.12</code>
             </p>
             <p>
-                Check the host's PHP version using Docker
+                Check the host's PHP version using Docker:
                 <code>docker run --rm lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')</code>
             </p>
-            <h3>CLI</h3>
+
+            <h3 id="cli"><a href="#cli">CLI</a></h3>
             <hr/>
             <p>
-                Install the package via composer
+                Not using docker? Not a problem. It is a couple more steps, but it is just as easy to run directly.
+            </p>
+            <p>
+                Install the package via composer:
                 <code>composer require lightswitch05/php-version-audit:~1.0</code>
             </p>
             <p>
-                Execute the PHP script
+                Execute the PHP script, checking the run-time version of PHP:
                 <code>./vendor/bin/php-version-audit</code>
             </p>
             <p>
                 Produce an exit code if any CVEs are found
                 <code>./vendor/bin/php-version-audit --fail-security</code>
             </p>
-            <h3>Optional Arguments</h3>
+            <h3 id="direct-invocation"><a href="#direct-invocation">Direct Invocation</a></h3>
+            <hr/>
+            <p>
+                Want to integrate with PHP Version Audit? That's certainly possible.
+                A word caution, this is a very early release. I do not have any plans for breaking changes,
+                but I'm also not committed to keeping the interface as-is if there are new features to implement.
+                Docker/CLI is certainly the preferred method over direct invocation.
+                <code>
+                    $phpVersionAudit = new lightswitch05\PhpVersionAudit\Application(phpversion(), false);<br/>
+                    $phpVersionAudit->hasVulnerabilities(); #=> true<br/>
+                    $phpVersionAudit->getLatestPatchVersion(); #=> '7.3.12'<br/>
+                </code>
+            </p>
+
+            <h3 id="json-rules"><a href="#json-rules">JSON Rules</a></h3>
+            <hr />
+            <p>
+                The data used to drive PHP Version Audit is automatically updated on a regular basis
+                and is hosted on GitHub pages. This is the real meat-and-potatoes of PHP Version Audit,
+                and you can consume it directly for use in other tools. If you choose to do this,
+                please respect the project license by giving proper attribution notices.
+                Also, I ask any implementations to read the lastUpdatedDate and fail if it has become out of date (2+ weeks).
+                This should not happen since it is automatically updated&#8230; but we all know how fragile software is.
+            </p>
+            <p>
+                Get the latest PHP 7.3 release version directly from the rules using
+                <a href="https://curl.haxx.se/">curl</a> and <a href="https://stedolan.github.io/jq/">jq</a>:
+                <code>
+                    curl -s https://www.github.developerdan.com/php-version-audit/rules-v1.json | jq '.latestVersions["7.3"]'
+                </code>
+            </p>
+
+            <h3 id="options"><a href="#options">Options</a></h3>
             <hr/>
             <dl>
                 <dt><strong>--help</strong></dt>
@@ -96,6 +200,38 @@
                 <dd>generate a 40 exit code if there is a newer release.</dd>
                 <dt><strong>--no-update</strong></dt>
                 <dd>do not download the latest rules. NOT RECOMMENDED!</dd>
+            </dl>
+        </section>
+
+        <section id="output">
+            <h2><a href="#output">Output</a></h2>
+            <dl>
+                <dt><strong>auditVersion</strong>: string</dt>
+                <dd>The version of PHP that is being audited.</dd>
+                <dt><strong>hasVulnerabilities</strong>: bool</dt>
+                <dd>If the auditVersion has any known CVEs or not.</dd>
+                <dt><strong>hasSecuritySupport</strong>: bool</dt>
+                <dd>If the auditVersion is still receiving security updates.</dd>
+                <dt><strong>hasActiveSupport</strong>: bool</dt>
+                <dd>If the auditVersion is still receiving active support (bug updates).</dd>
+                <dt><strong>isLatestPatchVersion</strong>: bool</dt>
+                <dd>If auditVersion is the latest patch-level release (7.3.x).</dd>
+                <dt><strong>isLatestMinorVersion</strong>: bool</dt>
+                <dd>If auditVersion is the latest minor-level release (7.x.x).</dd>
+                <dt><strong>isLatestVersion</strong>: bool</dt>
+                <dd>If auditVersion is the latest release (x.x.x).</dd>
+                <dt><strong>latestPatchVersion</strong>: string</dt>
+                <dd>The latest patch-level version for auditVersion.</dd>
+                <dt><strong>latestMinorVersion</strong>: string</dt>
+                <dd>The latest minor-level version for auditVersion.</dd>
+                <dt><strong>latestVersion</strong>: string</dt>
+                <dd>The latest PHP version.</dd>
+                <dt><strong>activeSupportEndDate</strong>: string|null</dt>
+                <dd>ISO8601 formatted date for the end of active support for auditVersion (bug fixes).</dd>
+                <dt><strong>securitySupportEndDate</strong>: string</dt>
+                <dd>ISO8601 formatted date for the end of security support for auditVersion.</dd>
+                <dt><strong>vulnerabilities</strong>: object</dt>
+                <dd>CVEs known to affect auditVersion with details about the CVE. CVE Details might be null for recently discovered CVEs.</dd>
             </dl>
         </section>
         <section id="project-goals">
