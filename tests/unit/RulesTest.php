@@ -62,16 +62,16 @@ class RulesTest extends \Codeception\Test\Unit
         $rules = json_decode(self::$rulesRaw);
         $rules->supportEndDates = [];
         file_put_contents(__DIR__ . self::$rulesPath, json_encode($rules));
-        $rules = Rules::loadRules(true);
+        Rules::loadRules(true);
     }
 
     public function testItSavesRules()
     {
-        $relaseOne = PhpRelease::fromReleaseDescription(PhpVersion::fromString('5.4.0'), '2019-11-28T00:00:00+0000', 'CVE-2019-11043 CVE-2019-11041 CVE-2019-11042');
-        $relaseTwo = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.3.0'), '2019-11-28T00:00:00+0000', '');
-        $relaseThree = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.4.0rc'), '2019-11-28T00:00:00+0000', 'CVE-2019-11041');
-        $relaseFour = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.3.1'), '2019-11-28T00:00:00+0000', '');
-        $relaseFive = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.4.0'), '2019-11-28T00:00:00+0000', '');
-        Rules::saveRules([$relaseOne, $relaseTwo, $relaseThree, $relaseFour, $relaseFive], [], []);
+        $releaseOne = PhpRelease::fromReleaseDescription(PhpVersion::fromString('5.4.0'), '2019-11-28T00:00:00+0000', 'CVE-2019-11043 CVE-2019-11041 CVE-2019-11042');
+        $releaseTwo = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.3.0'), '2019-11-28T00:00:00+0000', '');
+        $releaseThree = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.4.0rc'), '2019-11-28T00:00:00+0000', 'CVE-2019-11041');
+        $releaseFour = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.3.1'), '2019-11-28T00:00:00+0000', '');
+        $releaseFive = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.4.0'), '2019-11-28T00:00:00+0000', '');
+        Rules::saveRules([$releaseOne, $releaseTwo, $releaseThree, $releaseFour, $releaseFive], [], []);
     }
 }

@@ -79,10 +79,9 @@ final class Application
      */
     public function isLatestVersion(): bool
     {
-        if (!$this->rules->latestVersion) {
-            throw StaleRulesException::fromString("Latest PHP version is unknown!");
-        }
-        return $this->auditVersion->compareTo($this->rules->latestVersion) === 0;
+        $versionString = self::getLatestVersion();
+        $latestVersion = PhpVersion::fromString($versionString);
+        return $this->auditVersion->compareTo($latestVersion) === 0;
     }
 
     /**
@@ -101,12 +100,9 @@ final class Application
      */
     public function isLatestPatchVersion(): bool
     {
-        $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
-        if (!isset($this->rules->latestVersions->$majorAndMinor)) {
-            throw UnknownVersionException::fromString((string)$this->auditVersion);
-        }
-        $latestPatch = $this->rules->latestVersions->$majorAndMinor;
-        return $this->auditVersion->compareTo($latestPatch) >= 0;
+        $versionString = self::getLatestPatchVersion();
+        $latestVersion = PhpVersion::fromString($versionString);
+        return $this->auditVersion->compareTo($latestVersion) === 0;
     }
 
     /**
@@ -126,12 +122,9 @@ final class Application
      */
     public function isLatestMinorVersion(): bool
     {
-        $major = (string) $this->auditVersion->getMajor();
-        if (!isset($this->rules->latestVersions->$major)) {
-            throw UnknownVersionException::fromString((string)$this->auditVersion);
-        }
-        $latestMinor = $this->rules->latestVersions->$major;
-        return $this->auditVersion->compareTo($latestMinor) >= 0;
+        $versionString = self::getLatestMinorVersion();
+        $latestVersion = PhpVersion::fromString($versionString);
+        return $this->auditVersion->compareTo($latestVersion) === 0;
     }
 
     /**
@@ -159,15 +152,11 @@ final class Application
      */
     public function hasSecuritySupport(): bool
     {
-        $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
-        if (!isset($this->rules->supportEndDates->$majorAndMinor)) {
-            throw UnknownVersionException::fromString((string)$this->auditVersion);
-        }
-        /** @var \DateTimeImmutable $activeSupport */
-        if ($this->auditVersion->isPreRelease() || !$securitySupport = $this->rules->supportEndDates->$majorAndMinor->security) {
+        if (!$endDateString = self::getSecuritySupportEndDate()) {
             return false;
         }
-        return DateHelpers::nowTimestamp() - $securitySupport->getTimestamp() < 0;
+        $endDate = DateHelpers::fromISO8601($endDateString);
+        return DateHelpers::nowTimestamp() - $endDate->getTimestamp() < 0;
     }
 
     /**
@@ -195,22 +184,18 @@ final class Application
      */
     public function hasActiveSupport(): bool
     {
-        $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
-        if (!isset($this->rules->supportEndDates->$majorAndMinor)) {
-            throw UnknownVersionException::fromString((string)$this->auditVersion);
-        }
-        /** @var \DateTimeImmutable $activeSupport */
-        if ($this->auditVersion->isPreRelease() || !$activeSupport = $this->rules->supportEndDates->$majorAndMinor->active) {
+        if (!$endDateString = self::getActiveSupportEndDate()) {
             return false;
         }
-        return DateHelpers::nowTimestamp() - $activeSupport->getTimestamp() < 0;
+        $endDate = DateHelpers::fromISO8601($endDateString);
+        return DateHelpers::nowTimestamp() - $endDate->getTimestamp() < 0;
     }
 
     public function getAllAuditDetails(): \stdClass
     {
         Rules::assertFreshRules($this->rules);
         return (object) [
-            'auditVersion' => $this->auditVersion,
+            'auditVersion' => (string) $this->auditVersion,
             'hasVulnerabilities' => $this->hasVulnerabilities(),
             'hasSecuritySupport' => $this->hasSecuritySupport(),
             'hasActiveSupport' => $this->hasActiveSupport(),
