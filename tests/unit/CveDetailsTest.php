@@ -8,19 +8,11 @@ class CveDetailsTest extends \Codeception\Test\Unit
     const CVE_ID = 'CVE-2019-1234';
     private static $CVE_ID;
 
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
     protected function _before()
     {
         self::$CVE_ID = CveId::fromString(self::CVE_ID);
     }
 
-    protected function _after()
-    {
-    }
 
     public function testBasicConstruction()
     {

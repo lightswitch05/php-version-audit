@@ -9,18 +9,9 @@ class PhpReleaseTest extends \Codeception\Test\Unit
     private static $PHP_VERSION;
     private static $PHP_RELEASE_DATE = "2019-11-28T00:00:00+0000";
 
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
     protected function _before()
     {
         self::$PHP_VERSION = PhpVersion::fromString(self::$VERSION_STRING);
-    }
-
-    protected function _after()
-    {
     }
 
     public function testItParsesASimpleString()
@@ -55,5 +46,15 @@ class PhpReleaseTest extends \Codeception\Test\Unit
         $smallest = PhpRelease::fromReleaseDescription(PhpVersion::fromString("7.3.13"), null, null);
         $this->assertLessThan(0, $smallest->compareTo($largest));
         $this->assertGreaterThan(0, $largest->compareTo($smallest));
+    }
+
+    public function testItSorts()
+    {
+        $largest = PhpRelease::fromReleaseDescription(PhpVersion::fromString("7.4.0"), null, null);
+        $smallest = PhpRelease::fromReleaseDescription(PhpVersion::fromString("7.3.13"), null, null);
+        $sorted = PhpRelease::sort([$largest, $smallest]);
+        $this->assertNotEmpty($sorted);
+        $this->assertEquals((string) $smallest->getVersion(), (string) $sorted[0]->getVersion());
+        $this->assertEquals((string) $largest->getVersion(), (string) $sorted[1]->getVersion());
     }
 }

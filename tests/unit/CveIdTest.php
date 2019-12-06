@@ -6,19 +6,6 @@ class CveIdTest extends \Codeception\Test\Unit
 {
     const VALID_CVE_ID = 'CVE-2016-5094';
 
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
     public function testItCreatesASimpleIdFromString()
     {
         $cve = CveId::fromString(self::VALID_CVE_ID);

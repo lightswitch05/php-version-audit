@@ -4,18 +4,6 @@ use \lightswitch05\PhpVersionAudit\PhpVersion;
 
 class PhpVersionTest extends \Codeception\Test\Unit
 {
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
 
     public function testItParsesFromSimpleString()
     {
@@ -29,6 +17,12 @@ class PhpVersionTest extends \Codeception\Test\Unit
         $this->assertEquals($version->getMajorMinorVersionString(), "7.3");
         $this->assertFalse($version->isPreRelease());
         $this->assertEquals(json_encode($versionString), json_encode($versionString));
+    }
+
+    public function testItParsesNull()
+    {
+        $version = PhpVersion::fromString(null);
+        $this->assertNull($version);
     }
 
     public function testItParsesBetaString()
@@ -77,6 +71,12 @@ class PhpVersionTest extends \Codeception\Test\Unit
         $two = PhpVersion::fromString("7.3.13");
         $this->assertEquals(0, $one->compareTo($two));
         $this->assertEquals(0, $two->compareTo($one));
+    }
+
+    public function testItConvertsToJson()
+    {
+        $version = PhpVersion::fromString("7.3.13");
+        $this->assertEquals(json_encode("7.3.13"), json_encode($version));
     }
 
     public function testItComparesPreRelease()

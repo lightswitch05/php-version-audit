@@ -4,19 +4,6 @@ use \lightswitch05\PhpVersionAudit\DateHelpers;
 
 class DateHelpersTest extends \Codeception\Test\Unit
 {
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
     public function testItParsersFromISO8601ToNull()
     {
         $date = DateHelpers::fromISO8601(null);
@@ -49,8 +36,8 @@ class DateHelpersTest extends \Codeception\Test\Unit
 
     public function testItParsesFromJMYToISO8601WithDate()
     {
-        $date = DateHelpers::fromYMDToISO8601("2011-08-27");
-        $this->assertEquals('2011-08-27T00:00:00+0000', $date);
+        $date = DateHelpers::fromJMYToISO8601("27 Aug 1986");
+        $this->assertEquals('1986-08-27T00:00:00+0000', $date);
     }
 
     public function testItParsesFromCveFormatToISO8601WithNull()
