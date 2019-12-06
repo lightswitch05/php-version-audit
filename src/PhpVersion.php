@@ -101,10 +101,7 @@ final class PhpVersion implements \JsonSerializable
         if ($this->preReleaseType !== $otherVersion->preReleaseType) {
             return strcmp($this->preReleaseType, $otherVersion->preReleaseType);
         }
-        if ($this->preReleaseVersion !== $otherVersion->preReleaseVersion) {
-            return $this->preReleaseVersion - $otherVersion->preReleaseVersion;
-        }
-        return 0;
+        return $this->preReleaseVersion - $otherVersion->preReleaseVersion;
     }
 
     /**
