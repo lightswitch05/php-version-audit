@@ -127,9 +127,9 @@ final class Rules
 
     /**
      * @param PhpRelease[] $releases
-     * @return PhpVersion
+     * @return PhpVersion|null
      */
-    private static function releasesToLatestVersion(array $releases): PhpVersion
+    private static function releasesToLatestVersion(array $releases): ?PhpVersion
     {
         $latestVersion = null;
         foreach ($releases as $release) {

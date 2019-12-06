@@ -9,6 +9,5 @@ RUN composer install --prefer-dist --no-progress --no-suggest
 
 FROM php:7.4-cli-alpine
 WORKDIR /opt/php-version-audit
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 COPY --from=composer-build /opt/php-version-audit /opt/php-version-audit
 ENTRYPOINT ["/opt/php-version-audit/php-version-audit"]

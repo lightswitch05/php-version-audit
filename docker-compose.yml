@@ -12,7 +12,9 @@ services:
 
   php:
     <<: *common
-    image: php:7.4-cli
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.dev
 
   build:
     build:
