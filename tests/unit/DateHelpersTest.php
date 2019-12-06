@@ -40,6 +40,18 @@ class DateHelpersTest extends \Codeception\Test\Unit
         $this->assertEquals('1986-08-27T00:00:00+0000', $date);
     }
 
+    public function testItParsesFromYMDToISO8601WithNull()
+    {
+        $date = DateHelpers::fromYMDToISO8601(null);
+        $this->assertNull($date);
+    }
+
+    public function testItParsesFromYMDToISO8601WithString()
+    {
+        $date = DateHelpers::fromYMDToISO8601('2019-12-25');
+        $this->assertEquals('2019-12-25T00:00:00+0000', $date);
+    }
+
     public function testItParsesFromCveFormatToISO8601WithNull()
     {
         $date = DateHelpers::fromCveFormatToISO8601(null);
