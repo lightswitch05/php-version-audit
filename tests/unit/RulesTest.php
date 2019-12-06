@@ -1,19 +1,23 @@
 <?php
 
 use \lightswitch05\PhpVersionAudit\Rules;
+use \lightswitch05\PhpVersionAudit\PhpRelease;
+use \lightswitch05\PhpVersionAudit\PhpVersion;
+use \lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 class RulesTest extends \Codeception\Test\Unit
 {
-    private static $RULES_RAW;
+    private static $rulesPath = '/../../docs/rules-v1.json';
+    private static $rulesRaw;
 
     public function _before()
     {
-        self::$RULES_RAW = file_get_contents(__DIR__ . '/../../docs/rules-v1.json');
+        self::$rulesRaw = file_get_contents(__DIR__ . self::$rulesPath);
     }
 
     public function _after()
     {
-        file_put_contents(__DIR__ . '/../../docs/rules-v1.json', self::$RULES_RAW);
+        file_put_contents(__DIR__ . self::$rulesPath, self::$rulesRaw);
     }
 
     public function testItAssertsFreshRules()
@@ -26,7 +30,7 @@ class RulesTest extends \Codeception\Test\Unit
 
     public function testItAssertsStaleRules()
     {
-        $this->expectException(\lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException::class);
+        $this->expectException(StaleRulesException::class);
         $rules = (object) [
             'lastUpdatedDate' => (new DateTime())->modify('-2 week')->modify('-1 hour')
         ];
@@ -39,14 +43,35 @@ class RulesTest extends \Codeception\Test\Unit
         $this->assertNotNull($rules);
     }
 
+    public function testItThrowsOnMissingRules()
+    {
+        $this->expectException(StaleRulesException::class);
+        unlink(__DIR__ . self::$rulesPath);
+        Rules::loadRules(true);
+    }
+
     public function testItLoadsRulesWithUpdate()
     {
         $rules = Rules::loadRules(false);
         $this->assertNotNull($rules);
     }
 
+    public function testItEnsuresValidRules()
+    {
+        $this->expectException(StaleRulesException::class);
+        $rules = json_decode(self::$rulesRaw);
+        $rules->supportEndDates = [];
+        file_put_contents(__DIR__ . self::$rulesPath, json_encode($rules));
+        $rules = Rules::loadRules(true);
+    }
+
     public function testItSavesRules()
     {
-        Rules::saveRules([], [], []);
+        $relaseOne = PhpRelease::fromReleaseDescription(PhpVersion::fromString('5.4.0'), '2019-11-28T00:00:00+0000', 'CVE-2019-11043 CVE-2019-11041 CVE-2019-11042');
+        $relaseTwo = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.3.0'), '2019-11-28T00:00:00+0000', '');
+        $relaseThree = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.4.0rc'), '2019-11-28T00:00:00+0000', 'CVE-2019-11041');
+        $relaseFour = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.3.1'), '2019-11-28T00:00:00+0000', '');
+        $relaseFive = PhpRelease::fromReleaseDescription(PhpVersion::fromString('7.4.0'), '2019-11-28T00:00:00+0000', '');
+        Rules::saveRules([$relaseOne, $relaseTwo, $relaseThree, $relaseFour, $relaseFive], [], []);
     }
 }
