@@ -103,6 +103,7 @@ final class Rules
             'name' => 'PHP Version Audit',
             'website' => 'https://github.com/lightswitch05/php-version-audit',
             'licence' => 'https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE',
+            'source' => self::$HOSTED_RULES_PATH,
             'releasesCount' => count($releases),
             'cveCount' => count($cves),
             'supportVersionsCount' => count(array_keys($supportEndDates)),
@@ -121,7 +122,7 @@ final class Rules
      */
     private static function writeRulesFile(\stdClass $rules): void
     {
-        file_put_contents(__DIR__ . self::$RULES_PATH, json_encode($rules, JSON_PRETTY_PRINT));
+        file_put_contents(__DIR__ . self::$RULES_PATH, json_encode($rules, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
     }
 
     /**
