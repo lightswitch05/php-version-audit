@@ -8,6 +8,7 @@ use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 final class CachedDownload
 {
     const INDEX_FILE_NAME = 'index.json';
+    const MAX_RETRY = 3;
 
     /**
      * @param string $url
@@ -27,7 +28,8 @@ final class CachedDownload
     public static function dom(string $url): \DOMDocument
     {
         $html = self::download($url);
-        if (($dom = \DOMDocument::loadHTML($html, LIBXML_NOWARNING | LIBXML_NONET | LIBXML_NOERROR)) === false) {
+        $dom = \DOMDocument::loadHTML($html, LIBXML_NOWARNING | LIBXML_NONET | LIBXML_NOERROR);
+        if ($dom === false) {
             throw ParseException::fromString("Unable to parse url: " . $url);
         }
         return $dom;
@@ -50,19 +52,45 @@ final class CachedDownload
         }
         $modifiedDate = self::getServerLastModifiedDate($url);
         if (substr($url, -2) === 'gz') {
-            if (($stream = gzopen($url, 'rb')) === false){
-                throw ParseException::fromString("Unable to download: $url");
-            }
-            if (($data = stream_get_contents($stream)) === false) {
-                throw ParseException::fromString("Unable to download: $url");
-            }
+            $data = self::downloadGZipFile($url);
         } else {
-            if(($data = file_get_contents($url)) === false) {
-                throw ParseException::fromString("Unable to download: $url");
-            }
+            $data = self::downloadTextFile($url);
         }
         self::writeCacheFile($url, $data, $modifiedDate);
         return $data;
+    }
+
+    private static function downloadGZipFile(string $url, int $attempt = 0): string
+    {
+        $stream = gzopen($url, 'rb');
+        if ($stream === false && $attempt < self::MAX_RETRY) {
+            sleep(15);
+            return self::downloadGZipFile($url, $attempt + 1);
+        } else if ($stream === false) {
+            throw ParseException::fromString("Unable to download: $url");
+        }
+
+        $data = stream_get_contents($stream);
+        if ($data === false && $attempt < self::MAX_RETRY) {
+            sleep(15);
+            return self::downloadGZipFile($url, $attempt + 1);
+        } else if ($data === false) {
+            throw ParseException::fromString("Unable to download: $url");
+        }
+        return $data;
+    }
+
+    private static function downloadTextFile(string $url, int $attempt = 0): string
+    {
+        $data = file_get_contents($url);
+        if ($data !== false) {
+            return $data;
+        }
+        if ($attempt < self::MAX_RETRY) {
+            sleep(15);
+            return self::downloadTextFile($url, $attempt + 1);
+        }
+        throw ParseException::fromString("Unable to download: $url");
     }
 
     /**
@@ -76,7 +104,8 @@ final class CachedDownload
         if (!is_file($fullPath)) {
             throw ParseException::fromString("Cached file not found: $fullPath");
         }
-        if(($contents = file_get_contents($fullPath)) === false) {
+        $contents = file_get_contents($fullPath);
+        if($contents === false) {
             throw ParseException::fromString("Unable to read cached file: $fullPath");
         }
         return $contents;
@@ -115,9 +144,10 @@ final class CachedDownload
 
     /**
      * @param string $url
+     * @param int $attempt
      * @return \DateTimeImmutable
      */
-    private static function getServerLastModifiedDate(string $url): \DateTimeImmutable
+    private static function getServerLastModifiedDate(string $url, int $attempt = 0): \DateTimeImmutable
     {
         $context = stream_context_create([
             'http' => [
@@ -125,7 +155,11 @@ final class CachedDownload
             ]
         ]);
         $headers = get_headers($url, 1, $context);
-        if (!isset($headers['Last-Modified'])) {
+        if ($headers === false && $attempt < self::MAX_RETRY) {
+            sleep(15);
+            return self::getServerLastModifiedDate($url, $attempt + 1);
+        }
+        if (!$headers || !isset($headers['Last-Modified'])) {
             // Always assume just updated if the header is missing
             return new \DateTimeImmutable();
         }
