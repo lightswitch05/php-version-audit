@@ -3,9 +3,10 @@
 set -e
 
 # Parse image name for repo name
-tagStart=$(expr index "$IMAGE_NAME" :)
-repoName=${IMAGE_NAME:0:tagStart-1}
+distroStart=$(expr index "$DOCKERFILE_PATH" .)
+distroName=${DOCKERFILE_PATH:0:distroStart-1}
 
-docker tag $IMAGE_NAME ${repoName}:latest
-docker push ${repoName}:latest
-
+if [ "$distroName" == "alpine" ]; then
+    docker tag "${IMAGE_NAME}" "${DOCKER_REPO}:latest"
+    docker push "${DOCKER_REPO}:latest"
+fi

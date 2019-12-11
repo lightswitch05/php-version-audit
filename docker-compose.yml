@@ -19,5 +19,5 @@ services:
   build:
     build:
       context: ./
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./docker/Dockerfile.alpine
     image: lightswitch05/php-version-audit

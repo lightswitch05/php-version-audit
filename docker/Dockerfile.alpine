@@ -5,7 +5,14 @@ COPY ./docs ./docs
 COPY php-version-audit .
 COPY ./composer.json .
 COPY ./composer.lock .
-RUN composer install --prefer-dist --no-progress --no-suggest
+RUN composer install            \
+    --classmap-authoritative    \
+    --no-dev                    \
+    --no-interaction            \
+    --no-progress               \
+    --no-suggest                \
+    --optimize-autoloader       \
+    --prefer-dist
 
 FROM php:7.4-cli-alpine
 WORKDIR /opt/php-version-audit
