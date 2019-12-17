@@ -1,5 +1,7 @@
 # PHP Version Audit
 
+[![PHP Version Audit Logo](https://www.github.developerdan.com/php-version-audit/php-version-audit-logo.svg)](https://www.github.developerdan.com/php-version-audit/)
+
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lightswitch05/php-version-audit/Auto%20Updates)](https://github.com/lightswitch05/php-version-audit/actions?query=workflow%3A%22Auto+Updates%22)
 [![Packagist Version](https://img.shields.io/packagist/v/lightswitch05/php-version-audit)](https://packagist.org/packages/lightswitch05/php-version-audit)
 [![Docker Pulls](https://img.shields.io/docker/pulls/lightswitch05/php-version-audit)](https://hub.docker.com/r/lightswitch05/php-version-audit)
@@ -25,6 +27,7 @@ staying informed on PHP releases and security exploits.
 >   * [Options](#options)
 > * [Output](#output)
 > * [Project Goals](#project-goals)
+> * [Acknowledgments & License](#acknowledgments--license)
 
 ## Features:
 * List known CVEs for a given version of PHP
@@ -37,7 +40,7 @@ staying informed on PHP releases and security exploits.
 * Rules automatically updated twice a day. Information is sourced directly from php.net - you'll never be waiting on someone like me to merge a pull request before getting the latest patch information.
 * Multiple interfaces: CLI (via PHP Composer), Docker, direct code import
 * Easily scriptable for use with CI/CD workflows. All Docker/CLI outputs are in JSON format to be consumed with your favorite tools - such as [jq](https://stedolan.github.io/jq/).
-* Configurable exit conditions. Use CLI flags like `--fail-security` to set a failure exit code if the given version of PHP has a known CVE or is no longer receiving security updates. 
+* Configurable exit conditions. Use CLI flags like `--fail-security` to set a failure exit code if the given version of PHP has a known CVE or is no longer receiving security updates.
 
 ## Example:
 
@@ -87,7 +90,7 @@ Not using docker? Not a problem. It is a couple more steps, but it is just as ea
 Install the package via composer:
 
     composer require lightswitch05/php-version-audit:~1.0
-    
+
 Execute the PHP script, checking the run-time version of PHP:
 
     ./vendor/bin/php-version-audit
@@ -118,7 +121,7 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
                                     [--fail-security] [--fail-support]
                                     [--fail-patch] [--fail-latest]
                                     [--no-update]
-    
+
     optional arguments:
     --help                          show this help message and exit.
     --version                       set the PHP Version to run against. Defaults to the runtime version, be sure to set this if you are using the docker image.
@@ -145,12 +148,19 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
 * vulnerabilities: object - CVEs known to affect auditVersion with details about the CVE. CVE Details might be null for recently discovered CVEs.
 
 ## Project Goals:
+
 * Always use update-to-date information and fail if it becomes too stale. Since this tool is designed to help its users stay informed, it must in turn fail if it becomes outdated.
-* Fail if the requested information is unavailable. ex. getting the support end date of PHP version 6.0, or 5.7.0. Again, since this tool is designed to help its users stay informed, it must in turn fail if the requested information is unavailable. 
+* Fail if the requested information is unavailable. ex. getting the support end date of PHP version 6.0, or 5.7.0. Again, since this tool is designed to help its users stay informed, it must in turn fail if the requested information is unavailable.
 * Work in both open and closed networks (as long as the tool is up-to-date).
 * Minimal footprint and dependencies.
 * Runtime support for the oldest supported version of PHP. If you are using this tool with an unsupported version of PHP, then you already have all the answers that this tool can give you: Yes, you have vulnerabilities and are out of date. Of course that is just for the run-time, it is still the goal of this project to supply information about any reasonable version of PHP.
 
-## TODO
-* Add logging with an optional verbose flag(s)
-* Improve tests & code coverage
+## Acknowledgments & License
+
+* This project is released under the [Apache License 2.0](https://raw.githubusercontent.com/lightswitch05/php-version-audit/master/LICENSE).
+* The accuracy of the information provided by this project cannot be verified or guaranteed. All functions are provided as convenience only and should not be used for reliability, accuracy, or punctuality.
+* The logo was created using Colin Viebrock's [PHP Logo](https://www.php.net/download-logos.php) as the base image, released under [Creative Commons Attribution-Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). The logo has been modified from its original form to include overlay graphics.
+* This project and the use of the modified PHP logo is not endorsed by Colin Viebrock.
+* This project and the use of the PHP name is not endorsed by The PHP Group.
+* CVE details and descriptions are downloaded from National Institute of Standard and Technology's [National Vulnerability Database](https://nvd.nist.gov/). This project and the use of CVE information is not endorsed by NIST or the NVD. CVE details are provided as convenience only. The accuracy of the information cannot be verified.
+* PHP release details and support dates are parsed from ChangeLogs ([4](https://www.php.net/ChangeLog-4.php), [5](https://www.php.net/ChangeLog-5.php), [7](https://www.php.net/ChangeLog-7.php)) as well as [Supported Versions](https://www.php.net/supported-versions.php) and [EOL dates](https://www.php.net/eol.php). The accuracy of the information cannot be verified.
