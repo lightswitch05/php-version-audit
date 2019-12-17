@@ -46,7 +46,7 @@ code {
 }
 
 pre {
-    overflow-inline: auto;
+    overflow: scroll;
 }
 
 li {
@@ -55,4 +55,17 @@ li {
 
 li ul {
     margin-top: 3px;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 10px;
 }
