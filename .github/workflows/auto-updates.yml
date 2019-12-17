@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2-beta
+    - uses: actions/checkout@v2
       with:
         ref: master
-        fetch-depth: 0
+        fetch-depth: 10
 
     - name: Ensure latest commit with tags
       run: git fetch; git fetch --tags; git checkout master; git pull
