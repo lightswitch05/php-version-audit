@@ -100,20 +100,22 @@ class Cli
 
     private static function showHelp(): void
     {
-        $help = "PHP Version Audit\n";
-        $help .= "usage: php-version-audit\t[--help] [--" . self::$PHP_VERSION . "=PHP_VERSION]\n";
-        $help .= "\t\t\t\t[--" . self::$FAIL_SECURITY . "] [--" . self::$FAIL_SUPPORT . "]\n";
-        $help .= "\t\t\t\t[--" . self::$FAIL_PATCH . "] [--" . self::$FAIL_LATEST . "]\n";
-        $help .= "\t\t\t\t[--" . self::$NO_UPDATE . "]\n\n";
-        $help .= "optional arguments:\n";
-        $help .= "--" . self::$HELP . "\t\t\t\tshow this help message and exit.\n";
-        $help .= "--" . self::$PHP_VERSION . "\t\t\tset the PHP Version to run against. Defaults to the runtime version, be sure to set this if you are using the docker image.\n";
-        $help .= "--" . self::$FAIL_SECURITY . "\t\t\tgenerate a " . self::$FAIL_SECURITY_CODE . " exit code if any CVEs are found, or security support has ended.\n";
-        $help .= "--" . self::$FAIL_SUPPORT. "\t\t\tgenerate a " . self::$FAIL_SUPPORT_CODE . " exit code if the version of PHP no longer gets active (bug) support.\n";
-        $help .= "--" . self::$FAIL_PATCH . "\t\t\tgenerate a " . self::$FAIL_PATCH_CODE . " exit code if there is a newer patch-level release.\n";
-        $help .= "--" . self::$FAIL_LATEST . "\t\t\tgenerate a " . self::$FAIL_LATEST_CODE . " exit code if there is a newer release.\n";
-        $help .= "--" . self::$NO_UPDATE . "\t\t\tdo not download the latest rules. NOT RECOMMENDED!\n";
-        fwrite(STDOUT, "$help\n");
+        $usageMask = "\t\t\t\t[--%s] [--%s]\n";
+        $argsMask = "--%s\t\t\t%s\n";
+        $argsErrorCodeMask = "--%s\t\t\tgenerate a %s %s\n";
+        printf("%s\n", "PHP Version Audit");
+        printf("%s\t%s\n", "usage: php-version-audit", "[--help] [--" . self::$PHP_VERSION . "=PHP_VERSION]");
+        printf($usageMask, self::$FAIL_SECURITY, self::$FAIL_SUPPORT);
+        printf($usageMask, self::$FAIL_PATCH, self::$FAIL_LATEST);
+        printf("\t\t\t\t[--%s]\n", self::$NO_UPDATE);
+        printf("%s\n", "optional arguments:");
+        printf($argsMask, self::$HELP,"\tshow this help message and exit.");
+        printf($argsMask, self::$PHP_VERSION,"set the PHP Version to run against. Defaults to the runtime version, be sure to set this if you are using the docker image.");
+        printf($argsErrorCodeMask, self::$FAIL_SECURITY, self::$FAIL_SECURITY_CODE, "exit code if any CVEs are found, or security support has ended.");
+        printf($argsErrorCodeMask, self::$FAIL_SUPPORT, self::$FAIL_SUPPORT_CODE, "exit code if the version of PHP no longer gets active (bug) support.");
+        printf($argsErrorCodeMask, self::$FAIL_PATCH, self::$FAIL_PATCH_CODE, "exit code if there is a newer patch-level release.");
+        printf($argsErrorCodeMask, self::$FAIL_LATEST, self::$FAIL_LATEST_CODE, "exit code if there is a newer release.");
+        printf($argsMask, self::$NO_UPDATE, "do not download the latest rules. NOT RECOMMENDED!");
     }
 
     private static function getVersion(array $options): string
