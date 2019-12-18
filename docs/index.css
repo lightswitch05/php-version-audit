@@ -43,6 +43,8 @@ code, dl, pre {
 
 code {
     display: block;
+    overflow: scroll;
+    white-space: nowrap;
 }
 
 pre {
