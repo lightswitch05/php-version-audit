@@ -26,5 +26,4 @@ echo "Last tag: ${LAST_TAG}"
 NEW_TAG="${LAST_TAG%.*}.$((${LAST_TAG##*.}+1))"
 echo "New tag: ${NEW_TAG}"
 git tag "${NEW_TAG}"
-git push
-git push origin "${NEW_TAG}"
+git push origin : "${NEW_TAG}"

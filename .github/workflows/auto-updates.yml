@@ -16,10 +16,12 @@ jobs:
         ref: master
         fetch-depth: 10
         token: ${{ secrets.GITHUB_PAT }}
-        repository: https://x-access-token:${{ secrets.GITHUB_PAT }}@github.com/lightswitch05/php-version-audit.git
+
+    - name: Change origin to bypass gh-pages issues with actions
+      run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_PAT }}@github.com/lightswitch05/php-version-audit.git
 
     - name: Ensure latest commit with tags
-      run: git fetch; git fetch --tags; git checkout master; git pull
+      run: git fetch; git fetch --tags --all; git checkout master; git pull
 
     - name: Install dependencies
       run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
