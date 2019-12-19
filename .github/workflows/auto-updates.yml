@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 2 * * *'
     - cron: '0 14 * * *'
-    #- cron: '*/10 * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
     - name: commit updates
       run: ./github-commit-auto-updates.sh
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
