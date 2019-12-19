@@ -31,3 +31,6 @@ jobs:
 
     - name: commit updates
       run: ./github-commit-auto-updates.sh
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
