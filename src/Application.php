@@ -114,7 +114,11 @@ final class Application
         if (!isset($this->rules->latestVersions->$majorAndMinor)) {
             throw UnknownVersionException::fromString((string)$this->auditVersion);
         }
-        return (string) $this->rules->latestVersions->$majorAndMinor;
+        $latestPatch = $this->rules->latestVersions->$majorAndMinor;
+        if ($this->auditVersion->compareTo($latestPatch) > 0) {
+            throw UnknownVersionException::fromString((string)$this->auditVersion);
+        }
+        return (string) $latestPatch;
     }
 
     /**

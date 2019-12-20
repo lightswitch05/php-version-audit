@@ -64,16 +64,28 @@ class ApplicationTest extends \Codeception\Test\Unit
         $this->assertFalse($result);
     }
 
-    public function testUnknownLatestMinorVersion()
+    public function testUnknownMajorLatestMinorVersion()
     {
         $this->expectException(UnknownVersionException::class);
         (new Application('6.0.0', true))->getLatestMinorVersion();
     }
 
-    public function testUnknownLatestPatchVersion()
+    public function testUnknownMajorLatestPatchVersion()
+    {
+        $this->expectException(UnknownVersionException::class);
+        (new Application('1.0.0', true))->getLatestpatchVersion();
+    }
+
+    public function testUnknownMinorLatestPatchVersion()
     {
         $this->expectException(UnknownVersionException::class);
         (new Application('7.50.0', true))->getLatestPatchVersion();
+    }
+
+    public function testUnknownPatchLatestPatchVersion()
+    {
+        $this->expectException(UnknownVersionException::class);
+        (new Application('7.2.200', true))->getLatestPatchVersion();
     }
 
     public function testGetSecurityEndDateValid()
@@ -85,12 +97,12 @@ class ApplicationTest extends \Codeception\Test\Unit
     public function testGetSecurityEndDateInvalid()
     {
         $this->expectException(UnknownVersionException::class);
-        (new Application('6.0.0', true))->getSecuritySupportEndDate();
+        (new Application('6.1.0', true))->getSecuritySupportEndDate();
     }
 
     public function testGetSecurityEndDateOld()
     {
-        $endDate = (new Application('7.0.0', true))->getSecuritySupportEndDate();
+        $endDate = (new Application('7.1.0', true))->getSecuritySupportEndDate();
         $this->assertNotEmpty($endDate);
     }
 
@@ -115,7 +127,7 @@ class ApplicationTest extends \Codeception\Test\Unit
     public function testItHasSecuritySupportUnknown()
     {
         $this->expectException(UnknownVersionException::class);
-        (new Application('6.0.0', true))->hasSecuritySupport();
+        (new Application('6.2.0', true))->hasSecuritySupport();
     }
 
     public function testItHasSecuritySupportPreRelease()
@@ -139,7 +151,7 @@ class ApplicationTest extends \Codeception\Test\Unit
     public function testItHasActiveSupportUnknown()
     {
         $this->expectException(UnknownVersionException::class);
-        (new Application('6.0.0', true))->hasActiveSupport();
+        (new Application('6.3.0', true))->hasActiveSupport();
     }
 
     public function testItHasActiveSupportPreRelease()
@@ -169,7 +181,7 @@ class ApplicationTest extends \Codeception\Test\Unit
     public function testGetAllAuditDetailsUnknown()
     {
         $this->expectException(UnknownVersionException::class);
-        (new Application('6.0.0', true))->getAllAuditDetails();
+        (new Application('6.4.0', true))->getAllAuditDetails();
     }
 
     private function assertAllAuditDetails($result)

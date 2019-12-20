@@ -8,4 +8,4 @@ if [  -e "${CA_CERT_PATH}" ] && [ "$(ls -A "${CA_CERT_PATH}")" ]; then
     update-ca-certificates 1> /tmp/update-ca-certificates.log
 fi
 
-exec /opt/php-version-audit/php-version-audit "$@"
+/opt/php-version-audit/php-version-audit "$@"
