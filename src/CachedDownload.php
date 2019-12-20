@@ -9,6 +9,11 @@ final class CachedDownload
 {
     const INDEX_FILE_NAME = 'index.json';
     const MAX_RETRY = 3;
+    const DEFAULT_CURL_OPTS = [
+        CURLOPT_FAILONERROR => true,
+        CURLOPT_ACCEPT_ENCODING => '',
+        CURLOPT_RETURNTRANSFER => true
+    ];
 
     /**
      * @param string $url
@@ -54,41 +59,35 @@ final class CachedDownload
         if (substr($url, -2) === 'gz') {
             $data = self::downloadGZipFile($url);
         } else {
-            $data = self::downloadTextFile($url);
+            $data = self::downloadFile($url);
         }
         self::writeCacheFile($url, $data, $modifiedDate);
         return $data;
     }
 
-    private static function downloadGZipFile(string $url, int $attempt = 0): string
+    private static function downloadGZipFile(string $url): string
     {
-        $stream = gzopen($url, 'rb');
-        if ($stream === false && $attempt < self::MAX_RETRY) {
-            sleep(15);
-            return self::downloadGZipFile($url, $attempt + 1);
-        } else if ($stream === false) {
-            throw ParseException::fromString("Unable to download: $url");
-        }
-
-        $data = stream_get_contents($stream);
-        if ($data === false && $attempt < self::MAX_RETRY) {
-            sleep(15);
-            return self::downloadGZipFile($url, $attempt + 1);
-        } else if ($data === false) {
-            throw ParseException::fromString("Unable to download: $url");
+        $encoded = self::downloadFile($url);
+        $data = gzdecode($encoded);
+        if ($data === false) {
+            throw ParseException::fromString("Unable to parse file: $url");
         }
         return $data;
     }
 
-    private static function downloadTextFile(string $url, int $attempt = 0): string
+    private static function downloadFile(string $url, int $attempt = 0): string
     {
-        $data = file_get_contents($url);
-        if ($data !== false) {
-            return $data;
+        $ch = curl_init($url);
+        curl_setopt_array($ch, self::DEFAULT_CURL_OPTS);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        if ($response !== false) {
+            return $response;
         }
+
         if ($attempt < self::MAX_RETRY) {
             sleep(15);
-            return self::downloadTextFile($url, $attempt + 1);
+            return self::downloadFile($url, $attempt + 1);
         }
         throw ParseException::fromString("Unable to download: $url");
     }
@@ -149,21 +148,24 @@ final class CachedDownload
      */
     private static function getServerLastModifiedDate(string $url, int $attempt = 0): \DateTimeImmutable
     {
-        $context = stream_context_create([
-            'http' => [
-                'method' => 'HEAD'
-            ]
-        ]);
-        $headers = get_headers($url, 1, $context);
-        if ($headers === false && $attempt < self::MAX_RETRY) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, self::DEFAULT_CURL_OPTS);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_setopt($ch, CURLOPT_FILETIME,  true);
+        $response = curl_exec($ch);
+        $fileTime = curl_getinfo($ch,  CURLINFO_FILETIME);
+        curl_close($ch);
+        if ($response !== false && $fileTime > -1) {
+            return DateHelpers::fromTimestamp($fileTime);
+        }
+
+        if ($response === false && $attempt < self::MAX_RETRY) {
             sleep(15);
             return self::getServerLastModifiedDate($url, $attempt + 1);
         }
-        if (!$headers || !isset($headers['Last-Modified'])) {
-            // Always assume just updated if the header is missing
-            return new \DateTimeImmutable();
-        }
-        return DateHelpers::fromRFC7231($headers['Last-Modified']);
+
+        // Fall back on assuming it was just updated
+        return new \DateTimeImmutable();
     }
 
     /**

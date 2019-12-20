@@ -11,7 +11,8 @@
     },
     "require": {
         "php": ">=7.2.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
         "ext-libxml": "*",
