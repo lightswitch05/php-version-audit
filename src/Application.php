@@ -71,7 +71,7 @@ final class Application
      */
     public function hasVulnerabilities(): bool
     {
-        return !empty($this->getVulnerabilities());
+        return !empty((array) $this->getVulnerabilities());
     }
 
     /**

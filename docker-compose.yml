@@ -15,14 +15,22 @@ services:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile.dev
+    environment:
+      REQUIRE_VERSION_ARG: ${REQUIRE_VERSION_ARG:-false}
 
   phpstan:
     <<: *common
     image: phpstan/phpstan:0.12
     command: analyse ./src
 
-  build:
+  build-alpine:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile.alpine
-    image: lightswitch05/php-version-audit
+    image: lightswitch05/php-version-audit:dev
+
+  build-buster:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.buster
+    image: lightswitch05/php-version-audit:dev

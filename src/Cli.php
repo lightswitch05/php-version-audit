@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace lightswitch05\PhpVersionAudit;
 
 
+use lightswitch05\PhpVersionAudit\Exceptions\InvalidArgumentException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 class Cli
@@ -25,7 +26,14 @@ class Cli
 
     public static function run(): int
     {
-        $args = self::getArgs();
+        try {
+            $args = self::getArgs();
+        } catch (InvalidArgumentException $ex) {
+            // TODO add log message explaining that required args are missing
+            self::showHelp();
+            return 1;
+        }
+
         if ($args['help']) {
             self::showHelp();
             return 0;
@@ -110,7 +118,7 @@ class Cli
         printf("\t\t\t\t[--%s]\n", self::$NO_UPDATE);
         printf("%s\n", "optional arguments:");
         printf($argsMask, self::$HELP,"\tshow this help message and exit.");
-        printf($argsMask, self::$PHP_VERSION,"set the PHP Version to run against. Defaults to the runtime version, be sure to set this if you are using the docker image.");
+        printf($argsMask, self::$PHP_VERSION,"set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.");
         printf($argsErrorCodeMask, self::$FAIL_SECURITY, self::$FAIL_SECURITY_CODE, "exit code if any CVEs are found, or security support has ended.");
         printf($argsErrorCodeMask, self::$FAIL_SUPPORT, self::$FAIL_SUPPORT_CODE, "exit code if the version of PHP no longer gets active (bug) support.");
         printf($argsErrorCodeMask, self::$FAIL_PATCH, self::$FAIL_PATCH_CODE, "exit code if there is a newer patch-level release.");
@@ -122,6 +130,9 @@ class Cli
     {
         if (isset($options[self::$PHP_VERSION]) && !empty($options[self::$PHP_VERSION])) {
             return $options[self::$PHP_VERSION];
+        }
+        if (getenv('REQUIRE_VERSION_ARG', true) === 'true') {
+            throw new InvalidArgumentException('Error: --version argument is required.');
         }
         return phpversion();
     }
