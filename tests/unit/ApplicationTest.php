@@ -12,6 +12,13 @@ class ApplicationTest extends \Codeception\Test\Unit
         $this->assertTrue($app->hasVulnerabilities());
     }
 
+    public function testItDoesNotHaveVulnerabilities()
+    {
+        $latestVersion = (new Application('7.4.1', true))->getLatestVersion();
+        $app = new Application($latestVersion, true);
+        $this->assertFalse($app->hasVulnerabilities());
+    }
+
     public function testItRequiresAValidVersion()
     {
         $this->expectException(InvalidVersionException::class);
