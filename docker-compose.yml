@@ -16,6 +16,11 @@ services:
       context: ./
       dockerfile: ./docker/Dockerfile.dev
 
+  phpstan:
+    <<: *common
+    image: phpstan/phpstan:0.12
+    command: analyse ./src
+
   build:
     build:
       context: ./

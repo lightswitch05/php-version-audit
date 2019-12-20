@@ -17,6 +17,11 @@ final class DateHelpers
         return self::fromFormat(\DateTime::RFC7231, $date);
     }
 
+    public static function fromTimestamp(int $date): ?\DateTimeImmutable
+    {
+        return (new \DateTimeImmutable())->setTimestamp($date);
+    }
+
     public static function fromJMYToISO8601(?string $date): ?string
     {
         $dateTime = self::fromFormat('j M Y', $date);
