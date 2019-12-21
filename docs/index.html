@@ -135,6 +135,10 @@
                 Check the host's PHP version using Docker:
                 <code>docker run --rm lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')</code>
             </p>
+            <p>
+                Run behind an HTTPS proxy (for use on restricted networks). Requires a volume mount of a directory with your trusted cert (with .crt extension) - see <a href="https://manpages.debian.org/buster/ca-certificates/update-ca-certificates.8.en.html">update-ca-certificates</a> for more details.
+                <code>docker run --rm -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=7.4.1</code>
+            </p>
 
             <h3 id="cli"><a href="#cli">CLI</a></h3>
             <hr/>
@@ -191,7 +195,7 @@
                 <dt><strong>--help</strong></dt>
                 <dd>show arguments help message and exit.</dd>
                 <dt><strong>--version=VERSION</strong></dt>
-                <dd>set the PHP Version to run against. Defaults to the runtime version, be sure to set this if you are using the docker image.</dd>
+                <dd>set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.</dd>
                 <dt><strong>--fail-security</strong></dt>
                 <dd>generate a 10 exit code if any CVEs are found, or security support has ended.</dd>
                 <dt><strong>--fail-support</strong></dt>
