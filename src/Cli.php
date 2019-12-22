@@ -6,6 +6,7 @@ namespace lightswitch05\PhpVersionAudit;
 
 
 use lightswitch05\PhpVersionAudit\Exceptions\InvalidArgumentException;
+use lightswitch05\PhpVersionAudit\Exceptions\InvalidVersionException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class Cli
@@ -23,6 +24,8 @@ final class Cli
     private static $FAIL_LATEST = 'fail-latest';
     private static $FAIL_LATEST_CODE = 40;
     private static $FAIL_STALE_CODE = 100;
+    private static $INVALID_ARG_CODE = 200;
+    private static $INVALID_VERSION_CODE = 300;
 
 
     public static function run(): int
@@ -33,7 +36,7 @@ final class Cli
         } catch (InvalidArgumentException $ex) {
             Logger::error($ex->getMessage());
             self::showHelp();
-            return 1;
+            return self::$INVALID_ARG_CODE;
         }
 
         if ($args['help']) {
@@ -41,7 +44,13 @@ final class Cli
             return 0;
         }
 
-        $app = new Application($args[self::$PHP_VERSION], $args[self::$NO_UPDATE]);
+        try {
+            $app = new Application($args[self::$PHP_VERSION], $args[self::$NO_UPDATE]);
+        } catch (InvalidVersionException $ex) {
+            Logger::error($ex->getMessage());
+            return self::$INVALID_VERSION_CODE;
+        }
+
 
         if ($args[self::$FULL_UPDATE]) {
             /**
