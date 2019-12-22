@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
+use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class Rules
@@ -18,9 +19,9 @@ final class Rules
     private static $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
 
     /**
-     * @param /stdCalss $rules
+     * @param \stdClass $rules
      */
-    public static function assertFreshRules($rules): void
+    public static function assertFreshRules(\stdClass $rules): void
     {
         $elapsedSeconds = DateHelpers::nowTimestamp() - $rules->lastUpdatedDate->getTimestamp();
         if ($elapsedSeconds > 1209600) {
@@ -29,7 +30,7 @@ final class Rules
     }
 
     /**
-     * @param bool $localRulesOnly
+     * @param bool $noUpdate
      * @return \stdClass
      */
     public static function loadRules(bool $noUpdate): \stdClass
@@ -44,13 +45,19 @@ final class Rules
      */
     private static function getRulesStdObject(bool $noUpdate): \stdClass
     {
-        if ($noUpdate) {
-            if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
-                throw StaleRulesException::fromString("Unable to load rules");
+        if (!$noUpdate) {
+            try {
+                return CachedDownload::json(self::$HOSTED_RULES_PATH);
+            } catch (ParseException $ex) {
+                Logger::warning($ex->getMessage());
             }
-            return json_decode($rulesString);
         }
-        return CachedDownload::json(self::$HOSTED_RULES_PATH);
+
+        // Either $noUpdate or download fresh rules failed - use package copy
+        if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
+            throw StaleRulesException::fromString("Unable to load rules from disk");
+        }
+        return json_decode($rulesString);
     }
 
     /**
@@ -59,8 +66,7 @@ final class Rules
      */
     private static function transformRules(\stdClass $rules): \stdClass
     {
-        if (empty($rules)
-            || empty($rules->lastUpdatedDate)
+        if (empty($rules->lastUpdatedDate)
             || empty($rules->latestVersions)
             || empty($rules->latestVersion)
             || empty($rules->supportEndDates)) {
@@ -93,10 +99,12 @@ final class Rules
     }
 
     /**
-     * @param /stdClass $updatedRules
+     * @param array<PhpRelease> $releases
+     * @param array<CveDetails> $cves
+     * @param array<\stdClass> $supportEndDates
      * @return void
      */
-    public static function saveRules($releases, $cves, $supportEndDates): void
+    public static function saveRules(array $releases, array $cves, array $supportEndDates): void
     {
         $rules = (object) [
             'lastUpdatedDate' => DateHelpers::nowString(),
@@ -145,9 +153,9 @@ final class Rules
         return $latestVersion;
     }
 
-     /**
+    /**
      * @param PhpRelease[] $releases
-     * @return \stdClass[]
+     * @return array<int|string, PhpVersion>
      */
     private static function releasesToLatestVersions(array $releases): array
     {
@@ -178,7 +186,7 @@ final class Rules
 
     /**
      * @param PhpRelease[] $releases
-     * @return string[]
+     * @return array<string, PhpRelease>
      */
     private static function formatReleases(array $releases): array
     {

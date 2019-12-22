@@ -7,13 +7,14 @@ namespace lightswitch05\PhpVersionAudit\Parsers;
 
 use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Logger;
 use lightswitch05\PhpVersionAudit\PhpRelease;
 use lightswitch05\PhpVersionAudit\PhpVersion;
 
 final class ChangelogParser
 {
     /**
-     * @return PhpRelease[]
+     * @return array<PhpRelease>
      */
     public static function run(): array
     {
@@ -37,6 +38,7 @@ final class ChangelogParser
     private static function parseChangelog(string $url): array
     {
         $releases = [];
+        Logger::info('Beginning Changelog parse: ', $url);
         $dom = CachedDownload::dom($url);
         foreach ($dom->getElementsByTagName('section') as $sectionTag) {
             $versionString = $sectionTag->getAttribute('id');

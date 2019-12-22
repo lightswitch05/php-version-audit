@@ -53,8 +53,7 @@ final class PhpRelease implements \JsonSerializable
     public static function sort(array $releases): array
     {
         $sortedReleases = array_merge([], $releases);
-        usort($sortedReleases, function($first, $second) {
-            /** @var PhpRelease $first, @var PhpRelease $second */
+        usort($sortedReleases, function(PhpRelease $first, PhpRelease $second): int {
             return $first->compareTo($second);
         });
         return $sortedReleases;

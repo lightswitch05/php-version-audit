@@ -22,7 +22,10 @@ final class CveId implements \JsonSerializable
      */
     private $sequenceNumber;
 
-    private function __construct($id)
+    /**
+     * @param string $id
+     */
+    private function __construct(string $id)
     {
         $this->id = $id;
         preg_match("#CVE-(\d+)-(\d+)#", $id, $matches);
@@ -49,7 +52,7 @@ final class CveId implements \JsonSerializable
     public static function sort(array $cveIds): array
     {
         $sortedCveIds = array_merge([], $cveIds);
-        usort($sortedCveIds, function($first, $second) {
+        usort($sortedCveIds, function(CveId $first, CveId $second): int {
             /** @var CveId $first, @var CveId $second */
             return $first->compareTo($second);
         });

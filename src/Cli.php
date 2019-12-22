@@ -8,7 +8,7 @@ namespace lightswitch05\PhpVersionAudit;
 use lightswitch05\PhpVersionAudit\Exceptions\InvalidArgumentException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
-class Cli
+final class Cli
 {
     private static $PHP_VERSION = 'version';
     private static $HELP = 'help';
@@ -24,12 +24,14 @@ class Cli
     private static $FAIL_LATEST_CODE = 40;
     private static $FAIL_STALE_CODE = 100;
 
+
     public static function run(): int
     {
         try {
             $args = self::getArgs();
+            Logger::setVerbosity($args['verbosity']);
         } catch (InvalidArgumentException $ex) {
-            // TODO add log message explaining that required args are missing
+            Logger::error($ex->getMessage());
             self::showHelp();
             return 1;
         }
@@ -57,7 +59,7 @@ class Cli
         try {
             $auditDetails = $app->getAllAuditDetails();
             $output = json_encode($auditDetails, JSON_PRETTY_PRINT);
-            fwrite(STDOUT, "$output\n");
+            fwrite(STDOUT, "$output" . PHP_EOL);
 
             if ($args[self::$FAIL_SECURITY] && ($auditDetails->hasVulnerabilities || !$auditDetails->hasSecuritySupport)) {
                 return self::$FAIL_SECURITY_CODE;
@@ -72,7 +74,7 @@ class Cli
                 return self::$FAIL_PATCH_CODE;
             }
         } catch (StaleRulesException $ex) {
-            // TODO Add error message here
+            Logger::error($ex->getMessage());
             return self::$FAIL_STALE_CODE;
         }
 
@@ -92,7 +94,11 @@ class Cli
             self::$FAIL_PATCH,
             self::$FAIL_SUPPORT,
             self::$NO_UPDATE,
-            self::$FULL_UPDATE
+            self::$FULL_UPDATE,
+            'silent',
+            'v',
+            'vv',
+            'vvv'
         ]);
         return [
             self::$PHP_VERSION => self::getVersion($options),
@@ -103,20 +109,22 @@ class Cli
             self::$FAIL_LATEST => self::getOptionalFlag($options, self::$FAIL_LATEST),
             self::$FAIL_PATCH => self::getOptionalFlag($options, self::$FAIL_PATCH),
             self::$FAIL_SUPPORT => self::getOptionalFlag($options, self::$FAIL_SUPPORT),
+            'verbosity' => self::getVerbosity($options)
         ];
     }
 
     private static function showHelp(): void
     {
-        $usageMask = "\t\t\t\t[--%s] [--%s]\n";
-        $argsMask = "--%s\t\t\t%s\n";
-        $argsErrorCodeMask = "--%s\t\t\tgenerate a %s %s\n";
-        printf("%s\n", "PHP Version Audit");
-        printf("%s\t%s\n", "usage: php-version-audit", "[--help] [--" . self::$PHP_VERSION . "=PHP_VERSION]");
+        $usageMask = "\t\t\t\t[--%s] [--%s]" . PHP_EOL;
+        $argsMask = "--%s\t\t\t%s" . PHP_EOL;
+        $argsErrorCodeMask = "--%s\t\t\tgenerate a %s %s" . PHP_EOL;
+        printf("%s" . PHP_EOL, "PHP Version Audit");
+        printf("%s\t%s" . PHP_EOL, "usage: php-version-audit", "[--help] [--" . self::$PHP_VERSION . "=PHP_VERSION]");
         printf($usageMask, self::$FAIL_SECURITY, self::$FAIL_SUPPORT);
         printf($usageMask, self::$FAIL_PATCH, self::$FAIL_LATEST);
-        printf("\t\t\t\t[--%s]\n", self::$NO_UPDATE);
-        printf("%s\n", "optional arguments:");
+        printf($usageMask, self::$NO_UPDATE, 'silent');
+        printf("\t\t\t\t[--%s]" . PHP_EOL, 'v');
+        printf("%s" . PHP_EOL, "optional arguments:");
         printf($argsMask, self::$HELP,"\tshow this help message and exit.");
         printf($argsMask, self::$PHP_VERSION,"set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.");
         printf($argsErrorCodeMask, self::$FAIL_SECURITY, self::$FAIL_SECURITY_CODE, "exit code if any CVEs are found, or security support has ended.");
@@ -124,6 +132,8 @@ class Cli
         printf($argsErrorCodeMask, self::$FAIL_PATCH, self::$FAIL_PATCH_CODE, "exit code if there is a newer patch-level release.");
         printf($argsErrorCodeMask, self::$FAIL_LATEST, self::$FAIL_LATEST_CODE, "exit code if there is a newer release.");
         printf($argsMask, self::$NO_UPDATE, "do not download the latest rules. NOT RECOMMENDED!");
+        printf($argsMask, 'silent', "do not write any error messages to STDERR.");
+        printf($argsMask, 'v', "\tSet verbosity. v=warnings, vv=info, vvv=debug. Default is error. All logging writes to STDERR.");
     }
 
     private static function getVersion(array $options): string
@@ -132,7 +142,7 @@ class Cli
             return $options[self::$PHP_VERSION];
         }
         if (getenv('REQUIRE_VERSION_ARG', true) === 'true') {
-            throw new InvalidArgumentException('Error: --version argument is required.');
+            throw new InvalidArgumentException("Missing required argument: --version");
         }
         return phpversion();
     }
@@ -140,5 +150,22 @@ class Cli
     private static function getOptionalFlag(array $options, string $name): bool
     {
         return isset($options[$name]);
+    }
+
+    private static function getVerbosity(array $options): int
+    {
+        if (self::getOptionalFlag($options, 'vvv')) {
+            return Logger::DEBUG;
+        }
+        if (self::getOptionalFlag($options, 'vv')) {
+            return Logger::INFO;
+        }
+        if (self::getOptionalFlag($options, 'v')) {
+            return Logger::WARNING;
+        }
+        if (self::getOptionalFlag($options, 'silent')) {
+            return Logger::SILENT;
+        }
+        return Logger::ERROR;
     }
 }

@@ -12,6 +12,6 @@ final class ParseException extends \ErrorException
      */
     public static function fromString(?string $message): ParseException
     {
-        return new self('Parse error: ' . $message);
+        return new self("Parse error: $message");
     }
 }

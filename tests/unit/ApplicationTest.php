@@ -184,6 +184,13 @@ class ApplicationTest extends \Codeception\Test\Unit
         (new Application('6.4.0', true))->getAllAuditDetails();
     }
 
+    public function testGetRulesUpdateDate()
+    {
+        $date = (new Application('7.4.1', true))->getRulesLastUpdatedDate();
+        $this->assertNotEmpty($date);
+        $this->assertIsString($date);
+    }
+
     private function assertAllAuditDetails($result)
     {
         $this->assertNotEmpty($result);

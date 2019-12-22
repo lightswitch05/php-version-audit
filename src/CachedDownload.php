@@ -18,6 +18,7 @@ final class CachedDownload
     /**
      * @param string $url
      * @return string
+     * @throws ParseException
      */
     public static function download(string $url): string
     {
@@ -40,6 +41,11 @@ final class CachedDownload
         return $dom;
     }
 
+    /**
+     * @param string $url
+     * @return \stdClass
+     * @throws ParseException
+     */
     public static function json(string $url): \stdClass
     {
         $html = self::download($url);
@@ -49,6 +55,7 @@ final class CachedDownload
     /**
      * @param string $url
      * @return string
+     * @throws ParseException
      */
     private static function downloadCachedFile(string $url): string
     {
@@ -77,6 +84,7 @@ final class CachedDownload
 
     private static function downloadFile(string $url, int $attempt = 0): string
     {
+        Logger::debug('Downloading attempt ', $attempt, ': ', $url);
         $ch = curl_init($url);
         curl_setopt_array($ch, self::DEFAULT_CURL_OPTS);
         $response = curl_exec($ch);
@@ -95,9 +103,11 @@ final class CachedDownload
     /**
      * @param string $url
      * @return string
+     * @throws ParseException
      */
     private static function getFileFromCache(string $url): string
     {
+        Logger::debug('Loading file from cache: ', $url);
         $filename = self::urlToFileName($url);
         $fullPath = self::getCachePath($filename);
         if (!is_file($fullPath)) {
@@ -121,7 +131,13 @@ final class CachedDownload
             return false;
         }
         $lastModifiedDate = DateHelpers::fromISO8601($cacheIndex->$url->lastModifiedDate);
-        return !self::isExpired($url, $lastModifiedDate);
+        $expired = self::isExpired($url, $lastModifiedDate);
+        if ($expired) {
+            Logger::debug('Cache has expired for ', $url);
+        } else {
+            Logger::debug('Cache is valid for ', $url);
+        }
+        return !$expired;
     }
 
     /**
@@ -135,6 +151,7 @@ final class CachedDownload
         $elapsedSeconds = DateHelpers::nowTimestamp() - $lastModifiedTimestamp;
         // enforce a minimum cache of 1 hour to makeup for lack of last modified time on changelog
         if ($elapsedSeconds < 3600) {
+            Logger::debug('Cache time under 3600: ', $url);
             return false;
         }
         $serverLastModifiedDate = self::getServerLastModifiedDate($url);
@@ -143,7 +160,7 @@ final class CachedDownload
 
     /**
      * @param string $url
-     * @param int $attempt
+     * @param int    $attempt
      * @return \DateTimeImmutable
      */
     private static function getServerLastModifiedDate(string $url, int $attempt = 0): \DateTimeImmutable
@@ -236,6 +253,6 @@ final class CachedDownload
      */
     private static function getCachePath(?string $filename = null): string
     {
-        return __DIR__ . '/../tmp/' . $filename;
+        return __DIR__ . "/../tmp/$filename";
     }
 }
