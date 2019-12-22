@@ -17,7 +17,7 @@ final class DateHelpers
         return self::fromFormat(\DateTime::RFC7231, $date);
     }
 
-    public static function fromTimestamp(int $date): ?\DateTimeImmutable
+    public static function fromTimestamp(int $date): \DateTimeImmutable
     {
         return (new \DateTimeImmutable())->setTimestamp($date);
     }

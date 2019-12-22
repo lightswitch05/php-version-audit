@@ -195,7 +195,7 @@ final class Application
         return DateHelpers::nowTimestamp() - $endDate->getTimestamp() < 0;
     }
 
-    public function getRulesLastUpdatedDate(): string
+    public function getRulesLastUpdatedDate(): ?string
     {
         return DateHelpers::toISO8601($this->rules->lastUpdatedDate);
     }

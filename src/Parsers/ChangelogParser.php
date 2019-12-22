@@ -14,7 +14,7 @@ use lightswitch05\PhpVersionAudit\PhpVersion;
 final class ChangelogParser
 {
     /**
-     * @return PhpRelease[]
+     * @return array<PhpRelease>
      */
     public static function run(): array
     {

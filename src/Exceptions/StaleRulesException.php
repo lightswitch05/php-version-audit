@@ -12,6 +12,6 @@ class StaleRulesException extends \DomainException
      */
     public static function fromString(?string $details)
     {
-        return new self('Rules are stale: ' . $details);
+        return new self("Rules are stale: $details");
     }
 }

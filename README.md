@@ -43,7 +43,7 @@ staying informed on PHP releases and security exploits.
 * Configurable exit conditions. Use CLI flags like `--fail-security` to set a failure exit code if the given version of PHP has a known CVE or is no longer receiving security updates.
 
 ## Example:
-
+    docker run --rm -t lightswitch05/php-version-audit:latest --version=7.3.10
     {
         "auditVersion": "7.3.10",
         "hasVulnerabilities": true,
@@ -77,15 +77,15 @@ Running with docker is the preferred and easiest way to use PHP Version Audit.
 
 Check a specific version of PHP using Docker:
 
-    docker run --rm -T lightswitch05/php-version-audit:latest --version=7.3.12
+    docker run --rm -t lightswitch05/php-version-audit:latest --version=7.3.12
 
 Check the host's PHP version using Docker:
 
-    docker run --rm -T lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')
+    docker run --rm -t lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')
 
 Run behind an HTTPS proxy (for use on restricted networks). Requires a volume mount of a directory with your trusted cert (with .crt extension) - see [update-ca-certificates](https://manpages.debian.org/buster/ca-certificates/update-ca-certificates.8.en.html) for more details.
 
-    docker run --rm -T -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=7.4.1
+    docker run --rm -t -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=7.4.1
 
 ### CLI
 

@@ -253,6 +253,6 @@ final class CachedDownload
      */
     private static function getCachePath(?string $filename = null): string
     {
-        return __DIR__ . '/../tmp/' . $filename;
+        return __DIR__ . "/../tmp/$filename";
     }
 }

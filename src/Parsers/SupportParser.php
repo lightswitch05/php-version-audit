@@ -12,11 +12,14 @@ use lightswitch05\PhpVersionAudit\PhpVersion;
 
 final class SupportParser
 {
-    public static function run()
+    /**
+     * @return array<\stdClass>
+     */
+    public static function run(): array
     {
         $supportDates = self::parseEol();
         $supportDates = array_merge($supportDates, self::parseSupportedVersions());
-        uksort($supportDates, function($first, $second) {
+        uksort($supportDates, function(string $first, string $second): int {
             $firstVersion = PhpVersion::fromString($first . ".0");
             $secondVersion = PhpVersion::fromString($second . ".0");
             return $firstVersion->compareTo($secondVersion);
@@ -52,7 +55,7 @@ final class SupportParser
     }
 
     /**
-     * @return \stdClass[]
+     * @return array<\stdClass>
      */
     private static function parseEol(): array
     {

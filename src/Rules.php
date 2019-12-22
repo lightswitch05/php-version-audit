@@ -19,9 +19,9 @@ final class Rules
     private static $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
 
     /**
-     * @param /stdCalss $rules
+     * @param \stdClass $rules
      */
-    public static function assertFreshRules($rules): void
+    public static function assertFreshRules(\stdClass $rules): void
     {
         $elapsedSeconds = DateHelpers::nowTimestamp() - $rules->lastUpdatedDate->getTimestamp();
         if ($elapsedSeconds > 1209600) {
@@ -66,8 +66,7 @@ final class Rules
      */
     private static function transformRules(\stdClass $rules): \stdClass
     {
-        if (empty($rules)
-            || empty($rules->lastUpdatedDate)
+        if (empty($rules->lastUpdatedDate)
             || empty($rules->latestVersions)
             || empty($rules->latestVersion)
             || empty($rules->supportEndDates)) {
@@ -100,11 +99,12 @@ final class Rules
     }
 
     /**
-     * @param $releases
-     * @param $cves
-     * @param $supportEndDates
+     * @param array<PhpRelease> $releases
+     * @param array<CveDetails> $cves
+     * @param array<\stdClass> $supportEndDates
+     * @return void
      */
-    public static function saveRules($releases, $cves, $supportEndDates): void
+    public static function saveRules(array $releases, array $cves, array $supportEndDates): void
     {
         $rules = (object) [
             'lastUpdatedDate' => DateHelpers::nowString(),
@@ -153,9 +153,9 @@ final class Rules
         return $latestVersion;
     }
 
-     /**
+    /**
      * @param PhpRelease[] $releases
-     * @return \stdClass[]
+     * @return array<int|string, PhpVersion>
      */
     private static function releasesToLatestVersions(array $releases): array
     {
@@ -186,7 +186,7 @@ final class Rules
 
     /**
      * @param PhpRelease[] $releases
-     * @return string[]
+     * @return array<string, PhpRelease>
      */
     private static function formatReleases(array $releases): array
     {

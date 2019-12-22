@@ -18,6 +18,7 @@
         "ext-libxml": "*",
         "ext-dom": "*",
         "ext-zlib": "*",
-        "codeception/codeception": "^3.1"
+        "codeception/codeception": "^3.1",
+        "vimeo/psalm": "^3.7"
     }
 }

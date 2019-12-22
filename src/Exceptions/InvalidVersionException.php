@@ -12,6 +12,6 @@ final class InvalidVersionException extends \InvalidArgumentException
      */
     public static function fromString(?string $version): InvalidVersionException
     {
-        return new self(sprintf('PhpVersion [%s] is not valid', $version));
+        return new self("PhpVersion [$version] is not valid");
     }
 }

@@ -12,12 +12,15 @@ use lightswitch05\PhpVersionAudit\Logger;
 
 final class NvdFeedParser
 {
+    /**
+     * @var int $CVE_START_YEAR
+     */
     private static $CVE_START_YEAR = 2002;
 
     /**
-     * @param CveId[] $cveIds
-     * @param \DateTimeImmutable|null $lastUpdate
-     * @return array
+     * @param list<string> $cveIds
+     * @return array<string, CveDetails>
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     public static function run(array $cveIds): array
     {
@@ -33,16 +36,17 @@ final class NvdFeedParser
         foreach ($feeds as $feed) {
             $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feed));
         }
-        uksort($cveDetails, function(string $first, string $second) {
+        uksort($cveDetails, function(string $first, string $second): int {
             return CveId::fromString($first)->compareTo(CveId::fromString($second));
         });
         return $cveDetails;
     }
 
     /**
-     * @param array  $cveIds
+     * @param array<array-key, mixed> $cveIds
      * @param string $feedName
-     * @return array
+     * @return array<string, CveDetails>
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     private static function parseFeed(array $cveIds, string $feedName): array
     {
