@@ -195,6 +195,11 @@ final class Application
         return DateHelpers::nowTimestamp() - $endDate->getTimestamp() < 0;
     }
 
+    public function getRulesLastUpdatedDate(): string
+    {
+        return DateHelpers::toISO8601($this->rules->lastUpdatedDate);
+    }
+
     public function getAllAuditDetails(): \stdClass
     {
         Rules::assertFreshRules($this->rules);
@@ -211,6 +216,7 @@ final class Application
             'latestVersion' => $this->getLatestVersion(),
             'activeSupportEndDate' => $this->getActiveSupportEndDate(),
             'securitySupportEndDate' => $this->getSecuritySupportEndDate(),
+            'rulesLastUpdatedDate' => $this->getRulesLastUpdatedDate(),
             'vulnerabilities' => $this->getVulnerabilities()
         ];
     }
@@ -227,6 +233,7 @@ final class Application
      */
     public function fullRulesUpdate(): void
     {
+        Logger::warning('Running full rules update, this is slow and should not be ran locally!');
         $releases = ChangelogParser::run();
         $cves = $this->loadCveDetails($releases);
         $supportEndDates = SupportParser::run();
@@ -234,7 +241,7 @@ final class Application
         if ($this->rules->releasesCount > count($releases)
             || $this->rules->cveCount > count($cves)
             || $this->rules->supportVersionsCount > count(array_keys($supportEndDates))) {
-            throw StaleRulesException::fromString('Updated rules failed to parse');
+            throw StaleRulesException::fromString('Updated rules failed to meat expected counts.');
         }
 
         Rules::saveRules($releases, $cves, $supportEndDates);

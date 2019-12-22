@@ -44,7 +44,6 @@ staying informed on PHP releases and security exploits.
 
 ## Example:
 
-    docker run --rm lightswitch05/php-version-audit:latest --version=7.3.10
     {
         "auditVersion": "7.3.10",
         "hasVulnerabilities": true,
@@ -58,6 +57,7 @@ staying informed on PHP releases and security exploits.
         "latestVersion": "7.4.0",
         "activeSupportEndDate": "2020-12-06T00:00:00+0000",
         "securitySupportEndDate": "2021-12-06T00:00:00+0000",
+        "rulesLastUpdatedDate": "2019-12-10T02:04:16+0000",
         "vulnerabilities": {
             "CVE-2019-11043": {
                 "id": "CVE-2019-11043",
@@ -77,15 +77,15 @@ Running with docker is the preferred and easiest way to use PHP Version Audit.
 
 Check a specific version of PHP using Docker:
 
-    docker run --rm lightswitch05/php-version-audit:latest --version=7.3.12
+    docker run --rm -T lightswitch05/php-version-audit:latest --version=7.3.12
 
 Check the host's PHP version using Docker:
 
-    docker run --rm lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')
+    docker run --rm -T lightswitch05/php-version-audit:latest --version=$(php -r 'echo phpversion();')
 
 Run behind an HTTPS proxy (for use on restricted networks). Requires a volume mount of a directory with your trusted cert (with .crt extension) - see [update-ca-certificates](https://manpages.debian.org/buster/ca-certificates/update-ca-certificates.8.en.html) for more details.
 
-    docker run --rm -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=7.4.1
+    docker run --rm -T -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=7.4.1
 
 ### CLI
 
@@ -124,7 +124,8 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
     usage: php-version-audit        [--help] [--version=PHP_VERSION]
                                     [--fail-security] [--fail-support]
                                     [--fail-patch] [--fail-latest]
-                                    [--no-update]
+                                    [--no-update] [--silent]
+                                    [--v]
 
     optional arguments:
     --help                          show this help message and exit.
@@ -134,6 +135,8 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
     --fail-patch                    generate a 30 exit code if there is a newer patch-level release.
     --fail-latest                   generate a 40 exit code if there is a newer release.
     --no-update                     do not download the latest rules. NOT RECOMMENDED!
+    --silent                        do not write any error messages to STDERR.
+    --v                             Set verbosity. v=warnings, vv=info, vvv=debug. Default is error. All logging writes to STDERR.
 
 ### Output
 
@@ -149,6 +152,7 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
 * latestVersion: string - The latest PHP version.
 * activeSupportEndDate: string|null - ISO8601 formatted date for the end of active support for auditVersion (bug fixes).
 * securitySupportEndDate: string - ISO8601 formatted date for the end of security support for auditVersion.
+* rulesLastUpdatedDate: string - ISO8601 formatted date for the last time the rules were auto-updated (twice a day)..
 * vulnerabilities: object - CVEs known to affect auditVersion with details about the CVE. CVE Details might be null for recently discovered CVEs.
 
 ## Project Goals:

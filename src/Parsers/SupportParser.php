@@ -7,6 +7,7 @@ namespace lightswitch05\PhpVersionAudit\Parsers;
 
 use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Logger;
 use lightswitch05\PhpVersionAudit\PhpVersion;
 
 final class SupportParser
@@ -29,6 +30,7 @@ final class SupportParser
     private static function parseSupportedVersions(): array
     {
         $supportDatesByVersion = [];
+        Logger::info('Beginning Support parse.');
         $dom = CachedDownload::dom('https://www.php.net/supported-versions.php');
         foreach ($dom->getElementsByTagName('tr') as $row) {
             $class = strtolower($row->getAttribute('class'));
@@ -55,6 +57,7 @@ final class SupportParser
     private static function parseEol(): array
     {
         $supportDatesByVersion = [];
+        Logger::info('Beginning EOL parse.');
         $dom = CachedDownload::dom('https://www.php.net/eol.php');
         foreach ($dom->getElementsByTagName('tr') as $row) {
             $cells = $row->getElementsByTagName('td');

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
+use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class Rules
@@ -29,7 +30,7 @@ final class Rules
     }
 
     /**
-     * @param bool $localRulesOnly
+     * @param bool $noUpdate
      * @return \stdClass
      */
     public static function loadRules(bool $noUpdate): \stdClass
@@ -44,13 +45,19 @@ final class Rules
      */
     private static function getRulesStdObject(bool $noUpdate): \stdClass
     {
-        if ($noUpdate) {
-            if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
-                throw StaleRulesException::fromString("Unable to load rules");
+        if (!$noUpdate) {
+            try {
+                return CachedDownload::json(self::$HOSTED_RULES_PATH);
+            } catch (ParseException $ex) {
+                Logger::warning($ex->getMessage());
             }
-            return json_decode($rulesString);
         }
-        return CachedDownload::json(self::$HOSTED_RULES_PATH);
+
+        // Either $noUpdate or download fresh rules failed - use package copy
+        if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
+            throw StaleRulesException::fromString("Unable to load rules from disk");
+        }
+        return json_decode($rulesString);
     }
 
     /**
@@ -93,8 +100,9 @@ final class Rules
     }
 
     /**
-     * @param /stdClass $updatedRules
-     * @return void
+     * @param $releases
+     * @param $cves
+     * @param $supportEndDates
      */
     public static function saveRules($releases, $cves, $supportEndDates): void
     {

@@ -8,6 +8,7 @@ use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\CveDetails;
 use lightswitch05\PhpVersionAudit\CveId;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Logger;
 
 final class NvdFeedParser
 {
@@ -45,6 +46,7 @@ final class NvdFeedParser
      */
     private static function parseFeed(array $cveIds, string $feedName): array
     {
+        Logger::info('Beginning NVD feed parse: ', $feedName);
         $cveDetails = [];
         $cveFeed = CachedDownload::json("https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$feedName.json.gz");
         $cveItems = $cveFeed->CVE_Items;
