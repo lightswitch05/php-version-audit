@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2019-12-24T02:03:35+0000",
+    "lastUpdatedDate": "2019-12-24T14:02:27+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4544,42 +4544,42 @@
             "id": "CVE-2019-11044",
             "baseScore": null,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2019-12-23T03:15:00+0000",
+            "lastModifiedDate": "2019-12-23T14:21:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 on Windows, PHP link() function accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11045": {
             "id": "CVE-2019-11045",
             "baseScore": null,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2019-12-23T03:15:00+0000",
+            "lastModifiedDate": "2019-12-23T14:21:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP DirectoryIterator class accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11046": {
             "id": "CVE-2019-11046",
             "baseScore": null,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2019-12-23T03:15:00+0000",
+            "lastModifiedDate": "2019-12-23T14:21:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP bcmath extension functions on some systems, including Windows, can be tricked into reading beyond the allocated space by supplying it with string containing characters that are identified as numeric by the OS but aren't ASCII numbers. This can read to disclosure of the content of some memory locations."
         },
         "CVE-2019-11047": {
             "id": "CVE-2019-11047",
             "baseScore": null,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2019-12-23T03:15:00+0000",
+            "lastModifiedDate": "2019-12-23T14:21:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11049": {
             "id": "CVE-2019-11049",
             "baseScore": null,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2019-12-23T03:15:00+0000",
+            "lastModifiedDate": "2019-12-23T14:21:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.13 and 7.4.0 on Windows, when supplying custom headers to mail() function, due to mistake introduced in commit 78f4b4a2dcf92ddbccea1bb95f8390a18ac3342e, if the header is supplied in lowercase, this can result in double-freeing certain memory locations."
         },
         "CVE-2019-11050": {
             "id": "CVE-2019-11050",
             "baseScore": null,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2019-12-23T03:15:00+0000",
+            "lastModifiedDate": "2019-12-23T14:21:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-13224": {
