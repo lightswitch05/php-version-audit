@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2019-12-28T02:04:37+0000",
+    "lastUpdatedDate": "2019-12-28T14:02:14+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3193,7 +3193,7 @@
             "id": "CVE-2015-1351",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2019-02-04T18:57:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "Use-after-free vulnerability in the _zend_shared_memdup function in zend_shared_alloc.c in the OPcache extension in PHP through 5.6.7 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors."
         },
         "CVE-2015-1352": {
@@ -3263,14 +3263,14 @@
             "id": "CVE-2015-3329",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "Multiple stack-based buffer overflows in the phar_set_inode function in phar_internal.h in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allow remote attackers to execute arbitrary code via a crafted length value in a (1) tar, (2) phar, or (3) ZIP archive."
         },
         "CVE-2015-3330": {
             "id": "CVE-2015-3330",
             "baseScore": 6.8,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "The php_handler function in sapi/apache2handler/sapi_apache2.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8, when the Apache HTTP Server 2.4.x is used, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via pipelined HTTP requests that result in a \"deconfigured interpreter.\""
         },
         "CVE-2015-3411": {
@@ -3326,7 +3326,7 @@
             "id": "CVE-2015-4024",
             "baseScore": 5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "Algorithmic complexity vulnerability in the multipart_buffer_headers function in main/rfc1867.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 allows remote attackers to cause a denial of service (CPU consumption) via crafted form data that triggers an improper order-of-growth outcome."
         },
         "CVE-2015-4025": {
@@ -3396,7 +3396,7 @@
             "id": "CVE-2015-4643",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2019-05-10T16:42:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "Integer overflow in the ftp_genlist function in ext/ftp/ftp.c in PHP before 5.4.42, 5.5.x before 5.5.26, and 5.6.x before 5.6.10 allows remote FTP servers to execute arbitrary code via a long reply to a LIST command, leading to a heap-based buffer overflow.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2015-4022."
         },
         "CVE-2015-4644": {
@@ -3501,7 +3501,7 @@
             "id": "CVE-2015-8386",
             "baseScore": 7.5,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "PCRE before 8.38 mishandles the interaction of lookbehind assertions and mutually recursive subpatterns, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8387": {
@@ -3802,7 +3802,7 @@
             "id": "CVE-2016-5385",
             "baseScore": 8.1,
             "publishedDate": "2016-07-19T02:00:00+0000",
-            "lastModifiedDate": "2019-03-04T14:47:00+0000",
+            "lastModifiedDate": "2019-12-27T16:08:00+0000",
             "description": "PHP through 7.0.8 does not attempt to address RFC 3875 section 4.1.18 namespace conflicts and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary proxy server via a crafted Proxy header in an HTTP request, as demonstrated by (1) an application that makes a getenv('HTTP_PROXY') call or (2) a CGI configuration of PHP, aka an \"httpoxy\" issue."
         },
         "CVE-2016-5399": {
