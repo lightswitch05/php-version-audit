@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace lightswitch05\PhpVersionAudit;
 
+use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
 use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 
 final class CachedDownload
@@ -97,7 +98,7 @@ final class CachedDownload
             sleep(15);
             return self::downloadFile($url, $attempt + 1);
         }
-        throw ParseException::fromString("Unable to download: $url");
+        throw DownloadException::fromString("Unable to download: $url");
     }
 
     /**

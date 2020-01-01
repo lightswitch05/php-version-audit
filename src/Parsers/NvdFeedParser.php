@@ -8,6 +8,8 @@ use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\CveDetails;
 use lightswitch05\PhpVersionAudit\CveId;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
+use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Logger;
 
 final class NvdFeedParser
@@ -20,21 +22,31 @@ final class NvdFeedParser
     /**
      * @param list<string> $cveIds
      * @return array<string, CveDetails>
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @throws DownloadException
+     * @throws ParseException
      */
     public static function run(array $cveIds): array
     {
         ini_set('memory_limit', '1024M');
-        $feeds = ['modified', 'recent'];
+        $feedNames = ['modified', 'recent'];
         $cvesById = array_flip($cveIds);
-        $currentYear = date("Y");
+        $currentYear = (int) date("Y");
         for($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
-            $feeds[] = (string)$cveYear;
+            $feedNames[] = (string)$cveYear;
         }
 
         $cveDetails = [];
-        foreach ($feeds as $feed) {
-            $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feed));
+        foreach ($feedNames as $feedName) {
+            try {
+                $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feedName));
+            } catch (DownloadException $ex) {
+                if ($feedName === (string)$currentYear && date('j') === '1') {
+                    Logger::warning('Unable to download feed ', $feedName, '. Skipping due to beginning of the year.');
+                    continue;
+                }
+                throw $ex;
+            }
+
         }
         uksort($cveDetails, function(string $first, string $second): int {
             return CveId::fromString($first)->compareTo(CveId::fromString($second));
@@ -46,7 +58,7 @@ final class NvdFeedParser
      * @param array<array-key, mixed> $cveIds
      * @param string $feedName
      * @return array<string, CveDetails>
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @throws ParseException
      */
     private static function parseFeed(array $cveIds, string $feedName): array
     {
