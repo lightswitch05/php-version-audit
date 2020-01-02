@@ -20,9 +20,8 @@ final class NvdFeedParser
     private static $CVE_START_YEAR = 2002;
 
     /**
-     * @param list<string> $cveIds
+     * @param array<string> $cveIds
      * @return array<string, CveDetails>
-     * @throws DownloadException
      * @throws ParseException
      */
     public static function run(array $cveIds): array
@@ -30,23 +29,14 @@ final class NvdFeedParser
         ini_set('memory_limit', '1024M');
         $feedNames = ['modified', 'recent'];
         $cvesById = array_flip($cveIds);
-        $currentYear = (int) date("Y");
+        $currentYear = (int) date('Y');
         for($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
             $feedNames[] = (string)$cveYear;
         }
 
         $cveDetails = [];
         foreach ($feedNames as $feedName) {
-            try {
-                $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feedName));
-            } catch (DownloadException $ex) {
-                if ($feedName === (string)$currentYear && date('j') === '1') {
-                    Logger::warning('Unable to download feed ', $feedName, '. Skipping due to beginning of the year.');
-                    continue;
-                }
-                throw $ex;
-            }
-
+            $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feedName));
         }
         uksort($cveDetails, function(string $first, string $second): int {
             return CveId::fromString($first)->compareTo(CveId::fromString($second));
@@ -64,7 +54,8 @@ final class NvdFeedParser
     {
         Logger::info('Beginning NVD feed parse: ', $feedName);
         $cveDetails = [];
-        $cveFeed = CachedDownload::json("https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$feedName.json.gz");
+        $cveFeed = self::downloadFeed($feedName);
+
         $cveItems = $cveFeed->CVE_Items;
         $cveFeed = null; // free memory as fast as possible since this is very memory heavy
         foreach($cveItems as $cveItem) {
@@ -74,6 +65,26 @@ final class NvdFeedParser
             }
         }
         return $cveDetails;
+    }
+
+    /**
+     * @param string $feedName
+     * @return \stdClass
+     * @throws ParseException
+     */
+    private static function downloadFeed(string $feedName): \stdClass
+    {
+        try {
+            return CachedDownload::json("https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$feedName.json.gz");
+        } catch (DownloadException $ex) {
+            if ($feedName === date('Y') && date('n') === '1') {
+                Logger::warning('Unable to download feed ', $feedName, '. Skipping due to beginning of the year.');
+                return (object) [
+                    'CVE_Items' => []
+                ];
+            }
+            throw ParseException::fromException($ex, __FILE__, __LINE__);
+        }
     }
 
     /**

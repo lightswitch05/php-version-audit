@@ -20,6 +20,7 @@ final class CachedDownload
      * @param string $url
      * @return string
      * @throws ParseException
+     * @throws DownloadException
      */
     public static function download(string $url): string
     {
@@ -31,6 +32,7 @@ final class CachedDownload
      * @param string $url
      * @return \DOMDocument
      * @throws ParseException
+     * @throws DownloadException
      */
     public static function dom(string $url): \DOMDocument
     {
@@ -46,6 +48,7 @@ final class CachedDownload
      * @param string $url
      * @return \stdClass
      * @throws ParseException
+     * @throws DownloadException
      */
     public static function json(string $url): \stdClass
     {
@@ -57,6 +60,7 @@ final class CachedDownload
      * @param string $url
      * @return string
      * @throws ParseException
+     * @throws DownloadException
      */
     private static function downloadCachedFile(string $url): string
     {
@@ -73,6 +77,12 @@ final class CachedDownload
         return $data;
     }
 
+    /**
+     * @param string $url
+     * @return string
+     * @throws DownloadException
+     * @throws ParseException
+     */
     private static function downloadGZipFile(string $url): string
     {
         $encoded = self::downloadFile($url);
@@ -83,6 +93,12 @@ final class CachedDownload
         return $data;
     }
 
+    /**
+     * @param string $url
+     * @param int    $attempt
+     * @return string
+     * @throws DownloadException
+     */
     private static function downloadFile(string $url, int $attempt = 0): string
     {
         Logger::debug('Downloading attempt ', $attempt, ': ', $url);

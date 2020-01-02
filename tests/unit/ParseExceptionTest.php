@@ -17,4 +17,15 @@ class ParseExceptionTest extends \Codeception\Test\Unit
         $this->assertNotNull($exception);
         $this->assertEquals('Parse error: ', $exception->getMessage());
     }
+
+    public function testItCreatesFromException()
+    {
+        $ex = new Exception('Test Exception');
+        $parseException = ParseException::fromException($ex, 'filename.php', 500);
+        $this->assertNotNull($parseException);
+        $this->assertEquals('Test Exception', $parseException->getMessage());
+        $this->assertEquals(500, $parseException->getLine());
+        $this->assertEquals('filename.php', $parseException->getFile());
+        $this->assertEquals($ex, $parseException->getPrevious());
+    }
 }
