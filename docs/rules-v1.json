@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-01-08T02:04:00+0000",
+    "lastUpdatedDate": "2020-01-08T14:02:29+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4563,9 +4563,9 @@
         },
         "CVE-2019-11047": {
             "id": "CVE-2019-11047",
-            "baseScore": 9.1,
+            "baseScore": 6.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2020-01-03T11:15:00+0000",
+            "lastModifiedDate": "2020-01-07T20:11:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11049": {
