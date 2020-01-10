@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-01-10T02:04:00+0000",
+    "lastUpdatedDate": "2020-01-10T14:11:15+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4549,9 +4549,9 @@
         },
         "CVE-2019-11045": {
             "id": "CVE-2019-11045",
-            "baseScore": 7.5,
+            "baseScore": 5.9,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2020-01-03T11:15:00+0000",
+            "lastModifiedDate": "2020-01-09T16:05:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP DirectoryIterator class accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11046": {
