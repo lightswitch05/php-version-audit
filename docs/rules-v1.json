@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2020-01-14T14:02:17+0000",
+    "lastUpdatedDate": "2020-01-15T02:04:01+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 346,
-    "cveCount": 304,
+    "cveCount": 306,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.1",
     "latestVersions": {
@@ -3216,6 +3216,20 @@
             "publishedDate": "2015-03-30T10:59:00+0000",
             "lastModifiedDate": "2018-10-30T16:27:00+0000",
             "description": "Integer overflow in the regcomp implementation in the Henry Spencer BSD regex library (aka rxspencer) alpha3.8.g5 on 32-bit platforms, as used in NetBSD through 6.1.5 and other products, might allow context-dependent attackers to execute arbitrary code via a large regular expression that leads to a heap-based buffer overflow."
+        },
+        "CVE-2015-2325": {
+            "id": "CVE-2015-2325",
+            "baseScore": null,
+            "publishedDate": "2020-01-14T17:15:00+0000",
+            "lastModifiedDate": "2020-01-14T17:17:00+0000",
+            "description": "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier."
+        },
+        "CVE-2015-2326": {
+            "id": "CVE-2015-2326",
+            "baseScore": null,
+            "publishedDate": "2020-01-14T17:15:00+0000",
+            "lastModifiedDate": "2020-01-14T17:17:00+0000",
+            "description": "The pcre_compile2 function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code and cause a denial of service (out-of-bounds read) via regular expression with a group containing both a forward referencing subroutine call and a recursive back reference, as demonstrated by \"((?+1)(\\1))/\"."
         },
         "CVE-2015-2331": {
             "id": "CVE-2015-2331",
