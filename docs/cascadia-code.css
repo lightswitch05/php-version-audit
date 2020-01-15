@@ -1,0 +1,4 @@
+@font-face {
+    font-family: "Cascadia Mono PL Web";
+    src: local("Cascadia Mono PL"), local("Cascadia Code PL"), local("Cascadia Mono"), local("Cascadia Code"), url('fonts/CascadiaMonoPL.ttf') format('truetype');
+}

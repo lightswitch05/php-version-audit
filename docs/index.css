@@ -33,12 +33,11 @@ section {
 }
 
 code, dl, pre {
-    color: #c1f1f0;
     background-color: #0a121b;
     padding: 10px;
     margin: 10px 10px 0 10px;
     font-size: 14px;
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: "Cascadia Mono PL Web", Consolas, "Courier New", monospace;
 }
 
 code {

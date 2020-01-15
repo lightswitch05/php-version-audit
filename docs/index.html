@@ -7,6 +7,7 @@
     <meta name="description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated list of CVE exploits, new releases, and end of life dates.">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="latolatinfonts.css">
+    <link rel="stylesheet" href="cascadia-code.css">
     <meta property="og:title" content="PHP Version Audit" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.github.developerdan.com/php-version-audit/">
@@ -200,23 +201,23 @@
             <h3 id="options"><a href="#options">Options</a></h3>
             <hr/>
             <dl>
-                <dt><strong>--help</strong></dt>
+                <dt>--help</dt>
                 <dd>show arguments help message and exit.</dd>
-                <dt><strong>--version=VERSION</strong></dt>
+                <dt>--version=VERSION</dt>
                 <dd>set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.</dd>
-                <dt><strong>--fail-security</strong></dt>
+                <dt>--fail-security</dt>
                 <dd>generate a 10 exit code if any CVEs are found, or security support has ended.</dd>
-                <dt><strong>--fail-support</strong></dt>
+                <dt>--fail-support</dt>
                 <dd>generate a 20 exit code if the version of PHP no longer gets active (bug) support.</dd>
-                <dt><strong>--fail-patch</strong></dt>
+                <dt>--fail-patch</dt>
                 <dd>generate a 30 exit code if there is a newer patch-level release.</dd>
-                <dt><strong>--fail-latest</strong></dt>
+                <dt>--fail-latest</dt>
                 <dd>generate a 40 exit code if there is a newer release.</dd>
-                <dt><strong>--no-update</strong></dt>
+                <dt>--no-update</dt>
                 <dd>do not download the latest rules. NOT RECOMMENDED!</dd>
-                <dt><strong>--silent</strong></dt>
+                <dt>--silent</dt>
                 <dd>do not write any error messages to STDERR.</dd>
-                <dt><strong>--v</strong></dt>
+                <dt>--v</dt>
                 <dd>Set verbosity. v=warnings, vv=info, vvv=debug. Default is error. All logging writes to STDERR.</dd>
             </dl>
         </section>
@@ -224,33 +225,33 @@
         <section id="output">
             <h2><a href="#output">Output</a></h2>
             <dl>
-                <dt><strong>auditVersion</strong>: string</dt>
+                <dt>&bull; auditVersion: <i>string</i></dt>
                 <dd>The version of PHP that is being audited.</dd>
-                <dt><strong>hasVulnerabilities</strong>: bool</dt>
+                <dt>&bull; hasVulnerabilities: <i>bool</i></dt>
                 <dd>If the auditVersion has any known CVEs or not.</dd>
-                <dt><strong>hasSecuritySupport</strong>: bool</dt>
+                <dt>&bull; hasSecuritySupport: <i>bool</i></dt>
                 <dd>If the auditVersion is still receiving security updates.</dd>
-                <dt><strong>hasActiveSupport</strong>: bool</dt>
+                <dt>&bull; hasActiveSupport: <i>bool</i></dt>
                 <dd>If the auditVersion is still receiving active support (bug updates).</dd>
-                <dt><strong>isLatestPatchVersion</strong>: bool</dt>
+                <dt>&bull; isLatestPatchVersion: <i>bool</i></dt>
                 <dd>If auditVersion is the latest patch-level release (7.3.x).</dd>
-                <dt><strong>isLatestMinorVersion</strong>: bool</dt>
+                <dt>&bull; isLatestMinorVersion: <i>bool</i></dt>
                 <dd>If auditVersion is the latest minor-level release (7.x.x).</dd>
-                <dt><strong>isLatestVersion</strong>: bool</dt>
+                <dt>&bull; isLatestVersion: <i>bool</i></dt>
                 <dd>If auditVersion is the latest release (x.x.x).</dd>
-                <dt><strong>latestPatchVersion</strong>: string</dt>
+                <dt>&bull; latestPatchVersion: <i>string</i></dt>
                 <dd>The latest patch-level version for auditVersion.</dd>
-                <dt><strong>latestMinorVersion</strong>: string</dt>
+                <dt>&bull; latestMinorVersion: <i>string</i></dt>
                 <dd>The latest minor-level version for auditVersion.</dd>
-                <dt><strong>latestVersion</strong>: string</dt>
+                <dt>&bull; latestVersion: <i>string</i></dt>
                 <dd>The latest PHP version.</dd>
-                <dt><strong>activeSupportEndDate</strong>: string|null</dt>
+                <dt>&bull; activeSupportEndDate: <i>string|null</i></dt>
                 <dd>ISO8601 formatted date for the end of active support for auditVersion (bug fixes).</dd>
-                <dt><strong>securitySupportEndDate</strong>: string</dt>
+                <dt>&bull; securitySupportEndDate: <i>string</i></dt>
                 <dd>ISO8601 formatted date for the end of security support for auditVersion.</dd>
-                <dt><strong>rulesLastUpdatedDate</strong>: string</dt>
+                <dt>&bull; rulesLastUpdatedDate: <i>string</i></dt>
                 <dd>ISO8601 formatted date for the last time the rules were auto-updated (twice a day).</dd>
-                <dt><strong>vulnerabilities</strong>: object</dt>
+                <dt>&bull; vulnerabilities: <i>object</i></dt>
                 <dd>CVEs known to affect auditVersion with details about the CVE. CVE Details might be null for recently discovered CVEs.</dd>
             </dl>
         </section>
