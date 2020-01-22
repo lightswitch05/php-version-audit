@@ -37,7 +37,13 @@ code, dl, pre {
     padding: 10px;
     margin: 10px 10px 0 10px;
     font-size: 14px;
-    font-family: "Cascadia Mono PL Web", Consolas, "Courier New", monospace;
+    font-family: "Fira Code", Consolas, "Courier New", monospace;
+}
+
+@supports (font-variation-settings: normal) {
+    code, dl, pre {
+        font-family: "Fira Code VF", Consolas, "Courier New", monospace;
+    }
 }
 
 code {
