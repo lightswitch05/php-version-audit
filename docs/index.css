@@ -72,6 +72,12 @@ li ul {
     margin-right: auto;
 }
 
+.avatar {
+    height: 1.5em;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
 footer {
     text-align: center;
     margin-bottom: 10px;
