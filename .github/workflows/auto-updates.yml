@@ -2,8 +2,8 @@ name: Auto Updates
 
 on:
   schedule:
-    - cron: '0 2 * * *'
-    - cron: '0 14 * * *'
+    #- cron: '0 2 * * *'
+    #- cron: '0 14 * * *'
     #- cron: '*/10 * * * *'
 
 jobs:
