@@ -1,0 +1,35 @@
+name: Auto Updates
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+    - cron: '0 14 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: master
+        fetch-depth: 10
+        token: ${{ secrets.GITHUB_PAT }}
+
+    - name: Change origin to bypass gh-pages issues with actions
+      run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_PAT }}@github.com/lightswitch05/php-version-audit.git
+
+    - name: Ensure latest commit with tags
+      run: git fetch; git fetch --tags --all; git checkout master; git pull
+
+    - name: Install dependencies
+      run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+    - name: Run Update
+      run: ./php-version-audit --full-update --no-update --vvv
+
+    - name: commit updates
+      run: ./github-commit-auto-updates.sh
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
