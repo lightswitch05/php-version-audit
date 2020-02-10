@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2020-02-10T02:05:24+0000",
+    "lastUpdatedDate": "2020-02-10T14:03:59+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 349,
-    "cveCount": 306,
+    "cveCount": 308,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.2",
     "latestVersions": {
@@ -4623,6 +4623,20 @@
             "publishedDate": "2019-07-10T14:15:00+0000",
             "lastModifiedDate": "2019-07-17T18:15:00+0000",
             "description": "A use-after-free in onig_new_deluxe() in regext.c in Oniguruma 6.9.2 allows attackers to potentially cause information disclosure, denial of service, or possibly code execution by providing a crafted regular expression. The attacker provides a pair of a regex pattern and a string, with a multi-byte encoding that gets handled by onig_new_deluxe(). Oniguruma issues often affect Ruby, as well as common optional libraries for PHP and Rust."
+        },
+        "CVE-2020-7059": {
+            "id": "CVE-2020-7059",
+            "baseScore": null,
+            "publishedDate": "2020-02-10T08:15:00+0000",
+            "lastModifiedDate": "2020-02-10T08:15:00+0000",
+            "description": "When using fgetss() function to read data with stripping tags, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause this function to read past the allocated buffer. This may lead to information disclosure or crash."
+        },
+        "CVE-2020-7060": {
+            "id": "CVE-2020-7060",
+            "baseScore": null,
+            "publishedDate": "2020-02-10T08:15:00+0000",
+            "lastModifiedDate": "2020-02-10T08:15:00+0000",
+            "description": "When using certain mbstring functions to convert multibyte encodings, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause function mbfl_filt_conv_big5_wchar to read past the allocated buffer. This may lead to information disclosure or crash."
         }
     }
 }
