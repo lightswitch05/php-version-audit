@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2020-02-19T14:04:11+0000",
+    "lastUpdatedDate": "2020-02-20T02:02:38+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 349,
-    "cveCount": 308,
+    "cveCount": 309,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.2",
     "latestVersions": {
@@ -3062,6 +3062,13 @@
             "publishedDate": "2014-08-23T01:55:00+0000",
             "lastModifiedDate": "2017-01-07T03:00:00+0000",
             "description": "Multiple buffer overflows in the php_parserr function in ext/standard/dns.c in PHP before 5.4.32 and 5.5.x before 5.5.16 allow remote DNS servers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted DNS record, related to the dns_get_record function and the dn_expand function.  NOTE: this issue exists because of an incomplete fix for CVE-2014-4049."
+        },
+        "CVE-2014-3622": {
+            "id": "CVE-2014-3622",
+            "baseScore": null,
+            "publishedDate": "2020-02-19T13:15:00+0000",
+            "lastModifiedDate": "2020-02-19T13:56:00+0000",
+            "description": "Use-after-free vulnerability in the add_post_var function in the Posthandler component in PHP 5.6.x before 5.6.1 might allow remote attackers to execute arbitrary code by leveraging a third-party filter extension that accesses a certain ksep value."
         },
         "CVE-2014-3668": {
             "id": "CVE-2014-3668",
