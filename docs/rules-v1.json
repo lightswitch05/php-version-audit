@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2020-02-20T02:02:38+0000",
+    "lastUpdatedDate": "2020-02-20T14:04:02+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 349,
+    "releasesCount": 352,
     "cveCount": 309,
     "supportVersionsCount": 18,
-    "latestVersion": "7.4.2",
+    "latestVersion": "7.4.3",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -23,12 +23,12 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.2",
+        "7": "7.4.3",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
-        "7.2": "7.2.27",
-        "7.3": "7.3.14",
-        "7.4": "7.4.2"
+        "7.2": "7.2.28",
+        "7.3": "7.3.15",
+        "7.4": "7.4.3"
     },
     "supportEndDates": {
         "3.0": {
@@ -2349,6 +2349,13 @@
                 "CVE-2020-7060"
             ]
         },
+        "7.2.28": {
+            "releaseDate": "2020-02-20T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7062",
+                "CVE-2020-7063"
+            ]
+        },
         "7.3.0": {
             "releaseDate": "2018-12-06T00:00:00+0000",
             "patchedCves": [
@@ -2454,6 +2461,14 @@
                 "CVE-2020-7060"
             ]
         },
+        "7.3.15": {
+            "releaseDate": "2020-02-20T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7061",
+                "CVE-2020-7062",
+                "CVE-2020-7063"
+            ]
+        },
         "7.4.0": {
             "releaseDate": "2019-11-28T00:00:00+0000",
             "patchedCves": [
@@ -2478,6 +2493,14 @@
             "patchedCves": [
                 "CVE-2020-7059",
                 "CVE-2020-7060"
+            ]
+        },
+        "7.4.3": {
+            "releaseDate": "2020-02-20T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7061",
+                "CVE-2020-7062",
+                "CVE-2020-7063"
             ]
         }
     },
