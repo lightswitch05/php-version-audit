@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-02-25T02:02:10+0000",
+    "lastUpdatedDate": "2020-02-25T14:04:21+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3088,9 +3088,9 @@
         },
         "CVE-2014-3622": {
             "id": "CVE-2014-3622",
-            "baseScore": null,
+            "baseScore": 9.8,
             "publishedDate": "2020-02-19T13:15:00+0000",
-            "lastModifiedDate": "2020-02-19T13:56:00+0000",
+            "lastModifiedDate": "2020-02-24T22:06:00+0000",
             "description": "Use-after-free vulnerability in the add_post_var function in the Posthandler component in PHP 5.6.x before 5.6.1 might allow remote attackers to execute arbitrary code by leveraging a third-party filter extension that accesses a certain ksep value."
         },
         "CVE-2014-3668": {
