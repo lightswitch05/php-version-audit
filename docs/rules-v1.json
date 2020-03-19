@@ -1,10 +1,10 @@
 {
-    "lastUpdatedDate": "2020-03-19T02:04:54+0000",
+    "lastUpdatedDate": "2020-03-19T14:06:17+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 352,
+    "releasesCount": 354,
     "cveCount": 312,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.3",
@@ -26,8 +26,8 @@
         "7": "7.4.3",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
-        "7.2": "7.2.28",
-        "7.3": "7.3.15",
+        "7.2": "7.2.29",
+        "7.3": "7.3.16",
         "7.4": "7.4.3"
     },
     "supportEndDates": {
@@ -2356,6 +2356,13 @@
                 "CVE-2020-7063"
             ]
         },
+        "7.2.29": {
+            "releaseDate": "2020-03-19T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7064",
+                "CVE-2020-7066"
+            ]
+        },
         "7.3.0": {
             "releaseDate": "2018-12-06T00:00:00+0000",
             "patchedCves": [
@@ -2467,6 +2474,14 @@
                 "CVE-2020-7061",
                 "CVE-2020-7062",
                 "CVE-2020-7063"
+            ]
+        },
+        "7.3.16": {
+            "releaseDate": "2020-03-19T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7064",
+                "CVE-2020-7065",
+                "CVE-2020-7066"
             ]
         },
         "7.4.0": {
