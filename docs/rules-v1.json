@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-03-27T02:05:08+0000",
+    "lastUpdatedDate": "2020-03-27T14:06:46+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4695,7 +4695,7 @@
             "id": "CVE-2020-7061",
             "baseScore": 9.1,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2020-02-28T17:57:00+0000",
+            "lastModifiedDate": "2020-03-26T15:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.15 and 7.4.x below 7.4.3, while extracting PHAR files on Windows using phar extension, certain content inside PHAR file could lead to one-byte read past the allocated buffer. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7062": {
