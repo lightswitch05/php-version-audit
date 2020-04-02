@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-04-02T02:04:57+0000",
+    "lastUpdatedDate": "2020-04-02T14:06:20+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4714,23 +4714,23 @@
         },
         "CVE-2020-7064": {
             "id": "CVE-2020-7064",
-            "baseScore": null,
+            "baseScore": 5.4,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-04-01T04:15:00+0000",
+            "lastModifiedDate": "2020-04-01T16:00:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.34, while parsing EXIF data with exif_read_data() function, it is possible for malicious data to cause PHP to read one byte of uninitialized memory. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7065": {
             "id": "CVE-2020-7065",
-            "baseScore": null,
+            "baseScore": 8.8,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-04-01T04:15:00+0000",
+            "lastModifiedDate": "2020-04-01T16:00:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.34, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
         },
         "CVE-2020-7066": {
             "id": "CVE-2020-7066",
-            "baseScore": null,
+            "baseScore": 4.3,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-04-01T04:15:00+0000",
+            "lastModifiedDate": "2020-04-01T16:00:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.34, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
         }
     }
