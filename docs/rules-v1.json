@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2020-04-16T02:04:50+0000",
+    "lastUpdatedDate": "2020-04-16T13:09:39+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 355,
+    "releasesCount": 357,
     "cveCount": 315,
     "supportVersionsCount": 18,
-    "latestVersion": "7.4.4",
+    "latestVersion": "7.4.5",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -23,12 +23,12 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.4",
+        "7": "7.4.5",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
         "7.2": "7.2.29",
-        "7.3": "7.3.16",
-        "7.4": "7.4.4"
+        "7.3": "7.3.17",
+        "7.4": "7.4.5"
     },
     "supportEndDates": {
         "3.0": {
@@ -122,7 +122,7 @@
             "patchedCves": []
         },
         "4.0.4": {
-            "releaseDate": "2000-12-19T00:00:00+0000",
+            "releaseDate": "2000-02-20T00:00:00+0000",
             "patchedCves": []
         },
         "4.0.5": {
@@ -267,7 +267,7 @@
             "patchedCves": []
         },
         "5.0.0": {
-            "releaseDate": "2004-07-13T00:00:00+0000",
+            "releaseDate": "2003-06-29T00:00:00+0000",
             "patchedCves": []
         },
         "5.0.1": {
@@ -2484,6 +2484,12 @@
                 "CVE-2020-7066"
             ]
         },
+        "7.3.17": {
+            "releaseDate": "2020-04-16T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7067"
+            ]
+        },
         "7.4.0": {
             "releaseDate": "2019-11-28T00:00:00+0000",
             "patchedCves": [
@@ -2524,6 +2530,12 @@
                 "CVE-2020-7064",
                 "CVE-2020-7065",
                 "CVE-2020-7066"
+            ]
+        },
+        "7.4.5": {
+            "releaseDate": "2020-04-16T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7067"
             ]
         }
     },
