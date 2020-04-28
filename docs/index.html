@@ -4,18 +4,36 @@
 <head>
     <meta charset="utf-8">
     <title>PHP Version Audit</title>
-    <meta name="description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated
-            list of CVE exploits, new releases, and end of life dates.">
+    <meta name="description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated list of CVE exploits, new releases, and end of life dates.">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="fira_code.css">
+    <meta property="og:title" content="PHP Version Audit" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.github.developerdan.com/php-version-audit/">
+    <meta property="og:image" content="https://www.github.developerdan.com/php-version-audit/php-version-audit-logo.png" />
+    <meta property="og:image:secure_url" content="https://www.github.developerdan.com/php-version-audit/php-version-audit-logo.png">
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="651" />
+    <meta property="og:image:height" content="351" />
+    <meta property="og:image:alt" content="PHP Version Audit Logo" />
+    <meta property="og:description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated list of CVE exploits, new releases, and end of life dates.">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
     <main>
-        <h1>PHP Version Audit: <small><a href="https://github.com/lightswitch05/php-version-audit">Source on Github</a></small></h1>
+        <h1>
+            <a href="https://www.github.developerdan.com/">
+                <img class="avatar" src="lightswitch05.png" alt="lightswitch05 avatar">
+            </a>
+            PHP Version Audit: <small><a href="https://github.com/lightswitch05/php-version-audit">Source on Github</a></small>
+        </h1>
         <img class="logo" src="php-version-audit-logo.svg" alt="PHP Version Audit Logo">
         <p>
+            <a href="https://github.com/lightswitch05/php-version-audit">
+                <img alt="Github Stars" src="https://img.shields.io/github/stars/lightswitch05/php-version-audit" style="max-width:100%;">
+            </a>
             <a href="https://github.com/lightswitch05/php-version-audit/actions?query=workflow%3A%22Auto+Updates%22">
                 <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/lightswitch05/php-version-audit/Auto Updates" style="max-width:100%;">
             </a>
@@ -24,9 +42,6 @@
             </a>
             <a href="https://hub.docker.com/r/lightswitch05/php-version-audit">
                 <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/lightswitch05/php-version-audit" style="max-width:100%;">
-            </a>
-            <a href="https://sonarcloud.io/dashboard?id=lightswitch05_php-version-audit">
-                <img src="https://sonarcloud.io/api/project_badges/measure?project=lightswitch05_php-version-audit&metric=alert_status" alt="Quality Gate Status" style="max-width:100%;">
             </a>
             <a href="https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE">
                 <img alt="license" src="https://img.shields.io/github/license/lightswitch05/php-version-audit.svg" style="max-width:100%;">
@@ -47,7 +62,8 @@
             staying informed on PHP releases and security exploits.
         </p>
 
-        <section>
+        <section id="index">
+            <h2><a href="#index">Index</a></h2>
             <nav>
                 <ul>
                     <li><a href="#features">Features</a></li>
@@ -193,23 +209,23 @@
             <h3 id="options"><a href="#options">Options</a></h3>
             <hr/>
             <dl>
-                <dt><strong>--help</strong></dt>
+                <dt>--help</dt>
                 <dd>show arguments help message and exit.</dd>
-                <dt><strong>--version=VERSION</strong></dt>
+                <dt>--version=VERSION</dt>
                 <dd>set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.</dd>
-                <dt><strong>--fail-security</strong></dt>
+                <dt>--fail-security</dt>
                 <dd>generate a 10 exit code if any CVEs are found, or security support has ended.</dd>
-                <dt><strong>--fail-support</strong></dt>
+                <dt>--fail-support</dt>
                 <dd>generate a 20 exit code if the version of PHP no longer gets active (bug) support.</dd>
-                <dt><strong>--fail-patch</strong></dt>
+                <dt>--fail-patch</dt>
                 <dd>generate a 30 exit code if there is a newer patch-level release.</dd>
-                <dt><strong>--fail-latest</strong></dt>
+                <dt>--fail-latest</dt>
                 <dd>generate a 40 exit code if there is a newer release.</dd>
-                <dt><strong>--no-update</strong></dt>
+                <dt>--no-update</dt>
                 <dd>do not download the latest rules. NOT RECOMMENDED!</dd>
-                <dt><strong>--silent</strong></dt>
+                <dt>--silent</dt>
                 <dd>do not write any error messages to STDERR.</dd>
-                <dt><strong>--v</strong></dt>
+                <dt>--v</dt>
                 <dd>Set verbosity. v=warnings, vv=info, vvv=debug. Default is error. All logging writes to STDERR.</dd>
             </dl>
         </section>
@@ -217,33 +233,33 @@
         <section id="output">
             <h2><a href="#output">Output</a></h2>
             <dl>
-                <dt><strong>auditVersion</strong>: string</dt>
+                <dt>&bull; auditVersion: <i>string</i></dt>
                 <dd>The version of PHP that is being audited.</dd>
-                <dt><strong>hasVulnerabilities</strong>: bool</dt>
+                <dt>&bull; hasVulnerabilities: <i>bool</i></dt>
                 <dd>If the auditVersion has any known CVEs or not.</dd>
-                <dt><strong>hasSecuritySupport</strong>: bool</dt>
+                <dt>&bull; hasSecuritySupport: <i>bool</i></dt>
                 <dd>If the auditVersion is still receiving security updates.</dd>
-                <dt><strong>hasActiveSupport</strong>: bool</dt>
+                <dt>&bull; hasActiveSupport: <i>bool</i></dt>
                 <dd>If the auditVersion is still receiving active support (bug updates).</dd>
-                <dt><strong>isLatestPatchVersion</strong>: bool</dt>
+                <dt>&bull; isLatestPatchVersion: <i>bool</i></dt>
                 <dd>If auditVersion is the latest patch-level release (7.3.x).</dd>
-                <dt><strong>isLatestMinorVersion</strong>: bool</dt>
+                <dt>&bull; isLatestMinorVersion: <i>bool</i></dt>
                 <dd>If auditVersion is the latest minor-level release (7.x.x).</dd>
-                <dt><strong>isLatestVersion</strong>: bool</dt>
+                <dt>&bull; isLatestVersion: <i>bool</i></dt>
                 <dd>If auditVersion is the latest release (x.x.x).</dd>
-                <dt><strong>latestPatchVersion</strong>: string</dt>
+                <dt>&bull; latestPatchVersion: <i>string</i></dt>
                 <dd>The latest patch-level version for auditVersion.</dd>
-                <dt><strong>latestMinorVersion</strong>: string</dt>
+                <dt>&bull; latestMinorVersion: <i>string</i></dt>
                 <dd>The latest minor-level version for auditVersion.</dd>
-                <dt><strong>latestVersion</strong>: string</dt>
+                <dt>&bull; latestVersion: <i>string</i></dt>
                 <dd>The latest PHP version.</dd>
-                <dt><strong>activeSupportEndDate</strong>: string|null</dt>
+                <dt>&bull; activeSupportEndDate: <i>string|null</i></dt>
                 <dd>ISO8601 formatted date for the end of active support for auditVersion (bug fixes).</dd>
-                <dt><strong>securitySupportEndDate</strong>: string</dt>
+                <dt>&bull; securitySupportEndDate: <i>string</i></dt>
                 <dd>ISO8601 formatted date for the end of security support for auditVersion.</dd>
-                <dt><strong>rulesLastUpdatedDate</strong>: string</dt>
+                <dt>&bull; rulesLastUpdatedDate: <i>string</i></dt>
                 <dd>ISO8601 formatted date for the last time the rules were auto-updated (twice a day).</dd>
-                <dt><strong>vulnerabilities</strong>: object</dt>
+                <dt>&bull; vulnerabilities: <i>object</i></dt>
                 <dd>CVEs known to affect auditVersion with details about the CVE. CVE Details might be null for recently discovered CVEs.</dd>
             </dl>
         </section>
@@ -301,6 +317,6 @@
             </ul>
         </section>
     </main>
-    <footer>Copyright &copy; 2019 Daniel White</footer>
+    <footer>Copyright &copy; 2020 Daniel White</footer>
 </body>
 </html>

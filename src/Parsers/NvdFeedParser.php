@@ -8,6 +8,8 @@ use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\CveDetails;
 use lightswitch05\PhpVersionAudit\CveId;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
+use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Logger;
 
 final class NvdFeedParser
@@ -18,23 +20,23 @@ final class NvdFeedParser
     private static $CVE_START_YEAR = 2002;
 
     /**
-     * @param list<string> $cveIds
+     * @param array<string> $cveIds
      * @return array<string, CveDetails>
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @throws ParseException
      */
     public static function run(array $cveIds): array
     {
         ini_set('memory_limit', '1024M');
-        $feeds = ['modified', 'recent'];
+        $feedNames = ['modified', 'recent'];
         $cvesById = array_flip($cveIds);
-        $currentYear = date("Y");
+        $currentYear = (int) date('Y');
         for($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
-            $feeds[] = (string)$cveYear;
+            $feedNames[] = (string)$cveYear;
         }
 
         $cveDetails = [];
-        foreach ($feeds as $feed) {
-            $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feed));
+        foreach ($feedNames as $feedName) {
+            $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feedName));
         }
         uksort($cveDetails, function(string $first, string $second): int {
             return CveId::fromString($first)->compareTo(CveId::fromString($second));
@@ -46,13 +48,14 @@ final class NvdFeedParser
      * @param array<array-key, mixed> $cveIds
      * @param string $feedName
      * @return array<string, CveDetails>
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @throws ParseException
      */
     private static function parseFeed(array $cveIds, string $feedName): array
     {
         Logger::info('Beginning NVD feed parse: ', $feedName);
         $cveDetails = [];
-        $cveFeed = CachedDownload::json("https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$feedName.json.gz");
+        $cveFeed = self::downloadFeed($feedName);
+
         $cveItems = $cveFeed->CVE_Items;
         $cveFeed = null; // free memory as fast as possible since this is very memory heavy
         foreach($cveItems as $cveItem) {
@@ -65,6 +68,26 @@ final class NvdFeedParser
     }
 
     /**
+     * @param string $feedName
+     * @return \stdClass
+     * @throws ParseException
+     */
+    private static function downloadFeed(string $feedName): \stdClass
+    {
+        try {
+            return CachedDownload::json("https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$feedName.json.gz");
+        } catch (DownloadException $ex) {
+            if ($feedName === date('Y') && date('n') === '1') {
+                Logger::warning('Unable to download feed ', $feedName, '. Skipping due to beginning of the year.');
+                return (object) [
+                    'CVE_Items' => []
+                ];
+            }
+            throw ParseException::fromException($ex, __FILE__, __LINE__);
+        }
+    }
+
+    /**
      * @param \stdClass $cveItem
      * @return CveDetails|null
      */
@@ -73,7 +96,8 @@ final class NvdFeedParser
         if (!isset($cveItem->cve->CVE_data_meta->ID)) {
             return null;
         }
-        if(!$id = CveId::fromString($cveItem->cve->CVE_data_meta->ID)){
+        $id = CveId::fromString($cveItem->cve->CVE_data_meta->ID);
+        if ($id === null) {
             return null;
         }
         $publishedDate = DateHelpers::fromCveFormatToISO8601($cveItem->publishedDate);
@@ -91,7 +115,7 @@ final class NvdFeedParser
 
         if (isset($cveItem->impact->baseMetricV3->cvssV3->baseScore)) {
             $baseScore = $cveItem->impact->baseMetricV3->cvssV3->baseScore;
-        } else if (isset($cveItem->impact->baseMetricV2->cvssV2->baseScore)) {
+        } elseif (isset($cveItem->impact->baseMetricV2->cvssV2->baseScore)) {
             $baseScore = $cveItem->impact->baseMetricV2->cvssV2->baseScore;
         }
         return new CveDetails($id, $baseScore, $publishedDate, $lastModifiedDate, $description);

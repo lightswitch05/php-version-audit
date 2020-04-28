@@ -19,4 +19,4 @@ FROM php:7.4-cli-alpine
 WORKDIR /opt/php-version-audit
 ENV REQUIRE_VERSION_ARG=true
 COPY --from=composer-build /opt/php-version-audit /opt/php-version-audit
-ENTRYPOINT ["/opt/php-version-audit/php-version-audit"]
+ENTRYPOINT ["/opt/php-version-audit/docker/docker-entrypoint.sh"]

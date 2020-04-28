@@ -7,7 +7,7 @@ namespace lightswitch05\PhpVersionAudit\Exceptions;
 class StaleRulesException extends \DomainException
 {
     /**
-     * @param string|null details
+     * @param string|null $details
      * @return StaleRulesException
      */
     public static function fromString(?string $details)
