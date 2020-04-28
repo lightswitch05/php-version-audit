@@ -43,7 +43,7 @@ final class SupportParser
                 continue;
             }
             $version = trim($cells[0]->textContent);
-            if (PhpVersion::fromString($version . ".0")) {
+            if (PhpVersion::fromString($version . ".0") !== null) {
                 $activeDate = DateHelpers::fromJMYToISO8601(trim($cells[3]->textContent));
                 $securityDate = DateHelpers::fromJMYToISO8601(trim($cells[5]->textContent));
                 $supportDatesByVersion[$version] = new \stdClass();
@@ -68,7 +68,7 @@ final class SupportParser
                 continue;
             }
             $version = trim($cells[0]->textContent);
-            if (PhpVersion::fromString($version . ".0")) {
+            if (PhpVersion::fromString($version . ".0") !== null) {
                 $supportDatesByVersion[$version] = new \stdClass();
                 $supportDatesByVersion[$version]->active = null;
                 $supportDatesByVersion[$version]->security = DateHelpers::fromJMYToISO8601(trim($cells[1]->textContent));

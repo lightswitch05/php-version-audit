@@ -59,12 +59,12 @@ final class PhpVersion implements \JsonSerializable
         if (!$fullVersion || !preg_match('#(\d+).(\d+).(\d+)\s*(release\s*candidate|rc|beta|alpha)?\s*(\d*)#i', $fullVersion, $matches)) {
             return null;
         }
-        $major = intval($matches[1]);
-        $minor = intval($matches[2]);
-        $patch = intval($matches[3]);
+        $major = (int) $matches[1];
+        $minor = (int) $matches[2];
+        $patch = (int) $matches[3];
         $preReleaseVersion = null;
         if($preReleaseType = self::normalizeReleaseType($matches[4])) {
-            $preReleaseVersion = intval($matches[5]);
+            $preReleaseVersion = (int) $matches[5];
         }
         return new self($major, $minor, $patch, $preReleaseType, $preReleaseVersion);
     }
