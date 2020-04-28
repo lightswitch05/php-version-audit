@@ -36,9 +36,10 @@ final class PhpRelease implements \JsonSerializable
     public static function fromReleaseDescription(PhpVersion $version, ?string $releaseDate, ?string $releaseDescription): PhpRelease
     {
         $release = new self($version, $releaseDate);
-        if (!empty($releaseDescription) && preg_match_all('#CVE-[0-9]+-[0-9]+#i', $releaseDescription, $cveMatches)) {
+        if (!empty($releaseDescription) && preg_match_all('#CVE-\d+-\d+#i', $releaseDescription, $cveMatches)) {
             foreach ($cveMatches[0] as $match) {
-                if($id = CveId::fromString($match)) {
+                $id = CveId::fromString($match);
+                if ($id !== null) {
                     $release->addPatchedCveIds($id);
                 }
             }

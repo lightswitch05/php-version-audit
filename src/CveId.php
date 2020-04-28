@@ -29,8 +29,8 @@ final class CveId implements \JsonSerializable
     {
         $this->id = $id;
         preg_match("#CVE-(\d+)-(\d+)#", $id, $matches);
-        $this->year = intval($matches[1]);
-        $this->sequenceNumber = intval($matches[2]);
+        $this->year = (int) $matches[1];
+        $this->sequenceNumber = (int) $matches[2];
     }
 
     /**
@@ -65,7 +65,7 @@ final class CveId implements \JsonSerializable
      */
     public function compareTo(CveId $otherCveId): int
     {
-        if ($this->year != $otherCveId->year) {
+        if ($this->year !== $otherCveId->year) {
             return $this->year - $otherCveId->year;
         }
         return $this->sequenceNumber - $otherCveId->sequenceNumber;

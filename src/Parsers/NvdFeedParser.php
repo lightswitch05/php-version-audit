@@ -96,7 +96,8 @@ final class NvdFeedParser
         if (!isset($cveItem->cve->CVE_data_meta->ID)) {
             return null;
         }
-        if(!$id = CveId::fromString($cveItem->cve->CVE_data_meta->ID)){
+        $id = CveId::fromString($cveItem->cve->CVE_data_meta->ID);
+        if ($id === null) {
             return null;
         }
         $publishedDate = DateHelpers::fromCveFormatToISO8601($cveItem->publishedDate);
@@ -114,7 +115,7 @@ final class NvdFeedParser
 
         if (isset($cveItem->impact->baseMetricV3->cvssV3->baseScore)) {
             $baseScore = $cveItem->impact->baseMetricV3->cvssV3->baseScore;
-        } else if (isset($cveItem->impact->baseMetricV2->cvssV2->baseScore)) {
+        } elseif (isset($cveItem->impact->baseMetricV2->cvssV2->baseScore)) {
             $baseScore = $cveItem->impact->baseMetricV2->cvssV2->baseScore;
         }
         return new CveDetails($id, $baseScore, $publishedDate, $lastModifiedDate, $description);

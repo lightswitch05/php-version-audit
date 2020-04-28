@@ -25,7 +25,7 @@ final class DateHelpers
     public static function fromJMYToISO8601(?string $date): ?string
     {
         $dateTime = self::fromFormat('j M Y', $date);
-        if ($dateTime) {
+        if ($dateTime !== null) {
             $dateTime = $dateTime->setTime(0, 0, 0);
         }
         return self::toISO8601($dateTime);
@@ -34,7 +34,7 @@ final class DateHelpers
     public static function fromYMDToISO8601(?string $date): ?string
     {
         $dateTime = self::fromFormat('Y-m-d', $date);
-        if ($dateTime) {
+        if ($dateTime !== null) {
             $dateTime = $dateTime->setTime(0, 0, 0);
         }
         return self::toISO8601($dateTime);
@@ -58,7 +58,7 @@ final class DateHelpers
 
     public static function toISO8601(?\DateTimeImmutable $date): ?string
     {
-        if (!$date) {
+        if ($date === null) {
             return null;
         }
         return $date->format(\DateTime::ISO8601);
