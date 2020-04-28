@@ -53,7 +53,7 @@ final class CachedDownload
     public static function json(string $url): \stdClass
     {
         $html = self::download($url);
-        return json_decode($html);
+        return json_decode($html, false, 512, JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -251,7 +251,7 @@ final class CachedDownload
     {
         $fullPath = self::getCachePath(self::INDEX_FILE_NAME);
         $index = file_get_contents($fullPath);
-        return json_decode($index);
+        return json_decode($index, false, 512, JSON_THROW_ON_ERROR);
     }
 
     /**

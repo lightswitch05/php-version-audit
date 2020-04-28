@@ -42,7 +42,7 @@ final class ChangelogParser
         $dom = CachedDownload::dom($url);
         foreach ($dom->getElementsByTagName('section') as $sectionTag) {
             $versionString = $sectionTag->getAttribute('id');
-            if (!$version = PhpVersion::fromString($versionString)) {
+            if (($version = PhpVersion::fromString($versionString)) === null) {
                 continue;
             }
             $dateString = trim($sectionTag->getElementsByTagName('time')[0]->getAttribute('datetime'));

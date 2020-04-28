@@ -30,7 +30,7 @@ final class Application
     public function __construct(string $phpVersion, bool $noUpdate)
     {
         $this->auditVersion = PhpVersion::fromString($phpVersion);
-        if (!$this->auditVersion) {
+        if ($this->auditVersion === null) {
             throw InvalidVersionException::fromString($phpVersion);
         }
         $this->rules = Rules::loadRules($noUpdate);
@@ -45,7 +45,6 @@ final class Application
         $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
         $maxVersion = PhpVersion::fromString($majorAndMinor . ".9999");
         foreach($this->rules->releases as $versionString => $release) {
-            /** @var PhpRelease $release */
             $releaseVersion = PhpVersion::fromString($versionString);
             if ($releaseVersion->compareTo($this->auditVersion) <= 0 ||
                 $releaseVersion->compareTo($maxVersion) > 0) {
@@ -55,7 +54,6 @@ final class Application
         }
         $vulnerabilities = new \stdClass();
         foreach ($cves as $cve) {
-            /** @var CveId $cve */
             $cveDetails = null;
             $cveString = (string)$cve->getId();
             if (isset($this->rules->cves->$cveString)) {
@@ -89,7 +87,7 @@ final class Application
      */
     public function getLatestVersion(): string
     {
-        if (!$this->rules->latestVersion) {
+        if ($this->rules->latestVersion === []) {
             throw StaleRulesException::fromString("Latest PHP version is unknown!");
         }
         return (string) $this->rules->latestVersion;

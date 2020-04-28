@@ -57,7 +57,7 @@ final class Rules
         if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
             throw StaleRulesException::fromString("Unable to load rules from disk");
         }
-        return json_decode($rulesString);
+        return json_decode($rulesString, false, 512, JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -83,7 +83,7 @@ final class Rules
         }
         foreach ($rules->releases as $versionString => $release) {
             $phpVersion = PhpVersion::fromString($versionString);
-            $phpRelease = PhpRelease::fromReleaseDescription($phpVersion, $release->releaseDate, json_encode($release->patchedCves));
+            $phpRelease = PhpRelease::fromReleaseDescription($phpVersion, $release->releaseDate, json_encode($release->patchedCves, JSON_THROW_ON_ERROR));
             $rules->releases->$versionString = $phpRelease;
         }
         foreach ($rules->cves as $cveString => $cveDetails) {
