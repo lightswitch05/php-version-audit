@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2020-04-27T02:12:05+0000",
+    "lastUpdatedDate": "2020-04-28T02:11:58+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 358,
-    "cveCount": 315,
+    "cveCount": 316,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.5",
     "latestVersions": {
@@ -4748,6 +4748,13 @@
             "publishedDate": "2020-04-01T04:15:00+0000",
             "lastModifiedDate": "2020-04-03T14:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.34, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
+        },
+        "CVE-2020-7067": {
+            "id": "CVE-2020-7067",
+            "baseScore": null,
+            "publishedDate": "2020-04-27T21:15:00+0000",
+            "lastModifiedDate": "2020-04-27T21:15:00+0000",
+            "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
         }
     }
 }
