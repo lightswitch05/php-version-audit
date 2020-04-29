@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-04-29T02:11:55+0000",
+    "lastUpdatedDate": "2020-04-29T14:13:13+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4753,7 +4753,7 @@
             "id": "CVE-2020-7067",
             "baseScore": null,
             "publishedDate": "2020-04-27T21:15:00+0000",
-            "lastModifiedDate": "2020-04-27T21:15:00+0000",
+            "lastModifiedDate": "2020-04-28T11:01:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
         }
     }
