@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-04-30T14:10:03+0000",
+    "lastUpdatedDate": "2020-05-02T02:11:52+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4746,7 +4746,7 @@
             "id": "CVE-2020-7066",
             "baseScore": 4.3,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-04-27T21:15:00+0000",
+            "lastModifiedDate": "2020-04-30T18:53:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.29, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
         },
         "CVE-2020-7067": {
