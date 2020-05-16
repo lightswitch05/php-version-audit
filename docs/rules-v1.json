@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-05-15T02:13:10+0000",
+    "lastUpdatedDate": "2020-05-16T02:12:55+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -2556,7 +2556,9 @@
         },
         "7.4.6": {
             "releaseDate": "2020-05-14T00:00:00+0000",
-            "patchedCves": []
+            "patchedCves": [
+                "CVE-2019-11048"
+            ]
         }
     },
     "cves": {
