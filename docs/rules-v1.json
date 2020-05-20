@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2020-05-19T14:09:06+0000",
+    "lastUpdatedDate": "2020-05-20T14:08:07+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 361,
-    "cveCount": 316,
+    "cveCount": 317,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.6",
     "latestVersions": {
@@ -4689,6 +4689,13 @@
             "publishedDate": "2019-12-23T03:15:00+0000",
             "lastModifiedDate": "2020-01-15T16:15:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
+        },
+        "CVE-2019-11048": {
+            "id": "CVE-2019-11048",
+            "baseScore": null,
+            "publishedDate": "2020-05-20T08:15:00+0000",
+            "lastModifiedDate": "2020-05-20T08:15:00+0000",
+            "description": "In PHP versions 7.2.x below 7.2.31, 7.3.x below 7.3.18 and 7.4.x below 7.4.6, when HTTP file uploads are allowed, supplying overly long filenames or field names could lead PHP engine to try to allocate oversized memory storage, hit the memory limit and stop processing the request, without cleaning up temporary files created by upload request. This potentially could lead to accumulation of uncleaned temporary files exhausting the disk space on the target server."
         },
         "CVE-2019-11049": {
             "id": "CVE-2019-11049",
