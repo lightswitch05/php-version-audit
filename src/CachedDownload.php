@@ -13,7 +13,9 @@ final class CachedDownload
     const DEFAULT_CURL_OPTS = [
         CURLOPT_FAILONERROR => true,
         CURLOPT_ACCEPT_ENCODING => '',
-        CURLOPT_RETURNTRANSFER => true
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_USERAGENT => 'php-version-audit',
+        CURLOPT_VERBOSE => true
     ];
 
     /**
