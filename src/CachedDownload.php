@@ -15,7 +15,10 @@ final class CachedDownload
         CURLOPT_ACCEPT_ENCODING => '',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_USERAGENT => 'php-version-audit',
-        CURLOPT_VERBOSE => true
+        CURLOPT_VERBOSE => true,
+        // Trying to fix github actions error:
+        // Immediate connect fail for 2a02:cb40:200::1ad: Network is unreachable
+        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4
     ];
 
     /**
