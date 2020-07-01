@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-06-29T14:11:56+0000",
+    "lastUpdatedDate": "2020-07-01T12:54:49+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4702,7 +4702,7 @@
             "id": "CVE-2019-11048",
             "baseScore": 5.3,
             "publishedDate": "2020-05-20T08:15:00+0000",
-            "lastModifiedDate": "2020-06-23T02:15:00+0000",
+            "lastModifiedDate": "2020-06-29T23:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.31, 7.3.x below 7.3.18 and 7.4.x below 7.4.6, when HTTP file uploads are allowed, supplying overly long filenames or field names could lead PHP engine to try to allocate oversized memory storage, hit the memory limit and stop processing the request, without cleaning up temporary files created by upload request. This potentially could lead to accumulation of uncleaned temporary files exhausting the disk space on the target server."
         },
         "CVE-2019-11049": {
