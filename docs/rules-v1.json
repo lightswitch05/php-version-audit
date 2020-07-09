@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2020-07-07T16:07:56+0000",
+    "lastUpdatedDate": "2020-07-09T14:37:47+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 363,
+    "releasesCount": 366,
     "cveCount": 317,
     "supportVersionsCount": 18,
-    "latestVersion": "7.4.7",
+    "latestVersion": "7.4.8",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -23,12 +23,12 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.7",
+        "7": "7.4.8",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
-        "7.2": "7.2.31",
-        "7.3": "7.3.19",
-        "7.4": "7.4.7"
+        "7.2": "7.2.32",
+        "7.3": "7.3.20",
+        "7.4": "7.4.8"
     },
     "supportEndDates": {
         "3.0": {
@@ -114,11 +114,11 @@
             "patchedCves": []
         },
         "4.0.2": {
-            "releaseDate": "2000-08-29T00:00:00+0000",
+            "releaseDate": "1999-08-09T00:00:00+0000",
             "patchedCves": []
         },
         "4.0.3": {
-            "releaseDate": "2000-10-11T00:00:00+0000",
+            "releaseDate": "1999-11-16T00:00:00+0000",
             "patchedCves": []
         },
         "4.0.4": {
@@ -2373,6 +2373,10 @@
                 "CVE-2019-11048"
             ]
         },
+        "7.2.32": {
+            "releaseDate": "2020-07-09T00:00:00+0000",
+            "patchedCves": []
+        },
         "7.3.0": {
             "releaseDate": "2018-12-06T00:00:00+0000",
             "patchedCves": [
@@ -2510,6 +2514,10 @@
             "releaseDate": "2020-06-11T00:00:00+0000",
             "patchedCves": []
         },
+        "7.3.20": {
+            "releaseDate": "2020-07-09T00:00:00+0000",
+            "patchedCves": []
+        },
         "7.4.0": {
             "releaseDate": "2019-11-28T00:00:00+0000",
             "patchedCves": [
@@ -2566,6 +2574,10 @@
         },
         "7.4.7": {
             "releaseDate": "2020-06-11T00:00:00+0000",
+            "patchedCves": []
+        },
+        "7.4.8": {
+            "releaseDate": "2020-07-09T00:00:00+0000",
             "patchedCves": []
         }
     },
@@ -4702,7 +4714,7 @@
             "id": "CVE-2019-11048",
             "baseScore": 5.3,
             "publishedDate": "2020-05-20T08:15:00+0000",
-            "lastModifiedDate": "2020-07-05T20:15:00+0000",
+            "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.31, 7.3.x below 7.3.18 and 7.4.x below 7.4.6, when HTTP file uploads are allowed, supplying overly long filenames or field names could lead PHP engine to try to allocate oversized memory storage, hit the memory limit and stop processing the request, without cleaning up temporary files created by upload request. This potentially could lead to accumulation of uncleaned temporary files exhausting the disk space on the target server."
         },
         "CVE-2019-11049": {
@@ -4751,42 +4763,42 @@
             "id": "CVE-2020-7062",
             "baseScore": 7.5,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2020-07-05T20:15:00+0000",
+            "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when using file upload functionality, if upload progress tracking is enabled, but session.upload_progress.cleanup is set to 0 (disabled), and the file upload fails, the upload procedure would try to clean up data that does not exist and encounter null pointer dereference, which would likely lead to a crash."
         },
         "CVE-2020-7063": {
             "id": "CVE-2020-7063",
             "baseScore": 5.3,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2020-07-05T20:15:00+0000",
+            "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when creating PHAR archive using PharData::buildFromIterator() function, the files are added with default permissions (0666, or all access) even if the original files on the filesystem were with more restrictive permissions. This may result in files having more lax permissions than intended when such archive is extracted."
         },
         "CVE-2020-7064": {
             "id": "CVE-2020-7064",
             "baseScore": 5.4,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-07-05T20:15:00+0000",
+            "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.34, while parsing EXIF data with exif_read_data() function, it is possible for malicious data to cause PHP to read one byte of uninitialized memory. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7065": {
             "id": "CVE-2020-7065",
             "baseScore": 8.8,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-05-11T02:15:00+0000",
-            "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.34, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
+            "lastModifiedDate": "2020-07-08T20:15:00+0000",
+            "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
         },
         "CVE-2020-7066": {
             "id": "CVE-2020-7066",
             "baseScore": 4.3,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-07-05T20:15:00+0000",
+            "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.29, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
         },
         "CVE-2020-7067": {
             "id": "CVE-2020-7067",
             "baseScore": 7.5,
             "publishedDate": "2020-04-27T21:15:00+0000",
-            "lastModifiedDate": "2020-07-05T20:15:00+0000",
+            "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
         }
     }
