@@ -21,14 +21,14 @@ if [ "$LINES_ADDED" -gt "1" ]; then
    COMMIT_MESSAGE="${COMMIT_MESSAGE} Changes found @lightswitch05"
 fi
 
-#git add ./docs/rules-v1.json
-#git commit -m "${COMMIT_MESSAGE}"
+git add ./docs/rules-v1.json
+git commit -m "${COMMIT_MESSAGE}"
 LAST_TAG=$(git tag -l --sort=v:refname | tail -1)
 echo "Last tag: ${LAST_TAG}"
 NEW_TAG="${LAST_TAG%.*}.$((${LAST_TAG##*.}+1))"
 echo "New tag: ${NEW_TAG}"
-#git tag "${NEW_TAG}"
-#git push origin : "${NEW_TAG}"
-#git push gitlab : "${NEW_TAG}"
+git tag "${NEW_TAG}"
+git push origin : "${NEW_TAG}"
+git push gitlab : "${NEW_TAG}"
 
 
