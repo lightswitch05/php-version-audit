@@ -2,8 +2,8 @@ name: Auto Updates
 
 on:
   schedule:
-    - cron: '5 2 * * *'
-    - cron: '5 14 * * *'
+    - cron: '5 1 * * *'
+    - cron: '5 13 * * *'
 
 jobs:
   build:
@@ -15,6 +15,26 @@ jobs:
         ref: master
         fetch-depth: 10
         token: ${{ secrets.GITHUB_PAT }}
+
+    # Cache for Composer
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - uses: actions/cache@v2
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+
+    # Cache for full update
+    - uses: actions/cache@v2
+      with:
+        path: ${{ github.workspace }}/.tmp
+        key: ${{ runner.os }}-php-version-audit-${{ hashFiles('${{ github.workspace }}/docs/rules-v1.json') }}
+        restore-keys: |
+          ${{ runner.os }}-php-version-audit-
 
     - name: Change origin to bypass gh-pages issues with actions
       run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_PAT }}@github.com/lightswitch05/php-version-audit.git
