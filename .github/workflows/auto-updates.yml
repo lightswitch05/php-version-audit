@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '5 1 * * *'
     - cron: '5 13 * * *'
-    - cron: '30 * * * *' # debug the cron jobs
+    - cron: '*/15 * * * *' # debug the cron jobs
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: ${{ github.workspace }}/tmp
-        key: ${{ runner.os }}-php-version-audit-${{ hashFiles('${{ github.workspace }}/docs/rules-v1.json') }}
+        key: ${{ runner.os }}-php-version-audit-${{ hashFiles('**/docs/rules-v1.json') }}
         restore-keys: |
           ${{ runner.os }}-php-version-audit-
 
