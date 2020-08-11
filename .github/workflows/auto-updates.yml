@@ -32,8 +32,8 @@ jobs:
     # Cache for full update
     - uses: actions/cache@v2
       with:
-        path: ${{ github.workspace }}/.tmp
-        key: ${{ runner.os }}-php-version-audit-${{ hashFiles('**/rules-v1.json') }}
+        path: ${{ github.workspace }}/tmp
+        key: ${{ runner.os }}-php-version-audit-${{ hashFiles('${{ github.workspace }}/docs/rules-v1.json') }}
         restore-keys: |
           ${{ runner.os }}-php-version-audit-
 
