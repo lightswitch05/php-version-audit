@@ -15,10 +15,6 @@ final class CachedDownload
         CURLOPT_ACCEPT_ENCODING => '',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_USERAGENT => 'php-version-audit',
-        CURLOPT_VERBOSE => true,
-        // Trying to fix github actions error:
-        // Immediate connect fail for 2a02:cb40:200::1ad: Network is unreachable
-        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4
     ];
 
     /**
@@ -150,6 +146,7 @@ final class CachedDownload
     {
         $cacheIndex = self::getCacheIndex();
         if (!isset($cacheIndex->$url)) {
+            Logger::debug('Cache does not exist for ', $url);
             return false;
         }
         $lastModifiedDate = DateHelpers::fromISO8601($cacheIndex->$url->lastModifiedDate);
@@ -228,6 +225,7 @@ final class CachedDownload
         }
         $indexPath = self::getCachePath(self::INDEX_FILE_NAME);
         if (!is_file($indexPath)) {
+            Logger::debug('Cache index not found, creating new one.');
             self::saveCacheIndex(new \stdClass());
         }
     }
