@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-08-19T01:19:17+0000",
+    "lastUpdatedDate": "2020-08-19T13:17:44+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4697,7 +4697,7 @@
             "id": "CVE-2019-11043",
             "baseScore": 9.8,
             "publishedDate": "2019-10-28T15:15:00+0000",
-            "lastModifiedDate": "2019-10-30T20:15:00+0000",
+            "lastModifiedDate": "2020-08-18T15:05:00+0000",
             "description": "In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24 and 7.3.x below 7.3.11 in certain configurations of FPM setup it is possible to cause FPM module to write past allocated buffers into the space reserved for FCGI protocol data, thus opening the possibility of remote code execution."
         },
         "CVE-2019-11044": {
