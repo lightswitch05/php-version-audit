@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-08-25T01:19:04+0000",
+    "lastUpdatedDate": "2020-08-25T13:17:57+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4515,7 +4515,7 @@
             "id": "CVE-2018-14883",
             "baseScore": 7.5,
             "publishedDate": "2018-08-03T13:29:00+0000",
-            "lastModifiedDate": "2019-03-05T18:35:00+0000",
+            "lastModifiedDate": "2020-08-24T17:37:00+0000",
             "description": "An issue was discovered in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. An Integer Overflow leads to a heap-based buffer over-read in exif_thumbnail_extract of exif.c."
         },
         "CVE-2018-14884": {
@@ -4543,7 +4543,7 @@
             "id": "CVE-2018-19518",
             "baseScore": 7.5,
             "publishedDate": "2018-11-25T10:29:00+0000",
-            "lastModifiedDate": "2019-10-21T23:15:00+0000",
+            "lastModifiedDate": "2020-08-24T17:37:00+0000",
             "description": "University of Washington IMAP Toolkit 2007f on UNIX, as used in imap_open() in PHP and other products, launches an rsh command (by means of the imap_rimap function in c-client/imap4r1.c and the tcp_aopen function in osdep/unix/tcp_unix.c) without preventing argument injection, which might allow remote attackers to execute arbitrary OS commands if the IMAP server name is untrusted input (e.g., entered by a user of a web application) and if rsh has been replaced by a program with different argument semantics. For example, if rsh is a link to ssh (as seen on Debian and Ubuntu systems), then the attack can use an IMAP server name containing a \"-oProxyCommand\" argument."
         },
         "CVE-2018-20783": {
@@ -4557,7 +4557,7 @@
             "id": "CVE-2019-6977",
             "baseScore": 8.8,
             "publishedDate": "2019-01-27T02:29:00+0000",
-            "lastModifiedDate": "2019-04-10T18:29:00+0000",
+            "lastModifiedDate": "2020-08-24T17:37:00+0000",
             "description": "gdImageColorMatch in gd_color_match.c in the GD Graphics Library (aka LibGD) 2.2.5, as used in the imagecolormatch function in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1, has a heap-based buffer overflow. This can be exploited by an attacker who is able to trigger imagecolormatch calls with crafted image data."
         },
         "CVE-2019-9020": {
