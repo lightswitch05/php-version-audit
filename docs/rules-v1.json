@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2020-09-09T13:20:28+0000",
+    "lastUpdatedDate": "2020-09-10T01:22:57+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 371,
-    "cveCount": 317,
+    "cveCount": 318,
     "supportVersionsCount": 18,
     "latestVersion": "7.4.10",
     "latestVersions": {
@@ -4826,6 +4826,13 @@
             "publishedDate": "2020-04-27T21:15:00+0000",
             "lastModifiedDate": "2020-07-08T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
+        },
+        "CVE-2020-7068": {
+            "id": "CVE-2020-7068",
+            "baseScore": null,
+            "publishedDate": "2020-09-09T18:15:00+0000",
+            "lastModifiedDate": "2020-09-09T19:15:00+0000",
+            "description": "In PHP versions 7.2.x below 7.3.21, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         }
     }
 }
