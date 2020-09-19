@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-09-19T01:26:10+0000",
+    "lastUpdatedDate": "2020-09-19T13:20:03+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -2661,7 +2661,7 @@
             "id": "CVE-2007-3378",
             "baseScore": 6.8,
             "publishedDate": "2007-06-29T18:30:00+0000",
-            "lastModifiedDate": "2020-09-17T15:15:00+0000",
+            "lastModifiedDate": "2020-09-18T19:15:00+0000",
             "description": "The (1) session_save_path, (2) ini_set, and (3) error_log functions in PHP 4.4.7 and earlier, and PHP 5 5.2.3 and earlier, when invoked from a .htaccess file, allow remote attackers to bypass safe_mode and open_basedir restrictions and possibly execute arbitrary commands, as demonstrated using (a) php_value, (b) php_flag, and (c) directives in .htaccess."
         },
         "CVE-2007-3806": {
@@ -4831,7 +4831,7 @@
             "id": "CVE-2020-7068",
             "baseScore": 7.4,
             "publishedDate": "2020-09-09T18:15:00+0000",
-            "lastModifiedDate": "2020-09-15T15:16:00+0000",
+            "lastModifiedDate": "2020-09-18T12:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.3.21, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         }
     }
