@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-09-24T01:29:44+0000",
+    "lastUpdatedDate": "2020-09-24T13:20:49+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4831,7 +4831,7 @@
             "id": "CVE-2020-7068",
             "baseScore": 3.6,
             "publishedDate": "2020-09-09T18:15:00+0000",
-            "lastModifiedDate": "2020-09-21T16:58:00+0000",
+            "lastModifiedDate": "2020-09-23T17:54:00+0000",
             "description": "In PHP versions 7.2.x below 7.3.21, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         }
     }
