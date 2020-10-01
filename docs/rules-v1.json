@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2020-10-01T13:21:40+0000",
+    "lastUpdatedDate": "2020-10-01T14:57:45+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 371,
+    "releasesCount": 374,
     "cveCount": 318,
     "supportVersionsCount": 18,
-    "latestVersion": "7.4.10",
+    "latestVersion": "7.4.11",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -23,12 +23,12 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.10",
+        "7": "7.4.11",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
-        "7.2": "7.2.33",
-        "7.3": "7.3.22",
-        "7.4": "7.4.10"
+        "7.2": "7.2.34",
+        "7.3": "7.3.23",
+        "7.4": "7.4.11"
     },
     "supportEndDates": {
         "3.0": {
@@ -114,11 +114,11 @@
             "patchedCves": []
         },
         "4.0.2": {
-            "releaseDate": "2000-08-29T00:00:00+0000",
+            "releaseDate": "1999-08-09T00:00:00+0000",
             "patchedCves": []
         },
         "4.0.3": {
-            "releaseDate": "2000-10-11T00:00:00+0000",
+            "releaseDate": "1999-11-16T00:00:00+0000",
             "patchedCves": []
         },
         "4.0.4": {
@@ -267,7 +267,7 @@
             "patchedCves": []
         },
         "5.0.0": {
-            "releaseDate": "2004-07-13T00:00:00+0000",
+            "releaseDate": "2003-06-29T00:00:00+0000",
             "patchedCves": []
         },
         "5.0.1": {
@@ -2383,6 +2383,13 @@
                 "CVE-2020-7068"
             ]
         },
+        "7.2.34": {
+            "releaseDate": "2020-10-01T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7069",
+                "CVE-2020-7070"
+            ]
+        },
         "7.3.0": {
             "releaseDate": "2018-12-06T00:00:00+0000",
             "patchedCves": [
@@ -2534,6 +2541,13 @@
             "releaseDate": "2020-09-03T00:00:00+0000",
             "patchedCves": []
         },
+        "7.3.23": {
+            "releaseDate": "2020-10-01T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7069",
+                "CVE-2020-7070"
+            ]
+        },
         "7.4.0": {
             "releaseDate": "2019-11-28T00:00:00+0000",
             "patchedCves": [
@@ -2605,6 +2619,13 @@
         "7.4.10": {
             "releaseDate": "2020-09-03T00:00:00+0000",
             "patchedCves": []
+        },
+        "7.4.11": {
+            "releaseDate": "2020-10-01T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7069",
+                "CVE-2020-7070"
+            ]
         }
     },
     "cves": {
