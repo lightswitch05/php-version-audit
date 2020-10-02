@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-10-02T01:31:15+0000",
+    "lastUpdatedDate": "2020-10-02T13:22:16+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4831,7 +4831,7 @@
             "id": "CVE-2020-7065",
             "baseScore": 8.8,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-07-08T20:15:00+0000",
+            "lastModifiedDate": "2020-10-01T17:08:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
         },
         "CVE-2020-7066": {
