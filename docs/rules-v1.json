@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-10-03T01:31:35+0000",
+    "lastUpdatedDate": "2020-10-03T13:21:26+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4670,21 +4670,21 @@
             "id": "CVE-2019-11034",
             "baseScore": 9.1,
             "publishedDate": "2019-04-18T17:29:00+0000",
-            "lastModifiedDate": "2019-06-03T15:29:00+0000",
+            "lastModifiedDate": "2020-10-02T13:33:00+0000",
             "description": "When processing certain files, PHP EXIF extension in versions 7.1.x below 7.1.28, 7.2.x below 7.2.17 and 7.3.x below 7.3.4 can be caused to read past allocated buffer in exif_process_IFD_TAG function. This may lead to information disclosure or crash."
         },
         "CVE-2019-11035": {
             "id": "CVE-2019-11035",
             "baseScore": 9.1,
             "publishedDate": "2019-04-18T17:29:00+0000",
-            "lastModifiedDate": "2019-06-03T15:29:00+0000",
+            "lastModifiedDate": "2020-10-02T13:13:00+0000",
             "description": "When processing certain files, PHP EXIF extension in versions 7.1.x below 7.1.28, 7.2.x below 7.2.17 and 7.3.x below 7.3.4 can be caused to read past allocated buffer in exif_iif_add_value function. This may lead to information disclosure or crash."
         },
         "CVE-2019-11036": {
             "id": "CVE-2019-11036",
             "baseScore": 9.1,
             "publishedDate": "2019-05-03T20:29:00+0000",
-            "lastModifiedDate": "2019-06-05T18:29:00+0000",
+            "lastModifiedDate": "2020-10-02T13:14:00+0000",
             "description": "When processing certain files, PHP EXIF extension in versions 7.1.x below 7.1.29, 7.2.x below 7.2.18 and 7.3.x below 7.3.5 can be caused to read past allocated buffer in exif_process_IFD_TAG function. This may lead to information disclosure or crash."
         },
         "CVE-2019-11038": {
@@ -4712,14 +4712,14 @@
             "id": "CVE-2019-11041",
             "baseScore": 7.1,
             "publishedDate": "2019-08-09T20:15:00+0000",
-            "lastModifiedDate": "2019-11-01T07:15:00+0000",
+            "lastModifiedDate": "2020-10-02T15:05:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.31, 7.2.x below 7.2.21 and 7.3.x below 7.3.8 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11042": {
             "id": "CVE-2019-11042",
             "baseScore": 7.1,
             "publishedDate": "2019-08-09T20:15:00+0000",
-            "lastModifiedDate": "2019-11-01T07:15:00+0000",
+            "lastModifiedDate": "2020-10-02T15:19:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.31, 7.2.x below 7.2.21 and 7.3.x below 7.3.8 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11043": {
@@ -4740,7 +4740,7 @@
             "id": "CVE-2019-11045",
             "baseScore": 5.9,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2020-01-15T16:15:00+0000",
+            "lastModifiedDate": "2020-10-02T17:32:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP DirectoryIterator class accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11046": {
@@ -4775,7 +4775,7 @@
             "id": "CVE-2019-11050",
             "baseScore": 6.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2020-01-20T19:15:00+0000",
+            "lastModifiedDate": "2020-10-02T17:34:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-13224": {
@@ -4852,8 +4852,8 @@
             "id": "CVE-2020-7068",
             "baseScore": 3.6,
             "publishedDate": "2020-09-09T18:15:00+0000",
-            "lastModifiedDate": "2020-09-24T14:15:00+0000",
-            "description": "In PHP versions 7.2.x below 7.2.23, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
+            "lastModifiedDate": "2020-10-02T15:15:00+0000",
+            "description": "In PHP versions 7.2.x below 7.2.33, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         },
         "CVE-2020-7069": {
             "id": "CVE-2020-7069",
