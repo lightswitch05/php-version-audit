@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-10-14T01:38:47+0000",
+    "lastUpdatedDate": "2020-10-14T13:24:10+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4145,7 +4145,7 @@
             "id": "CVE-2016-7126",
             "baseScore": 9.8,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2020-10-13T13:15:00+0000",
             "description": "The imagetruecolortopalette function in ext/gd/gd.c in PHP before 5.6.25 and 7.x before 7.0.10 does not properly validate the number of colors, which allows remote attackers to cause a denial of service (select_colors allocation error and out-of-bounds write) or possibly have unspecified other impact via a large value in the third argument."
         },
         "CVE-2016-7127": {
@@ -4180,14 +4180,14 @@
             "id": "CVE-2016-7131",
             "baseScore": 7.5,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2020-10-13T13:15:00+0000",
             "description": "ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) or possibly have unspecified other impact via a malformed wddxPacket XML document that is mishandled in a wddx_deserialize call, as demonstrated by a tag that lacks a < (less than) character."
         },
         "CVE-2016-7132": {
             "id": "CVE-2016-7132",
             "baseScore": 7.5,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2020-10-13T13:15:00+0000",
             "description": "ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) or possibly have unspecified other impact via an invalid wddxPacket XML document that is mishandled in a wddx_deserialize call, as demonstrated by a stray element inside a boolean element, leading to incorrect pop processing."
         },
         "CVE-2016-7133": {
