@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-10-15T01:39:55+0000",
+    "lastUpdatedDate": "2020-10-15T13:24:42+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3354,7 +3354,7 @@
             "id": "CVE-2015-0235",
             "baseScore": 10,
             "publishedDate": "2015-01-28T19:59:00+0000",
-            "lastModifiedDate": "2019-06-13T21:29:00+0000",
+            "lastModifiedDate": "2020-10-14T18:09:00+0000",
             "description": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka \"GHOST.\""
         },
         "CVE-2015-0273": {
@@ -4857,16 +4857,16 @@
         },
         "CVE-2020-7069": {
             "id": "CVE-2020-7069",
-            "baseScore": null,
+            "baseScore": 6.5,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2020-10-07T23:15:00+0000",
+            "lastModifiedDate": "2020-10-14T14:44:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when AES-CCM mode is used with openssl_encrypt() function with 12 bytes IV, only first 7 bytes of the IV is actually used. This can lead to both decreased security and incorrect encryption data."
         },
         "CVE-2020-7070": {
             "id": "CVE-2020-7070",
-            "baseScore": null,
+            "baseScore": 5.3,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2020-10-07T23:15:00+0000",
+            "lastModifiedDate": "2020-10-14T14:19:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when PHP is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead to cookies with prefixes like __Host confused with cookies that decode to such prefix, thus leading to an attacker being able to forge cookie which is supposed to be secure. See also CVE-2020-8184 for more information."
         }
     }
