@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2020-10-21T01:42:06+0000",
+    "lastUpdatedDate": "2020-10-21T13:25:32+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4761,7 +4761,7 @@
             "id": "CVE-2019-11048",
             "baseScore": 5.3,
             "publishedDate": "2020-05-20T08:15:00+0000",
-            "lastModifiedDate": "2020-07-08T12:15:00+0000",
+            "lastModifiedDate": "2020-10-20T22:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.31, 7.3.x below 7.3.18 and 7.4.x below 7.4.6, when HTTP file uploads are allowed, supplying overly long filenames or field names could lead PHP engine to try to allocate oversized memory storage, hit the memory limit and stop processing the request, without cleaning up temporary files created by upload request. This potentially could lead to accumulation of uncleaned temporary files exhausting the disk space on the target server."
         },
         "CVE-2019-11049": {
@@ -4845,7 +4845,7 @@
             "id": "CVE-2020-7067",
             "baseScore": 7.5,
             "publishedDate": "2020-04-27T21:15:00+0000",
-            "lastModifiedDate": "2020-07-08T12:15:00+0000",
+            "lastModifiedDate": "2020-10-20T22:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
         },
         "CVE-2020-7068": {
@@ -4859,14 +4859,14 @@
             "id": "CVE-2020-7069",
             "baseScore": 6.5,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2020-10-16T11:15:00+0000",
+            "lastModifiedDate": "2020-10-20T20:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when AES-CCM mode is used with openssl_encrypt() function with 12 bytes IV, only first 7 bytes of the IV is actually used. This can lead to both decreased security and incorrect encryption data."
         },
         "CVE-2020-7070": {
             "id": "CVE-2020-7070",
             "baseScore": 5.3,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2020-10-16T11:15:00+0000",
+            "lastModifiedDate": "2020-10-20T20:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when PHP is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead to cookies with prefixes like __Host confused with cookies that decode to such prefix, thus leading to an attacker being able to forge cookie which is supposed to be secure. See also CVE-2020-8184 for more information."
         }
     }
