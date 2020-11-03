@@ -1,7 +1,7 @@
 FROM php:7.4-cli-alpine
 WORKDIR /opt/php-version-audit
 
-RUN apk --update --no-cache add autoconf g++ make && \
+RUN apk --update --no-cache add libzip-dev autoconf g++ make && \
     pecl install -f xdebug && \
     docker-php-ext-enable xdebug && \
     apk del --purge autoconf g++ make

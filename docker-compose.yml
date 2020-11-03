@@ -8,7 +8,7 @@ x-common: &common
 services:
   composer:
     <<: *common
-    image: composer:1.9
+    image: composer:2.0
 
   php:
     <<: *common
