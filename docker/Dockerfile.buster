@@ -1,4 +1,4 @@
-FROM composer:1.9 as composer-build
+FROM composer:2.0 as composer-build
 WORKDIR /opt/php-version-audit
 COPY ./docker/docker-entrypoint.sh ./docker/docker-entrypoint.sh
 COPY ./src ./src
