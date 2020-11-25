@@ -21,7 +21,8 @@ final class ChangelogParser
         $urls = [
             'https://www.php.net/ChangeLog-4.php',
             'https://www.php.net/ChangeLog-5.php',
-            'https://www.php.net/ChangeLog-7.php'
+            'https://www.php.net/ChangeLog-7.php',
+            'https://www.php.net/ChangeLog-8.php'
         ];
         $allReleases = [];
         foreach ($urls as $url) {
