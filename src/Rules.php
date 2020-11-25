@@ -32,6 +32,8 @@ final class Rules
     /**
      * @param bool $noUpdate
      * @return \stdClass
+     * @throws Exceptions\DownloadException
+     * @throws ParseException
      */
     public static function loadRules(bool $noUpdate): \stdClass
     {
@@ -42,6 +44,8 @@ final class Rules
     /**
      * @param bool $noUpdate
      * @return \stdClass
+     * @throws Exceptions\DownloadException
+     * @throws ParseException
      */
     private static function getRulesStdObject(bool $noUpdate): \stdClass
     {
@@ -57,7 +61,11 @@ final class Rules
         if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
             throw StaleRulesException::fromString("Unable to load rules from disk");
         }
-        return json_decode($rulesString);
+        try {
+            return json_decode($rulesString,false, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException $e) {
+            throw ParseException::fromException($e, __FILE__, __LINE__);
+        }
     }
 
     /**

@@ -1,5 +1,5 @@
 parameters:
-  php_version_features: '7.2'
+  php_version_features: '7.3'
   sets:
     - 'code-quality'
     - 'php73'
