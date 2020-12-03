@@ -14,7 +14,7 @@ phpstan:
 	@docker-compose run --rm phpstan
 
 psalm:
-	@docker-compose run --rm php ./vendor/bin/psalm
+	@docker-compose run --rm --entrypoint=./vendor/bin/psalm php
 
 rector-dry:
 	@docker run --rm -v $(PWD):/project rector/rector:latest process /project/src --config /project/rector.yml --autoload-file /project/vendor/autoload.php --dry-run

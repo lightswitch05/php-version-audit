@@ -14,7 +14,9 @@ use lightswitch05\PhpVersionAudit\PhpVersion;
 final class ChangelogParser
 {
     /**
-     * @return array<PhpRelease>
+     * @return PhpRelease[]
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     public static function run(): array
     {
@@ -35,6 +37,8 @@ final class ChangelogParser
     /**
      * @param string $url
      * @return PhpRelease[]
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     private static function parseChangelog(string $url): array
     {

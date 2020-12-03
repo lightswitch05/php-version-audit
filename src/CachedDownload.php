@@ -26,7 +26,11 @@ final class CachedDownload
     public static function download(string $url): string
     {
         self::setup();
-        return self::downloadCachedFile($url);
+        try {
+            return self::downloadCachedFile($url);
+        } catch (\JsonException $e) {
+            throw ParseException::fromException($e, __FILE__, __LINE__);
+        }
     }
 
     /**
@@ -34,6 +38,10 @@ final class CachedDownload
      * @return \DOMDocument
      * @throws ParseException
      * @throws DownloadException
+     *
+     * @psalm-suppress InvalidReturnType
+     * @psalm-suppress InvalidStaticInvocation
+     * @psalm-suppress InvalidReturnStatement
      */
     public static function dom(string $url): \DOMDocument
     {
@@ -54,7 +62,12 @@ final class CachedDownload
     public static function json(string $url): \stdClass
     {
         $html = self::download($url);
-        return json_decode($html);
+        try {
+            return json_decode($html, false, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException $e) {
+            throw ParseException::fromException($e, __FILE__, __LINE__);
+        }
+
     }
 
     /**
@@ -62,6 +75,7 @@ final class CachedDownload
      * @return string
      * @throws ParseException
      * @throws DownloadException
+     * @throws \JsonException
      */
     private static function downloadCachedFile(string $url): string
     {
@@ -99,6 +113,9 @@ final class CachedDownload
      * @param int    $attempt
      * @return string
      * @throws DownloadException
+     *
+     * @psalm-suppress InvalidReturnType
+     * @psalm-suppress InvalidReturnStatement
      */
     private static function downloadFile(string $url, int $attempt = 0): string
     {
@@ -141,6 +158,7 @@ final class CachedDownload
     /**
      * @param string $url
      * @return bool
+     * @throws \JsonException
      */
     private static function isCached(string $url): bool
     {
@@ -231,10 +249,11 @@ final class CachedDownload
     }
 
     /**
-     * @param string $url
-     * @param string $data
+     * @param string             $url
+     * @param string             $data
      * @param \DateTimeImmutable $modifiedDate
      * @return void
+     * @throws \JsonException
      */
     private static function writeCacheFile(string $url, string $data, \DateTimeImmutable $modifiedDate): void
     {
@@ -249,12 +268,13 @@ final class CachedDownload
 
     /**
      * @return \stdClass
+     * @throws \JsonException
      */
     private static function getCacheIndex(): \stdClass
     {
         $fullPath = self::getCachePath(self::INDEX_FILE_NAME);
         $index = file_get_contents($fullPath);
-        return json_decode($index);
+        return json_decode($index, false, 513, JSON_THROW_ON_ERROR);
     }
 
     /**

@@ -53,7 +53,6 @@ final class CveId implements \JsonSerializable
     {
         $sortedCveIds = array_merge([], $cveIds);
         usort($sortedCveIds, function(CveId $first, CveId $second): int {
-            /** @var CveId $first, @var CveId $second */
             return $first->compareTo($second);
         });
         return $sortedCveIds;
