@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2021-01-07T05:18:37+0000",
+    "lastUpdatedDate": "2021-01-07T18:20:04+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 379,
+    "releasesCount": 382,
     "cveCount": 320,
     "supportVersionsCount": 19,
-    "latestVersion": "8.0.0",
+    "latestVersion": "8.0.1",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -23,14 +23,14 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.13",
+        "7": "7.4.14",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
         "7.2": "7.2.34",
-        "7.3": "7.3.25",
-        "7.4": "7.4.13",
-        "8": "8.0.0",
-        "8.0": "8.0.0"
+        "7.3": "7.3.26",
+        "7.4": "7.4.14",
+        "8": "8.0.1",
+        "8.0": "8.0.1"
     },
     "supportEndDates": {
         "3.0": {
@@ -2562,6 +2562,12 @@
             "releaseDate": "2020-11-26T00:00:00+0000",
             "patchedCves": []
         },
+        "7.3.26": {
+            "releaseDate": "2021-01-07T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7071"
+            ]
+        },
         "7.4.0": {
             "releaseDate": "2019-11-28T00:00:00+0000",
             "patchedCves": [
@@ -2649,9 +2655,21 @@
             "releaseDate": "2020-11-26T00:00:00+0000",
             "patchedCves": []
         },
+        "7.4.14": {
+            "releaseDate": "2021-01-07T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7071"
+            ]
+        },
         "8.0.0": {
             "releaseDate": "2020-11-26T00:00:00+0000",
             "patchedCves": []
+        },
+        "8.0.1": {
+            "releaseDate": "2021-01-07T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2020-7071"
+            ]
         }
     },
     "cves": {
