@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-01-21T05:18:38+0000",
+    "lastUpdatedDate": "2021-01-21T18:19:53+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4868,7 +4868,7 @@
             "id": "CVE-2020-7064",
             "baseScore": 5.4,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-11-05T14:54:00+0000",
+            "lastModifiedDate": "2021-01-20T15:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while parsing EXIF data with exif_read_data() function, it is possible for malicious data to cause PHP to read one byte of uninitialized memory. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7065": {
