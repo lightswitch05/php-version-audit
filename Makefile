@@ -5,7 +5,8 @@ setup:
 	@docker-compose run --rm composer install
 
 tests:
-	@docker-compose run --rm php vendor/bin/codecept run --coverage --coverage-html --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
+	@docker-compose run --rm composer validate --strict
+	@docker-compose run --rm --entrypoint=php php vendor/bin/codecept run --coverage --coverage-html --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
 
 run:
 	@docker-compose run --rm php ./php-version-audit

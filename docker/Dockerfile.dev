@@ -1,9 +1,12 @@
-FROM php:7.4-cli-alpine
+FROM php:8.0-cli-alpine
 WORKDIR /opt/php-version-audit
 
 RUN apk --update --no-cache add libzip-dev autoconf g++ make && \
+    cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" && \
     pecl install -f xdebug && \
     docker-php-ext-enable xdebug && \
+    pecl clear-cache && \
+    echo "xdebug.mode=coverage" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" && \
     apk del --purge autoconf g++ make
 
 ENTRYPOINT ["/opt/php-version-audit/docker/docker-entrypoint.sh"]

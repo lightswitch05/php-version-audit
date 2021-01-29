@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace lightswitch05\PhpVersionAudit;
 
+use DOMDocument;
 use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
 use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 
@@ -38,19 +39,16 @@ final class CachedDownload
      * @return \DOMDocument
      * @throws ParseException
      * @throws DownloadException
-     *
-     * @psalm-suppress InvalidReturnType
-     * @psalm-suppress InvalidStaticInvocation
-     * @psalm-suppress InvalidReturnStatement
      */
     public static function dom(string $url): \DOMDocument
     {
         $html = self::download($url);
-        $dom = \DOMDocument::loadHTML($html, LIBXML_NOWARNING | LIBXML_NONET | LIBXML_NOERROR);
+        $doc = new DOMDocument();
+        $dom = $doc->loadHTML($html, LIBXML_NOWARNING | LIBXML_NONET | LIBXML_NOERROR);
         if ($dom === false) {
             throw ParseException::fromString("Unable to parse url: " . $url);
         }
-        return $dom;
+        return $doc;
     }
 
     /**
@@ -67,7 +65,6 @@ final class CachedDownload
         } catch (\JsonException $e) {
             throw ParseException::fromException($e, __FILE__, __LINE__);
         }
-
     }
 
     /**

@@ -15,7 +15,7 @@ RUN composer install            \
     --optimize-autoloader       \
     --prefer-dist
 
-FROM php:7.4-cli-buster
+FROM php:8.0-cli-buster
 WORKDIR /opt/php-version-audit
 ENV REQUIRE_VERSION_ARG=true
 COPY --from=composer-build /opt/php-version-audit /opt/php-version-audit
