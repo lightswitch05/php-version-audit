@@ -9,6 +9,9 @@ services:
   composer:
     <<: *common
     image: composer:2.0
+    volumes:
+    - "${PWD}:/opt/php-version-audit"
+    - "${HOME}/.composer:/tmp"
 
   php:
     <<: *common
