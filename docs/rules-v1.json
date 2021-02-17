@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-02-17T01:48:48+0000",
+    "lastUpdatedDate": "2021-02-17T13:25:45+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4935,14 +4935,14 @@
             "id": "CVE-2020-7071",
             "baseScore": null,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-02-15T05:15:00+0000",
+            "lastModifiedDate": "2021-02-16T13:11:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.26, 7.4.x below 7.4.14 and 8.0.0, when validating URL with functions like filter_var($url, FILTER_VALIDATE_URL), PHP will accept an URL with invalid password as valid URL. This may lead to functions that rely on URL being valid to mis-parse the URL and produce wrong data as components of the URL."
         },
         "CVE-2021-21702": {
             "id": "CVE-2021-21702",
             "baseScore": null,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-02-15T05:15:00+0000",
+            "lastModifiedDate": "2021-02-16T13:11:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.27, 7.4.x below 7.4.15 and 8.0.x below 8.0.2, when using SOAP extension to connect to a SOAP server, a malicious SOAP server could return malformed XML data as a response that would cause PHP to access a null pointer and thus cause a crash."
         }
     }
