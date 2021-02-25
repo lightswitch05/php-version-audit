@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-02-25T01:53:00+0000",
+    "lastUpdatedDate": "2021-02-25T13:25:54+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4921,7 +4921,7 @@
             "id": "CVE-2020-7069",
             "baseScore": 6.5,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2021-02-18T15:15:00+0000",
+            "lastModifiedDate": "2021-02-24T00:47:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when AES-CCM mode is used with openssl_encrypt() function with 12 bytes IV, only first 7 bytes of the IV is actually used. This can lead to both decreased security and incorrect encryption data."
         },
         "CVE-2020-7070": {
