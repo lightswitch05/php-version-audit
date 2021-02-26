@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-02-26T01:53:10+0000",
+    "lastUpdatedDate": "2021-02-26T13:25:59+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4914,7 +4914,7 @@
             "id": "CVE-2020-7068",
             "baseScore": 3.6,
             "publishedDate": "2020-09-09T18:15:00+0000",
-            "lastModifiedDate": "2021-02-18T15:15:00+0000",
+            "lastModifiedDate": "2021-02-25T16:03:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.33, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         },
         "CVE-2020-7069": {
@@ -4928,7 +4928,7 @@
             "id": "CVE-2020-7070",
             "baseScore": 5.3,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2021-02-18T15:15:00+0000",
+            "lastModifiedDate": "2021-02-25T16:04:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when PHP is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead to cookies with prefixes like __Host confused with cookies that decode to such prefix, thus leading to an attacker being able to forge cookie which is supposed to be secure. See also CVE-2020-8184 for more information."
         },
         "CVE-2020-7071": {
