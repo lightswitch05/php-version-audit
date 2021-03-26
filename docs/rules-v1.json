@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-03-26T01:52:06+0000",
+    "lastUpdatedDate": "2021-03-26T13:34:43+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4950,7 +4950,7 @@
             "id": "CVE-2021-21702",
             "baseScore": 7.5,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-03-12T13:15:00+0000",
+            "lastModifiedDate": "2021-03-25T18:48:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.27, 7.4.x below 7.4.15 and 8.0.x below 8.0.2, when using SOAP extension to connect to a SOAP server, a malicious SOAP server could return malformed XML data as a response that would cause PHP to access a null pointer and thus cause a crash."
         }
     }
