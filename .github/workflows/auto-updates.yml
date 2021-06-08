@@ -7,9 +7,8 @@ on:
     - cron: '5 13 * * *'
 
 jobs:
-  build:
+  run-updates:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
       with:
@@ -51,6 +50,25 @@ jobs:
 
     - name: commit updates
       run: ./github-commit-auto-updates.sh
+
+  build:
+    runs-on: ubuntu-latest
+    needs: run-updates
+    strategy:
+      fail-fast: false
+      matrix:
+        TARGET:
+          - build-alpine
+          - build-buster
+    env:
+      TARGET: ${{matrix.TARGET}}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Tag and push all images
+        run: |
+          docker login --username=${{ secrets.DOCKERHUB_USER }} --password=${{ secrets.DOCKERHUB_PASS }}
+          ./tag-and-push-images.sh ${TARGET}
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
