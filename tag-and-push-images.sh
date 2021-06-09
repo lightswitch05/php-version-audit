@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 # Usage: ./tag-and-push-images.sh ${docker-compose-service-name}
 # examples:
@@ -17,18 +17,24 @@ function main() {
     echo "Pushing ${IMAGE}:${target}"
     docker push "${IMAGE}:${target}"
 
-    # Version-based tag name
+    # Version-based tag name with OS
     echo "Tagging ${IMAGE}:${target} as ${IMAGE}:${MAJOR_VERSION}-${target}"
     docker tag "${IMAGE}:${target}" "${IMAGE}:${MAJOR_VERSION}-${target}"
     echo "Pushing ${IMAGE}:${MAJOR_VERSION}-${target}"
     docker push "${IMAGE}:${MAJOR_VERSION}-${target}"
 
-    # Latest tag name
+    # Latest tag name & version-only tag
     if [[ "${target}" = "${DEFAULT_TAG}" ]]; then
         echo "Tagging ${IMAGE}:${target}" "${IMAGE}:latest"
         docker tag "${IMAGE}:${target}" "${IMAGE}:latest"
         echo "Pushing ${IMAGE}:latest"
         docker push "${IMAGE}:latest"
+
+        # Version-based tag name with OS
+        echo "Tagging ${IMAGE}:${target} as ${IMAGE}:${MAJOR_VERSION}"
+        docker tag "${IMAGE}:${target}" "${IMAGE}:${MAJOR_VERSION}"
+        echo "Pushing ${IMAGE}:${MAJOR_VERSION}"
+        docker push "${IMAGE}:${MAJOR_VERSION}"
     fi
 }
 

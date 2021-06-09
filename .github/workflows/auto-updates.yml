@@ -3,9 +3,9 @@ name: Auto Updates
 on:
   workflow_dispatch:
   schedule:
-    #- cron: '5 1 * * *'
-    #- cron: '5 13 * * *'
-    - cron: '15 */1 * * *'
+    - cron: '5 1 * * *'
+    - cron: '5 13 * * *'
+    #- cron: '15 */1 * * *'
 
 jobs:
   run-updates:
