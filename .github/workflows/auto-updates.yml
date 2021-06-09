@@ -59,8 +59,8 @@ jobs:
       fail-fast: false
       matrix:
         TARGET:
-          - build-alpine
-          - build-buster
+          - alpine
+          - buster
     env:
       TARGET: ${{matrix.TARGET}}
     steps:
