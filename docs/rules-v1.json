@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-07-23T02:06:24+0000",
+    "lastUpdatedDate": "2021-07-23T13:27:31+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4831,70 +4831,70 @@
             "id": "CVE-2019-11041",
             "baseScore": 7.1,
             "publishedDate": "2019-08-09T20:15:00+0000",
-            "lastModifiedDate": "2020-10-02T15:05:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.31, 7.2.x below 7.2.21 and 7.3.x below 7.3.8 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11042": {
             "id": "CVE-2019-11042",
             "baseScore": 7.1,
             "publishedDate": "2019-08-09T20:15:00+0000",
-            "lastModifiedDate": "2020-10-02T15:19:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.31, 7.2.x below 7.2.21 and 7.3.x below 7.3.8 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11043": {
             "id": "CVE-2019-11043",
             "baseScore": 9.8,
             "publishedDate": "2019-10-28T15:15:00+0000",
-            "lastModifiedDate": "2020-08-18T15:05:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24 and 7.3.x below 7.3.11 in certain configurations of FPM setup it is possible to cause FPM module to write past allocated buffers into the space reserved for FCGI protocol data, thus opening the possibility of remote code execution."
         },
         "CVE-2019-11044": {
             "id": "CVE-2019-11044",
             "baseScore": 7.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2020-01-03T11:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 on Windows, PHP link() function accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11045": {
             "id": "CVE-2019-11045",
             "baseScore": 5.9,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2021-01-30T02:34:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP DirectoryIterator class accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11046": {
             "id": "CVE-2019-11046",
             "baseScore": 7.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2021-01-17T04:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP bcmath extension functions on some systems, including Windows, can be tricked into reading beyond the allocated space by supplying it with string containing characters that are identified as numeric by the OS but aren't ASCII numbers. This can read to disclosure of the content of some memory locations."
         },
         "CVE-2019-11047": {
             "id": "CVE-2019-11047",
             "baseScore": 6.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2021-01-17T04:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11048": {
             "id": "CVE-2019-11048",
             "baseScore": 5.3,
             "publishedDate": "2020-05-20T08:15:00+0000",
-            "lastModifiedDate": "2021-06-14T18:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.31, 7.3.x below 7.3.18 and 7.4.x below 7.4.6, when HTTP file uploads are allowed, supplying overly long filenames or field names could lead PHP engine to try to allocate oversized memory storage, hit the memory limit and stop processing the request, without cleaning up temporary files created by upload request. This potentially could lead to accumulation of uncleaned temporary files exhausting the disk space on the target server."
         },
         "CVE-2019-11049": {
             "id": "CVE-2019-11049",
             "baseScore": 9.8,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2020-01-03T11:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.13 and 7.4.0 on Windows, when supplying custom headers to mail() function, due to mistake introduced in commit 78f4b4a2dcf92ddbccea1bb95f8390a18ac3342e, if the header is supplied in lowercase, this can result in double-freeing certain memory locations."
         },
         "CVE-2019-11050": {
             "id": "CVE-2019-11050",
             "baseScore": 6.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2021-01-30T02:34:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-13224": {
@@ -4908,98 +4908,98 @@
             "id": "CVE-2020-7059",
             "baseScore": 9.1,
             "publishedDate": "2020-02-10T08:15:00+0000",
-            "lastModifiedDate": "2021-06-14T18:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "When using fgetss() function to read data with stripping tags, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause this function to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2020-7060": {
             "id": "CVE-2020-7060",
             "baseScore": 9.1,
             "publishedDate": "2020-02-10T08:15:00+0000",
-            "lastModifiedDate": "2021-06-14T18:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "When using certain mbstring functions to convert multibyte encodings, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause function mbfl_filt_conv_big5_wchar to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2020-7061": {
             "id": "CVE-2020-7061",
             "baseScore": 9.1,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2020-03-26T15:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.15 and 7.4.x below 7.4.3, while extracting PHAR files on Windows using phar extension, certain content inside PHAR file could lead to one-byte read past the allocated buffer. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7062": {
             "id": "CVE-2020-7062",
             "baseScore": 7.5,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2020-07-08T12:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when using file upload functionality, if upload progress tracking is enabled, but session.upload_progress.cleanup is set to 0 (disabled), and the file upload fails, the upload procedure would try to clean up data that does not exist and encounter null pointer dereference, which would likely lead to a crash."
         },
         "CVE-2020-7063": {
             "id": "CVE-2020-7063",
             "baseScore": 5.3,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2020-07-08T12:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when creating PHAR archive using PharData::buildFromIterator() function, the files are added with default permissions (0666, or all access) even if the original files on the filesystem were with more restrictive permissions. This may result in files having more lax permissions than intended when such archive is extracted."
         },
         "CVE-2020-7064": {
             "id": "CVE-2020-7064",
             "baseScore": 5.4,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2021-02-03T16:49:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while parsing EXIF data with exif_read_data() function, it is possible for malicious data to cause PHP to read one byte of uninitialized memory. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7065": {
             "id": "CVE-2020-7065",
             "baseScore": 8.8,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-10-01T17:08:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
         },
         "CVE-2020-7066": {
             "id": "CVE-2020-7066",
             "baseScore": 4.3,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2020-07-08T12:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.29, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
         },
         "CVE-2020-7067": {
             "id": "CVE-2020-7067",
             "baseScore": 7.5,
             "publishedDate": "2020-04-27T21:15:00+0000",
-            "lastModifiedDate": "2021-06-14T18:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
         },
         "CVE-2020-7068": {
             "id": "CVE-2020-7068",
             "baseScore": 3.6,
             "publishedDate": "2020-09-09T18:15:00+0000",
-            "lastModifiedDate": "2021-02-25T16:03:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.33, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         },
         "CVE-2020-7069": {
             "id": "CVE-2020-7069",
             "baseScore": 6.5,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2021-06-14T18:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when AES-CCM mode is used with openssl_encrypt() function with 12 bytes IV, only first 7 bytes of the IV is actually used. This can lead to both decreased security and incorrect encryption data."
         },
         "CVE-2020-7070": {
             "id": "CVE-2020-7070",
             "baseScore": 5.3,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2021-02-25T16:04:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when PHP is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead to cookies with prefixes like __Host confused with cookies that decode to such prefix, thus leading to an attacker being able to forge cookie which is supposed to be secure. See also CVE-2020-8184 for more information."
         },
         "CVE-2020-7071": {
             "id": "CVE-2020-7071",
             "baseScore": 5.3,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-07-15T15:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.26, 7.4.x below 7.4.14 and 8.0.0, when validating URL with functions like filter_var($url, FILTER_VALIDATE_URL), PHP will accept an URL with invalid password as valid URL. This may lead to functions that rely on URL being valid to mis-parse the URL and produce wrong data as components of the URL."
         },
         "CVE-2021-21702": {
             "id": "CVE-2021-21702",
             "baseScore": 7.5,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-07-15T15:15:00+0000",
+            "lastModifiedDate": "2021-07-22T18:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.27, 7.4.x below 7.4.15 and 8.0.x below 8.0.2, when using SOAP extension to connect to a SOAP server, a malicious SOAP server could return malformed XML data as a response that would cause PHP to access a null pointer and thus cause a crash."
         }
     }
