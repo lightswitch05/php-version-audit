@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-07-27T02:10:03+0000",
+    "lastUpdatedDate": "2021-07-27T13:27:56+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3046,7 +3046,7 @@
             "id": "CVE-2011-3389",
             "baseScore": 4.3,
             "publishedDate": "2011-09-06T19:55:00+0000",
-            "lastModifiedDate": "2018-10-12T22:01:00+0000",
+            "lastModifiedDate": "2021-07-23T15:12:00+0000",
             "description": "The SSL protocol, as used in certain configurations in Microsoft Windows and Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, Opera, and other products, encrypts data by using CBC mode with chained initialization vectors, which allows man-in-the-middle attackers to obtain plaintext HTTP headers via a blockwise chosen-boundary attack (BCBA) on an HTTPS session, in conjunction with JavaScript code that uses (1) the HTML5 WebSocket API, (2) the Java URLConnection API, or (3) the Silverlight WebClient API, aka a \"BEAST\" attack."
         },
         "CVE-2011-4153": {
