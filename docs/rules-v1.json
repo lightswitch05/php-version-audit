@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-09-02T02:01:01+0000",
+    "lastUpdatedDate": "2021-09-02T13:31:53+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3493,7 +3493,7 @@
             "id": "CVE-2015-0235",
             "baseScore": 10,
             "publishedDate": "2015-01-28T19:59:00+0000",
-            "lastModifiedDate": "2021-05-04T18:15:00+0000",
+            "lastModifiedDate": "2021-09-01T18:15:00+0000",
             "description": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka \"GHOST.\""
         },
         "CVE-2015-0273": {
