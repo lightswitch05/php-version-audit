@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-10-09T02:01:02+0000",
+    "lastUpdatedDate": "2021-10-09T13:26:36+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5054,9 +5054,9 @@
         },
         "CVE-2021-21706": {
             "id": "CVE-2021-21706",
-            "baseScore": null,
+            "baseScore": 6.5,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2021-10-04T11:58:00+0000",
+            "lastModifiedDate": "2021-10-08T15:29:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.31, 7.4.x below 7.4.24 and 8.0.x below 8.0.11, in Microsoft Windows environment, ZipArchive::extractTo may be tricked into writing a file outside target directory when extracting a ZIP file, thus potentially causing files to be created or overwritten, subject to OS permissions."
         }
     }
