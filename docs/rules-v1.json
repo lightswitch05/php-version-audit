@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2021-10-21T02:13:35+0000",
+    "lastUpdatedDate": "2021-10-21T13:34:07+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 405,
+    "releasesCount": 406,
     "cveCount": 325,
     "supportVersionsCount": 19,
-    "latestVersion": "8.0.11",
+    "latestVersion": "8.0.12",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -29,8 +29,8 @@
         "7.2": "7.2.34",
         "7.3": "7.3.31",
         "7.4": "7.4.24",
-        "8": "8.0.11",
-        "8.0": "8.0.11"
+        "8": "8.0.12",
+        "8.0": "8.0.12"
     },
     "supportEndDates": {
         "3.0": {
@@ -2781,6 +2781,12 @@
         "8.0.11": {
             "releaseDate": "2021-09-23T00:00:00+0000",
             "patchedCves": []
+        },
+        "8.0.12": {
+            "releaseDate": "2021-10-21T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2021-21703"
+            ]
         }
     },
     "cves": {
@@ -4986,7 +4992,7 @@
             "id": "CVE-2020-7065",
             "baseScore": 8.8,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2021-07-22T18:15:00+0000",
+            "lastModifiedDate": "2021-10-20T11:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
         },
         "CVE-2020-7066": {
@@ -5014,28 +5020,28 @@
             "id": "CVE-2020-7069",
             "baseScore": 6.5,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2021-07-22T18:15:00+0000",
+            "lastModifiedDate": "2021-10-20T11:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when AES-CCM mode is used with openssl_encrypt() function with 12 bytes IV, only first 7 bytes of the IV is actually used. This can lead to both decreased security and incorrect encryption data."
         },
         "CVE-2020-7070": {
             "id": "CVE-2020-7070",
             "baseScore": 5.3,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2021-07-22T18:15:00+0000",
+            "lastModifiedDate": "2021-10-20T11:15:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when PHP is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead to cookies with prefixes like __Host confused with cookies that decode to such prefix, thus leading to an attacker being able to forge cookie which is supposed to be secure. See also CVE-2020-8184 for more information."
         },
         "CVE-2020-7071": {
             "id": "CVE-2020-7071",
             "baseScore": 5.3,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-09-14T16:29:00+0000",
+            "lastModifiedDate": "2021-10-20T11:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.26, 7.4.x below 7.4.14 and 8.0.0, when validating URL with functions like filter_var($url, FILTER_VALIDATE_URL), PHP will accept an URL with invalid password as valid URL. This may lead to functions that rely on URL being valid to mis-parse the URL and produce wrong data as components of the URL."
         },
         "CVE-2021-21702": {
             "id": "CVE-2021-21702",
             "baseScore": 7.5,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-09-14T16:37:00+0000",
+            "lastModifiedDate": "2021-10-20T11:16:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.27, 7.4.x below 7.4.15 and 8.0.x below 8.0.2, when using SOAP extension to connect to a SOAP server, a malicious SOAP server could return malformed XML data as a response that would cause PHP to access a null pointer and thus cause a crash."
         },
         "CVE-2021-21704": {
