@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2021-10-25T02:06:58+0000",
+    "lastUpdatedDate": "2021-10-25T13:30:12+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 407,
-    "cveCount": 325,
+    "cveCount": 326,
     "supportVersionsCount": 19,
     "latestVersion": "8.0.12",
     "latestVersions": {
@@ -5049,6 +5049,13 @@
             "publishedDate": "2021-02-15T04:15:00+0000",
             "lastModifiedDate": "2021-10-20T11:16:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.27, 7.4.x below 7.4.15 and 8.0.x below 8.0.2, when using SOAP extension to connect to a SOAP server, a malicious SOAP server could return malformed XML data as a response that would cause PHP to access a null pointer and thus cause a crash."
+        },
+        "CVE-2021-21703": {
+            "id": "CVE-2021-21703",
+            "baseScore": null,
+            "publishedDate": "2021-10-25T06:15:00+0000",
+            "lastModifiedDate": "2021-10-25T06:15:00+0000",
+            "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
             "id": "CVE-2021-21704",
