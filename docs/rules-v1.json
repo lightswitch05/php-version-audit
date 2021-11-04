@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-11-04T02:06:19+0000",
+    "lastUpdatedDate": "2021-11-04T13:34:08+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5058,16 +5058,16 @@
         },
         "CVE-2021-21703": {
             "id": "CVE-2021-21703",
-            "baseScore": 7.8,
+            "baseScore": 7,
             "publishedDate": "2021-10-25T06:15:00+0000",
-            "lastModifiedDate": "2021-11-03T04:15:00+0000",
+            "lastModifiedDate": "2021-11-03T16:22:00+0000",
             "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
             "id": "CVE-2021-21704",
             "baseScore": 5.9,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2021-10-29T13:15:00+0000",
+            "lastModifiedDate": "2021-11-03T20:24:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.29, 7.4.x below 7.4.21 and 8.0.x below 8.0.8, when using Firebird PDO driver extension, a malicious database server could cause crashes in various database functions, such as getAttribute(), execute(), fetch() and others by returning invalid response data that is not parsed correctly by the driver. This can result in crashes, denial of service or potentially memory corruption."
         },
         "CVE-2021-21705": {
@@ -5081,7 +5081,7 @@
             "id": "CVE-2021-21706",
             "baseScore": 6.5,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2021-10-29T13:15:00+0000",
+            "lastModifiedDate": "2021-11-03T20:24:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.31, 7.4.x below 7.4.24 and 8.0.x below 8.0.11, in Microsoft Windows environment, ZipArchive::extractTo may be tricked into writing a file outside target directory when extracting a ZIP file, thus potentially causing files to be created or overwritten, subject to OS permissions."
         }
     }
