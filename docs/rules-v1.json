@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-11-06T02:00:35+0000",
+    "lastUpdatedDate": "2021-11-06T13:28:07+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3527,7 +3527,7 @@
             "id": "CVE-2015-0235",
             "baseScore": 10,
             "publishedDate": "2015-01-28T19:59:00+0000",
-            "lastModifiedDate": "2021-09-01T18:15:00+0000",
+            "lastModifiedDate": "2021-11-05T17:15:00+0000",
             "description": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka \"GHOST.\""
         },
         "CVE-2015-0273": {
@@ -5074,7 +5074,7 @@
             "id": "CVE-2021-21705",
             "baseScore": 5.3,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2021-10-29T13:15:00+0000",
+            "lastModifiedDate": "2021-11-05T17:43:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.29, 7.4.x below 7.4.21 and 8.0.x below 8.0.8, when using URL validation functionality via filter_var() function with FILTER_VALIDATE_URL parameter, an URL with invalid password field can be accepted as valid. This can lead to the code incorrectly parsing the URL and potentially leading to other security implications - like contacting a wrong server or making a wrong access decision."
         },
         "CVE-2021-21706": {
