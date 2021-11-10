@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-11-10T02:03:30+0000",
+    "lastUpdatedDate": "2021-11-10T13:33:33+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3527,7 +3527,7 @@
             "id": "CVE-2015-0235",
             "baseScore": 10,
             "publishedDate": "2015-01-28T19:59:00+0000",
-            "lastModifiedDate": "2021-11-05T17:15:00+0000",
+            "lastModifiedDate": "2021-11-10T01:15:00+0000",
             "description": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka \"GHOST.\""
         },
         "CVE-2015-0273": {
@@ -5060,7 +5060,7 @@
             "id": "CVE-2021-21703",
             "baseScore": 7,
             "publishedDate": "2021-10-25T06:15:00+0000",
-            "lastModifiedDate": "2021-11-04T14:27:00+0000",
+            "lastModifiedDate": "2021-11-10T01:16:00+0000",
             "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
