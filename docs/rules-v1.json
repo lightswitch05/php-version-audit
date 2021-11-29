@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2021-11-29T02:04:11+0000",
+    "lastUpdatedDate": "2021-11-29T13:31:36+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 412,
-    "cveCount": 326,
+    "cveCount": 327,
     "supportVersionsCount": 20,
     "latestVersion": "8.1.0",
     "latestVersions": {
@@ -5091,7 +5091,7 @@
             "id": "CVE-2021-21703",
             "baseScore": 7,
             "publishedDate": "2021-10-25T06:15:00+0000",
-            "lastModifiedDate": "2021-11-18T08:15:00+0000",
+            "lastModifiedDate": "2021-11-28T23:31:00+0000",
             "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
@@ -5114,6 +5114,13 @@
             "publishedDate": "2021-10-04T04:15:00+0000",
             "lastModifiedDate": "2021-11-03T20:24:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.31, 7.4.x below 7.4.24 and 8.0.x below 8.0.11, in Microsoft Windows environment, ZipArchive::extractTo may be tricked into writing a file outside target directory when extracting a ZIP file, thus potentially causing files to be created or overwritten, subject to OS permissions."
+        },
+        "CVE-2021-21707": {
+            "id": "CVE-2021-21707",
+            "baseScore": null,
+            "publishedDate": "2021-11-29T07:15:00+0000",
+            "lastModifiedDate": "2021-11-29T07:15:00+0000",
+            "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
         }
     }
 }
