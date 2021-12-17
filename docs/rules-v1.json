@@ -1,10 +1,10 @@
 {
-    "lastUpdatedDate": "2021-12-16T13:31:06+0000",
+    "lastUpdatedDate": "2021-12-17T02:09:50+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 412,
+    "releasesCount": 413,
     "cveCount": 327,
     "supportVersionsCount": 20,
     "latestVersion": "8.1.0",
@@ -23,12 +23,12 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.26",
+        "7": "7.4.27",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
         "7.2": "7.2.34",
         "7.3": "7.3.33",
-        "7.4": "7.4.26",
+        "7.4": "7.4.27",
         "8": "8.1.0",
         "8.0": "8.0.13",
         "8.1": "8.1.0"
@@ -2759,6 +2759,10 @@
             "patchedCves": [
                 "CVE-2021-21707"
             ]
+        },
+        "7.4.27": {
+            "releaseDate": "2021-12-16T00:00:00+0000",
+            "patchedCves": []
         },
         "8.0.0": {
             "releaseDate": "2020-11-26T00:00:00+0000",
