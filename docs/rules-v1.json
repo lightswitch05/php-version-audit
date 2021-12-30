@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2021-12-30T02:09:22+0000",
+    "lastUpdatedDate": "2021-12-30T13:30:59+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4788,7 +4788,7 @@
             "id": "CVE-2018-19518",
             "baseScore": 7.5,
             "publishedDate": "2018-11-25T10:29:00+0000",
-            "lastModifiedDate": "2020-08-24T17:37:00+0000",
+            "lastModifiedDate": "2021-12-29T19:15:00+0000",
             "description": "University of Washington IMAP Toolkit 2007f on UNIX, as used in imap_open() in PHP and other products, launches an rsh command (by means of the imap_rimap function in c-client/imap4r1.c and the tcp_aopen function in osdep/unix/tcp_unix.c) without preventing argument injection, which might allow remote attackers to execute arbitrary OS commands if the IMAP server name is untrusted input (e.g., entered by a user of a web application) and if rsh has been replaced by a program with different argument semantics. For example, if rsh is a link to ssh (as seen on Debian and Ubuntu systems), then the attack can use an IMAP server name containing a \"-oProxyCommand\" argument."
         },
         "CVE-2018-20783": {
