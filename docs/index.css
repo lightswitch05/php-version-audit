@@ -31,6 +31,10 @@ a:hover {
     text-decoration: underline;
 }
 
+a.noline:hover {
+    text-decoration: none;
+}
+
 section {
     border-color: #30363d;
     border-style: solid;
