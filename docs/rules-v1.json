@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2022-02-27T02:09:28+0000",
+    "lastUpdatedDate": "2022-02-27T13:26:05+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 420,
-    "cveCount": 327,
+    "cveCount": 328,
     "supportVersionsCount": 20,
     "latestVersion": "8.1.3",
     "latestVersions": {
@@ -5157,6 +5157,13 @@
             "publishedDate": "2021-11-29T07:15:00+0000",
             "lastModifiedDate": "2022-02-21T11:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
+        },
+        "CVE-2021-21708": {
+            "id": "CVE-2021-21708",
+            "baseScore": null,
+            "publishedDate": "2022-02-27T08:15:00+0000",
+            "lastModifiedDate": "2022-02-27T09:15:00+0000",
+            "description": "In PHP versions 7.4.x below 7.4.28, 8.0.x below 8.0.16, and 8.1.x below 8.1.3, when using filter functions with FILTER_VALIDATE_FLOAT filter and min/max limits, if the filter fails, there is a possibility to trigger use of allocated memory after free, which can result it crashes, and potentially in overwrite of other memory chunks and RCE. This issue affects: code that uses FILTER_VALIDATE_FLOAT with min/max limits."
         }
     }
 }
