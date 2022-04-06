@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-04-06T02:39:26+0000",
+    "lastUpdatedDate": "2022-04-06T13:37:57+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4890,28 +4890,28 @@
             "id": "CVE-2019-9638",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2021-07-21T11:39:00+0000",
+            "lastModifiedDate": "2022-04-05T20:40:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an uninitialized read in exif_process_IFD_in_MAKERNOTE because of mishandling the maker_note->offset relationship to value_len."
         },
         "CVE-2019-9639": {
             "id": "CVE-2019-9639",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2021-07-21T11:39:00+0000",
+            "lastModifiedDate": "2022-04-05T20:48:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an uninitialized read in exif_process_IFD_in_MAKERNOTE because of mishandling the data_len variable."
         },
         "CVE-2019-9640": {
             "id": "CVE-2019-9640",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2021-07-21T11:39:00+0000",
+            "lastModifiedDate": "2022-04-05T20:48:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an Invalid Read in exif_process_SOFn."
         },
         "CVE-2019-9641": {
             "id": "CVE-2019-9641",
             "baseScore": 9.8,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2021-07-21T11:39:00+0000",
+            "lastModifiedDate": "2022-04-05T20:49:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an uninitialized read in exif_process_IFD_in_TIFF."
         },
         "CVE-2019-11034": {
