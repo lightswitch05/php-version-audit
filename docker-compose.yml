@@ -23,7 +23,7 @@ services:
 
   phpstan:
     <<: *common
-    image: phpstan/phpstan:0.12
+    image: ghcr.io/phpstan/phpstan:1
     command: analyse ./src
 
   alpine:
