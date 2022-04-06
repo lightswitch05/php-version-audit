@@ -10,7 +10,7 @@
         }
     },
     "require": {
-        "php": ">=7.2.0",
+        "php": ">=7.3.0",
         "ext-json": "*",
         "ext-curl": "*"
     },
@@ -18,7 +18,9 @@
         "ext-libxml": "*",
         "ext-dom": "*",
         "ext-zlib": "*",
-        "codeception/codeception": "^3.1",
-        "vimeo/psalm": "^3.7"
+        "ext-zip": "*",
+        "codeception/codeception": "^4.1",
+        "vimeo/psalm": "^4.2",
+        "codeception/module-asserts": "^1.3"
     }
 }

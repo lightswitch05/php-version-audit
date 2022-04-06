@@ -7,11 +7,11 @@ namespace lightswitch05\PhpVersionAudit\Exceptions;
 final class UnknownVersionException extends StaleRulesException
 {
     /**
-     * @param string|null $version
+     * @param string|null $details
      * @return UnknownVersionException
      */
-    public static function fromString(?string $version): UnknownVersionException
+    public static function fromString(?string $details): UnknownVersionException
     {
-        return new self("Unknown PHP version ($version), perhaps rules are stale.");
+        return new self("Unknown PHP version ($details), perhaps rules are stale.");
     }
 }

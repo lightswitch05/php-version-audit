@@ -34,37 +34,38 @@ staying informed on PHP releases and security exploits.
 * Check either the runtime version of PHP, or a supplied version
 * Display end-of-life dates for a given version of PHP
 * Display new releases for a given version of PHP with configurable specificity (latest/minor/patch)
-    * Patch: 7.2.24 -> 7.2.25
-    * Minor: 7.2.24 -> 7.3.12
-    * Latest: 5.6.40 -> 7.3.12
+    * Patch: 7.3.0 -> 7.3.33
+    * Minor: 7.3.0 -> 7.4.27
+    * Latest: 7.3.0 -> 8.1.1
 * Rules automatically updated twice a day. Information is sourced directly from php.net - you'll never be waiting on someone like me to merge a pull request before getting the latest patch information.
 * Multiple interfaces: CLI (via PHP Composer), Docker, direct code import
 * Easily scriptable for use with CI/CD workflows. All Docker/CLI outputs are in JSON format to be consumed with your favorite tools - such as [jq](https://stedolan.github.io/jq/).
 * Configurable exit conditions. Use CLI flags like `--fail-security` to set a failure exit code if the given version of PHP has a known CVE or is no longer receiving security updates.
+* Zero dependencies
 
 ## Example:
-    docker run --rm -t lightswitch05/php-version-audit:latest --version=7.3.10
+    docker run --rm -t lightswitch05/php-version-audit:latest --version=8.0.12
     {
-        "auditVersion": "7.3.10",
+        "auditVersion": "8.0.12",
         "hasVulnerabilities": true,
         "hasSecuritySupport": true,
         "hasActiveSupport": true,
         "isLatestPatchVersion": false,
         "isLatestMinorVersion": false,
         "isLatestVersion": false,
-        "latestPatchVersion": "7.3.12",
-        "latestMinorVersion": "7.4.0",
-        "latestVersion": "7.4.0",
-        "activeSupportEndDate": "2020-12-06T00:00:00+0000",
-        "securitySupportEndDate": "2021-12-06T00:00:00+0000",
-        "rulesLastUpdatedDate": "2019-12-10T02:04:16+0000",
+        "latestPatchVersion": "8.0.14",
+        "latestMinorVersion": "8.1.1",
+        "latestVersion": "8.1.1",
+        "activeSupportEndDate": "2022-11-26T00:00:00+0000",
+        "securitySupportEndDate": "2023-11-26T00:00:00+0000",
+        "rulesLastUpdatedDate": "2022-01-18T02:13:52+0000",
         "vulnerabilities": {
-            "CVE-2019-11043": {
-                "id": "CVE-2019-11043",
-                "baseScore": 9.8,
-                "publishedDate": "2019-10-28T15:15:00+0000",
-                "lastModifiedDate": "2019-10-30T20:15:00+0000",
-                "description": "In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24 and 7.3.x below 7.3.11 in certain configurations of FPM setup it is possible to cause FPM module to write past allocated buffers into the space reserved for FCGI protocol data, thus opening the possibility of remote code execution."
+            "CVE-2021-21707": {
+                "id": "CVE-2021-21707",
+                "baseScore": 5.3,
+                "publishedDate": "2021-11-29T07:15:00+0000",
+                "lastModifiedDate": "2022-01-04T16:12:00+0000",
+                "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
             }
         }
     }
@@ -77,7 +78,7 @@ Running with docker is the preferred and easiest way to use PHP Version Audit.
 
 Check a specific version of PHP using Docker:
 
-    docker run --rm -t lightswitch05/php-version-audit:latest --version=7.3.12
+    docker run --rm -t lightswitch05/php-version-audit:latest --version=8.1.1
 
 Check the host's PHP version using Docker:
 
@@ -85,7 +86,7 @@ Check the host's PHP version using Docker:
 
 Run behind an HTTPS proxy (for use on restricted networks). Requires a volume mount of a directory with your trusted cert (with .crt extension) - see [update-ca-certificates](https://manpages.debian.org/buster/ca-certificates/update-ca-certificates.8.en.html) for more details.
 
-    docker run --rm -t -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=7.4.1
+    docker run --rm -t -e https_proxy='https://your.proxy.server:port/' --volume /full/path/to/trusted/certs/directory:/usr/local/share/ca-certificates lightswitch05/php-version-audit:latest --version=8.1.1
 
 ### CLI
 
@@ -109,15 +110,15 @@ Want to integrate with PHP Version Audit? That's certainly possible. A word caut
 
     $phpVersionAudit = new lightswitch05\PhpVersionAudit\Application(phpversion(), false);
     $phpVersionAudit->hasVulnerabilities(); #=> true
-    $phpVersionAudit->getLatestPatchVersion(); #=> '7.3.12'
+    $phpVersionAudit->getLatestPatchVersion(); #=> '8.1.1'
 
 ### JSON Rules
 
 The data used to drive PHP Version Audit is automatically updated on a regular basis and is hosted on GitHub pages. This is the real meat-and-potatoes of PHP Version Audit, and you can consume it directly for use in other tools. If you choose to do this, please respect the project license by giving proper attribution notices. Also, I ask any implementations to read the `lastUpdatedDate` and fail if it has become out of date (2+ weeks). This should not happen since it is automatically updated... but we all know how fragile software is.
 
-Get the latest PHP 7.3 release version directly from the rules using [curl](https://curl.haxx.se/) and [jq](https://stedolan.github.io/jq/):
+Get the latest PHP 8.1 release version directly from the rules using [curl](https://curl.haxx.se/) and [jq](https://stedolan.github.io/jq/):
 
-    curl -s https://www.github.developerdan.com/php-version-audit/rules-v1.json | jq '.latestVersions["7.3"]'
+    curl -s https://www.github.developerdan.com/php-version-audit/rules-v1.json | jq '.latestVersions["8.1"]'
 
 ### Options
 
@@ -144,8 +145,8 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
 * hasVulnerabilities:  bool - If the auditVersion has any known CVEs or not.
 * hasSecuritySupport: bool - If the auditVersion is still receiving security updates.
 * hasActiveSupport: bool - If the auditVersion is still receiving active support (bug updates).
-* isLatestPatchVersion: bool - If auditVersion is the latest patch-level release (7.3.x).
-* isLatestMinorVersion: bool - If auditVersion is the latest minor-level release (7.x.x).
+* isLatestPatchVersion: bool - If auditVersion is the latest patch-level release (8.0.x).
+* isLatestMinorVersion: bool - If auditVersion is the latest minor-level release (8.x.x).
 * isLatestVersion: bool - If auditVersion is the latest release (x.x.x).
 * latestPatchVersion: string - The latest patch-level version for auditVersion.
 * latestMinorVersion: string - The latest minor-level version for auditVersion.
@@ -171,4 +172,4 @@ Get the latest PHP 7.3 release version directly from the rules using [curl](http
 * This project and the use of the modified PHP logo is not endorsed by Colin Viebrock.
 * This project and the use of the PHP name is not endorsed by The PHP Group.
 * CVE details and descriptions are downloaded from National Institute of Standard and Technology's [National Vulnerability Database](https://nvd.nist.gov/). This project and the use of CVE information is not endorsed by NIST or the NVD. CVE details are provided as convenience only. The accuracy of the information cannot be verified.
-* PHP release details and support dates are parsed from ChangeLogs ([4](https://www.php.net/ChangeLog-4.php), [5](https://www.php.net/ChangeLog-5.php), [7](https://www.php.net/ChangeLog-7.php)) as well as [Supported Versions](https://www.php.net/supported-versions.php) and [EOL dates](https://www.php.net/eol.php). The accuracy of the information cannot be verified.
+* PHP release details and support dates are parsed from ChangeLogs ([4](https://www.php.net/ChangeLog-4.php), [5](https://www.php.net/ChangeLog-5.php), [7](https://www.php.net/ChangeLog-7.php), [8](https://www.php.net/ChangeLog-8.php)) as well as [Supported Versions](https://www.php.net/supported-versions.php) and [EOL dates](https://www.php.net/eol.php). The accuracy of the information cannot be verified.

@@ -34,6 +34,8 @@ echo "Patch version: ${PATCH_VERSION}"
 NEW_TAG="${MAJOR_VERSION}.${MINOR_VERSION}.$((PATCH_VERSION+1))"
 echo "New tag: ${NEW_TAG}"
 git tag "${NEW_TAG}"
+git push
+git push gitlab
 git push origin : "${NEW_TAG}"
 git push gitlab : "${NEW_TAG}"
 

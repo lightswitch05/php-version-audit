@@ -14,14 +14,17 @@ use lightswitch05\PhpVersionAudit\PhpVersion;
 final class ChangelogParser
 {
     /**
-     * @return array<PhpRelease>
+     * @return PhpRelease[]
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     public static function run(): array
     {
         $urls = [
             'https://www.php.net/ChangeLog-4.php',
             'https://www.php.net/ChangeLog-5.php',
-            'https://www.php.net/ChangeLog-7.php'
+            'https://www.php.net/ChangeLog-7.php',
+            'https://www.php.net/ChangeLog-8.php'
         ];
         $allReleases = [];
         foreach ($urls as $url) {
@@ -34,6 +37,8 @@ final class ChangelogParser
     /**
      * @param string $url
      * @return PhpRelease[]
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     private static function parseChangelog(string $url): array
     {

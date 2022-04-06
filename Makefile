@@ -5,7 +5,8 @@ setup:
 	@docker-compose run --rm composer install
 
 tests:
-	@docker-compose run --rm php vendor/bin/codecept run --coverage --coverage-html --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
+	@docker-compose run --rm composer validate --strict
+	@docker-compose run --rm --entrypoint=php php vendor/bin/codecept run --coverage --coverage-html --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
 
 run:
 	@docker-compose run --rm php ./php-version-audit
@@ -14,7 +15,7 @@ phpstan:
 	@docker-compose run --rm phpstan
 
 psalm:
-	@docker-compose run --rm php ./vendor/bin/psalm
+	@docker-compose run --rm --entrypoint=./vendor/bin/psalm php
 
 rector-dry:
 	@docker run --rm -v $(PWD):/project rector/rector:latest process /project/src --config /project/rector.yml --autoload-file /project/vendor/autoload.php --dry-run

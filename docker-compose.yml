@@ -8,7 +8,10 @@ x-common: &common
 services:
   composer:
     <<: *common
-    image: composer:1.9
+    image: composer:2.0
+    volumes:
+    - "${PWD}:/opt/php-version-audit"
+    - "${HOME}/.composer:/tmp"
 
   php:
     <<: *common
@@ -23,14 +26,14 @@ services:
     image: phpstan/phpstan:0.12
     command: analyse ./src
 
-  build-alpine:
+  alpine:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile.alpine
-    image: lightswitch05/php-version-audit:dev
+    image: lightswitch05/php-version-audit:alpine
 
-  build-buster:
+  buster:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile.buster
-    image: lightswitch05/php-version-audit:dev
+    image: lightswitch05/php-version-audit:buster

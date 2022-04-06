@@ -13,7 +13,9 @@ use lightswitch05\PhpVersionAudit\PhpVersion;
 final class SupportParser
 {
     /**
-     * @return array<\stdClass>
+     * @return \stdClass[]
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     public static function run(): array
     {
@@ -29,6 +31,8 @@ final class SupportParser
 
     /**
      * @return \stdClass[]
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     private static function parseSupportedVersions(): array
     {
@@ -56,6 +60,8 @@ final class SupportParser
 
     /**
      * @return array<\stdClass>
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
+     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
      */
     private static function parseEol(): array
     {
