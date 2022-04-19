@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-04-19T03:04:25+0000",
+    "lastUpdatedDate": "2022-04-19T13:44:15+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4832,7 +4832,7 @@
             "id": "CVE-2018-19518",
             "baseScore": 7.5,
             "publishedDate": "2018-11-25T10:29:00+0000",
-            "lastModifiedDate": "2021-12-29T19:15:00+0000",
+            "lastModifiedDate": "2022-04-18T18:12:00+0000",
             "description": "University of Washington IMAP Toolkit 2007f on UNIX, as used in imap_open() in PHP and other products, launches an rsh command (by means of the imap_rimap function in c-client/imap4r1.c and the tcp_aopen function in osdep/unix/tcp_unix.c) without preventing argument injection, which might allow remote attackers to execute arbitrary OS commands if the IMAP server name is untrusted input (e.g., entered by a user of a web application) and if rsh has been replaced by a program with different argument semantics. For example, if rsh is a link to ssh (as seen on Debian and Ubuntu systems), then the attack can use an IMAP server name containing a \"-oProxyCommand\" argument."
         },
         "CVE-2018-20783": {
@@ -5182,7 +5182,7 @@
             "id": "CVE-2021-21708",
             "baseScore": 9.8,
             "publishedDate": "2022-02-27T08:15:00+0000",
-            "lastModifiedDate": "2022-03-25T08:15:00+0000",
+            "lastModifiedDate": "2022-04-18T18:36:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.28, 8.0.x below 8.0.16, and 8.1.x below 8.1.3, when using filter functions with FILTER_VALIDATE_FLOAT filter and min/max limits, if the filter fails, there is a possibility to trigger use of allocated memory after free, which can result it crashes, and potentially in overwrite of other memory chunks and RCE. This issue affects: code that uses FILTER_VALIDATE_FLOAT with min/max limits."
         }
     }
