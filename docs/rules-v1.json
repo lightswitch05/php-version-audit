@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-04-21T03:06:22+0000",
+    "lastUpdatedDate": "2022-04-21T13:38:19+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5175,7 +5175,7 @@
             "id": "CVE-2021-21707",
             "baseScore": 5.3,
             "publishedDate": "2021-11-29T07:15:00+0000",
-            "lastModifiedDate": "2022-03-25T18:10:00+0000",
+            "lastModifiedDate": "2022-04-20T18:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
         },
         "CVE-2021-21708": {
