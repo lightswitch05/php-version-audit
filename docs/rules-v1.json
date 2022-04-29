@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-04-29T03:09:19+0000",
+    "lastUpdatedDate": "2022-04-29T13:50:55+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5147,7 +5147,7 @@
             "id": "CVE-2021-21703",
             "baseScore": 7,
             "publishedDate": "2021-10-25T06:15:00+0000",
-            "lastModifiedDate": "2022-04-20T00:15:00+0000",
+            "lastModifiedDate": "2022-04-28T14:42:00+0000",
             "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
