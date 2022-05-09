@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-05-09T03:02:23+0000",
+    "lastUpdatedDate": "2022-05-09T13:45:22+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5077,7 +5077,7 @@
             "id": "CVE-2020-7063",
             "baseScore": 5.3,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2021-07-22T18:15:00+0000",
+            "lastModifiedDate": "2022-05-08T23:50:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when creating PHAR archive using PharData::buildFromIterator() function, the files are added with default permissions (0666, or all access) even if the original files on the filesystem were with more restrictive permissions. This may result in files having more lax permissions than intended when such archive is extracted."
         },
         "CVE-2020-7064": {
@@ -5098,7 +5098,7 @@
             "id": "CVE-2020-7066",
             "baseScore": 4.3,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2021-07-22T18:15:00+0000",
+            "lastModifiedDate": "2022-05-08T23:51:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.29, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
         },
         "CVE-2020-7067": {
