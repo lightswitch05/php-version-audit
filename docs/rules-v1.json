@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-06-18T03:02:37+0000",
+    "lastUpdatedDate": "2022-06-18T13:32:18+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3643,7 +3643,7 @@
             "id": "CVE-2015-0235",
             "baseScore": 10,
             "publishedDate": "2015-01-28T19:59:00+0000",
-            "lastModifiedDate": "2021-11-17T22:15:00+0000",
+            "lastModifiedDate": "2022-06-17T19:15:00+0000",
             "description": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka \"GHOST.\""
         },
         "CVE-2015-0273": {
@@ -5218,14 +5218,14 @@
             "id": "CVE-2022-31625",
             "baseScore": null,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2022-06-16T06:15:00+0000",
+            "lastModifiedDate": "2022-06-17T13:15:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when using Postgres database extension, supplying invalid parameters to the parametrized query may lead to PHP attempting to free memory using uninitialized data as pointers. This could lead to RCE vulnerability or denial of service."
         },
         "CVE-2022-31626": {
             "id": "CVE-2022-31626",
             "baseScore": null,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2022-06-16T06:15:00+0000",
+            "lastModifiedDate": "2022-06-17T13:15:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when pdo_mysql extension with mysqlnd driver, if the third party is allowed to supply host to connect to and the password for the connection, password of excessive length can trigger a buffer overflow in PHP, which can lead to a remote code execution vulnerability."
         }
     }
