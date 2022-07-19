@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-07-19T03:31:37+0000",
+    "lastUpdatedDate": "2022-07-19T13:51:03+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3695,7 +3695,7 @@
             "id": "CVE-2015-2325",
             "baseScore": 7.8,
             "publishedDate": "2020-01-14T17:15:00+0000",
-            "lastModifiedDate": "2020-01-24T13:51:00+0000",
+            "lastModifiedDate": "2022-07-18T17:48:00+0000",
             "description": "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier."
         },
         "CVE-2015-2326": {
