@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-07-21T03:19:03+0000",
+    "lastUpdatedDate": "2022-07-21T13:49:32+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4015,9 +4015,9 @@
         },
         "CVE-2015-8391": {
             "id": "CVE-2015-8391",
-            "baseScore": 9,
+            "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2022-07-20T17:29:00+0000",
             "description": "The pcre_compile function in pcre_compile.c in PCRE before 8.38 mishandles certain [: nesting, which allows remote attackers to cause a denial of service (CPU consumption) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8393": {
@@ -4059,7 +4059,7 @@
             "id": "CVE-2015-8866",
             "baseScore": 9.6,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2019-02-14T18:49:00+0000",
+            "lastModifiedDate": "2022-07-20T16:32:00+0000",
             "description": "ext/libxml/libxml.c in PHP before 5.5.22 and 5.6.x before 5.6.6, when PHP-FPM is used, does not isolate each thread from libxml_disable_entity_loader changes in other threads, which allows remote attackers to conduct XML External Entity (XXE) and XML Entity Expansion (XEE) attacks via a crafted XML document, a related issue to CVE-2015-5161."
         },
         "CVE-2015-8867": {
@@ -4087,7 +4087,7 @@
             "id": "CVE-2016-1283",
             "baseScore": 9.8,
             "publishedDate": "2016-01-03T00:59:00+0000",
-            "lastModifiedDate": "2021-08-06T18:29:00+0000",
+            "lastModifiedDate": "2022-07-20T16:58:00+0000",
             "description": "The pcre_compile2 function in pcre_compile.c in PCRE 8.38 mishandles the /((?:F?+(?:^(?(R)a+\\\"){99}-))(?J)(?'R'(?'R'<((?'RR'(?'R'\\){97)?J)?J)(?'R'(?'R'\\){99|(:(?|(?'R')(\\k'R')|((?'R')))H'R'R)(H'R))))))/ pattern and related patterns with named subgroups, which allows remote attackers to cause a denial of service (heap-based buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2016-1903": {
@@ -4115,14 +4115,14 @@
             "id": "CVE-2016-3074",
             "baseScore": 9.8,
             "publishedDate": "2016-04-26T14:59:00+0000",
-            "lastModifiedDate": "2018-10-09T19:59:00+0000",
+            "lastModifiedDate": "2022-07-20T16:57:00+0000",
             "description": "Integer signedness error in GD Graphics Library 2.1.1 (aka libgd or libgd2) allows remote attackers to cause a denial of service (crash) or potentially execute arbitrary code via crafted compressed gd2 data, which triggers a heap-based buffer overflow."
         },
         "CVE-2016-3078": {
             "id": "CVE-2016-3078",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2017-09-07T01:29:00+0000",
+            "lastModifiedDate": "2022-07-20T16:57:00+0000",
             "description": "Multiple integer overflows in php_zip.c in the zip extension in PHP before 7.0.6 allow remote attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly have unspecified other impact via a crafted call to (1) getFromIndex or (2) getFromName in the ZipArchive class."
         },
         "CVE-2016-3185": {
@@ -4171,28 +4171,28 @@
             "id": "CVE-2016-4343",
             "baseScore": 8.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2022-07-20T16:31:00+0000",
             "description": "The phar_make_dirstream function in ext/phar/dirstream.c in PHP before 5.6.18 and 7.x before 7.0.3 mishandles zero-size ././@LongLink files, which allows remote attackers to cause a denial of service (uninitialized pointer dereference) or possibly have unspecified other impact via a crafted TAR archive."
         },
         "CVE-2016-4344": {
             "id": "CVE-2016-4344",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2016-05-24T15:23:00+0000",
+            "lastModifiedDate": "2022-07-20T16:56:00+0000",
             "description": "Integer overflow in the xml_utf8_encode function in ext/xml/xml.c in PHP before 7.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a long argument to the utf8_encode function, leading to a heap-based buffer overflow."
         },
         "CVE-2016-4345": {
             "id": "CVE-2016-4345",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2016-05-24T14:24:00+0000",
+            "lastModifiedDate": "2022-07-20T16:56:00+0000",
             "description": "Integer overflow in the php_filter_encode_url function in ext/filter/sanitizing_filters.c in PHP before 7.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a long string, leading to a heap-based buffer overflow."
         },
         "CVE-2016-4346": {
             "id": "CVE-2016-4346",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2018-10-30T16:27:00+0000",
+            "lastModifiedDate": "2022-07-20T16:56:00+0000",
             "description": "Integer overflow in the str_pad function in ext/standard/string.c in PHP before 7.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a long string, leading to a heap-based buffer overflow."
         },
         "CVE-2016-4473": {
@@ -4255,7 +4255,7 @@
             "id": "CVE-2016-4544",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2018-10-30T16:27:00+0000",
+            "lastModifiedDate": "2022-07-20T16:55:00+0000",
             "description": "The exif_process_TIFF_in_JPEG function in ext/exif/exif.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 does not validate TIFF start data, which allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via crafted header data."
         },
         "CVE-2016-5093": {
@@ -4332,21 +4332,21 @@
             "id": "CVE-2016-5770",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2022-07-20T16:54:00+0000",
             "description": "Integer overflow in the SplFileObject::fread function in spl_directory.c in the SPL extension in PHP before 5.5.37 and 5.6.x before 5.6.23 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a large integer argument, a related issue to CVE-2016-5096."
         },
         "CVE-2016-5771": {
             "id": "CVE-2016-5771",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2022-07-20T16:52:00+0000",
             "description": "spl_array.c in the SPL extension in PHP before 5.5.37 and 5.6.x before 5.6.23 improperly interacts with the unserialize implementation and garbage collection, which allows remote attackers to execute arbitrary code or cause a denial of service (use-after-free and application crash) via crafted serialized data."
         },
         "CVE-2016-5772": {
             "id": "CVE-2016-5772",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2022-07-20T16:49:00+0000",
             "description": "Double free vulnerability in the php_wddx_process_data function in wddx.c in the WDDX extension in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via crafted XML data that is mishandled in a wddx_deserialize call."
         },
         "CVE-2016-5773": {
@@ -4605,7 +4605,7 @@
             "id": "CVE-2016-10160",
             "baseScore": 9.8,
             "publishedDate": "2017-01-24T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2022-07-20T16:58:00+0000",
             "description": "Off-by-one error in the phar_parse_pharfile function in ext/phar/phar.c in PHP before 5.6.30 and 7.0.x before 7.0.15 allows remote attackers to cause a denial of service (memory corruption) or possibly execute arbitrary code via a crafted PHAR archive with an alias mismatch."
         },
         "CVE-2016-10161": {
@@ -4647,7 +4647,7 @@
             "id": "CVE-2017-5340",
             "baseScore": 9.8,
             "publishedDate": "2017-01-11T06:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2022-07-20T16:46:00+0000",
             "description": "Zend/zend_hash.c in PHP before 7.0.15 and 7.1.x before 7.1.1 mishandles certain cases that require large array allocations, which allows remote attackers to execute arbitrary code or cause a denial of service (integer overflow, uninitialized memory access, and use of arbitrary destructor function pointers) via crafted serialized data."
         },
         "CVE-2017-7890": {
@@ -4661,28 +4661,28 @@
             "id": "CVE-2017-9224",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2018-10-31T10:30:00+0000",
+            "lastModifiedDate": "2022-07-20T16:38:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A stack out-of-bounds read occurs in match_at() during regular expression searching. A logical error involving order of validation and access in match_at() could result in an out-of-bounds read from a stack buffer."
         },
         "CVE-2017-9226": {
             "id": "CVE-2017-9226",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2018-10-31T10:30:00+0000",
+            "lastModifiedDate": "2022-07-20T16:38:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A heap out-of-bounds write or read occurs in next_state_val() during regular expression compilation. Octal numbers larger than 0xff are not handled correctly in fetch_token() and fetch_token_in_cc(). A malformed regular expression containing an octal number in the form of '\\700' would produce an invalid code point value larger than 0xff in next_state_val(), resulting in an out-of-bounds write memory corruption."
         },
         "CVE-2017-9227": {
             "id": "CVE-2017-9227",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2022-07-20T16:34:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A stack out-of-bounds read occurs in mbc_enc_len() during regular expression searching. Invalid handling of reg->dmin in forward_search_range() could result in an invalid pointer dereference, as an out-of-bounds read from a stack buffer."
         },
         "CVE-2017-9228": {
             "id": "CVE-2017-9228",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2022-07-20T16:34:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A heap out-of-bounds write occurs in bitset_set_range() during regular expression compilation due to an uninitialized variable from an incorrect state transition. An incorrect state transition in parse_char_class() could create an execution path that leaves a critical local variable uninitialized until it's used as an index, resulting in an out-of-bounds write memory corruption."
         },
         "CVE-2017-9229": {
@@ -4724,7 +4724,7 @@
             "id": "CVE-2017-11147",
             "baseScore": 9.1,
             "publishedDate": "2017-07-10T14:29:00+0000",
-            "lastModifiedDate": "2019-10-03T00:03:00+0000",
+            "lastModifiedDate": "2022-07-20T17:56:00+0000",
             "description": "In PHP before 5.6.30 and 7.x before 7.0.15, the PHAR archive handler could be used by attackers supplying malicious archive files to crash the PHP interpreter or potentially disclose information due to a buffer over-read in the phar_parse_pharfile function in ext/phar/phar.c."
         },
         "CVE-2017-11362": {
@@ -5081,7 +5081,7 @@
             "id": "CVE-2019-13224",
             "baseScore": 9.8,
             "publishedDate": "2019-07-10T14:15:00+0000",
-            "lastModifiedDate": "2019-07-17T18:15:00+0000",
+            "lastModifiedDate": "2022-07-20T16:33:00+0000",
             "description": "A use-after-free in onig_new_deluxe() in regext.c in Oniguruma 6.9.2 allows attackers to potentially cause information disclosure, denial of service, or possibly code execution by providing a crafted regular expression. The attacker provides a pair of a regex pattern and a string, with a multi-byte encoding that gets handled by onig_new_deluxe(). Oniguruma issues often affect Ruby, as well as common optional libraries for PHP and Rust."
         },
         "CVE-2020-7059": {
