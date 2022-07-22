@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-07-22T03:24:48+0000",
+    "lastUpdatedDate": "2022-07-22T13:45:37+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -2939,7 +2939,7 @@
             "id": "CVE-2007-0455",
             "baseScore": 7.5,
             "publishedDate": "2007-01-30T17:28:00+0000",
-            "lastModifiedDate": "2018-10-16T16:32:00+0000",
+            "lastModifiedDate": "2022-07-21T15:17:00+0000",
             "description": "Buffer overflow in the gdImageStringFTEx function in gdft.c in GD Graphics Library 2.0.33 and earlier allows remote attackers to cause a denial of service (application crash) and possibly execute arbitrary code via a crafted string with a JIS encoded font."
         },
         "CVE-2007-1001": {
@@ -2953,7 +2953,7 @@
             "id": "CVE-2007-1887",
             "baseScore": 7.5,
             "publishedDate": "2007-04-06T01:19:00+0000",
-            "lastModifiedDate": "2018-10-30T16:25:00+0000",
+            "lastModifiedDate": "2022-07-21T15:12:00+0000",
             "description": "Buffer overflow in the sqlite_decode_binary function in the bundled sqlite library in PHP 4 before 4.4.5 and PHP 5 before 5.2.1 allows context-dependent attackers to execute arbitrary code via an empty value of the in parameter, as demonstrated by calling the sqlite_udf_decode_binary function with a 0x01 character."
         },
         "CVE-2007-1900": {
