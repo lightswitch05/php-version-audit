@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-07-29T03:29:41+0000",
+    "lastUpdatedDate": "2022-07-29T13:48:39+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5242,7 +5242,7 @@
             "id": "CVE-2022-31627",
             "baseScore": null,
             "publishedDate": "2022-07-28T06:15:00+0000",
-            "lastModifiedDate": "2022-07-28T06:15:00+0000",
+            "lastModifiedDate": "2022-07-28T12:04:00+0000",
             "description": "In PHP versions 8.1.x below 8.1.8, when fileinfo functions, such as finfo_buffer, due to incorrect patch applied to the third party code from libmagic, incorrect function may be used to free allocated memory, which may lead to heap corruption."
         }
     }
