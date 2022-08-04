@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2022-08-04T03:08:21+0000",
+    "lastUpdatedDate": "2022-08-04T13:45:48+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 432,
+    "releasesCount": 434,
     "cveCount": 331,
     "supportVersionsCount": 20,
-    "latestVersion": "8.1.8",
+    "latestVersion": "8.1.9",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -29,9 +29,9 @@
         "7.2": "7.2.34",
         "7.3": "7.3.33",
         "7.4": "7.4.30",
-        "8": "8.1.8",
-        "8.0": "8.0.21",
-        "8.1": "8.1.8"
+        "8": "8.1.9",
+        "8.0": "8.0.22",
+        "8.1": "8.1.9"
     },
     "supportEndDates": {
         "3.0": {
@@ -2879,6 +2879,10 @@
             "releaseDate": "2022-07-07T00:00:00+0000",
             "patchedCves": []
         },
+        "8.0.22": {
+            "releaseDate": "2022-08-04T00:00:00+0000",
+            "patchedCves": []
+        },
         "8.1.0": {
             "releaseDate": "2021-11-25T00:00:00+0000",
             "patchedCves": [
@@ -2925,6 +2929,10 @@
             "patchedCves": [
                 "CVE-2022-31627"
             ]
+        },
+        "8.1.9": {
+            "releaseDate": "2022-08-04T00:00:00+0000",
+            "patchedCves": []
         }
     },
     "cves": {
@@ -5240,9 +5248,9 @@
         },
         "CVE-2022-31627": {
             "id": "CVE-2022-31627",
-            "baseScore": null,
+            "baseScore": 9.8,
             "publishedDate": "2022-07-28T06:15:00+0000",
-            "lastModifiedDate": "2022-07-28T12:04:00+0000",
+            "lastModifiedDate": "2022-08-03T23:19:00+0000",
             "description": "In PHP versions 8.1.x below 8.1.8, when fileinfo functions, such as finfo_buffer, due to incorrect patch applied to the third party code from libmagic, incorrect function may be used to free allocated memory, which may lead to heap corruption."
         }
     }
