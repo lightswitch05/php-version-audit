@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-08-06T03:01:43+0000",
+    "lastUpdatedDate": "2022-08-06T13:33:47+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3297,7 +3297,7 @@
             "id": "CVE-2012-2386",
             "baseScore": 7.5,
             "publishedDate": "2012-07-07T10:21:00+0000",
-            "lastModifiedDate": "2012-09-22T03:32:00+0000",
+            "lastModifiedDate": "2022-08-05T16:54:00+0000",
             "description": "Integer overflow in the phar_parse_tarfile function in tar.c in the phar extension in PHP before 5.3.14 and 5.4.x before 5.4.4 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted tar file that triggers a heap-based buffer overflow."
         },
         "CVE-2012-2688": {
@@ -3493,7 +3493,7 @@
             "id": "CVE-2014-3515",
             "baseScore": 7.5,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2017-01-07T03:00:00+0000",
+            "lastModifiedDate": "2022-08-05T16:55:00+0000",
             "description": "The SPL component in PHP before 5.4.30 and 5.5.x before 5.5.14 incorrectly anticipates that certain data structures will have the array data type after unserialization, which allows remote attackers to execute arbitrary code via a crafted string that triggers use of a Hashtable destructor, related to \"type confusion\" issues in (1) ArrayObject and (2) SPLObjectStorage."
         },
         "CVE-2014-3538": {
@@ -3703,7 +3703,7 @@
             "id": "CVE-2015-2325",
             "baseScore": 7.8,
             "publishedDate": "2020-01-14T17:15:00+0000",
-            "lastModifiedDate": "2022-07-18T17:48:00+0000",
+            "lastModifiedDate": "2022-08-05T14:29:00+0000",
             "description": "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier."
         },
         "CVE-2015-2326": {
@@ -3920,7 +3920,7 @@
             "id": "CVE-2015-6831",
             "baseScore": 7.3,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2017-11-04T01:29:00+0000",
+            "lastModifiedDate": "2022-08-05T14:28:00+0000",
             "description": "Multiple use-after-free vulnerabilities in SPL in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allow remote attackers to execute arbitrary code via vectors involving (1) ArrayObject, (2) SplObjectStorage, and (3) SplDoublyLinkedList, which are mishandled during unserialization."
         },
         "CVE-2015-6832": {
@@ -4025,7 +4025,7 @@
             "id": "CVE-2015-8391",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-07-20T17:29:00+0000",
+            "lastModifiedDate": "2022-08-05T14:30:00+0000",
             "description": "The pcre_compile function in pcre_compile.c in PCRE before 8.38 mishandles certain [: nesting, which allows remote attackers to cause a denial of service (CPU consumption) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8393": {
