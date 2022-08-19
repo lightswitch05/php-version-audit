@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-08-19T03:25:47+0000",
+    "lastUpdatedDate": "2022-08-19T13:48:07+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5234,9 +5234,9 @@
         },
         "CVE-2022-31625": {
             "id": "CVE-2022-31625",
-            "baseScore": 9.8,
+            "baseScore": 8.1,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2022-07-22T19:15:00+0000",
+            "lastModifiedDate": "2022-08-18T13:11:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when using Postgres database extension, supplying invalid parameters to the parametrized query may lead to PHP attempting to free memory using uninitialized data as pointers. This could lead to RCE vulnerability or denial of service."
         },
         "CVE-2022-31626": {
