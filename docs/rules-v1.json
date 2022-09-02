@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-09-02T03:46:58+0000",
+    "lastUpdatedDate": "2022-09-02T13:46:37+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3130,7 +3130,7 @@
             "id": "CVE-2010-3436",
             "baseScore": 5,
             "publishedDate": "2010-11-09T01:00:00+0000",
-            "lastModifiedDate": "2011-10-21T02:48:00+0000",
+            "lastModifiedDate": "2022-09-01T16:32:00+0000",
             "description": "fopen_wrappers.c in PHP 5.3.x through 5.3.3 might allow remote attackers to bypass open_basedir restrictions via vectors related to the length of a filename."
         },
         "CVE-2010-3709": {
@@ -4705,7 +4705,7 @@
             "id": "CVE-2017-9229",
             "baseScore": 7.5,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2022-09-01T16:20:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A SIGSEGV occurs in left_adjust_char_head() during regular expression compilation. Invalid handling of reg->dmax in forward_search_range() could result in an invalid pointer dereference, normally as an immediate denial-of-service condition."
         },
         "CVE-2017-11142": {
