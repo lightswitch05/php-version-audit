@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-09-17T03:32:22+0000",
+    "lastUpdatedDate": "2022-09-17T13:40:53+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4038,9 +4038,9 @@
         },
         "CVE-2015-8393": {
             "id": "CVE-2015-8393",
-            "baseScore": 5,
+            "baseScore": 7.5,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2017-07-01T01:29:00+0000",
+            "lastModifiedDate": "2022-09-16T20:02:00+0000",
             "description": "pcregrep in PCRE before 8.38 mishandles the -q option for binary files, which might allow remote attackers to obtain sensitive information via a crafted file, as demonstrated by a CGI script that sends stdout data to a client."
         },
         "CVE-2015-8394": {
