@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2022-09-29T03:49:10+0000",
+    "lastUpdatedDate": "2022-09-29T14:01:00+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 436,
-    "cveCount": 331,
+    "releasesCount": 437,
+    "cveCount": 333,
     "supportVersionsCount": 20,
     "latestVersion": "8.1.10",
     "latestVersions": {
@@ -23,12 +23,12 @@
         "5.4": "5.4.45",
         "5.5": "5.5.38",
         "5.6": "5.6.40",
-        "7": "7.4.30",
+        "7": "7.4.32",
         "7.0": "7.0.33",
         "7.1": "7.1.33",
         "7.2": "7.2.34",
         "7.3": "7.3.33",
-        "7.4": "7.4.30",
+        "7.4": "7.4.32",
         "8": "8.1.10",
         "8.0": "8.0.23",
         "8.1": "8.1.10"
@@ -2781,6 +2781,13 @@
                 "CVE-2022-31626"
             ]
         },
+        "7.4.32": {
+            "releaseDate": "2022-09-29T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2022-31628",
+                "CVE-2022-31629"
+            ]
+        },
         "8.0.0": {
             "releaseDate": "2020-11-26T00:00:00+0000",
             "patchedCves": []
@@ -3424,7 +3431,7 @@
             "id": "CVE-2014-0207",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2016-11-28T19:10:00+0000",
+            "lastModifiedDate": "2022-09-28T20:39:00+0000",
             "description": "The cdf_read_short_sector function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, allows remote attackers to cause a denial of service (assertion failure and application exit) via a crafted CDF file."
         },
         "CVE-2014-0236": {
@@ -3466,7 +3473,7 @@
             "id": "CVE-2014-2497",
             "baseScore": 4.3,
             "publishedDate": "2014-03-21T14:55:00+0000",
-            "lastModifiedDate": "2017-01-07T02:59:00+0000",
+            "lastModifiedDate": "2022-09-28T20:39:00+0000",
             "description": "The gdImageCreateFromXpm function in gdxpm.c in libgd, as used in PHP 5.4.26 and earlier, allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted color table in an XPM file."
         },
         "CVE-2014-3478": {
@@ -5260,6 +5267,20 @@
             "publishedDate": "2022-07-28T06:15:00+0000",
             "lastModifiedDate": "2022-08-26T15:15:00+0000",
             "description": "In PHP versions 8.1.x below 8.1.8, when fileinfo functions, such as finfo_buffer, due to incorrect patch applied to the third party code from libmagic, incorrect function may be used to free allocated memory, which may lead to heap corruption."
+        },
+        "CVE-2022-31628": {
+            "id": "CVE-2022-31628",
+            "baseScore": null,
+            "publishedDate": "2022-09-28T23:15:00+0000",
+            "lastModifiedDate": "2022-09-29T01:43:00+0000",
+            "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the phar uncompressor code would recursively uncompress \"quines\" gzip files, resulting in an infinite loop."
+        },
+        "CVE-2022-31629": {
+            "id": "CVE-2022-31629",
+            "baseScore": null,
+            "publishedDate": "2022-09-28T23:15:00+0000",
+            "lastModifiedDate": "2022-09-29T01:43:00+0000",
+            "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a `__Host-` or `__Secure-` cookie by PHP applications."
         }
     }
 }
