@@ -3,32 +3,34 @@ declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
-final class CveDetails implements \JsonSerializable
+use JsonSerializable;
+
+final class CveDetails implements JsonSerializable
 {
     /**
      * @var CveId $id
      */
-    private $id;
+    private CveId $id;
 
     /**
      * @var float|null $baseScore
      */
-    private $baseScore;
+    private ?float $baseScore;
 
     /**
      * @var string|null $publishedDate
      */
-    private $publishedDate;
+    private ?string $publishedDate;
 
     /**
      * @var string|null $lastModifiedDate
      */
-    private $lastModifiedDate;
+    private ?string $lastModifiedDate;
 
     /**
      * @var string|null $description
      */
-    private $description;
+    private ?string $description;
 
     /**
      * Cve constructor.

@@ -11,21 +11,21 @@ use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class Cli
 {
-    private static $PHP_VERSION = 'version';
-    private static $HELP = 'help';
-    private static $NO_UPDATE = 'no-update';
-    private static $FULL_UPDATE = 'full-update';
-    private static $FAIL_SECURITY = 'fail-security';
-    private static $FAIL_SECURITY_CODE = 10;
-    private static $FAIL_SUPPORT = 'fail-support';
-    private static $FAIL_SUPPORT_CODE = 20;
-    private static $FAIL_PATCH = 'fail-patch';
-    private static $FAIL_PATCH_CODE = 30;
-    private static $FAIL_LATEST = 'fail-latest';
-    private static $FAIL_LATEST_CODE = 40;
-    private static $FAIL_STALE_CODE = 100;
-    private static $INVALID_ARG_CODE = 200;
-    private static $INVALID_VERSION_CODE = 300;
+    private static string $PHP_VERSION = 'version';
+    private static string $HELP = 'help';
+    private static string $NO_UPDATE = 'no-update';
+    private static string $FULL_UPDATE = 'full-update';
+    private static string $FAIL_SECURITY = 'fail-security';
+    private static int $FAIL_SECURITY_CODE = 10;
+    private static string $FAIL_SUPPORT = 'fail-support';
+    private static int $FAIL_SUPPORT_CODE = 20;
+    private static string $FAIL_PATCH = 'fail-patch';
+    private static int $FAIL_PATCH_CODE = 30;
+    private static string $FAIL_LATEST = 'fail-latest';
+    private static int $FAIL_LATEST_CODE = 40;
+    private static int $FAIL_STALE_CODE = 100;
+    private static int $INVALID_ARG_CODE = 200;
+    private static int $INVALID_VERSION_CODE = 300;
 
 
     public static function run(): int
@@ -68,7 +68,7 @@ final class Cli
         try {
             $auditDetails = $app->getAllAuditDetails();
             $output = json_encode($auditDetails, JSON_PRETTY_PRINT);
-            fwrite(STDOUT, "$output" . PHP_EOL);
+            fwrite(STDOUT, $output . PHP_EOL);
 
             if ($args[self::$FAIL_SECURITY] && ($auditDetails->hasVulnerabilities || !$auditDetails->hasSecuritySupport)) {
                 return self::$FAIL_SECURITY_CODE;
@@ -153,7 +153,7 @@ final class Cli
         if (getenv('REQUIRE_VERSION_ARG', true) === 'true') {
             throw new InvalidArgumentException("Missing required argument: --version");
         }
-        return phpversion();
+        return PHP_VERSION;
     }
 
     private static function getOptionalFlag(array $options, string $name): bool

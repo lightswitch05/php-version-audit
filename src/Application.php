@@ -3,24 +3,24 @@ declare(strict_types = 1);
 
 namespace lightswitch05\PhpVersionAudit;
 
-use lightswitch05\PhpVersionAudit\Exceptions\InvalidVersionException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 use lightswitch05\PhpVersionAudit\Exceptions\UnknownVersionException;
 use lightswitch05\PhpVersionAudit\Parsers\ChangelogParser;
 use lightswitch05\PhpVersionAudit\Parsers\NvdFeedParser;
 use lightswitch05\PhpVersionAudit\Parsers\SupportParser;
+use stdClass;
 
 final class Application
 {
     /**
-     * @var \stdClass $rules
+     * @var stdClass $rules
      */
-    private $rules;
+    private stdClass $rules;
 
     /**
      * @var PhpVersion $auditVersion
      */
-    private $auditVersion;
+    private PhpVersion $auditVersion;
 
     /**
      * Application constructor.
@@ -30,16 +30,16 @@ final class Application
     public function __construct(string $phpVersion, bool $noUpdate)
     {
         $this->auditVersion = PhpVersion::fromString($phpVersion);
-        if ($this->auditVersion === null) {
-            throw InvalidVersionException::fromString($phpVersion);
+        try {
+            $this->rules = Rules::loadRules($noUpdate);
+        } catch (Exceptions\DownloadException|Exceptions\ParseException $e) {
         }
-        $this->rules = Rules::loadRules($noUpdate);
     }
 
     /**
-     * @return \stdClass
+     * @return stdClass
      */
-    public function getVulnerabilities(): \stdClass
+    public function getVulnerabilities(): stdClass
     {
         $cves = [];
         $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
@@ -52,7 +52,7 @@ final class Application
             }
             $cves = array_merge($cves, $release->getPatchedCveIds());
         }
-        $vulnerabilities = new \stdClass();
+        $vulnerabilities = new stdClass();
         foreach ($cves as $cve) {
             $cveDetails = null;
             $cveString = (string)$cve->getId();
@@ -77,7 +77,7 @@ final class Application
      */
     public function isLatestVersion(): bool
     {
-        $versionString = self::getLatestVersion();
+        $versionString = $this->getLatestVersion();
         $latestVersion = PhpVersion::fromString($versionString);
         return $this->auditVersion->compareTo($latestVersion) === 0;
     }
@@ -98,7 +98,7 @@ final class Application
      */
     public function isLatestPatchVersion(): bool
     {
-        $versionString = self::getLatestPatchVersion();
+        $versionString = $this->getLatestPatchVersion();
         $latestVersion = PhpVersion::fromString($versionString);
         return $this->auditVersion->compareTo($latestVersion) === 0;
     }
@@ -124,7 +124,7 @@ final class Application
      */
     public function isLatestMinorVersion(): bool
     {
-        $versionString = self::getLatestMinorVersion();
+        $versionString = $this->getLatestMinorVersion();
         $latestVersion = PhpVersion::fromString($versionString);
         return $this->auditVersion->compareTo($latestVersion) === 0;
     }
@@ -154,7 +154,7 @@ final class Application
      */
     public function hasSecuritySupport(): bool
     {
-        if (!$endDateString = self::getSecuritySupportEndDate()) {
+        if (!$endDateString = $this->getSecuritySupportEndDate()) {
             return false;
         }
         $endDate = DateHelpers::fromISO8601($endDateString);
@@ -186,7 +186,7 @@ final class Application
      */
     public function hasActiveSupport(): bool
     {
-        if (!$endDateString = self::getActiveSupportEndDate()) {
+        if (!$endDateString = $this->getActiveSupportEndDate()) {
             return false;
         }
         $endDate = DateHelpers::fromISO8601($endDateString);
@@ -198,7 +198,7 @@ final class Application
         return DateHelpers::toISO8601($this->rules->lastUpdatedDate);
     }
 
-    public function getAllAuditDetails(): \stdClass
+    public function getAllAuditDetails(): stdClass
     {
         Rules::assertFreshRules($this->rules);
         return (object) [
@@ -249,6 +249,8 @@ final class Application
     /**
      * @param PhpRelease[] $releases
      * @return CveDetails[]
+     * @throws Exceptions\ParseException
+     * @throws Exceptions\ParseException
      */
     private function loadCveDetails(array $releases): array
     {

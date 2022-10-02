@@ -11,13 +11,14 @@ use lightswitch05\PhpVersionAudit\DateHelpers;
 use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
 use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Logger;
+use stdClass;
 
 final class NvdFeedParser
 {
     /**
      * @var int $CVE_START_YEAR
      */
-    private static $CVE_START_YEAR = 2002;
+    private static int $CVE_START_YEAR = 2002;
 
     /**
      * @param array<string> $cveIds
@@ -45,7 +46,7 @@ final class NvdFeedParser
     }
 
     /**
-     * @param array<array-key, mixed> $cveIds
+     * @param array $cveIds
      * @param string $feedName
      * @return array<string, CveDetails>
      * @throws ParseException
@@ -69,10 +70,10 @@ final class NvdFeedParser
 
     /**
      * @param string $feedName
-     * @return \stdClass
+     * @return stdClass
      * @throws ParseException
      */
-    private static function downloadFeed(string $feedName): \stdClass
+    private static function downloadFeed(string $feedName): stdClass
     {
         try {
             return CachedDownload::json("https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$feedName.json.gz");
@@ -88,10 +89,10 @@ final class NvdFeedParser
     }
 
     /**
-     * @param \stdClass $cveItem
+     * @param stdClass $cveItem
      * @return CveDetails|null
      */
-    private static function parseCveItem(\stdClass $cveItem): ?CveDetails
+    private static function parseCveItem(stdClass $cveItem): ?CveDetails
     {
         if (!isset($cveItem->cve->CVE_data_meta->ID)) {
             return null;
@@ -106,7 +107,7 @@ final class NvdFeedParser
         $baseScore = null;
         if (isset($cveItem->cve->description->description_data)) {
             foreach ($cveItem->cve->description->description_data as $description) {
-                if ($description->lang == 'en') {
+                if ($description->lang === 'en') {
                     $description = $description->value;
                     break;
                 }

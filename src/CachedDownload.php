@@ -3,15 +3,19 @@ declare(strict_types = 1);
 
 namespace lightswitch05\PhpVersionAudit;
 
+use DateTimeImmutable;
 use DOMDocument;
+use JsonException;
 use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
 use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
+use RuntimeException;
+use stdClass;
 
 final class CachedDownload
 {
-    const INDEX_FILE_NAME = 'index.json';
-    const MAX_RETRY = 3;
-    const DEFAULT_CURL_OPTS = [
+    public const INDEX_FILE_NAME = 'index.json';
+    public const MAX_RETRY = 3;
+    public const DEFAULT_CURL_OPTS = [
         CURLOPT_FAILONERROR => true,
         CURLOPT_ACCEPT_ENCODING => '',
         CURLOPT_RETURNTRANSFER => true,
@@ -29,18 +33,18 @@ final class CachedDownload
         self::setup();
         try {
             return self::downloadCachedFile($url);
-        } catch (\JsonException $e) {
+        } catch (JsonException $e) {
             throw ParseException::fromException($e, __FILE__, __LINE__);
         }
     }
 
     /**
      * @param string $url
-     * @return \DOMDocument
+     * @return DOMDocument
      * @throws ParseException
      * @throws DownloadException
      */
-    public static function dom(string $url): \DOMDocument
+    public static function dom(string $url): DOMDocument
     {
         $html = self::download($url);
         $doc = new DOMDocument();
@@ -53,16 +57,16 @@ final class CachedDownload
 
     /**
      * @param string $url
-     * @return \stdClass
+     * @return stdClass
      * @throws ParseException
      * @throws DownloadException
      */
-    public static function json(string $url): \stdClass
+    public static function json(string $url): stdClass
     {
         $html = self::download($url);
         try {
             return json_decode($html, false, 512, JSON_THROW_ON_ERROR);
-        } catch (\JsonException $e) {
+        } catch (JsonException $e) {
             throw ParseException::fromException($e, __FILE__, __LINE__);
         }
     }
@@ -72,7 +76,7 @@ final class CachedDownload
      * @return string
      * @throws ParseException
      * @throws DownloadException
-     * @throws \JsonException
+     * @throws JsonException
      */
     private static function downloadCachedFile(string $url): string
     {
@@ -155,7 +159,7 @@ final class CachedDownload
     /**
      * @param string $url
      * @return bool
-     * @throws \JsonException
+     * @throws JsonException
      */
     private static function isCached(string $url): bool
     {
@@ -176,10 +180,10 @@ final class CachedDownload
 
     /**
      * @param string $url
-     * @param \DateTimeImmutable $lastModifiedDate
+     * @param DateTimeImmutable $lastModifiedDate
      * @return bool
      */
-    private static function isExpired(string $url, \DateTimeImmutable $lastModifiedDate): bool
+    private static function isExpired(string $url, DateTimeImmutable $lastModifiedDate): bool
     {
         $lastModifiedTimestamp = $lastModifiedDate->getTimestamp();
         $elapsedSeconds = DateHelpers::nowTimestamp() - $lastModifiedTimestamp;
@@ -195,9 +199,9 @@ final class CachedDownload
     /**
      * @param string $url
      * @param int    $attempt
-     * @return \DateTimeImmutable
+     * @return DateTimeImmutable
      */
-    private static function getServerLastModifiedDate(string $url, int $attempt = 0): \DateTimeImmutable
+    private static function getServerLastModifiedDate(string $url, int $attempt = 0): DateTimeImmutable
     {
         $ch = curl_init($url);
         curl_setopt_array($ch, self::DEFAULT_CURL_OPTS);
@@ -216,7 +220,7 @@ final class CachedDownload
         }
 
         // Fall back on assuming it was just updated
-        return new \DateTimeImmutable();
+        return new DateTimeImmutable();
     }
 
     /**
@@ -235,28 +239,28 @@ final class CachedDownload
     private static function setup(): void
     {
         $tempDir = self::getCachePath();
-        if (!is_dir($tempDir)) {
-            mkdir($tempDir);
+        if (!is_dir($tempDir) && !mkdir($tempDir) && !is_dir($tempDir)) {
+            throw new RuntimeException(sprintf('Directory "%s" was not created', $tempDir));
         }
         $indexPath = self::getCachePath(self::INDEX_FILE_NAME);
         if (!is_file($indexPath)) {
             Logger::debug('Cache index not found, creating new one.');
-            self::saveCacheIndex(new \stdClass());
+            self::saveCacheIndex(new stdClass());
         }
     }
 
     /**
      * @param string             $url
      * @param string             $data
-     * @param \DateTimeImmutable $modifiedDate
+     * @param DateTimeImmutable $modifiedDate
      * @return void
-     * @throws \JsonException
+     * @throws JsonException
      */
-    private static function writeCacheFile(string $url, string $data, \DateTimeImmutable $modifiedDate): void
+    private static function writeCacheFile(string $url, string $data, DateTimeImmutable $modifiedDate): void
     {
         $cacheIndex = self::getCacheIndex();
         $filename = self::urlToFileName($url);
-        $cacheIndex->$url = new \stdClass();
+        $cacheIndex->$url = new stdClass();
         $cacheIndex->$url->filename = $filename;
         $cacheIndex->$url->lastModifiedDate = DateHelpers::toISO8601($modifiedDate);
         file_put_contents(self::getCachePath($filename), $data);
@@ -264,10 +268,10 @@ final class CachedDownload
     }
 
     /**
-     * @return \stdClass
-     * @throws \JsonException
+     * @return stdClass
+     * @throws JsonException
      */
-    private static function getCacheIndex(): \stdClass
+    private static function getCacheIndex(): stdClass
     {
         $fullPath = self::getCachePath(self::INDEX_FILE_NAME);
         $index = file_get_contents($fullPath);
@@ -275,9 +279,9 @@ final class CachedDownload
     }
 
     /**
-     * @param \stdClass $index
+     * @param stdClass $index
      */
-    private static function saveCacheIndex(\stdClass $index): void
+    private static function saveCacheIndex(stdClass $index): void
     {
         $fullPath = self::getCachePath(self::INDEX_FILE_NAME);
         $data = json_encode($index, JSON_PRETTY_PRINT);

@@ -7,15 +7,18 @@ namespace lightswitch05\PhpVersionAudit\Parsers;
 
 use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
+use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Logger;
 use lightswitch05\PhpVersionAudit\PhpVersion;
+use stdClass;
 
 final class SupportParser
 {
     /**
-     * @return \stdClass[]
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @return stdClass[]
+     * @throws DownloadException
+     * @throws ParseException
      */
     public static function run(): array
     {
@@ -30,9 +33,9 @@ final class SupportParser
     }
 
     /**
-     * @return \stdClass[]
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @return stdClass[]
+     * @throws DownloadException
+     * @throws ParseException
      */
     private static function parseSupportedVersions(): array
     {
@@ -50,7 +53,7 @@ final class SupportParser
             if (PhpVersion::fromString($version . ".0") !== null) {
                 $activeDate = DateHelpers::fromJMYToISO8601(trim($cells[3]->textContent));
                 $securityDate = DateHelpers::fromJMYToISO8601(trim($cells[5]->textContent));
-                $supportDatesByVersion[$version] = new \stdClass();
+                $supportDatesByVersion[$version] = new stdClass();
                 $supportDatesByVersion[$version]->active = $activeDate;
                 $supportDatesByVersion[$version]->security = $securityDate;
             }
@@ -59,9 +62,9 @@ final class SupportParser
     }
 
     /**
-     * @return array<\stdClass>
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @return array<stdClass>
+     * @throws DownloadException
+     * @throws ParseException
      */
     private static function parseEol(): array
     {
@@ -75,7 +78,7 @@ final class SupportParser
             }
             $version = trim($cells[0]->textContent);
             if (PhpVersion::fromString($version . ".0") !== null) {
-                $supportDatesByVersion[$version] = new \stdClass();
+                $supportDatesByVersion[$version] = new stdClass();
                 $supportDatesByVersion[$version]->active = null;
                 $supportDatesByVersion[$version]->security = DateHelpers::fromJMYToISO8601(trim($cells[1]->textContent));
             }

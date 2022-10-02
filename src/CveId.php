@@ -5,22 +5,24 @@ declare(strict_types=1);
 namespace lightswitch05\PhpVersionAudit;
 
 
-final class CveId implements \JsonSerializable
+use JsonSerializable;
+
+final class CveId implements JsonSerializable
 {
     /**
      * @var string $id
      */
-    private $id;
+    private string $id;
 
     /**
      * @var int $year
      */
-    private $year;
+    private int $year;
 
     /**
      * @var int $sequenceNumber
      */
-    private $sequenceNumber;
+    private int $sequenceNumber;
 
     /**
      * @param string $id

@@ -7,6 +7,8 @@ namespace lightswitch05\PhpVersionAudit\Parsers;
 
 use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\DateHelpers;
+use lightswitch05\PhpVersionAudit\Exceptions\DownloadException;
+use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Logger;
 use lightswitch05\PhpVersionAudit\PhpRelease;
 use lightswitch05\PhpVersionAudit\PhpVersion;
@@ -15,8 +17,8 @@ final class ChangelogParser
 {
     /**
      * @return PhpRelease[]
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @throws DownloadException
+     * @throws ParseException
      */
     public static function run(): array
     {
@@ -37,8 +39,8 @@ final class ChangelogParser
     /**
      * @param string $url
      * @return PhpRelease[]
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
-     * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException
+     * @throws DownloadException
+     * @throws ParseException
      */
     private static function parseChangelog(string $url): array
     {

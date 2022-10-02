@@ -3,36 +3,38 @@ declare(strict_types = 1);
 
 namespace lightswitch05\PhpVersionAudit;
 
-final class PhpVersion implements \JsonSerializable
+use JsonSerializable;
+
+final class PhpVersion implements JsonSerializable
 {
-    const PRE_RELEASE_ALPHA = 'alpha';
-    const PRE_RELEASE_BETA = 'beta';
-    const PRE_RELEASE_CANDIDATE = 'rc';
+    public const PRE_RELEASE_ALPHA = 'alpha';
+    public const PRE_RELEASE_BETA = 'beta';
+    public const PRE_RELEASE_CANDIDATE = 'rc';
 
     /**
      * @var int $major
      */
-    private $major;
+    private int $major;
 
     /**
      * @var int $minor
      */
-    private $minor;
+    private int $minor;
 
     /**
      * @var int $patch
      */
-    private $patch;
+    private int $patch;
 
     /**
      * $var string|null
      */
-    private $preReleaseType;
+    private ?string $preReleaseType;
 
     /**
      * @var int|null
      */
-    private $preReleaseVersion;
+    private ?int $preReleaseVersion;
 
     /**
      * @param int $major

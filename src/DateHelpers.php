@@ -5,28 +5,31 @@ declare(strict_types=1);
 namespace lightswitch05\PhpVersionAudit;
 
 
+use DateTimeImmutable;
+use DateTimeInterface;
+
 final class DateHelpers
 {
-    public static function fromISO8601(?string $date): ?\DateTimeImmutable
+    public static function fromISO8601(?string $date): ?DateTimeImmutable
     {
-        return self::fromFormat(\DateTime::ISO8601, $date);
+        return self::fromFormat(DateTimeInterface::ATOM, $date);
     }
 
-    public static function fromRFC7231(?string $date): ?\DateTimeImmutable
+    public static function fromRFC7231(?string $date): ?DateTimeImmutable
     {
-        return self::fromFormat(\DateTime::RFC7231, $date);
+        return self::fromFormat(DateTimeInterface::RFC7231, $date);
     }
 
-    public static function fromTimestamp(int $date): \DateTimeImmutable
+    public static function fromTimestamp(int $date): DateTimeImmutable
     {
-        return (new \DateTimeImmutable())->setTimestamp($date);
+        return (new DateTimeImmutable())->setTimestamp($date);
     }
 
     public static function fromJMYToISO8601(?string $date): ?string
     {
         $dateTime = self::fromFormat('j M Y', $date);
         if ($dateTime !== null) {
-            $dateTime = $dateTime->setTime(0, 0, 0);
+            $dateTime = $dateTime->setTime(0, 0);
         }
         return self::toISO8601($dateTime);
     }
@@ -35,7 +38,7 @@ final class DateHelpers
     {
         $dateTime = self::fromFormat('Y-m-d', $date);
         if ($dateTime !== null) {
-            $dateTime = $dateTime->setTime(0, 0, 0);
+            $dateTime = $dateTime->setTime(0, 0);
         }
         return self::toISO8601($dateTime);
     }
@@ -53,25 +56,25 @@ final class DateHelpers
      */
     public static function nowString(): string
     {
-        return self::toISO8601(new \DateTimeImmutable());
+        return self::toISO8601(new DateTimeImmutable());
     }
 
     public static function nowTimestamp(): int
     {
-        return (new \DateTimeImmutable())->getTimestamp();
+        return (new DateTimeImmutable())->getTimestamp();
     }
 
-    public static function toISO8601(?\DateTimeImmutable $date): ?string
+    public static function toISO8601(?DateTimeImmutable $date): ?string
     {
         if ($date === null) {
             return null;
         }
-        return $date->format(\DateTime::ISO8601);
+        return $date->format(DateTimeInterface::ATOM);
     }
 
-    private static function fromFormat(string $format, ?string $date): ?\DateTimeImmutable
+    private static function fromFormat(string $format, ?string $date): ?DateTimeImmutable
     {
-        if ($date && $newDate = \DateTimeImmutable::createFromFormat($format, $date)) {
+        if ($date && $newDate = DateTimeImmutable::createFromFormat($format, $date)) {
             return $newDate;
         }
         return null;

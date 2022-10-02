@@ -3,25 +3,27 @@ declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
+use JsonException;
 use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
+use stdClass;
 
 final class Rules
 {
     /**
      * @var string $RULES_PATH
      */
-    private static $RULES_PATH = '/../docs/rules-v1.json';
+    private static string $RULES_PATH = '/../docs/rules-v1.json';
 
     /**
      * @var string $HOSTED_RULES_PATH
      */
-    private static $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
+    private static string $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
 
     /**
-     * @param \stdClass $rules
+     * @param stdClass $rules
      */
-    public static function assertFreshRules(\stdClass $rules): void
+    public static function assertFreshRules(stdClass $rules): void
     {
         $elapsedSeconds = DateHelpers::nowTimestamp() - $rules->lastUpdatedDate->getTimestamp();
         if ($elapsedSeconds > 1209600) {
@@ -31,11 +33,11 @@ final class Rules
 
     /**
      * @param bool $noUpdate
-     * @return \stdClass
+     * @return stdClass
      * @throws Exceptions\DownloadException
      * @throws ParseException
      */
-    public static function loadRules(bool $noUpdate): \stdClass
+    public static function loadRules(bool $noUpdate): stdClass
     {
         $loadedRules = self::getRulesStdObject($noUpdate);
         return self::transformRules($loadedRules);
@@ -43,11 +45,11 @@ final class Rules
 
     /**
      * @param bool $noUpdate
-     * @return \stdClass
+     * @return stdClass
      * @throws Exceptions\DownloadException
      * @throws ParseException
      */
-    private static function getRulesStdObject(bool $noUpdate): \stdClass
+    private static function getRulesStdObject(bool $noUpdate): stdClass
     {
         if (!$noUpdate) {
             try {
@@ -63,16 +65,16 @@ final class Rules
         }
         try {
             return json_decode($rulesString,false, 512, JSON_THROW_ON_ERROR);
-        } catch (\JsonException $e) {
+        } catch (JsonException $e) {
             throw ParseException::fromException($e, __FILE__, __LINE__);
         }
     }
 
     /**
-     * @param \stdClass $rules
-     * @return \stdClass
+     * @param stdClass $rules
+     * @return stdClass
      */
-    private static function transformRules(\stdClass $rules): \stdClass
+    private static function transformRules(stdClass $rules): stdClass
     {
         if (empty($rules->lastUpdatedDate)
             || empty($rules->latestVersions)
@@ -109,7 +111,7 @@ final class Rules
     /**
      * @param array<PhpRelease> $releases
      * @param array<CveDetails> $cves
-     * @param array<\stdClass> $supportEndDates
+     * @param array<stdClass> $supportEndDates
      * @return void
      */
     public static function saveRules(array $releases, array $cves, array $supportEndDates): void
@@ -133,10 +135,10 @@ final class Rules
     }
 
     /**
-     * @param \stdClass $rules
+     * @param stdClass $rules
      * @return void
      */
-    private static function writeRulesFile(\stdClass $rules): void
+    private static function writeRulesFile(stdClass $rules): void
     {
         file_put_contents(__DIR__ . self::$RULES_PATH, json_encode($rules, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
     }

@@ -1,10 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit\Exceptions;
 
+use ErrorException;
 
-final class DownloadException extends \ErrorException
+final class DownloadException extends ErrorException
 {
     /**
      * @param string|null $message
