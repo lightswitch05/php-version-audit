@@ -235,12 +235,7 @@ final class Application
         $releases = ChangelogParser::run();
         $cves = $this->loadCveDetails($releases);
         $supportEndDates = SupportParser::run();
-
-        if ($this->rules->releasesCount > count($releases)
-            || $this->rules->cveCount > count($cves)
-            || $this->rules->supportVersionsCount > count(array_keys($supportEndDates))) {
-            throw StaleRulesException::fromString('Updated rules failed to meat expected counts.');
-        }
+        $this->assertExpectedRulesCount($releases, $cves, $supportEndDates);
 
         Rules::saveRules($releases, $cves, $supportEndDates);
         $this->rules = Rules::loadRules(true);
@@ -260,5 +255,33 @@ final class Application
             }
         }
         return NvdFeedParser::run($cves);
+    }
+
+    /**
+     * @param array<PhpRelease> $releases
+     * @param array<CveDetails> $cves
+     * @param array<\stdClass> $supportEndDates
+     * @return void
+     */
+    private function assertExpectedRulesCount(array $releases, array $cves, array $supportEndDates): void
+    {
+        $currentCounts = [
+            'releasesCount' => $this->rules->releasesCount,
+            'cveCount' => $this->rules->cveCount,
+            'supportVersionsCount' => $this->rules->supportVersionsCount
+        ];
+
+        $newCounts = [
+            'releasesCount' => count($releases),
+            'cveCount' => count($cves),
+            'supportVersionsCount' => count(array_keys($supportEndDates))
+        ];
+
+        foreach ($currentCounts as $type => $currentCount) {
+            if ($currentCount > $newCounts[$type]) {
+                $error = "Updated rules failed to meet expected counts. {$type}: {$newCounts[$type]} < {$currentCount}";
+                throw StaleRulesException::fromString($error);
+            }
+        }
     }
 }
