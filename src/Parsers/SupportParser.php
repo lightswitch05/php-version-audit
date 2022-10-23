@@ -70,14 +70,15 @@ final class SupportParser
         $dom = CachedDownload::dom('https://www.php.net/eol.php');
         foreach ($dom->getElementsByTagName('tr') as $row) {
             $cells = $row->getElementsByTagName('td');
-            if (count($cells) < 5) {
+            if (count($cells) < 4) {
                 continue;
             }
             $version = trim($cells[0]->textContent);
             if (PhpVersion::fromString($version . ".0") !== null) {
                 $supportDatesByVersion[$version] = new \stdClass();
                 $supportDatesByVersion[$version]->active = null;
-                $supportDatesByVersion[$version]->security = DateHelpers::fromJMYToISO8601(trim($cells[1]->textContent));
+                $rawDate = strtok($cells[1]->textContent, '(');
+                $supportDatesByVersion[$version]->security = DateHelpers::fromJMYToISO8601(trim($rawDate));
             }
         }
         return $supportDatesByVersion;
