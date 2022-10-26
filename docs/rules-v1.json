@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-10-26T03:20:10+0000",
+    "lastUpdatedDate": "2022-10-26T13:59:35+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5230,7 +5230,7 @@
             "id": "CVE-2021-21704",
             "baseScore": 5.9,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2022-09-29T17:15:00+0000",
+            "lastModifiedDate": "2022-10-25T14:58:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.29, 7.4.x below 7.4.21 and 8.0.x below 8.0.8, when using Firebird PDO driver extension, a malicious database server could cause crashes in various database functions, such as getAttribute(), execute(), fetch() and others by returning invalid response data that is not parsed correctly by the driver. This can result in crashes, denial of service or potentially memory corruption."
         },
         "CVE-2021-21705": {
@@ -5279,7 +5279,7 @@
             "id": "CVE-2022-31627",
             "baseScore": 9.8,
             "publishedDate": "2022-07-28T06:15:00+0000",
-            "lastModifiedDate": "2022-09-29T17:15:00+0000",
+            "lastModifiedDate": "2022-10-25T19:45:00+0000",
             "description": "In PHP versions 8.1.x below 8.1.8, when fileinfo functions, such as finfo_buffer, due to incorrect patch applied to the third party code from libmagic, incorrect function may be used to free allocated memory, which may lead to heap corruption."
         },
         "CVE-2022-31628": {
