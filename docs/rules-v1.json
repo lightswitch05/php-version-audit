@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2022-10-28T03:22:30+0000",
+    "lastUpdatedDate": "2022-10-28T13:58:58+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 439,
-    "cveCount": 333,
+    "releasesCount": 440,
+    "cveCount": 334,
     "supportVersionsCount": 20,
     "latestVersion": "8.1.11",
     "latestVersions": {
@@ -30,7 +30,7 @@
         "7.3": "7.3.33",
         "7.4": "7.4.32",
         "8": "8.1.11",
-        "8.0": "8.0.24",
+        "8.0": "8.0.25",
         "8.1": "8.1.11"
     },
     "supportEndDates": {
@@ -2901,6 +2901,13 @@
                 "CVE-2022-31629"
             ]
         },
+        "8.0.25": {
+            "releaseDate": "2022-10-27T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2022-31630",
+                "CVE-2022-37454"
+            ]
+        },
         "8.1.0": {
             "releaseDate": "2021-11-25T00:00:00+0000",
             "patchedCves": [
@@ -3368,7 +3375,7 @@
             "id": "CVE-2013-1824",
             "baseScore": 4.3,
             "publishedDate": "2013-09-16T13:02:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2022-10-27T20:51:00+0000",
             "description": "The SOAP parser in PHP before 5.3.22 and 5.4.x before 5.4.12 allows remote attackers to read arbitrary files via a SOAP WSDL file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions."
         },
         "CVE-2013-2110": {
@@ -5272,7 +5279,7 @@
             "id": "CVE-2022-31626",
             "baseScore": 8.8,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2022-09-29T17:15:00+0000",
+            "lastModifiedDate": "2022-10-27T16:04:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when pdo_mysql extension with mysqlnd driver, if the third party is allowed to supply host to connect to and the password for the connection, password of excessive length can trigger a buffer overflow in PHP, which can lead to a remote code execution vulnerability."
         },
         "CVE-2022-31627": {
@@ -5295,6 +5302,13 @@
             "publishedDate": "2022-09-28T23:15:00+0000",
             "lastModifiedDate": "2022-10-07T15:15:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a `__Host-` or `__Secure-` cookie by PHP applications."
+        },
+        "CVE-2022-37454": {
+            "id": "CVE-2022-37454",
+            "baseScore": 9.8,
+            "publishedDate": "2022-10-21T06:15:00+0000",
+            "lastModifiedDate": "2022-10-25T15:23:00+0000",
+            "description": "The Keccak XKCP SHA-3 reference implementation before fdc6fef has an integer overflow and resultant buffer overflow that allows attackers to execute arbitrary code or eliminate expected cryptographic properties. This occurs in the sponge function interface."
         }
     }
 }
