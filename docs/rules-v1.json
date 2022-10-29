@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-10-29T03:10:02+0000",
+    "lastUpdatedDate": "2022-10-29T13:39:26+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3494,7 +3494,7 @@
             "id": "CVE-2014-2270",
             "baseScore": 4.3,
             "publishedDate": "2014-03-14T15:55:00+0000",
-            "lastModifiedDate": "2017-07-01T01:29:00+0000",
+            "lastModifiedDate": "2022-10-28T23:23:00+0000",
             "description": "softmagic.c in file before 5.17 and libmagic allows context-dependent attackers to cause a denial of service (out-of-bounds memory access and crash) via crafted offsets in the softmagic of a PE executable."
         },
         "CVE-2014-2497": {
@@ -3515,21 +3515,21 @@
             "id": "CVE-2014-3479",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2016-11-28T19:11:00+0000",
+            "lastModifiedDate": "2022-10-28T23:26:00+0000",
             "description": "The cdf_check_stream_offset function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, relies on incorrect sector-size data, which allows remote attackers to cause a denial of service (application crash) via a crafted stream offset in a CDF file."
         },
         "CVE-2014-3480": {
             "id": "CVE-2014-3480",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2016-11-28T19:11:00+0000",
+            "lastModifiedDate": "2022-10-28T23:25:00+0000",
             "description": "The cdf_count_chain function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, does not properly validate sector-count data, which allows remote attackers to cause a denial of service (application crash) via a crafted CDF file."
         },
         "CVE-2014-3487": {
             "id": "CVE-2014-3487",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2016-11-28T19:11:00+0000",
+            "lastModifiedDate": "2022-10-28T23:21:00+0000",
             "description": "The cdf_read_property_info function in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, does not properly validate a stream offset, which allows remote attackers to cause a denial of service (application crash) via a crafted CDF file."
         },
         "CVE-2014-3515": {
@@ -5237,7 +5237,7 @@
             "id": "CVE-2021-21703",
             "baseScore": 7,
             "publishedDate": "2021-10-25T06:15:00+0000",
-            "lastModifiedDate": "2022-09-29T17:15:00+0000",
+            "lastModifiedDate": "2022-10-29T02:44:00+0000",
             "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
@@ -5251,7 +5251,7 @@
             "id": "CVE-2021-21705",
             "baseScore": 5.3,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2022-09-29T17:15:00+0000",
+            "lastModifiedDate": "2022-10-29T02:50:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.29, 7.4.x below 7.4.21 and 8.0.x below 8.0.8, when using URL validation functionality via filter_var() function with FILTER_VALIDATE_URL parameter, an URL with invalid password field can be accepted as valid. This can lead to the code incorrectly parsing the URL and potentially leading to other security implications - like contacting a wrong server or making a wrong access decision."
         },
         "CVE-2021-21706": {
