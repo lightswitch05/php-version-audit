@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-11-05T03:03:35+0000",
+    "lastUpdatedDate": "2022-11-05T13:35:22+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3599,7 +3599,7 @@
             "id": "CVE-2014-3710",
             "baseScore": 5,
             "publishedDate": "2014-11-05T11:55:00+0000",
-            "lastModifiedDate": "2018-01-05T02:29:00+0000",
+            "lastModifiedDate": "2022-11-05T02:10:00+0000",
             "description": "The donote function in readelf.c in file through 5.20, as used in the Fileinfo component in PHP 5.4.34, does not ensure that sufficient note headers are present, which allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted ELF file."
         },
         "CVE-2014-3981": {
@@ -3732,7 +3732,7 @@
             "id": "CVE-2015-1352",
             "baseScore": 5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2019-10-09T23:13:00+0000",
+            "lastModifiedDate": "2022-11-05T02:10:00+0000",
             "description": "The build_tablename function in pgsql.c in the PostgreSQL (aka pgsql) extension in PHP through 5.6.7 does not validate token extraction for table names, which allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted name."
         },
         "CVE-2015-2301": {
