@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-11-09T03:12:14+0000",
+    "lastUpdatedDate": "2022-11-09T13:55:27+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3543,7 +3543,7 @@
             "id": "CVE-2014-3515",
             "baseScore": 7.5,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2022-08-05T16:55:00+0000",
+            "lastModifiedDate": "2022-11-09T03:05:00+0000",
             "description": "The SPL component in PHP before 5.4.30 and 5.5.x before 5.5.14 incorrectly anticipates that certain data structures will have the array data type after unserialization, which allows remote attackers to execute arbitrary code via a crafted string that triggers use of a Hashtable destructor, related to \"type confusion\" issues in (1) ArrayObject and (2) SPLObjectStorage."
         },
         "CVE-2014-3538": {
@@ -3683,7 +3683,7 @@
             "id": "CVE-2014-9709",
             "baseScore": 5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2019-10-09T23:12:00+0000",
+            "lastModifiedDate": "2022-11-09T03:04:00+0000",
             "description": "The GetCode_ function in gd_gif_in.c in GD 2.1.1 and earlier, as used in PHP before 5.5.21 and 5.6.x before 5.6.5, allows remote attackers to cause a denial of service (buffer over-read and application crash) via a crafted GIF image that is improperly handled by the gdImageCreateFromGif function."
         },
         "CVE-2014-9767": {
