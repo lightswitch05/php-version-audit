@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-11-15T02:56:04+0000",
+    "lastUpdatedDate": "2022-11-16T02:56:48+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5307,21 +5307,21 @@
             "id": "CVE-2022-31628",
             "baseScore": 5.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2022-11-07T18:41:00+0000",
+            "lastModifiedDate": "2022-11-14T15:15:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the phar uncompressor code would recursively uncompress \"quines\" gzip files, resulting in an infinite loop."
         },
         "CVE-2022-31629": {
             "id": "CVE-2022-31629",
             "baseScore": 6.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2022-11-07T18:46:00+0000",
+            "lastModifiedDate": "2022-11-14T15:15:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a `__Host-` or `__Secure-` cookie by PHP applications."
         },
         "CVE-2022-31630": {
             "id": "CVE-2022-31630",
             "baseScore": null,
             "publishedDate": "2022-11-14T07:15:00+0000",
-            "lastModifiedDate": "2022-11-14T07:15:00+0000",
+            "lastModifiedDate": "2022-11-14T14:07:00+0000",
             "description": "In PHP versions prior to 7.4.33, 8.0.25 and 8.2.12, when using imageloadfont() function in gd extension, it is possible to supply a specially crafted font file, such as if the loaded font is used with imagechar() function, the read outside allocated buffer will be used. This can lead to crashes or disclosure of confidential information."
         },
         "CVE-2022-37454": {
