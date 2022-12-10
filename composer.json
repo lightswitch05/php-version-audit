@@ -20,7 +20,7 @@
         "ext-zlib": "*",
         "ext-zip": "*",
         "codeception/codeception": "^5.0",
-        "vimeo/psalm": "^4.25",
+        "vimeo/psalm": "^5.1",
         "codeception/module-asserts": "^3.0"
     }
 }
