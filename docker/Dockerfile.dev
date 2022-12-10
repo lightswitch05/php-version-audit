@@ -1,7 +1,7 @@
 FROM php:8.1-cli-alpine
 WORKDIR /opt/php-version-audit
 
-RUN apk --update --no-cache add libzip-dev autoconf g++ make && \
+RUN apk --update --no-cache add libzip-dev autoconf g++ make linux-headers && \
     cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" && \
     pecl install -f xdebug && \
     docker-php-ext-enable xdebug && \
