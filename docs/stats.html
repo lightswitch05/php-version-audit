@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Three Years and Running | PHP Version Audit</title>
+    <meta name="description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated list of CVE exploits, new releases, and end of life dates.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./fonts/inter.css">
+    <meta property="og:title" content="Stats | PHP Version Audit" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.github.developerdan.com/php-version-audit/">
+    <meta property="og:image" content="https://www.github.developerdan.com/php-version-audit/php-version-audit-logo.png" />
+    <meta property="og:image:secure_url" content="https://www.github.developerdan.com/php-version-audit/php-version-audit-logo.png">
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="651" />
+    <meta property="og:image:height" content="351" />
+    <meta property="og:image:alt" content="PHP Version Audit Logo" />
+    <meta property="og:description" content="PHP Version Audit is a convenience tool to easily check a given PHP version against a regularly updated list of CVE exploits, new releases, and end of life dates.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="lightswitch05.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="alternate icon" href="favicon.ico">
+</head>
+
+<body>
+    <main>
+        <h1>
+            <a href="https://www.github.developerdan.com/" class="noline">
+                <img class="avatar" src="lightswitch05.svg" alt="lightswitch05 avatar">
+            </a>
+            <a href="https://www.github.developerdan.com/php-version-audit/">
+                PHP Version Audit
+            </a>: <small>Three Years and Running</small>
+        </h1>
+
+        <div>
+            <p>
+                Quick Stats
+                <ul>
+                <li>Updates: <span id="updates">2027</span></li>
+                <li>CVEs: <span id="cves">34</span></li>
+                <li>Releases: <span id="releases">102</span>
+                    <ul>
+                        <li>Major: <span id="major">1</span></li>
+                        <li>Minor: <span id="minor">2</span></li>
+                        <li>Patch: <span id="patch">99</span></li>
+                    </ul>
+                </li>
+                <li>Median hours: 5 hours (vs. 260 from CVE database - 98% faster)</li>
+            </ul>
+            </p>
+
+            <p>
+                A little over three years ago, I released the first version of PHP Version Audit. In case you've never
+                heard of it before, it is just a simple utility to check a given version of PHP against known CVEs or
+                support end dates. The coolest part of it (in my opinion) is that it self-updates by parsing the PHP
+                changelog twice a day, discovering any new releases and CVEs that have been patched. What makes it stand
+                out from other CVE tools is that the source being the Changelog means that the CVE alert is available long
+                before the NVE CVE database has been updated with the information. Now that it has been up and running for
+                three years, I thought it would be fun to look at some stats of the project.
+            </p>
+
+            <p>
+                In the past three years, there have been <strong>2,027 updates</strong> to the
+                <a href="https://github.com/lightswitch05/php-version-audit/blob/master/docs/rules-v1.json">rules</a> that
+                drive PHP Version Audit. The vast majority of the updates being automatic on a cron schedule. Those
+                automatic updates have parsed <strong>34 CVEs</strong> from the changelog - across
+                <strong>102 version releases</strong>. PHP Version Audit has discovered CVE announcements on median
+                of 5 hours after the Changelog update. The NVE CVE database gets updated with the CVEs on median of
+                260 hours - or almost 11 days after the Changelog update, making PHP Version Audit 98% faster than
+                other tools that source from the CVE Database. I think that is pretty cool!
+            </p>
+
+            <h2>CVE Database update after php release announcement</h2>
+
+            <div style="width: 75%; height: 70%;">
+                <canvas id="hoursTillCveDatabasePublish"></canvas>
+            </div>
+
+            <h2>PHP Version Audit update after php release announcement</h2>
+
+            <div style="width: 75%; height: 70%;">
+                <canvas id="hoursTillPhpVersionAuditPublish"></canvas>
+            </div>
+        </div>
+
+        <p>
+            PHP Version Audit was designed from the beginning to be self-updating. For the most part, that design
+            has worked out great. However, there are always some hiccups or breakages that require fixing. Below is a
+            graph showing the update frequency over the lifespan of the project. The longest the self-updating feature
+            was broken was 7 days. I've made it where PHP Version Audit will throw a 'Stale' exception if its last update
+            is over 2 weeks, so I'm happy to say I'm well within the grace period. While things did a have bit of a rocky
+            start, it is pretty rare to go un-updated for longer then 24 hours.
+        </p>
+
+        <h2>Update Frequency</h2>
+        <div style="width: 95%; height: 90%;">
+            <canvas id="releaseFrequencyCanvas"></canvas>
+        </div>
+
+        <p>
+            That is all for the stats! Thank you for reading. Earlier this year I released
+            <a href="https://www.github.developerdan.com/node-version-audit/">Node Version Audit</a>, as it
+            continues running it will be interesting to see how the stats compare with PHP in a few years.
+            By the way, the only stat I don't know is if anyone
+            <a href="https://github.com/lightswitch05/php-version-audit/discussions/140">is actually using this thing</a>?
+            I switched jobs recently and no longer use PHP, so while I enjoy keeping this project going, I no longer get to use it.
+            It would be nice to know if someone out there is actually using it!
+        </p>
+
+        <!--div style="width: 95%; height: 90%;">
+            <canvas id="phpReleaseByHourCanvas"></canvas>
+        </div-->
+    </main>
+
+    <script type="application/javascript" src="chart.min.js"></script>
+    <script type="application/javascript" src="chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script type="application/javascript" src="stats.js"></script>
+</body>
+</html>

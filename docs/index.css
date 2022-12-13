@@ -18,6 +18,10 @@ body {
     margin-right: auto;
 }
 
+canvas {
+    background-color: #161b22;
+}
+
 main {
     margin: 0 5px 0 5px;
 }
