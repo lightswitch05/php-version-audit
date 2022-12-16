@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-12-16T02:13:00+0000",
+    "lastUpdatedDate": "2022-12-16T13:26:42+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5292,7 +5292,7 @@
             "id": "CVE-2021-21707",
             "baseScore": 5.3,
             "publishedDate": "2021-11-29T07:15:00+0000",
-            "lastModifiedDate": "2022-10-05T01:47:00+0000",
+            "lastModifiedDate": "2022-12-15T21:15:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
         },
         "CVE-2021-21708": {
@@ -5306,14 +5306,14 @@
             "id": "CVE-2022-31625",
             "baseScore": 8.1,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2022-10-07T15:48:00+0000",
+            "lastModifiedDate": "2022-12-15T21:15:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when using Postgres database extension, supplying invalid parameters to the parametrized query may lead to PHP attempting to free memory using uninitialized data as pointers. This could lead to RCE vulnerability or denial of service."
         },
         "CVE-2022-31626": {
             "id": "CVE-2022-31626",
             "baseScore": 8.8,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2022-10-27T16:04:00+0000",
+            "lastModifiedDate": "2022-12-15T21:15:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when pdo_mysql extension with mysqlnd driver, if the third party is allowed to supply host to connect to and the password for the connection, password of excessive length can trigger a buffer overflow in PHP, which can lead to a remote code execution vulnerability."
         },
         "CVE-2022-31627": {
@@ -5327,14 +5327,14 @@
             "id": "CVE-2022-31628",
             "baseScore": 5.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2022-12-09T19:15:00+0000",
+            "lastModifiedDate": "2022-12-15T21:15:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the phar uncompressor code would recursively uncompress \"quines\" gzip files, resulting in an infinite loop."
         },
         "CVE-2022-31629": {
             "id": "CVE-2022-31629",
             "baseScore": 6.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2022-12-09T19:15:00+0000",
+            "lastModifiedDate": "2022-12-15T21:15:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a `__Host-` or `__Secure-` cookie by PHP applications."
         },
         "CVE-2022-31630": {
