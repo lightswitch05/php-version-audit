@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2022-12-24T02:09:27+0000",
+    "lastUpdatedDate": "2022-12-24T13:24:36+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5341,7 +5341,7 @@
             "id": "CVE-2022-31630",
             "baseScore": 7.1,
             "publishedDate": "2022-11-14T07:15:00+0000",
-            "lastModifiedDate": "2022-11-28T17:33:00+0000",
+            "lastModifiedDate": "2022-12-23T17:05:00+0000",
             "description": "In PHP versions prior to 7.4.33, 8.0.25 and 8.2.12, when using imageloadfont() function in gd extension, it is possible to supply a specially crafted font file, such as if the loaded font is used with imagechar() function, the read outside allocated buffer will be used. This can lead to crashes or disclosure of confidential information."
         },
         "CVE-2022-37454": {
