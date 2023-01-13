@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-01-13T02:25:49+0000",
+    "lastUpdatedDate": "2023-01-13T13:29:15+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5345,7 +5345,7 @@
             "id": "CVE-2022-31628",
             "baseScore": 5.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2022-12-15T21:15:00+0000",
+            "lastModifiedDate": "2023-01-12T19:52:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the phar uncompressor code would recursively uncompress \"quines\" gzip files, resulting in an infinite loop."
         },
         "CVE-2022-31629": {
