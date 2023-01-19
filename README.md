@@ -3,7 +3,7 @@
 [![PHP Version Audit Logo](https://www.github.developerdan.com/php-version-audit/php-version-audit-logo.svg)](https://www.github.developerdan.com/php-version-audit/)
 
 [![Github Stars](https://img.shields.io/github/stars/lightswitch05/php-version-audit)](https://github.com/lightswitch05/php-version-audit)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lightswitch05/php-version-audit/Auto%20Updates)](https://github.com/lightswitch05/php-version-audit/actions?query=workflow%3A%22Auto+Updates%22)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/lightswitch05/php-version-audit/auto-updates.yml)](https://github.com/lightswitch05/php-version-audit/actions/workflows/auto-updates.yml?query=workflow%3A%22Auto+Updates%22)
 [![Packagist Version](https://img.shields.io/packagist/v/lightswitch05/php-version-audit)](https://packagist.org/packages/lightswitch05/php-version-audit)
 [![Docker Pulls](https://img.shields.io/docker/pulls/lightswitch05/php-version-audit)](https://hub.docker.com/r/lightswitch05/php-version-audit)
 [![license](https://img.shields.io/github/license/lightswitch05/php-version-audit.svg)](https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE)
