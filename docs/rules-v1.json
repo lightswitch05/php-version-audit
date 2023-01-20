@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-01-20T02:26:02+0000",
+    "lastUpdatedDate": "2023-01-20T13:30:14+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3196,7 +3196,7 @@
             "id": "CVE-2010-2531",
             "baseScore": 4.3,
             "publishedDate": "2010-08-20T22:00:00+0000",
-            "lastModifiedDate": "2016-08-23T02:01:00+0000",
+            "lastModifiedDate": "2023-01-19T16:39:00+0000",
             "description": "The var_export function in PHP 5.2 before 5.2.14 and 5.3 before 5.3.3 flushes the output buffer to the user when certain fatal errors occur, even if display_errors is off, which allows remote attackers to obtain sensitive information by causing the application to exceed limits for memory, execution time, or recursion."
         },
         "CVE-2010-2950": {
@@ -3217,7 +3217,7 @@
             "id": "CVE-2010-3709",
             "baseScore": 4.3,
             "publishedDate": "2010-11-09T01:00:00+0000",
-            "lastModifiedDate": "2016-08-23T02:02:00+0000",
+            "lastModifiedDate": "2023-01-19T16:29:00+0000",
             "description": "The ZipArchive::getArchiveComment function in PHP 5.2.x through 5.2.14 and 5.3.x through 5.3.3 allows context-dependent attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted ZIP archive."
         },
         "CVE-2010-3710": {
@@ -3518,7 +3518,7 @@
             "id": "CVE-2014-0237",
             "baseScore": 5,
             "publishedDate": "2014-06-01T04:29:00+0000",
-            "lastModifiedDate": "2017-01-07T02:59:00+0000",
+            "lastModifiedDate": "2023-01-19T15:44:00+0000",
             "description": "The cdf_unpack_summary_info function in cdf.c in the Fileinfo component in PHP before 5.4.29 and 5.5.x before 5.5.13 allows remote attackers to cause a denial of service (performance degradation) by triggering many file_printf calls."
         },
         "CVE-2014-0238": {
@@ -3588,7 +3588,7 @@
             "id": "CVE-2014-3538",
             "baseScore": 5,
             "publishedDate": "2014-07-03T14:55:00+0000",
-            "lastModifiedDate": "2018-01-05T02:29:00+0000",
+            "lastModifiedDate": "2023-01-19T16:34:00+0000",
             "description": "file before 5.19 does not properly restrict the amount of data read during a regex search, which allows remote attackers to cause a denial of service (CPU consumption) via a crafted file that triggers backtracking during processing of an awk rule.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2013-7345."
         },
         "CVE-2014-3587": {
@@ -3644,7 +3644,7 @@
             "id": "CVE-2014-3981",
             "baseScore": 3.3,
             "publishedDate": "2014-06-08T18:55:00+0000",
-            "lastModifiedDate": "2017-01-07T03:00:00+0000",
+            "lastModifiedDate": "2023-01-19T16:30:00+0000",
             "description": "acinclude.m4, as used in the configure script in PHP 5.5.13 and earlier, allows local users to overwrite arbitrary files via a symlink attack on the /tmp/phpglibccheck file."
         },
         "CVE-2014-4049": {
@@ -3665,14 +3665,14 @@
             "id": "CVE-2014-4698",
             "baseScore": 4.6,
             "publishedDate": "2014-07-10T11:06:00+0000",
-            "lastModifiedDate": "2017-01-07T03:00:00+0000",
+            "lastModifiedDate": "2023-01-19T16:35:00+0000",
             "description": "Use-after-free vulnerability in ext/spl/spl_array.c in the SPL component in PHP through 5.5.14 allows context-dependent attackers to cause a denial of service or possibly have unspecified other impact via crafted ArrayIterator usage within applications in certain web-hosting environments."
         },
         "CVE-2014-4721": {
             "id": "CVE-2014-4721",
             "baseScore": 2.6,
             "publishedDate": "2014-07-06T23:55:00+0000",
-            "lastModifiedDate": "2017-01-07T03:00:00+0000",
+            "lastModifiedDate": "2023-01-19T16:14:00+0000",
             "description": "The phpinfo implementation in ext/standard/info.c in PHP before 5.4.30 and 5.5.x before 5.5.14 does not ensure use of the string data type for the PHP_AUTH_PW, PHP_AUTH_TYPE, PHP_AUTH_USER, and PHP_SELF variables, which might allow context-dependent attackers to obtain sensitive information from process memory by using the integer data type with crafted values, related to a \"type confusion\" vulnerability, as demonstrated by reading a private SSL key in an Apache HTTP Server web-hosting environment with mod_ssl and a PHP 5.3.x mod_php."
         },
         "CVE-2014-5120": {
@@ -3798,7 +3798,7 @@
             "id": "CVE-2015-2326",
             "baseScore": 5.5,
             "publishedDate": "2020-01-14T17:15:00+0000",
-            "lastModifiedDate": "2022-08-04T19:59:00+0000",
+            "lastModifiedDate": "2023-01-19T16:38:00+0000",
             "description": "The pcre_compile2 function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code and cause a denial of service (out-of-bounds read) via regular expression with a group containing both a forward referencing subroutine call and a recursive back reference, as demonstrated by \"((?+1)(\\1))/\"."
         },
         "CVE-2015-2331": {
