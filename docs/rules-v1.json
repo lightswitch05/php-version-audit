@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-01-21T02:18:55+0000",
+    "lastUpdatedDate": "2023-01-21T13:25:28+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3364,7 +3364,7 @@
             "id": "CVE-2012-2143",
             "baseScore": 4.3,
             "publishedDate": "2012-07-05T14:55:00+0000",
-            "lastModifiedDate": "2016-12-08T03:02:00+0000",
+            "lastModifiedDate": "2023-01-20T17:52:00+0000",
             "description": "The crypt_des (aka DES-based crypt) function in FreeBSD before 9.0-RELEASE-p2, as used in PHP, PostgreSQL, and other products, does not process the complete cleartext password if this password contains a 0x80 character, which makes it easier for context-dependent attackers to obtain access via an authentication attempt with an initial substring of the intended password, as demonstrated by a Unicode password."
         },
         "CVE-2012-2311": {
@@ -5352,7 +5352,7 @@
             "id": "CVE-2022-31629",
             "baseScore": 6.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2022-12-15T21:15:00+0000",
+            "lastModifiedDate": "2023-01-20T13:12:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a `__Host-` or `__Secure-` cookie by PHP applications."
         },
         "CVE-2022-31630": {
