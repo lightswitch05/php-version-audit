@@ -35,8 +35,10 @@ final class NvdFeedParser
         foreach ($feedNames as $feedName) {
             $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feedName));
         }
-        uksort($cveDetails, fn(string $first, string $second): int =>
-            CveId::fromString($first)->compareTo(CveId::fromString($second))
+        uksort(
+            $cveDetails,
+            fn(string $first, string $second): int =>
+                CveId::fromString($first)->compareTo(CveId::fromString($second))
         );
         return $cveDetails;
     }
