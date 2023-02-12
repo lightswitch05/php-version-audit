@@ -37,6 +37,7 @@ jobs:
     - run: make psalm
     - run: make rector-dry
     - run: make phpstan
+    - run: make ecs-dry
 
     - name: fix code coverage paths
       working-directory: ./tests/_output

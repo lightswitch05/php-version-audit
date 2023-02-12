@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
@@ -18,8 +19,7 @@ final class PhpVersion implements \JsonSerializable, \Stringable
          */
         private ?string $preReleaseType,
         private ?int $preReleaseVersion
-    )
-    {
+    ) {
     }
 
     public static function fromString(?string $fullVersion): ?PhpVersion
@@ -31,7 +31,8 @@ final class PhpVersion implements \JsonSerializable, \Stringable
         $minor = (int) $matches[2];
         $patch = (int) $matches[3];
         $preReleaseVersion = null;
-        if($preReleaseType = self::normalizeReleaseType($matches[4])) {
+        $preReleaseType = self::normalizeReleaseType($matches[4]);
+        if ($preReleaseType) {
             $preReleaseVersion = (int) $matches[5];
         }
         return new self($major, $minor, $patch, $preReleaseType, $preReleaseVersion);
@@ -71,7 +72,7 @@ final class PhpVersion implements \JsonSerializable, \Stringable
     private static function normalizeReleaseType(string $parsedReleaseType): ?string
     {
         $parsedReleaseType = strtolower($parsedReleaseType);
-        if (in_array($parsedReleaseType, [self::PRE_RELEASE_CANDIDATE, self::PRE_RELEASE_BETA, self::PRE_RELEASE_ALPHA])) {
+        if (in_array($parsedReleaseType, [self::PRE_RELEASE_CANDIDATE, self::PRE_RELEASE_BETA, self::PRE_RELEASE_ALPHA], true)) {
             return $parsedReleaseType;
         }
         if (preg_match('#release\s*candidate#', $parsedReleaseType)) {
@@ -105,17 +106,13 @@ final class PhpVersion implements \JsonSerializable, \Stringable
         return "$this->major.$this->minor";
     }
 
-    /**
-     * @return string
-     */
+    
     public function __toString(): string
     {
         return "$this->major.$this->minor.$this->patch$this->preReleaseType$this->preReleaseVersion";
     }
 
-    /**
-     * @return string
-     */
+    
     public function jsonSerialize(): string
     {
         return (string)$this;

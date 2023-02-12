@@ -11,7 +11,7 @@ tests:
 run:
 	@docker-compose run --rm php ./php-version-audit
 
-lint: phpstan psalm rector-dry
+lint: phpstan psalm rector-dry ecs-dry
 
 phpstan:
 	@docker-compose run --rm phpstan
@@ -24,3 +24,9 @@ rector-dry:
 
 rector:
 	@docker-compose run --rm --entrypoint vendor/bin/rector php process src
+
+ecs-dry:
+	@docker-compose run --rm --entrypoint vendor/bin/ecs php
+
+ecs:
+	@docker-compose run --rm --entrypoint vendor/bin/ecs php --fix

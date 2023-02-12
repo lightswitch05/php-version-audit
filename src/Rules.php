@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
@@ -45,11 +46,11 @@ final class Rules
         }
 
         // Either $noUpdate or download fresh rules failed - use package copy
-        if(!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
+        if (!is_file(__DIR__ . self::$RULES_PATH) || !$rulesString = file_get_contents(__DIR__ . self::$RULES_PATH)) {
             throw StaleRulesException::fromString("Unable to load rules from disk");
         }
         try {
-            return json_decode($rulesString,false, 512, JSON_THROW_ON_ERROR);
+            return json_decode($rulesString, false, 512, JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
             throw ParseException::fromException($e, __FILE__, __LINE__);
         }
@@ -112,8 +113,8 @@ final class Rules
             'latestVersion' => self::releasesToLatestVersion($releases),
             'latestVersions' => self::releasesToLatestVersions($releases),
             'supportEndDates' => $supportEndDates,
-            'releases' =>  self::formatReleases($releases),
-            'cves' => $cves
+            'releases' => self::formatReleases($releases),
+            'cves' => $cves,
         ];
         self::writeRulesFile($rules);
     }

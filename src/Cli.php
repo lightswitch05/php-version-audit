@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace lightswitch05\PhpVersionAudit;
-
 
 use lightswitch05\PhpVersionAudit\Exceptions\InvalidArgumentException;
 use lightswitch05\PhpVersionAudit\Exceptions\InvalidVersionException;
@@ -104,7 +103,7 @@ final class Cli
             'silent',
             'v',
             'vv',
-            'vvv'
+            'vvv',
         ]);
         return [
             self::$PHP_VERSION => self::getVersion($options),
@@ -115,7 +114,7 @@ final class Cli
             self::$FAIL_LATEST => self::getOptionalFlag($options, self::$FAIL_LATEST),
             self::$FAIL_PATCH => self::getOptionalFlag($options, self::$FAIL_PATCH),
             self::$FAIL_SUPPORT => self::getOptionalFlag($options, self::$FAIL_SUPPORT),
-            'verbosity' => self::getVerbosity($options)
+            'verbosity' => self::getVerbosity($options),
         ];
     }
 
@@ -131,8 +130,8 @@ final class Cli
         printf($usageMask, self::$NO_UPDATE, 'silent');
         printf("\t\t\t\t[--%s]" . PHP_EOL, 'v');
         printf("%s" . PHP_EOL, "optional arguments:");
-        printf($argsMask, self::$HELP,"\tshow this help message and exit.");
-        printf($argsMask, self::$PHP_VERSION,"set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.");
+        printf($argsMask, self::$HELP, "\tshow this help message and exit.");
+        printf($argsMask, self::$PHP_VERSION, "set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.");
         printf($argsErrorCodeMask, self::$FAIL_SECURITY, self::$FAIL_SECURITY_CODE, "exit code if any CVEs are found, or security support has ended.");
         printf($argsErrorCodeMask, self::$FAIL_SUPPORT, self::$FAIL_SUPPORT_CODE, "exit code if the version of PHP no longer gets active (bug) support.");
         printf($argsErrorCodeMask, self::$FAIL_PATCH, self::$FAIL_PATCH_CODE, "exit code if there is a newer patch-level release.");

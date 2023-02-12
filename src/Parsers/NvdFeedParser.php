@@ -1,6 +1,6 @@
 <?php
-declare(strict_types=1);
 
+declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit\Parsers;
 
@@ -27,7 +27,7 @@ final class NvdFeedParser
         $feedNames = ['modified', 'recent'];
         $cvesById = array_flip($cveIds);
         $currentYear = (int) date('Y');
-        for($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
+        for ($cveYear = self::$CVE_START_YEAR; $cveYear <= $currentYear; $cveYear++) {
             $feedNames[] = (string)$cveYear;
         }
 
@@ -37,7 +37,7 @@ final class NvdFeedParser
         }
         uksort(
             $cveDetails,
-            fn(string $first, string $second): int =>
+            fn (string $first, string $second): int =>
                 CveId::fromString($first)->compareTo(CveId::fromString($second))
         );
         return $cveDetails;
@@ -56,7 +56,7 @@ final class NvdFeedParser
 
         $cveItems = $cveFeed->CVE_Items;
         $cveFeed = null; // free memory as fast as possible since this is very memory heavy
-        foreach($cveItems as $cveItem) {
+        foreach ($cveItems as $cveItem) {
             $cve = self::parseCveItem($cveItem);
             if ($cve && isset($cveIds[(string)$cve->getId()])) {
                 $cveDetails[(string)$cve->getId()] = $cve;
@@ -76,7 +76,7 @@ final class NvdFeedParser
             if ($feedName === date('Y') && date('n') === '1') {
                 Logger::warning('Unable to download feed ', $feedName, '. Skipping due to beginning of the year.');
                 return (object) [
-                    'CVE_Items' => []
+                    'CVE_Items' => [],
                 ];
             }
             throw ParseException::fromException($ex, __FILE__, __LINE__);
@@ -98,7 +98,7 @@ final class NvdFeedParser
         $baseScore = null;
         if (isset($cveItem->cve->description->description_data)) {
             foreach ($cveItem->cve->description->description_data as $description) {
-                if ($description->lang == 'en') {
+                if ($description->lang === 'en') {
                     $description = $description->value;
                     break;
                 }

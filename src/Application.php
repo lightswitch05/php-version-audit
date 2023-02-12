@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
@@ -34,7 +35,7 @@ final class Application
         $cves = [];
         $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
         $maxVersion = PhpVersion::fromString($majorAndMinor . ".9999");
-        foreach($this->rules->releases as $versionString => $release) {
+        foreach ($this->rules->releases as $versionString => $release) {
             $releaseVersion = PhpVersion::fromString($versionString);
             if ($releaseVersion->compareTo($this->auditVersion) <= 0 ||
                 $releaseVersion->compareTo($maxVersion) > 0) {
@@ -117,7 +118,8 @@ final class Application
 
     public function hasSecuritySupport(): bool
     {
-        if (!$endDateString = self::getSecuritySupportEndDate()) {
+        $endDateString = self::getSecuritySupportEndDate();
+        if (!$endDateString) {
             return false;
         }
         $endDate = DateHelpers::fromISO8601($endDateString);
@@ -143,7 +145,8 @@ final class Application
 
     public function hasActiveSupport(): bool
     {
-        if (!$endDateString = self::getActiveSupportEndDate()) {
+        $endDateString = self::getActiveSupportEndDate();
+        if (!$endDateString) {
             return false;
         }
         $endDate = DateHelpers::fromISO8601($endDateString);
@@ -172,7 +175,7 @@ final class Application
             'activeSupportEndDate' => $this->getActiveSupportEndDate(),
             'securitySupportEndDate' => $this->getSecuritySupportEndDate(),
             'rulesLastUpdatedDate' => $this->getRulesLastUpdatedDate(),
-            'vulnerabilities' => $this->getVulnerabilities()
+            'vulnerabilities' => $this->getVulnerabilities(),
         ];
     }
 
@@ -223,13 +226,13 @@ final class Application
         $currentCounts = [
             'releasesCount' => $this->rules->releasesCount,
             'cveCount' => $this->rules->cveCount,
-            'supportVersionsCount' => $this->rules->supportVersionsCount
+            'supportVersionsCount' => $this->rules->supportVersionsCount,
         ];
 
         $newCounts = [
             'releasesCount' => count($releases),
             'cveCount' => count($cves),
-            'supportVersionsCount' => count(array_keys($supportEndDates))
+            'supportVersionsCount' => count(array_keys($supportEndDates)),
         ];
 
         foreach ($currentCounts as $type => $currentCount) {

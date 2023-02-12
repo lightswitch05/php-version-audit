@@ -1,8 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit\Exceptions;
-
 
 final class ParseException extends \ErrorException
 {

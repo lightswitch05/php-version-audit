@@ -1,13 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
 final class CveDetails implements \JsonSerializable
 {
-    /**
-     * Cve constructor.
-     */
     public function __construct(
         private CveId $id,
         private ?float $baseScore,
@@ -22,9 +20,7 @@ final class CveDetails implements \JsonSerializable
         return $this->id;
     }
 
-    /**
-     * @return array
-     */
+    
     public function jsonSerialize(): array
     {
         return [
@@ -32,7 +28,7 @@ final class CveDetails implements \JsonSerializable
             "baseScore" => $this->baseScore,
             "publishedDate" => $this->publishedDate,
             "lastModifiedDate" => $this->lastModifiedDate,
-            "description" => $this->description
+            "description" => $this->description,
         ];
     }
 }

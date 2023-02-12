@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace lightswitch05\PhpVersionAudit;
-
 
 final class CveId implements \JsonSerializable, \Stringable
 {
@@ -33,7 +32,7 @@ final class CveId implements \JsonSerializable, \Stringable
     public static function sort(array $cveIds): array
     {
         $sortedCveIds = array_merge([], $cveIds);
-        usort($sortedCveIds, fn(CveId $first, CveId $second): int => $first->compareTo($second));
+        usort($sortedCveIds, fn (CveId $first, CveId $second): int => $first->compareTo($second));
         return $sortedCveIds;
     }
 
@@ -50,19 +49,15 @@ final class CveId implements \JsonSerializable, \Stringable
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
+    
     public function __toString(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
+    
     public function jsonSerialize(): string
     {
-       return (string)$this;
+        return (string)$this;
     }
 }

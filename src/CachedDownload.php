@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace lightswitch05\PhpVersionAudit;
 
@@ -68,7 +69,7 @@ final class CachedDownload
      */
     private static function downloadCachedFile(string $url): string
     {
-        if(self::isCached($url)) {
+        if (self::isCached($url)) {
             return self::getFileFromCache($url);
         }
         $modifiedDate = self::getServerLastModifiedDate($url);
@@ -131,7 +132,7 @@ final class CachedDownload
             throw ParseException::fromString("Cached file not found: $fullPath");
         }
         $contents = file_get_contents($fullPath);
-        if($contents === false) {
+        if ($contents === false) {
             throw ParseException::fromString("Unable to read cached file: $fullPath");
         }
         return $contents;
@@ -175,9 +176,9 @@ final class CachedDownload
         $ch = curl_init($url);
         curl_setopt_array($ch, self::DEFAULT_CURL_OPTS);
         curl_setopt($ch, CURLOPT_NOBODY, true);
-        curl_setopt($ch, CURLOPT_FILETIME,  true);
+        curl_setopt($ch, CURLOPT_FILETIME, true);
         $response = curl_exec($ch);
-        $fileTime = curl_getinfo($ch,  CURLINFO_FILETIME);
+        $fileTime = curl_getinfo($ch, CURLINFO_FILETIME);
         curl_close($ch);
         if ($response !== false && $fileTime > -1) {
             return DateHelpers::fromTimestamp($fileTime);

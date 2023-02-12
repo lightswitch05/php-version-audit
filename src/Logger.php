@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace lightswitch05\PhpVersionAudit;
-
 
 final class Logger
 {
@@ -57,7 +56,7 @@ final class Logger
         $logEvent = (object) [
             'level' => $levelName,
             'time' => DateHelpers::nowString(),
-            'message' => ''
+            'message' => '',
         ];
         foreach ($messageParts as $messagePart) {
             if (is_string($messagePart)) {
