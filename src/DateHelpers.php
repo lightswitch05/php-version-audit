@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace lightswitch05\PhpVersionAudit;
-
 
 final class DateHelpers
 {
@@ -49,7 +48,6 @@ final class DateHelpers
     /**
      * @psalm-suppress NullableReturnStatement
      * @psalm-suppress InvalidNullableReturnType
-     * @return string
      */
     public static function nowString(): string
     {

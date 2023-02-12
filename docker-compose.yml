@@ -8,7 +8,7 @@ x-common: &common
 services:
   composer:
     <<: *common
-    image: composer:2.4
+    image: composer:2.5
     volumes:
     - "${PWD}:/opt/php-version-audit"
     - "${HOME}/.composer:/tmp"
@@ -37,3 +37,9 @@ services:
       context: ./
       dockerfile: ./docker/Dockerfile.buster
     image: lightswitch05/php-version-audit:buster
+
+  bullseye:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.bullseye
+    image: lightswitch05/php-version-audit:bullseye

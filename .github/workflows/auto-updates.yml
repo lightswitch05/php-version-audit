@@ -61,6 +61,7 @@ jobs:
         TARGET:
           - alpine
           - buster
+          - bullseye
     env:
       TARGET: ${{matrix.TARGET}}
     steps:
