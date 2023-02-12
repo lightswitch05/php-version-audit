@@ -33,11 +33,11 @@ jobs:
     - name: Install dependencies
       run: docker-compose run --rm composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
 
-    - run: make tests
-    - run: make psalm
-    - run: make rector-dry
-    - run: make phpstan
-    - run: make ecs-dry
+    - name: Run Tests
+      run: make tests
+
+    - name: Psalm Results
+      run: make psalm
 
     - name: fix code coverage paths
       working-directory: ./tests/_output

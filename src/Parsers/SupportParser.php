@@ -1,8 +1,9 @@
 <?php
-
 declare(strict_types=1);
 
+
 namespace lightswitch05\PhpVersionAudit\Parsers;
+
 
 use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\DateHelpers;
@@ -20,7 +21,7 @@ final class SupportParser
     {
         $supportDates = self::parseEol();
         $supportDates = array_merge($supportDates, self::parseSupportedVersions());
-        uksort($supportDates, function (string $first, string $second): int {
+        uksort($supportDates, function(string $first, string $second): int {
             $firstVersion = PhpVersion::fromString($first . ".0");
             $secondVersion = PhpVersion::fromString($second . ".0");
             return $firstVersion->compareTo($secondVersion);
@@ -41,7 +42,7 @@ final class SupportParser
         foreach ($dom->getElementsByTagName('tr') as $row) {
             $class = strtolower($row->getAttribute('class'));
             $cells = $row->getElementsByTagName('td');
-            if (!in_array($class, ['security', 'stable'], true) || count($cells) < 6) {
+            if (!in_array($class, ['security', 'stable']) || count($cells) < 6) {
                 // all the rows we are interested in have either security or stable class names
                 continue;
             }
