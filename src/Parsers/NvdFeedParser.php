@@ -14,10 +14,7 @@ use lightswitch05\PhpVersionAudit\Logger;
 
 final class NvdFeedParser
 {
-    /**
-     * @var int $CVE_START_YEAR
-     */
-    private static $CVE_START_YEAR = 2002;
+    private static int $CVE_START_YEAR = 2002;
 
     /**
      * @param array<string> $cveIds
@@ -38,15 +35,12 @@ final class NvdFeedParser
         foreach ($feedNames as $feedName) {
             $cveDetails = array_merge($cveDetails, self::parseFeed($cvesById, $feedName));
         }
-        uksort($cveDetails, function(string $first, string $second): int {
-            return CveId::fromString($first)->compareTo(CveId::fromString($second));
-        });
+        uksort($cveDetails, fn(string $first, string $second): int => CveId::fromString($first)->compareTo(CveId::fromString($second)));
         return $cveDetails;
     }
 
     /**
      * @param array<array-key, mixed> $cveIds
-     * @param string $feedName
      * @return array<string, CveDetails>
      * @throws ParseException
      */
@@ -68,8 +62,6 @@ final class NvdFeedParser
     }
 
     /**
-     * @param string $feedName
-     * @return \stdClass
      * @throws ParseException
      */
     private static function downloadFeed(string $feedName): \stdClass
@@ -87,10 +79,6 @@ final class NvdFeedParser
         }
     }
 
-    /**
-     * @param \stdClass $cveItem
-     * @return CveDetails|null
-     */
     private static function parseCveItem(\stdClass $cveItem): ?CveDetails
     {
         if (!isset($cveItem->cve->CVE_data_meta->ID)) {

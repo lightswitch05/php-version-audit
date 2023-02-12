@@ -35,7 +35,6 @@ final class ChangelogParser
     }
 
     /**
-     * @param string $url
      * @return PhpRelease[]
      * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
      * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException

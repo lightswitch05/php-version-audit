@@ -6,33 +6,14 @@ namespace lightswitch05\PhpVersionAudit;
 final class PhpRelease implements \JsonSerializable
 {
     /**
-     * @var PhpVersion $version
-     */
-    private $version;
-
-    /**
-     * @var string|null $releaseDate
-     */
-    private $releaseDate;
-
-    /**
      * @var CveId[] $patchedCveIds
      */
-    private $patchedCveIds;
+    private array $patchedCveIds = [];
 
-    private function __construct(PhpVersion $version, ?string $releaseDate)
+    private function __construct(private PhpVersion $version, private ?string $releaseDate)
     {
-        $this->version = $version;
-        $this->releaseDate = $releaseDate;
-        $this->patchedCveIds = [];
     }
 
-    /**
-     * @param PhpVersion $version
-     * @param string|null $releaseDate
-     * @param string|null $releaseDescription
-     * @return PhpRelease
-     */
     public static function fromReleaseDescription(PhpVersion $version, ?string $releaseDate, ?string $releaseDescription): PhpRelease
     {
         $release = new self($version, $releaseDate);
@@ -54,15 +35,10 @@ final class PhpRelease implements \JsonSerializable
     public static function sort(array $releases): array
     {
         $sortedReleases = array_merge([], $releases);
-        usort($sortedReleases, function(PhpRelease $first, PhpRelease $second): int {
-            return $first->compareTo($second);
-        });
+        usort($sortedReleases, fn(PhpRelease $first, PhpRelease $second): int => $first->compareTo($second));
         return $sortedReleases;
     }
 
-    /**
-     * @param CveId $cveId
-     */
     private function addPatchedCveIds(CveId $cveId): void
     {
         if (!in_array($cveId, $this->patchedCveIds)) {
@@ -71,9 +47,6 @@ final class PhpRelease implements \JsonSerializable
         }
     }
 
-    /**
-     * @return PhpVersion
-     */
     public function getVersion(): PhpVersion
     {
         return $this->version;

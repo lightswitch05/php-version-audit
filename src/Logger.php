@@ -7,16 +7,13 @@ namespace lightswitch05\PhpVersionAudit;
 
 final class Logger
 {
-    const SILENT = 0;
-    const ERROR = 1;
-    const WARNING = 2;
-    const INFO = 3;
-    const DEBUG = 4;
+    public const SILENT = 0;
+    public const ERROR = 1;
+    public const WARNING = 2;
+    public const INFO = 3;
+    public const DEBUG = 4;
 
-    /**
-     * @var int|null $verbosity
-     */
-    private static $verbosity;
+    private static ?int $verbosity = null;
 
     public static function setVerbosity(?int $verbosity): void
     {

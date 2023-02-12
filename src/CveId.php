@@ -5,38 +5,19 @@ declare(strict_types=1);
 namespace lightswitch05\PhpVersionAudit;
 
 
-final class CveId implements \JsonSerializable
+final class CveId implements \JsonSerializable, \Stringable
 {
-    /**
-     * @var string $id
-     */
-    private $id;
+    private int $year;
 
-    /**
-     * @var int $year
-     */
-    private $year;
+    private int $sequenceNumber;
 
-    /**
-     * @var int $sequenceNumber
-     */
-    private $sequenceNumber;
-
-    /**
-     * @param string $id
-     */
-    private function __construct(string $id)
+    private function __construct(private string $id)
     {
-        $this->id = $id;
         preg_match("#CVE-(\d+)-(\d+)#", $id, $matches);
         $this->year = (int) $matches[1];
         $this->sequenceNumber = (int) $matches[2];
     }
 
-    /**
-     * @param string|null $cveId
-     * @return CveId|null
-     */
     public static function fromString(?string $cveId): ?CveId
     {
         if (empty($cveId) || !preg_match("#CVE-(\d+)-(\d+)#i", $cveId, $matches)) {
@@ -52,16 +33,10 @@ final class CveId implements \JsonSerializable
     public static function sort(array $cveIds): array
     {
         $sortedCveIds = array_merge([], $cveIds);
-        usort($sortedCveIds, function(CveId $first, CveId $second): int {
-            return $first->compareTo($second);
-        });
+        usort($sortedCveIds, fn(CveId $first, CveId $second): int => $first->compareTo($second));
         return $sortedCveIds;
     }
 
-    /**
-     * @param CveId $otherCveId
-     * @return int
-     */
     public function compareTo(CveId $otherCveId): int
     {
         if ($this->year !== $otherCveId->year) {

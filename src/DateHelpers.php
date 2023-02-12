@@ -49,7 +49,6 @@ final class DateHelpers
     /**
      * @psalm-suppress NullableReturnStatement
      * @psalm-suppress InvalidNullableReturnType
-     * @return string
      */
     public static function nowString(): string
     {

@@ -12,19 +12,12 @@ use lightswitch05\PhpVersionAudit\Parsers\SupportParser;
 
 final class Application
 {
-    /**
-     * @var \stdClass $rules
-     */
-    private $rules;
+    private \stdClass $rules;
 
-    /**
-     * @var PhpVersion $auditVersion
-     */
-    private $auditVersion;
+    private ?\lightswitch05\PhpVersionAudit\PhpVersion $auditVersion = null;
 
     /**
      * Application constructor.
-     * @param string $phpVersion
      * @param bool $noUpdate disable downloading the latest rules from GitHub pages
      */
     public function __construct(string $phpVersion, bool $noUpdate)
@@ -36,9 +29,6 @@ final class Application
         $this->rules = Rules::loadRules($noUpdate);
     }
 
-    /**
-     * @return \stdClass
-     */
     public function getVulnerabilities(): \stdClass
     {
         $cves = [];
@@ -64,17 +54,11 @@ final class Application
         return $vulnerabilities;
     }
 
-    /**
-     * @return bool
-     */
     public function hasVulnerabilities(): bool
     {
         return !empty((array) $this->getVulnerabilities());
     }
 
-    /**
-     * @return bool
-     */
     public function isLatestVersion(): bool
     {
         $versionString = self::getLatestVersion();
@@ -82,9 +66,6 @@ final class Application
         return $this->auditVersion->compareTo($latestVersion) === 0;
     }
 
-    /**
-     * @return string
-     */
     public function getLatestVersion(): string
     {
         if (!$this->rules->latestVersion) {
@@ -93,9 +74,6 @@ final class Application
         return (string) $this->rules->latestVersion;
     }
 
-    /**
-     * @return bool
-     */
     public function isLatestPatchVersion(): bool
     {
         $versionString = self::getLatestPatchVersion();
@@ -103,9 +81,6 @@ final class Application
         return $this->auditVersion->compareTo($latestVersion) === 0;
     }
 
-    /**
-     * @return string
-     */
     public function getLatestPatchVersion(): string
     {
         $majorAndMinor = $this->auditVersion->getMajorMinorVersionString();
@@ -119,9 +94,6 @@ final class Application
         return (string) $latestPatch;
     }
 
-    /**
-     * @return bool
-     */
     public function isLatestMinorVersion(): bool
     {
         $versionString = self::getLatestMinorVersion();
@@ -129,9 +101,6 @@ final class Application
         return $this->auditVersion->compareTo($latestVersion) === 0;
     }
 
-    /**
-     * @return string
-     */
     public function getLatestMinorVersion(): string
     {
         $major = (string) $this->auditVersion->getMajor();
@@ -141,17 +110,11 @@ final class Application
         return (string) $this->rules->latestVersions->$major;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSecuritySupportEndDate(): ?string
     {
         return $this->getSupportEndDate('security');
     }
 
-    /**
-     * @return bool
-     */
     public function hasSecuritySupport(): bool
     {
         if (!$endDateString = self::getSecuritySupportEndDate()) {
@@ -161,9 +124,6 @@ final class Application
         return DateHelpers::nowTimestamp() - $endDate->getTimestamp() < 0;
     }
 
-    /**
-     * @return string|null
-     */
     public function getActiveSupportEndDate(): ?string
     {
         return $this->getSupportEndDate('active');
@@ -181,9 +141,6 @@ final class Application
         return DateHelpers::toISO8601($this->rules->supportEndDates->$majorAndMinor->$supportType);
     }
 
-    /**
-     * @return bool
-     */
     public function hasActiveSupport(): bool
     {
         if (!$endDateString = self::getActiveSupportEndDate()) {
@@ -227,7 +184,6 @@ final class Application
      *       The github hosted rules are setup on a cron schedule to update multiple times a day.
      *       Running it directly will not provide you with any new information and will only
      *       waste time and server resources.
-     * @return void
      */
     public function fullRulesUpdate(): void
     {
@@ -261,7 +217,6 @@ final class Application
      * @param array<PhpRelease> $releases
      * @param array<CveDetails> $cves
      * @param array<\stdClass> $supportEndDates
-     * @return void
      */
     private function assertExpectedRulesCount(array $releases, array $cves, array $supportEndDates): void
     {

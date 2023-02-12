@@ -8,30 +8,19 @@ use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class Rules
 {
-    /**
-     * @var string $RULES_PATH
-     */
-    private static $RULES_PATH = '/../docs/rules-v1.json';
+    private static string $RULES_PATH = '/../docs/rules-v1.json';
 
-    /**
-     * @var string $HOSTED_RULES_PATH
-     */
-    private static $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
+    private static string $HOSTED_RULES_PATH = 'https://www.github.developerdan.com/php-version-audit/rules-v1.json';
 
-    /**
-     * @param \stdClass $rules
-     */
     public static function assertFreshRules(\stdClass $rules): void
     {
         $elapsedSeconds = DateHelpers::nowTimestamp() - $rules->lastUpdatedDate->getTimestamp();
-        if ($elapsedSeconds > 1209600) {
+        if ($elapsedSeconds > 1_209_600) {
             throw StaleRulesException::fromString("Rules are older then two weeks");
         }
     }
 
     /**
-     * @param bool $noUpdate
-     * @return \stdClass
      * @throws Exceptions\DownloadException
      * @throws ParseException
      */
@@ -42,8 +31,6 @@ final class Rules
     }
 
     /**
-     * @param bool $noUpdate
-     * @return \stdClass
      * @throws Exceptions\DownloadException
      * @throws ParseException
      */
@@ -68,10 +55,6 @@ final class Rules
         }
     }
 
-    /**
-     * @param \stdClass $rules
-     * @return \stdClass
-     */
     private static function transformRules(\stdClass $rules): \stdClass
     {
         if (empty($rules->lastUpdatedDate)
@@ -91,7 +74,7 @@ final class Rules
         }
         foreach ($rules->releases as $versionString => $release) {
             $phpVersion = PhpVersion::fromString($versionString);
-            $phpRelease = PhpRelease::fromReleaseDescription($phpVersion, $release->releaseDate, json_encode($release->patchedCves));
+            $phpRelease = PhpRelease::fromReleaseDescription($phpVersion, $release->releaseDate, json_encode($release->patchedCves, JSON_THROW_ON_ERROR));
             $rules->releases->$versionString = $phpRelease;
         }
         foreach ($rules->cves as $cveString => $cveDetails) {
@@ -110,7 +93,6 @@ final class Rules
      * @param array<PhpRelease> $releases
      * @param array<CveDetails> $cves
      * @param array<\stdClass> $supportEndDates
-     * @return void
      */
     public static function saveRules(array $releases, array $cves, array $supportEndDates): void
     {
@@ -132,10 +114,6 @@ final class Rules
         self::writeRulesFile($rules);
     }
 
-    /**
-     * @param \stdClass $rules
-     * @return void
-     */
     private static function writeRulesFile(\stdClass $rules): void
     {
         file_put_contents(__DIR__ . self::$RULES_PATH, json_encode($rules, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
@@ -143,7 +121,6 @@ final class Rules
 
     /**
      * @param PhpRelease[] $releases
-     * @return PhpVersion|null
      */
     private static function releasesToLatestVersion(array $releases): ?PhpVersion
     {
@@ -153,7 +130,7 @@ final class Rules
             if ($releaseVersion->isPreRelease()) {
                 continue;
             }
-            $latestVersion = $latestVersion ?? $releaseVersion;
+            $latestVersion ??= $releaseVersion;
             if ($releaseVersion->compareTo($latestVersion) > 0) {
                 $latestVersion = $releaseVersion;
             }
