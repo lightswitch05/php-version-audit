@@ -110,7 +110,7 @@ final class PhpVersion implements \JsonSerializable, \Stringable
      */
     public function __toString(): string
     {
-        return (string) "$this->major.$this->minor.$this->patch$this->preReleaseType$this->preReleaseVersion";
+        return "$this->major.$this->minor.$this->patch$this->preReleaseType$this->preReleaseVersion";
     }
 
     /**
