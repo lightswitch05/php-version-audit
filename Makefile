@@ -11,8 +11,6 @@ tests:
 run:
 	@docker-compose run --rm php ./php-version-audit
 
-lint: phpstan psalm rector-dry ecs-dry
-
 phpstan:
 	@docker-compose run --rm phpstan
 
@@ -20,13 +18,7 @@ psalm:
 	@docker-compose run --rm --entrypoint=./vendor/bin/psalm php
 
 rector-dry:
-	@docker-compose run --rm --entrypoint vendor/bin/rector php process src --dry-run
+	@docker run --rm -v $(PWD):/project rector/rector:latest process /project/src --config /project/rector.yml --autoload-file /project/vendor/autoload.php --dry-run
 
 rector:
-	@docker-compose run --rm --entrypoint vendor/bin/rector php process src
-
-ecs-dry:
-	@docker-compose run --rm --entrypoint vendor/bin/ecs php
-
-ecs:
-	@docker-compose run --rm --entrypoint vendor/bin/ecs php --fix
+	@docker run --rm -v $(PWD):/project rector/rector:latest process /project/src --config /project/rector.yml --autoload-file /project/vendor/autoload.php

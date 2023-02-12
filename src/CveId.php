@@ -1,22 +1,42 @@
 <?php
-
 declare(strict_types=1);
+
 
 namespace lightswitch05\PhpVersionAudit;
 
-final class CveId implements \JsonSerializable, \Stringable
+
+final class CveId implements \JsonSerializable
 {
-    private int $year;
+    /**
+     * @var string $id
+     */
+    private $id;
 
-    private int $sequenceNumber;
+    /**
+     * @var int $year
+     */
+    private $year;
 
-    private function __construct(private string $id)
+    /**
+     * @var int $sequenceNumber
+     */
+    private $sequenceNumber;
+
+    /**
+     * @param string $id
+     */
+    private function __construct(string $id)
     {
+        $this->id = $id;
         preg_match("#CVE-(\d+)-(\d+)#", $id, $matches);
         $this->year = (int) $matches[1];
         $this->sequenceNumber = (int) $matches[2];
     }
 
+    /**
+     * @param string|null $cveId
+     * @return CveId|null
+     */
     public static function fromString(?string $cveId): ?CveId
     {
         if (empty($cveId) || !preg_match("#CVE-(\d+)-(\d+)#i", $cveId, $matches)) {
@@ -32,10 +52,16 @@ final class CveId implements \JsonSerializable, \Stringable
     public static function sort(array $cveIds): array
     {
         $sortedCveIds = array_merge([], $cveIds);
-        usort($sortedCveIds, fn (CveId $first, CveId $second): int => $first->compareTo($second));
+        usort($sortedCveIds, function(CveId $first, CveId $second): int {
+            return $first->compareTo($second);
+        });
         return $sortedCveIds;
     }
 
+    /**
+     * @param CveId $otherCveId
+     * @return int
+     */
     public function compareTo(CveId $otherCveId): int
     {
         if ($this->year !== $otherCveId->year) {
@@ -49,15 +75,19 @@ final class CveId implements \JsonSerializable, \Stringable
         return $this->id;
     }
 
-    
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->id;
     }
 
-    
+    /**
+     * @return string
+     */
     public function jsonSerialize(): string
     {
-        return (string)$this;
+       return (string)$this;
     }
 }

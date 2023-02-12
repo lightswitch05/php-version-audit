@@ -1,8 +1,9 @@
 <?php
-
 declare(strict_types=1);
 
+
 namespace lightswitch05\PhpVersionAudit;
+
 
 use lightswitch05\PhpVersionAudit\Exceptions\InvalidArgumentException;
 use lightswitch05\PhpVersionAudit\Exceptions\InvalidVersionException;
@@ -10,21 +11,21 @@ use lightswitch05\PhpVersionAudit\Exceptions\StaleRulesException;
 
 final class Cli
 {
-    private static string $PHP_VERSION = 'version';
-    private static string $HELP = 'help';
-    private static string $NO_UPDATE = 'no-update';
-    private static string $FULL_UPDATE = 'full-update';
-    private static string $FAIL_SECURITY = 'fail-security';
-    private static int $FAIL_SECURITY_CODE = 10;
-    private static string $FAIL_SUPPORT = 'fail-support';
-    private static int $FAIL_SUPPORT_CODE = 20;
-    private static string $FAIL_PATCH = 'fail-patch';
-    private static int $FAIL_PATCH_CODE = 30;
-    private static string $FAIL_LATEST = 'fail-latest';
-    private static int $FAIL_LATEST_CODE = 40;
-    private static int $FAIL_STALE_CODE = 100;
-    private static int $INVALID_ARG_CODE = 200;
-    private static int $INVALID_VERSION_CODE = 300;
+    private static $PHP_VERSION = 'version';
+    private static $HELP = 'help';
+    private static $NO_UPDATE = 'no-update';
+    private static $FULL_UPDATE = 'full-update';
+    private static $FAIL_SECURITY = 'fail-security';
+    private static $FAIL_SECURITY_CODE = 10;
+    private static $FAIL_SUPPORT = 'fail-support';
+    private static $FAIL_SUPPORT_CODE = 20;
+    private static $FAIL_PATCH = 'fail-patch';
+    private static $FAIL_PATCH_CODE = 30;
+    private static $FAIL_LATEST = 'fail-latest';
+    private static $FAIL_LATEST_CODE = 40;
+    private static $FAIL_STALE_CODE = 100;
+    private static $INVALID_ARG_CODE = 200;
+    private static $INVALID_VERSION_CODE = 300;
 
 
     public static function run(): int
@@ -89,6 +90,9 @@ final class Cli
         return 0;
     }
 
+    /**
+     * @return array
+     */
     private static function getArgs(): array
     {
         $options = getopt('', [
@@ -103,7 +107,7 @@ final class Cli
             'silent',
             'v',
             'vv',
-            'vvv',
+            'vvv'
         ]);
         return [
             self::$PHP_VERSION => self::getVersion($options),
@@ -114,7 +118,7 @@ final class Cli
             self::$FAIL_LATEST => self::getOptionalFlag($options, self::$FAIL_LATEST),
             self::$FAIL_PATCH => self::getOptionalFlag($options, self::$FAIL_PATCH),
             self::$FAIL_SUPPORT => self::getOptionalFlag($options, self::$FAIL_SUPPORT),
-            'verbosity' => self::getVerbosity($options),
+            'verbosity' => self::getVerbosity($options)
         ];
     }
 
@@ -130,8 +134,8 @@ final class Cli
         printf($usageMask, self::$NO_UPDATE, 'silent');
         printf("\t\t\t\t[--%s]" . PHP_EOL, 'v');
         printf("%s" . PHP_EOL, "optional arguments:");
-        printf($argsMask, self::$HELP, "\tshow this help message and exit.");
-        printf($argsMask, self::$PHP_VERSION, "set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.");
+        printf($argsMask, self::$HELP,"\tshow this help message and exit.");
+        printf($argsMask, self::$PHP_VERSION,"set the PHP Version to run against. Defaults to the runtime version. This is required when running with docker.");
         printf($argsErrorCodeMask, self::$FAIL_SECURITY, self::$FAIL_SECURITY_CODE, "exit code if any CVEs are found, or security support has ended.");
         printf($argsErrorCodeMask, self::$FAIL_SUPPORT, self::$FAIL_SUPPORT_CODE, "exit code if the version of PHP no longer gets active (bug) support.");
         printf($argsErrorCodeMask, self::$FAIL_PATCH, self::$FAIL_PATCH_CODE, "exit code if there is a newer patch-level release.");

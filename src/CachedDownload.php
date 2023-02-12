@@ -1,6 +1,5 @@
 <?php
-
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace lightswitch05\PhpVersionAudit;
 
@@ -10,9 +9,9 @@ use lightswitch05\PhpVersionAudit\Exceptions\ParseException;
 
 final class CachedDownload
 {
-    private const INDEX_FILE_NAME = 'index.json';
-    private const MAX_RETRY = 3;
-    private const DEFAULT_CURL_OPTS = [
+    const INDEX_FILE_NAME = 'index.json';
+    const MAX_RETRY = 3;
+    const DEFAULT_CURL_OPTS = [
         CURLOPT_FAILONERROR => true,
         CURLOPT_ACCEPT_ENCODING => '',
         CURLOPT_RETURNTRANSFER => true,
@@ -20,6 +19,8 @@ final class CachedDownload
     ];
 
     /**
+     * @param string $url
+     * @return string
      * @throws ParseException
      * @throws DownloadException
      */
@@ -34,6 +35,8 @@ final class CachedDownload
     }
 
     /**
+     * @param string $url
+     * @return \DOMDocument
      * @throws ParseException
      * @throws DownloadException
      */
@@ -49,6 +52,8 @@ final class CachedDownload
     }
 
     /**
+     * @param string $url
+     * @return \stdClass
      * @throws ParseException
      * @throws DownloadException
      */
@@ -63,17 +68,19 @@ final class CachedDownload
     }
 
     /**
+     * @param string $url
+     * @return string
      * @throws ParseException
      * @throws DownloadException
      * @throws \JsonException
      */
     private static function downloadCachedFile(string $url): string
     {
-        if (self::isCached($url)) {
+        if(self::isCached($url)) {
             return self::getFileFromCache($url);
         }
         $modifiedDate = self::getServerLastModifiedDate($url);
-        if (str_ends_with($url, 'gz')) {
+        if (substr($url, -2) === 'gz') {
             $data = self::downloadGZipFile($url);
         } else {
             $data = self::downloadFile($url);
@@ -83,6 +90,8 @@ final class CachedDownload
     }
 
     /**
+     * @param string $url
+     * @return string
      * @throws DownloadException
      * @throws ParseException
      */
@@ -97,6 +106,9 @@ final class CachedDownload
     }
 
     /**
+     * @param string $url
+     * @param int    $attempt
+     * @return string
      * @throws DownloadException
      *
      * @psalm-suppress InvalidReturnType
@@ -121,6 +133,8 @@ final class CachedDownload
     }
 
     /**
+     * @param string $url
+     * @return string
      * @throws ParseException
      */
     private static function getFileFromCache(string $url): string
@@ -132,13 +146,15 @@ final class CachedDownload
             throw ParseException::fromString("Cached file not found: $fullPath");
         }
         $contents = file_get_contents($fullPath);
-        if ($contents === false) {
+        if($contents === false) {
             throw ParseException::fromString("Unable to read cached file: $fullPath");
         }
         return $contents;
     }
 
     /**
+     * @param string $url
+     * @return bool
      * @throws \JsonException
      */
     private static function isCached(string $url): bool
@@ -158,6 +174,11 @@ final class CachedDownload
         return !$expired;
     }
 
+    /**
+     * @param string $url
+     * @param \DateTimeImmutable $lastModifiedDate
+     * @return bool
+     */
     private static function isExpired(string $url, \DateTimeImmutable $lastModifiedDate): bool
     {
         $lastModifiedTimestamp = $lastModifiedDate->getTimestamp();
@@ -171,14 +192,19 @@ final class CachedDownload
         return $serverLastModifiedDate->getTimestamp() > $lastModifiedTimestamp;
     }
 
+    /**
+     * @param string $url
+     * @param int    $attempt
+     * @return \DateTimeImmutable
+     */
     private static function getServerLastModifiedDate(string $url, int $attempt = 0): \DateTimeImmutable
     {
         $ch = curl_init($url);
         curl_setopt_array($ch, self::DEFAULT_CURL_OPTS);
         curl_setopt($ch, CURLOPT_NOBODY, true);
-        curl_setopt($ch, CURLOPT_FILETIME, true);
+        curl_setopt($ch, CURLOPT_FILETIME,  true);
         $response = curl_exec($ch);
-        $fileTime = curl_getinfo($ch, CURLINFO_FILETIME);
+        $fileTime = curl_getinfo($ch,  CURLINFO_FILETIME);
         curl_close($ch);
         if ($response !== false && $fileTime > -1) {
             return DateHelpers::fromTimestamp($fileTime);
@@ -193,12 +219,19 @@ final class CachedDownload
         return new \DateTimeImmutable();
     }
 
+    /**
+     * @param string $url
+     * @return string
+     */
     private static function urlToFileName(string $url): string
     {
         $hash = hash("sha256", $url);
         return substr($hash, 0, 15) . ".txt";
     }
 
+    /**
+     * @return void
+     */
     private static function setup(): void
     {
         $tempDir = self::getCachePath();
@@ -213,6 +246,10 @@ final class CachedDownload
     }
 
     /**
+     * @param string             $url
+     * @param string             $data
+     * @param \DateTimeImmutable $modifiedDate
+     * @return void
      * @throws \JsonException
      */
     private static function writeCacheFile(string $url, string $data, \DateTimeImmutable $modifiedDate): void
@@ -227,6 +264,7 @@ final class CachedDownload
     }
 
     /**
+     * @return \stdClass
      * @throws \JsonException
      */
     private static function getCacheIndex(): \stdClass
@@ -236,6 +274,9 @@ final class CachedDownload
         return json_decode($index, false, 513, JSON_THROW_ON_ERROR);
     }
 
+    /**
+     * @param \stdClass $index
+     */
     private static function saveCacheIndex(\stdClass $index): void
     {
         $fullPath = self::getCachePath(self::INDEX_FILE_NAME);
@@ -243,6 +284,10 @@ final class CachedDownload
         file_put_contents($fullPath, $data);
     }
 
+    /**
+     * @param string|null $filename
+     * @return string
+     */
     private static function getCachePath(?string $filename = null): string
     {
         return __DIR__ . "/../tmp/$filename";

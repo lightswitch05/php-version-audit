@@ -1,4 +1,4 @@
-FROM composer:2.5 as composer-build
+FROM composer:2.4 as composer-build
 WORKDIR /opt/php-version-audit
 COPY ./docker/docker-entrypoint.sh ./docker/docker-entrypoint.sh
 COPY ./src ./src
@@ -15,7 +15,7 @@ RUN composer install            \
     --optimize-autoloader       \
     --prefer-dist
 
-FROM php:8.2-cli-buster
+FROM php:8.1-cli-buster
 WORKDIR /opt/php-version-audit
 ENV REQUIRE_VERSION_ARG=true
 COPY --from=composer-build /opt/php-version-audit /opt/php-version-audit
