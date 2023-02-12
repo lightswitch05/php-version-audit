@@ -18,7 +18,7 @@ psalm:
 	@docker-compose run --rm --entrypoint=./vendor/bin/psalm php
 
 rector-dry:
-	@docker run --rm -v $(PWD):/project rector/rector:latest process /project/src --config /project/rector.yml --autoload-file /project/vendor/autoload.php --dry-run
+	@docker-compose run --rm --entrypoint vendor/bin/rector php process src --dry-run
 
 rector:
-	@docker run --rm -v $(PWD):/project rector/rector:latest process /project/src --config /project/rector.yml --autoload-file /project/vendor/autoload.php
+	@docker-compose run --rm --entrypoint vendor/bin/rector php process src
