@@ -74,7 +74,11 @@ final class Rules
         }
         foreach ($rules->releases as $versionString => $release) {
             $phpVersion = PhpVersion::fromString($versionString);
-            $phpRelease = PhpRelease::fromReleaseDescription($phpVersion, $release->releaseDate, json_encode($release->patchedCves, JSON_THROW_ON_ERROR));
+            $phpRelease = PhpRelease::fromReleaseDescription(
+                $phpVersion,
+                $release->releaseDate,
+                json_encode($release->patchedCves, JSON_THROW_ON_ERROR)
+            );
             $rules->releases->$versionString = $phpRelease;
         }
         foreach ($rules->cves as $cveString => $cveDetails) {

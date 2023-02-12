@@ -11,6 +11,8 @@ tests:
 run:
 	@docker-compose run --rm php ./php-version-audit
 
+lint: phpstan psalm rector-dry
+
 phpstan:
 	@docker-compose run --rm phpstan
 

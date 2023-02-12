@@ -8,12 +8,13 @@ final class CveDetails implements \JsonSerializable
     /**
      * Cve constructor.
      */
-    public function __construct(private CveId $id,
-                                private ?float $baseScore,
-                                private ?string $publishedDate,
-                                private ?string $lastModifiedDate,
-                                private ?string $description)
-    {
+    public function __construct(
+        private CveId $id,
+        private ?float $baseScore,
+        private ?string $publishedDate,
+        private ?string $lastModifiedDate,
+        private ?string $description
+    ) {
     }
 
     public function getId(): CveId
