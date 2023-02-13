@@ -6,12 +6,13 @@ setup:
 
 tests:
 	@docker-compose run --rm composer validate --strict
-	@docker-compose run --rm --entrypoint=php php vendor/bin/codecept run --coverage --coverage-html --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
+	@docker-compose run --rm php vendor/bin/codecept run --coverage --coverage-html --phpunit-xml test-results.xml --coverage-xml coverage.xml --steps
 
 run:
-	@docker-compose run --rm php ./php-version-audit
+	@docker-compose run --rm php-version-audit
 
 lint: phpstan psalm rector-dry ecs-dry
+lint-fix: phpstan psalm rector ecs
 
 phpstan:
 	@docker-compose run --rm phpstan
