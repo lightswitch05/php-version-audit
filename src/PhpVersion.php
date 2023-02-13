@@ -9,6 +9,12 @@ final class PhpVersion implements \JsonSerializable, \Stringable
     private const PRE_RELEASE_ALPHA = 'alpha';
     private const PRE_RELEASE_BETA = 'beta';
     private const PRE_RELEASE_CANDIDATE = 'rc';
+    private const PRE_RELEASE_TYPES = [
+        self::PRE_RELEASE_ALPHA,
+        self::PRE_RELEASE_BETA,
+        self::PRE_RELEASE_CANDIDATE,
+    ];
+    private const RELEASE_PATTERN = '#(\d+).(\d+).(\d+)\s*(release\s*candidate|rc|beta|alpha)?\s*(\d*)#i';
 
     private function __construct(
         private int $major,
@@ -24,7 +30,7 @@ final class PhpVersion implements \JsonSerializable, \Stringable
 
     public static function fromString(?string $fullVersion): ?PhpVersion
     {
-        if (!$fullVersion || !preg_match('#(\d+).(\d+).(\d+)\s*(release\s*candidate|rc|beta|alpha)?\s*(\d*)#i', $fullVersion, $matches)) {
+        if (!$fullVersion || !preg_match(self::RELEASE_PATTERN, $fullVersion, $matches)) {
             return null;
         }
         $major = (int) $matches[1];
@@ -72,7 +78,7 @@ final class PhpVersion implements \JsonSerializable, \Stringable
     private static function normalizeReleaseType(string $parsedReleaseType): ?string
     {
         $parsedReleaseType = strtolower($parsedReleaseType);
-        if (in_array($parsedReleaseType, [self::PRE_RELEASE_CANDIDATE, self::PRE_RELEASE_BETA, self::PRE_RELEASE_ALPHA], true)) {
+        if (in_array($parsedReleaseType, self::PRE_RELEASE_TYPES, true)) {
             return $parsedReleaseType;
         }
         if (preg_match('#release\s*candidate#', $parsedReleaseType)) {
@@ -106,13 +112,13 @@ final class PhpVersion implements \JsonSerializable, \Stringable
         return "$this->major.$this->minor";
     }
 
-    
+
     public function __toString(): string
     {
         return "$this->major.$this->minor.$this->patch$this->preReleaseType$this->preReleaseVersion";
     }
 
-    
+
     public function jsonSerialize(): string
     {
         return (string)$this;
