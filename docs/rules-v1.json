@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-02-13T02:56:21+0000",
+    "lastUpdatedDate": "2023-02-13T13:30:49+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3078,8 +3078,8 @@
             "id": "CVE-2007-2872",
             "baseScore": 6.8,
             "publishedDate": "2007-06-04T17:30:00+0000",
-            "lastModifiedDate": "2023-02-02T16:15:00+0000",
-            "description": "CVE-2007-2872 php chunk_split integer overflow"
+            "lastModifiedDate": "2023-02-13T02:17:00+0000",
+            "description": "Multiple integer overflows in the chunk_split function in PHP 5 before 5.2.3 and PHP 4 before 4.4.8 allow remote attackers to cause a denial of service (crash) or execute arbitrary code via the (1) chunks, (2) srclen, and (3) chunklen arguments."
         },
         "CVE-2007-3378": {
             "id": "CVE-2007-3378",
@@ -3225,8 +3225,8 @@
             "id": "CVE-2010-3709",
             "baseScore": 4.3,
             "publishedDate": "2010-11-09T01:00:00+0000",
-            "lastModifiedDate": "2023-02-02T14:15:00+0000",
-            "description": "CVE-2010-3709 php: NULL pointer dereference in ZipArchive::getArchiveComment"
+            "lastModifiedDate": "2023-02-13T04:25:00+0000",
+            "description": "The ZipArchive::getArchiveComment function in PHP 5.2.x through 5.2.14 and 5.3.x through 5.3.3 allows context-dependent attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted ZIP archive."
         },
         "CVE-2010-3710": {
             "id": "CVE-2010-3710",
@@ -3239,8 +3239,8 @@
             "id": "CVE-2010-3870",
             "baseScore": 6.8,
             "publishedDate": "2010-11-12T21:00:00+0000",
-            "lastModifiedDate": "2023-02-02T14:15:00+0000",
-            "description": "CVE-2010-3870 php: XSS mitigation bypass via utf8_decode()"
+            "lastModifiedDate": "2023-02-13T04:27:00+0000",
+            "description": "The utf8_decode function in PHP before 5.3.4 does not properly handle non-shortest form UTF-8 encoding and ill-formed subsequences in UTF-8 data, which makes it easier for remote attackers to bypass cross-site scripting (XSS) and SQL injection protection mechanisms via a crafted string."
         },
         "CVE-2010-4150": {
             "id": "CVE-2010-4150",
@@ -3351,8 +3351,8 @@
             "id": "CVE-2012-0830",
             "baseScore": 7.5,
             "publishedDate": "2012-02-06T20:55:00+0000",
-            "lastModifiedDate": "2023-02-02T18:15:00+0000",
-            "description": "CVE-2012-0830 php: remote code exec flaw introduced in the CVE-2011-4885 hashdos fix"
+            "lastModifiedDate": "2023-02-13T03:26:00+0000",
+            "description": "The php_register_variable_ex function in php_variables.c in PHP 5.3.9 allows remote attackers to execute arbitrary code via a request containing a large number of variables, related to improper handling of array variables. NOTE: this vulnerability exists because of an incorrect fix for CVE-2011-4885."
         },
         "CVE-2012-1172": {
             "id": "CVE-2012-1172",
@@ -3379,8 +3379,8 @@
             "id": "CVE-2012-2311",
             "baseScore": 7.5,
             "publishedDate": "2012-05-11T10:15:00+0000",
-            "lastModifiedDate": "2018-01-18T02:29:00+0000",
-            "description": "sapi/cgi/cgi_main.c in PHP before 5.3.13 and 5.4.x before 5.4.3, when configured as a CGI script (aka php-cgi), does not properly handle query strings that contain a %3D sequence but no = (equals sign) character, which allows remote attackers to execute arbitrary code by placing command-line options in the query string, related to lack of skipping a certain php_getopt for the 'd' case.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-1823."
+            "lastModifiedDate": "2023-02-13T00:24:00+0000",
+            "description": "sapi/cgi/cgi_main.c in PHP before 5.3.13 and 5.4.x before 5.4.3, when configured as a CGI script (aka php-cgi), does not properly handle query strings that contain a %3D sequence but no = (equals sign) character, which allows remote attackers to execute arbitrary code by placing command-line options in the query string, related to lack of skipping a certain php_getopt for the 'd' case. NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-1823."
         },
         "CVE-2012-2329": {
             "id": "CVE-2012-2329",
@@ -3393,8 +3393,8 @@
             "id": "CVE-2012-2386",
             "baseScore": 7.5,
             "publishedDate": "2012-07-07T10:21:00+0000",
-            "lastModifiedDate": "2023-02-02T14:16:00+0000",
-            "description": "CVE-2012-2386 php: Integer overflow leading to heap-buffer overflow in the Phar extension"
+            "lastModifiedDate": "2023-02-13T04:33:00+0000",
+            "description": "Integer overflow in the phar_parse_tarfile function in tar.c in the phar extension in PHP before 5.3.14 and 5.4.x before 5.4.4 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted tar file that triggers a heap-based buffer overflow."
         },
         "CVE-2012-2688": {
             "id": "CVE-2012-2688",
@@ -3435,7 +3435,7 @@
             "id": "CVE-2013-1824",
             "baseScore": 4.3,
             "publishedDate": "2013-09-16T13:02:00+0000",
-            "lastModifiedDate": "2022-10-27T20:51:00+0000",
+            "lastModifiedDate": "2023-02-13T04:41:00+0000",
             "description": "The SOAP parser in PHP before 5.3.22 and 5.4.x before 5.4.12 allows remote attackers to read arbitrary files via a SOAP WSDL file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions."
         },
         "CVE-2013-2110": {
@@ -3519,7 +3519,7 @@
             "id": "CVE-2014-0236",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2016-05-18T18:26:00+0000",
+            "lastModifiedDate": "2023-02-13T00:37:00+0000",
             "description": "file before 5.18, as used in the Fileinfo component in PHP before 5.6.0, allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a zero root_storage value in a CDF file, related to cdf.c and readcdf.c."
         },
         "CVE-2014-0237": {
@@ -4394,15 +4394,15 @@
             "id": "CVE-2016-5385",
             "baseScore": 8.1,
             "publishedDate": "2016-07-19T02:00:00+0000",
-            "lastModifiedDate": "2023-02-02T21:17:00+0000",
-            "description": "It was discovered that PHP did not properly protect against the HTTP_PROXY variable name clash. A remote attacker could possibly use this flaw to redirect HTTP requests performed by a PHP script to an attacker-controlled proxy via a malicious HTTP request."
+            "lastModifiedDate": "2023-02-12T23:23:00+0000",
+            "description": "PHP through 7.0.8 does not attempt to address RFC 3875 section 4.1.18 namespace conflicts and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary proxy server via a crafted Proxy header in an HTTP request, as demonstrated by (1) an application that makes a getenv('HTTP_PROXY') call or (2) a CGI configuration of PHP, aka an \"httpoxy\" issue."
         },
         "CVE-2016-5399": {
             "id": "CVE-2016-5399",
             "baseScore": 7.8,
             "publishedDate": "2017-04-21T20:59:00+0000",
-            "lastModifiedDate": "2023-02-02T21:17:00+0000",
-            "description": "A flaw was found in the way certain error conditions were handled by bzread() function in PHP. An attacker could use this flaw to upload a specially crafted bz2 archive which, when parsed via the vulnerable function, could cause the application to crash or execute arbitrary code with the permissions of the user running the PHP application."
+            "lastModifiedDate": "2023-02-12T23:23:00+0000",
+            "description": "The bzread function in ext/bz2/bz2.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 allows remote attackers to cause a denial of service (out-of-bounds write) or execute arbitrary code via a crafted bz2 archive."
         },
         "CVE-2016-5766": {
             "id": "CVE-2016-5766",
