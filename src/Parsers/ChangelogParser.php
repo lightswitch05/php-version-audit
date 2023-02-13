@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace lightswitch05\PhpVersionAudit\Parsers;
-
 
 use lightswitch05\PhpVersionAudit\CachedDownload;
 use lightswitch05\PhpVersionAudit\DateHelpers;
@@ -24,7 +23,7 @@ final class ChangelogParser
             'https://www.php.net/ChangeLog-4.php',
             'https://www.php.net/ChangeLog-5.php',
             'https://www.php.net/ChangeLog-7.php',
-            'https://www.php.net/ChangeLog-8.php'
+            'https://www.php.net/ChangeLog-8.php',
         ];
         $allReleases = [];
         foreach ($urls as $url) {
@@ -35,7 +34,6 @@ final class ChangelogParser
     }
 
     /**
-     * @param string $url
      * @return PhpRelease[]
      * @throws \lightswitch05\PhpVersionAudit\Exceptions\DownloadException
      * @throws \lightswitch05\PhpVersionAudit\Exceptions\ParseException

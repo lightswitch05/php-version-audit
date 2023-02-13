@@ -207,7 +207,8 @@ class ApplicationTest extends \Codeception\Test\Unit
         $this->assertNotEmpty($result->latestMinorVersion);
         $this->assertTrue(is_string($result->latestVersion));
         $this->assertNotEmpty($result->latestVersion);
-        $this->assertObjectHasAttribute('activeSupportEndDate', $result);
         $this->assertNotNull($result->vulnerabilities);
+        $hasActiveSupportEndDate = property_exists($result, 'activeSupportEndDate');
+        $this->assertTrue($hasActiveSupportEndDate);
     }
 }
