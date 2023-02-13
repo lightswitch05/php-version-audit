@@ -15,8 +15,11 @@ final class PhpRelease implements \JsonSerializable
     {
     }
 
-    public static function fromReleaseDescription(PhpVersion $version, ?string $releaseDate, ?string $releaseDescription): PhpRelease
-    {
+    public static function fromReleaseDescription(
+        PhpVersion $version,
+        ?string $releaseDate,
+        ?string $releaseDescription
+    ): PhpRelease {
         $release = new self($version, $releaseDate);
         if (!empty($releaseDescription) && preg_match_all('#CVE-\d+-\d+#i', $releaseDescription, $cveMatches)) {
             foreach ($cveMatches[0] as $match) {
@@ -42,10 +45,17 @@ final class PhpRelease implements \JsonSerializable
 
     private function addPatchedCveIds(CveId $cveId): void
     {
-        if (!in_array($cveId, $this->patchedCveIds, true)) {
-            $this->patchedCveIds[] = $cveId;
-            $this->patchedCveIds = CveId::sort($this->patchedCveIds);
+        for ($i = 0; $i < sizeof($this->patchedCveIds); $i++) {
+            $comparison = $this->patchedCveIds[$i]->compareTo($cveId);
+            if ($comparison === 0) {
+                return;
+            }
+            if ($comparison > 0) {
+                array_splice($this->patchedCveIds, $i, 0, [$cveId]);
+                return;
+            }
         }
+        $this->patchedCveIds[] = $cveId;
     }
 
     public function getVersion(): PhpVersion
@@ -66,7 +76,7 @@ final class PhpRelease implements \JsonSerializable
         return $this->patchedCveIds;
     }
 
-    
+
     public function jsonSerialize(): array
     {
         return [
