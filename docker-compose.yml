@@ -18,8 +18,17 @@ services:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile.dev
+    entrypoint: php
     environment:
-      REQUIRE_VERSION_ARG: ${REQUIRE_VERSION_ARG:-false}
+      REQUIRE_VERSION_ARG: "false"
+
+  php-version-audit:
+    <<: *common
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.dev
+    environment:
+      REQUIRE_VERSION_ARG: "false"
 
   phpstan:
     <<: *common

@@ -9,4 +9,6 @@ RUN apk --update --no-cache add libzip-dev autoconf g++ make linux-headers && \
     echo "xdebug.mode=coverage" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" && \
     apk del --purge autoconf g++ make
 
+ENV REQUIRE_VERSION_ARG=true
+
 ENTRYPOINT ["/opt/php-version-audit/docker/docker-entrypoint.sh"]

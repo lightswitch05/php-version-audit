@@ -29,6 +29,12 @@ final class Cli
 
     public static function run(): int
     {
+        $helpArg = self::getHelpArg();
+        if ($helpArg) {
+            self::showHelp();
+            return 0;
+        }
+
         try {
             $args = self::getArgs();
             Logger::setVerbosity($args['verbosity']);
@@ -36,11 +42,6 @@ final class Cli
             Logger::error($ex->getMessage());
             self::showHelp();
             return self::$INVALID_ARG_CODE;
-        }
-
-        if ($args['help']) {
-            self::showHelp();
-            return 0;
         }
 
         try {
@@ -116,6 +117,14 @@ final class Cli
             self::$FAIL_SUPPORT => self::getOptionalFlag($options, self::$FAIL_SUPPORT),
             'verbosity' => self::getVerbosity($options),
         ];
+    }
+
+    private static function getHelpArg(): bool
+    {
+        $options = getopt('', [
+            self::$HELP,
+        ]);
+        return self::getOptionalFlag($options, self::$HELP);
     }
 
     private static function showHelp(): void
