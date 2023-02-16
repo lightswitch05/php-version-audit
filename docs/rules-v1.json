@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2023-02-16T02:26:22+0000",
+    "lastUpdatedDate": "2023-02-16T13:36:37+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 453,
-    "cveCount": 335,
+    "cveCount": 337,
     "supportVersionsCount": 21,
     "latestVersion": "8.2.3",
     "latestVersions": {
@@ -5338,7 +5338,7 @@
             "id": "CVE-2021-21707",
             "baseScore": 5.3,
             "publishedDate": "2021-11-29T07:15:00+0000",
-            "lastModifiedDate": "2022-12-15T21:15:00+0000",
+            "lastModifiedDate": "2023-02-16T03:07:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
         },
         "CVE-2021-21708": {
@@ -5396,6 +5396,20 @@
             "publishedDate": "2022-10-21T06:15:00+0000",
             "lastModifiedDate": "2022-12-08T15:41:00+0000",
             "description": "The Keccak XKCP SHA-3 reference implementation before fdc6fef has an integer overflow and resultant buffer overflow that allows attackers to execute arbitrary code or eliminate expected cryptographic properties. This occurs in the sponge function interface."
+        },
+        "CVE-2023-0568": {
+            "id": "CVE-2023-0568",
+            "baseScore": null,
+            "publishedDate": "2023-02-16T07:15:00+0000",
+            "lastModifiedDate": "2023-02-16T07:15:00+0000",
+            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification."
+        },
+        "CVE-2023-0662": {
+            "id": "CVE-2023-0662",
+            "baseScore": null,
+            "publishedDate": "2023-02-16T07:15:00+0000",
+            "lastModifiedDate": "2023-02-16T07:15:00+0000",
+            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space."
         }
     }
 }
