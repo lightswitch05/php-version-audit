@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-02-17T02:32:27+0000",
+    "lastUpdatedDate": "2023-02-17T13:30:38+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4106,56 +4106,56 @@
             "id": "CVE-2015-8383",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:31:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "PCRE before 8.38 mishandles certain repeated conditional groups, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8386": {
             "id": "CVE-2015-8386",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:31:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "PCRE before 8.38 mishandles the interaction of lookbehind assertions and mutually recursive subpatterns, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8387": {
             "id": "CVE-2015-8387",
             "baseScore": 7.3,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:30:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "PCRE before 8.38 mishandles (?123) subroutine calls and related subroutine calls, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8389": {
             "id": "CVE-2015-8389",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:08:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "PCRE before 8.38 mishandles the /(?:|a|){100}x/ pattern and related patterns, which allows remote attackers to cause a denial of service (infinite recursion) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8390": {
             "id": "CVE-2015-8390",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:23:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "PCRE before 8.38 mishandles the [: and \\\\ substrings in character classes, which allows remote attackers to cause a denial of service (uninitialized memory read) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8391": {
             "id": "CVE-2015-8391",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-05T14:30:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "The pcre_compile function in pcre_compile.c in PCRE before 8.38 mishandles certain [: nesting, which allows remote attackers to cause a denial of service (CPU consumption) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8393": {
             "id": "CVE-2015-8393",
             "baseScore": 7.5,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-09-16T20:02:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "pcregrep in PCRE before 8.38 mishandles the -q option for binary files, which might allow remote attackers to obtain sensitive information via a crafted file, as demonstrated by a CGI script that sends stdout data to a client."
         },
         "CVE-2015-8394": {
             "id": "CVE-2015-8394",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:22:00+0000",
+            "lastModifiedDate": "2023-02-16T14:15:00+0000",
             "description": "PCRE before 8.38 mishandles the (?(<digits>) and (?(R<digits>) conditions, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8616": {
@@ -5401,14 +5401,14 @@
             "id": "CVE-2023-0568",
             "baseScore": null,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2023-02-16T07:15:00+0000",
+            "lastModifiedDate": "2023-02-16T14:08:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification."
         },
         "CVE-2023-0662": {
             "id": "CVE-2023-0662",
             "baseScore": null,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2023-02-16T07:15:00+0000",
+            "lastModifiedDate": "2023-02-16T14:08:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space."
         }
     }
