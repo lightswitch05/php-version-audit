@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-03-11T02:14:06+0000",
+    "lastUpdatedDate": "2023-03-11T13:26:01+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5399,9 +5399,9 @@
         },
         "CVE-2023-0567": {
             "id": "CVE-2023-0567",
-            "baseScore": null,
+            "baseScore": 6.2,
             "publishedDate": "2023-03-01T08:15:00+0000",
-            "lastModifiedDate": "2023-03-01T13:45:00+0000",
+            "lastModifiedDate": "2023-03-10T17:32:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, password_verify() function may accept some invalid Blowfish hashes as valid. If such invalid hash ever ends up in the password database, it may lead to an application allowing any password for this entry as valid."
         },
         "CVE-2023-0568": {
