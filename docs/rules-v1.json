@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-05-04T02:06:27+0000",
+    "lastUpdatedDate": "2023-05-04T13:28:49+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5410,7 +5410,7 @@
             "id": "CVE-2022-37454",
             "baseScore": 9.8,
             "publishedDate": "2022-10-21T06:15:00+0000",
-            "lastModifiedDate": "2023-03-07T04:15:00+0000",
+            "lastModifiedDate": "2023-05-03T11:15:00+0000",
             "description": "The Keccak XKCP SHA-3 reference implementation before fdc6fef has an integer overflow and resultant buffer overflow that allows attackers to execute arbitrary code or eliminate expected cryptographic properties. This occurs in the sponge function interface."
         },
         "CVE-2023-0567": {
