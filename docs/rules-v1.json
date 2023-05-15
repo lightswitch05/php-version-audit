@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-05-15T02:11:25+0000",
+    "lastUpdatedDate": "2023-05-15T13:25:40+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3311,7 +3311,7 @@
             "id": "CVE-2010-4645",
             "baseScore": 5,
             "publishedDate": "2011-01-11T03:00:00+0000",
-            "lastModifiedDate": "2017-08-17T01:33:00+0000",
+            "lastModifiedDate": "2023-05-15T00:15:00+0000",
             "description": "strtod.c, as used in the zend_strtod function in PHP 5.2 before 5.2.17 and 5.3 before 5.3.5, and other products, allows context-dependent attackers to cause a denial of service (infinite loop) via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers, as demonstrated using 2.2250738585072011e-308."
         },
         "CVE-2011-0421": {
