@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-05-18T02:08:38+0000",
+    "lastUpdatedDate": "2023-05-18T13:26:43+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5432,15 +5432,15 @@
             "id": "CVE-2023-0568",
             "baseScore": 8.1,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2023-03-03T18:02:00+0000",
-            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification."
+            "lastModifiedDate": "2023-05-17T20:15:00+0000",
+            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification.\u00a0"
         },
         "CVE-2023-0662": {
             "id": "CVE-2023-0662",
             "baseScore": 7.5,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2023-02-24T18:09:00+0000",
-            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space."
+            "lastModifiedDate": "2023-05-17T20:15:00+0000",
+            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space.\u00a0"
         }
     }
 }
