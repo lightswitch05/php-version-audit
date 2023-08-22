@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-08-22T01:52:11+0000",
+    "lastUpdatedDate": "2023-08-22T13:23:34+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5505,9 +5505,9 @@
         },
         "CVE-2023-3824": {
             "id": "CVE-2023-3824",
-            "baseScore": null,
+            "baseScore": 9.8,
             "publishedDate": "2023-08-11T06:15:00+0000",
-            "lastModifiedDate": "2023-08-12T06:19:00+0000",
+            "lastModifiedDate": "2023-08-21T16:31:00+0000",
             "description": "In PHP version 8.0.* before 8.0.30,\u00a0 8.1.* before 8.1.22, and 8.2.* before 8.2.8, when loading phar file, while reading PHAR directory entries, insufficient length checking may lead to a stack buffer overflow, leading potentially to memory corruption or RCE.\u00a0\n\n"
         }
     }
