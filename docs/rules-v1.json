@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-10-26T01:53:56+0000",
+    "lastUpdatedDate": "2023-10-26T13:27:43+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3430,7 +3430,7 @@
             "id": "CVE-2011-2483",
             "baseScore": 5,
             "publishedDate": "2011-08-25T14:22:00+0000",
-            "lastModifiedDate": "2017-08-29T01:29:00+0000",
+            "lastModifiedDate": "2023-10-25T20:23:00+0000",
             "description": "crypt_blowfish before 1.1, as used in PHP before 5.3.7 on certain platforms, PostgreSQL before 8.4.9, and other products, does not properly handle 8-bit characters, which makes it easier for context-dependent attackers to determine a cleartext password by leveraging knowledge of a password hash."
         },
         "CVE-2011-3389": {
