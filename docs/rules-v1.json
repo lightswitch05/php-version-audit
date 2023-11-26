@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2023-11-25T13:21:29+0000",
+    "lastUpdatedDate": "2023-11-26T02:01:39+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -109,7 +109,7 @@
             "security": "2022-11-28T00:00:00+0000"
         },
         "8.0": {
-            "active": "2022-11-26T00:00:00+0000",
+            "active": null,
             "security": "2023-11-26T00:00:00+0000"
         },
         "8.1": {
