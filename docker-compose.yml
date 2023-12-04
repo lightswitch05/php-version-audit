@@ -1,4 +1,3 @@
-version: '3.7'
 
 x-common: &common
   volumes:
@@ -8,7 +7,9 @@ x-common: &common
 services:
   composer:
     <<: *common
-    image: composer:2.5
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.composer
     volumes:
     - "${PWD}:/opt/php-version-audit"
     - "${HOME}/.composer:/tmp"

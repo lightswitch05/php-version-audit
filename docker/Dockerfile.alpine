@@ -1,4 +1,5 @@
-FROM composer:2.5 as composer-build
+FROM php:8.2-cli-alpine AS composer-build
+COPY --from=composer/composer:2.5-bin /composer /usr/bin/composer
 WORKDIR /opt/php-version-audit
 COPY ./docker/docker-entrypoint.sh ./docker/docker-entrypoint.sh
 COPY ./src ./src
