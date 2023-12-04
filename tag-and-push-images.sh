@@ -3,11 +3,11 @@
 # Usage: ./tag-and-push-images.sh ${docker-compose-service-name}
 # examples:
 #     ./tag-and-push-images.sh alpine
-#     ./tag-and-push-images.sh bullseye
+#     ./tag-and-push-images.sh bookworm
 #
 function main() {
     target="${1}"
-    DEFAULT_TAG="bullseye"
+    DEFAULT_TAG="bookworm"
     MAJOR_VERSION="1"
     IMAGE="lightswitch05/php-version-audit"
 

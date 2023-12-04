@@ -62,6 +62,7 @@ jobs:
           - alpine
           - buster
           - bullseye
+          - bookworm
     env:
       TARGET: ${{matrix.TARGET}}
     steps:
