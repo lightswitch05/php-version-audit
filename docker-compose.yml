@@ -53,3 +53,9 @@ services:
       context: ./
       dockerfile: ./docker/Dockerfile.bullseye
     image: lightswitch05/php-version-audit:bullseye
+
+  bookworm:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.bookworm
+    image: lightswitch05/php-version-audit:bookworm
