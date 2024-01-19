@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2024-01-18T13:26:19+0000",
+    "lastUpdatedDate": "2024-01-19T02:02:29+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 479,
+    "releasesCount": 481,
     "cveCount": 341,
     "supportVersionsCount": 22,
-    "latestVersion": "8.3.1",
+    "latestVersion": "8.3.2",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -29,11 +29,11 @@
         "7.2": "7.2.34",
         "7.3": "7.3.33",
         "7.4": "7.4.33",
-        "8": "8.3.1",
+        "8": "8.3.2",
         "8.0": "8.0.30",
         "8.1": "8.1.27",
-        "8.2": "8.2.14",
-        "8.3": "8.3.1"
+        "8.2": "8.2.15",
+        "8.3": "8.3.2"
     },
     "supportEndDates": {
         "3.0": {
@@ -3166,12 +3166,20 @@
             "releaseDate": "2023-12-21T00:00:00+0000",
             "patchedCves": []
         },
+        "8.2.15": {
+            "releaseDate": "2024-01-18T00:00:00+0000",
+            "patchedCves": []
+        },
         "8.3.0": {
             "releaseDate": "2023-11-23T00:00:00+0000",
             "patchedCves": []
         },
         "8.3.1": {
             "releaseDate": "2023-12-21T00:00:00+0000",
+            "patchedCves": []
+        },
+        "8.3.2": {
+            "releaseDate": "2024-01-18T00:00:00+0000",
             "patchedCves": []
         }
     },
