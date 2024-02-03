@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2024-02-03T01:50:37+0000",
+    "lastUpdatedDate": "2024-02-03T13:20:26+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3270,9 +3270,9 @@
         },
         "CVE-2008-0599": {
             "id": "CVE-2008-0599",
-            "baseScore": 10,
+            "baseScore": 9.8,
             "publishedDate": "2008-05-05T17:20:00+0000",
-            "lastModifiedDate": "2018-10-15T22:01:00+0000",
+            "lastModifiedDate": "2024-02-02T13:52:00+0000",
             "description": "The init_request_info function in sapi/cgi/cgi_main.c in PHP before 5.2.6 does not properly consider operator precedence when calculating the length of PATH_TRANSLATED, which might allow remote attackers to execute arbitrary code via a crafted URI."
         },
         "CVE-2008-2371": {
