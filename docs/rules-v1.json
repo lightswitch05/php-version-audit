@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2024-04-11T13:23:23+0000",
+    "lastUpdatedDate": "2024-04-12T01:56:24+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 485,
+    "releasesCount": 487,
     "cveCount": 341,
     "supportVersionsCount": 22,
-    "latestVersion": "8.3.4",
+    "latestVersion": "8.3.6",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -29,11 +29,11 @@
         "7.2": "7.2.34",
         "7.3": "7.3.33",
         "7.4": "7.4.33",
-        "8": "8.3.4",
+        "8": "8.3.6",
         "8.0": "8.0.30",
         "8.1": "8.1.27",
-        "8.2": "8.2.17",
-        "8.3": "8.3.4"
+        "8.2": "8.2.18",
+        "8.3": "8.3.6"
     },
     "supportEndDates": {
         "3.0": {
@@ -3178,6 +3178,15 @@
             "releaseDate": "2024-03-14T00:00:00+0000",
             "patchedCves": []
         },
+        "8.2.18": {
+            "releaseDate": "2024-04-11T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2022-31629",
+                "CVE-2024-1874",
+                "CVE-2024-2756",
+                "CVE-2024-3096"
+            ]
+        },
         "8.3.0": {
             "releaseDate": "2023-11-23T00:00:00+0000",
             "patchedCves": []
@@ -3197,6 +3206,16 @@
         "8.3.4": {
             "releaseDate": "2024-03-14T00:00:00+0000",
             "patchedCves": []
+        },
+        "8.3.6": {
+            "releaseDate": "2024-04-11T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2022-31629",
+                "CVE-2024-1874",
+                "CVE-2024-2756",
+                "CVE-2024-2757",
+                "CVE-2024-3096"
+            ]
         }
     },
     "cves": {
