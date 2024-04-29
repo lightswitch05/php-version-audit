@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2024-04-29T01:59:06+0000",
+    "lastUpdatedDate": "2024-04-29T13:23:30+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 488,
-    "cveCount": 341,
+    "cveCount": 345,
     "supportVersionsCount": 22,
     "latestVersion": "8.3.6",
     "latestVersions": {
@@ -5614,6 +5614,34 @@
             "publishedDate": "2023-08-11T06:15:00+0000",
             "lastModifiedDate": "2023-10-27T18:58:00+0000",
             "description": "In PHP version 8.0.* before 8.0.30,\u00a0 8.1.* before 8.1.22, and 8.2.* before 8.2.8, when loading phar file, while reading PHAR directory entries, insufficient length checking may lead to a stack buffer overflow, leading potentially to memory corruption or RCE.\u00a0\n\n"
+        },
+        "CVE-2024-1874": {
+            "id": "CVE-2024-1874",
+            "baseScore": null,
+            "publishedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell.\u00a0\n\n"
+        },
+        "CVE-2024-2756": {
+            "id": "CVE-2024-2756",
+            "baseScore": null,
+            "publishedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "description": "Due to an incomplete fix to  CVE-2022-31629 https://github.com/advisories/GHSA-c43m-486j-j32p , network and same-site attackers can set a standard insecure cookie in the victim's browser which is treated as a __Host-\u00a0or __Secure-\u00a0cookie by PHP applications.\u00a0\n"
+        },
+        "CVE-2024-2757": {
+            "id": "CVE-2024-2757",
+            "baseScore": null,
+            "publishedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function.\u00a0\n\n"
+        },
+        "CVE-2024-3096": {
+            "id": "CVE-2024-3096",
+            "baseScore": null,
+            "publishedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "description": "In PHP\u00a0 version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if\u00a0a password stored with password_hash() starts with a null byte (\\x00), testing a blank string as the password via password_verify() will incorrectly return true.\n\n"
         }
     }
 }
