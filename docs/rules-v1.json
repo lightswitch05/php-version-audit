@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2024-04-30T01:57:13+0000",
+    "lastUpdatedDate": "2024-04-30T13:21:21+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -114,15 +114,15 @@
         },
         "8.1": {
             "active": "2023-11-25T00:00:00+0000",
-            "security": "2024-11-25T00:00:00+0000"
+            "security": "2025-12-31T00:00:00+0000"
         },
         "8.2": {
-            "active": "2024-12-08T00:00:00+0000",
-            "security": "2025-12-08T00:00:00+0000"
+            "active": "2024-12-31T00:00:00+0000",
+            "security": "2026-12-31T00:00:00+0000"
         },
         "8.3": {
-            "active": "2025-11-23T00:00:00+0000",
-            "security": "2026-11-23T00:00:00+0000"
+            "active": "2025-12-31T00:00:00+0000",
+            "security": "2027-12-31T00:00:00+0000"
         }
     },
     "releases": {
@@ -5619,28 +5619,28 @@
             "id": "CVE-2024-1874",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T12:42:00+0000",
             "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell.\u00a0\n\n"
         },
         "CVE-2024-2756": {
             "id": "CVE-2024-2756",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T12:42:00+0000",
             "description": "Due to an incomplete fix to  CVE-2022-31629 https://github.com/advisories/GHSA-c43m-486j-j32p , network and same-site attackers can set a standard insecure cookie in the victim's browser which is treated as a __Host-\u00a0or __Secure-\u00a0cookie by PHP applications.\u00a0\n"
         },
         "CVE-2024-2757": {
             "id": "CVE-2024-2757",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T12:42:00+0000",
             "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function.\u00a0\n\n"
         },
         "CVE-2024-3096": {
             "id": "CVE-2024-3096",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-04-29T04:15:00+0000",
+            "lastModifiedDate": "2024-04-29T12:42:00+0000",
             "description": "In PHP\u00a0 version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if\u00a0a password stored with password_hash() starts with a null byte (\\x00), testing a blank string as the password via password_verify() will incorrectly return true.\n\n"
         }
     }
