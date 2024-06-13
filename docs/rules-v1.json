@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2024-06-13T02:03:48+0000",
+    "lastUpdatedDate": "2024-06-13T13:25:31+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3599,7 +3599,7 @@
             "id": "CVE-2012-1823",
             "baseScore": 7.5,
             "publishedDate": "2012-05-11T10:15:00+0000",
-            "lastModifiedDate": "2024-06-12T02:15:00+0000",
+            "lastModifiedDate": "2024-06-13T04:15:00+0000",
             "description": "sapi/cgi/cgi_main.c in PHP before 5.3.12 and 5.4.x before 5.4.2, when configured as a CGI script (aka php-cgi), does not properly handle query strings that lack an = (equals sign) character, which allows remote attackers to execute arbitrary code by placing command-line options in the query string, related to lack of skipping a certain php_getopt for the 'd' case."
         },
         "CVE-2012-2143": {
@@ -5657,7 +5657,7 @@
             "id": "CVE-2024-1874",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-06-12T02:15:00+0000",
+            "lastModifiedDate": "2024-06-13T04:15:00+0000",
             "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell.\u00a0\n\n"
         },
         "CVE-2024-2756": {
@@ -5685,21 +5685,21 @@
             "id": "CVE-2024-4577",
             "baseScore": 9.8,
             "publishedDate": "2024-06-09T20:15:00+0000",
-            "lastModifiedDate": "2024-06-12T02:15:00+0000",
+            "lastModifiedDate": "2024-06-13T04:15:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, when using Apache and PHP-CGI on Windows, if the system is set up to use certain code pages, Windows may use \"Best-Fit\" behavior to replace characters in command line given to\u00a0Win32 API functions. PHP CGI module may misinterpret those characters as PHP options, which may allow a malicious user to pass options to PHP binary being run, and thus reveal the source code of scripts, run arbitrary PHP code on the server, etc."
         },
         "CVE-2024-5458": {
             "id": "CVE-2024-5458",
-            "baseScore": null,
+            "baseScore": 5.3,
             "publishedDate": "2024-06-09T19:15:00+0000",
-            "lastModifiedDate": "2024-06-12T02:15:00+0000",
+            "lastModifiedDate": "2024-06-13T04:15:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, due to a code logic error, filtering functions such as filter_var when validating URLs\u00a0(FILTER_VALIDATE_URL) for certain types of URLs the function will result in invalid user information (username + password part of URLs) being treated as valid user information. This may lead to the downstream code accepting invalid URLs as valid and parsing them incorrectly."
         },
         "CVE-2024-5585": {
             "id": "CVE-2024-5585",
-            "baseScore": null,
+            "baseScore": 8.8,
             "publishedDate": "2024-06-09T19:15:00+0000",
-            "lastModifiedDate": "2024-06-12T02:15:00+0000",
+            "lastModifiedDate": "2024-06-13T04:15:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, the fix for\u00a0CVE-2024-1874 does not work if the command name includes trailing spaces. Original issue:\u00a0when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell."
         }
     }
