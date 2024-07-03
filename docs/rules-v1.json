@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2024-07-03T02:04:42+0000",
+    "lastUpdatedDate": "2024-07-03T13:26:16+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5671,7 +5671,7 @@
             "id": "CVE-2024-2757",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-06-10T17:16:00+0000",
+            "lastModifiedDate": "2024-07-03T01:53:00+0000",
             "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function.\u00a0\n\n"
         },
         "CVE-2024-3096": {
