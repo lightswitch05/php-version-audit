@@ -42,12 +42,6 @@ services:
       dockerfile: ./docker/Dockerfile.alpine
     image: lightswitch05/php-version-audit:alpine
 
-  buster:
-    build:
-      context: ./
-      dockerfile: ./docker/Dockerfile.buster
-    image: lightswitch05/php-version-audit:buster
-
   bullseye:
     build:
       context: ./
