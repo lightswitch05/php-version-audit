@@ -13,7 +13,7 @@ function main() {
 
     # Build and tag primary tag name
     echo "Building ${target}"
-    docker-compose build --pull "${target}"
+    docker compose build --pull "${target}"
     echo "Pushing ${IMAGE}:${target}"
     docker push "${IMAGE}:${target}"
 
