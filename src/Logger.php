@@ -41,10 +41,7 @@ final class Logger
 
     private static function getVerbosity(): int
     {
-        if (isset(self::$verbosity)) {
-            return self::$verbosity;
-        }
-        return self::ERROR;
+        return self::$verbosity ?? self::ERROR;
     }
 
     private static function log(int $levelCode, string $levelName, array $messageParts): void
