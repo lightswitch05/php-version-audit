@@ -19,8 +19,8 @@
         "ext-dom": "*",
         "ext-zlib": "*",
         "ext-zip": "*",
-        "codeception/codeception": "^5.0",
-        "vimeo/psalm": "^5.6",
+        "codeception/codeception": "^5.1",
+        "vimeo/psalm": "^5.25",
         "codeception/module-asserts": "^3.0",
         "rector/rector": "^1.2.3",
         "symplify/easy-coding-standard": "^12.3"

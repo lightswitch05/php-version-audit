@@ -11,7 +11,7 @@ jobs:
   run-updates:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         ref: master
         fetch-depth: 10
@@ -22,7 +22,7 @@ jobs:
       id: composer-cache
       run: |
         echo "::set-output name=dir::$(composer config cache-files-dir)"
-    - uses: actions/cache@v2
+    - uses: actions/cache@v4
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -30,7 +30,7 @@ jobs:
           ${{ runner.os }}-composer-
 
     # Cache for full update
-    - uses: actions/cache@v2
+    - uses: actions/cache@v4
       with:
         path: ${{ github.workspace }}/tmp
         key: ${{ runner.os }}-php-version-audit-${{ hashFiles('**/docs/rules-v1.json') }}
