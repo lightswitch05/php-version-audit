@@ -18,7 +18,6 @@ final class Application
     private ?\lightswitch05\PhpVersionAudit\PhpVersion $auditVersion = null;
 
     /**
-     * Application constructor.
      * @param bool $noUpdate disable downloading the latest rules from GitHub pages
      */
     public function __construct(string $phpVersion, bool $noUpdate)
