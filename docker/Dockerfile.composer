@@ -1,4 +1,4 @@
-FROM php:8.2-cli-bookworm
-COPY --from=composer/composer:2.5-bin /composer /usr/bin/composer
+FROM php:8.3-cli-bookworm
+COPY --from=composer/composer:2.7-bin /composer /usr/bin/composer
 RUN apt-get update && apt-get install -y libzip4 libzip-dev && docker-php-ext-install zip
 ENTRYPOINT ["/usr/bin/composer"]

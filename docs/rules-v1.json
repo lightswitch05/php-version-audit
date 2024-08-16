@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2024-08-02T02:07:50+0000",
+    "lastUpdatedDate": "2024-08-16T20:41:12+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4490,7 +4490,7 @@
             "id": "CVE-2016-4070",
             "baseScore": 7.5,
             "publishedDate": "2016-05-20T11:00:00+0000",
-            "lastModifiedDate": "2024-05-17T01:09:00+0000",
+            "lastModifiedDate": "2024-08-06T01:15:00+0000",
             "description": "Integer overflow in the php_raw_url_encode function in ext/standard/url.c in PHP before 5.5.34, 5.6.x before 5.6.20, and 7.x before 7.0.5 allows remote attackers to cause a denial of service (application crash) via a long string to the rawurlencode function. NOTE: the vendor says \"Not sure if this qualifies as security issue (probably not)."
         },
         "CVE-2016-4071": {
@@ -5631,7 +5631,7 @@
             "id": "CVE-2023-0567",
             "baseScore": 6.2,
             "publishedDate": "2023-03-01T08:15:00+0000",
-            "lastModifiedDate": "2023-11-07T04:00:00+0000",
+            "lastModifiedDate": "2024-08-01T16:35:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, password_verify() function may accept some invalid Blowfish hashes as valid. If such invalid hash ever ends up in the password database, it may lead to an application allowing any password for this entry as valid.\u00a0\n\n"
         },
         "CVE-2023-0568": {
@@ -5701,7 +5701,7 @@
             "id": "CVE-2024-4577",
             "baseScore": 9.8,
             "publishedDate": "2024-06-09T20:15:00+0000",
-            "lastModifiedDate": "2024-06-21T19:15:00+0000",
+            "lastModifiedDate": "2024-08-14T19:23:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, when using Apache and PHP-CGI on Windows, if the system is set up to use certain code pages, Windows may use \"Best-Fit\" behavior to replace characters in command line given to\u00a0Win32 API functions. PHP CGI module may misinterpret those characters as PHP options, which may allow a malicious user to pass options to PHP binary being run, and thus reveal the source code of scripts, run arbitrary PHP code on the server, etc."
         },
         "CVE-2024-5458": {
