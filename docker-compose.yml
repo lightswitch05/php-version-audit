@@ -33,7 +33,7 @@ services:
 
   phpstan:
     <<: *common
-    image: ghcr.io/phpstan/phpstan:1
+    image: ghcr.io/phpstan/phpstan:1-php8.3
     command: analyse ./src
 
   alpine:
