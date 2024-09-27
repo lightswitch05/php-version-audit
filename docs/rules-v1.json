@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2024-09-26T13:31:38+0000",
+    "lastUpdatedDate": "2024-09-27T02:20:56+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 499,
+    "releasesCount": 502,
     "cveCount": 348,
     "supportVersionsCount": 22,
-    "latestVersion": "8.3.11",
+    "latestVersion": "8.3.12",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -29,11 +29,11 @@
         "7.2": "7.2.34",
         "7.3": "7.3.33",
         "7.4": "7.4.33",
-        "8": "8.3.11",
+        "8": "8.3.12",
         "8.0": "8.0.30",
-        "8.1": "8.1.29",
-        "8.2": "8.2.23",
-        "8.3": "8.3.11"
+        "8.1": "8.1.30",
+        "8.2": "8.2.24",
+        "8.3": "8.3.12"
     },
     "supportEndDates": {
         "3.0": {
@@ -3111,6 +3111,16 @@
                 "CVE-2024-5585"
             ]
         },
+        "8.1.30": {
+            "releaseDate": "2024-09-26T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2024-4577",
+                "CVE-2024-8925",
+                "CVE-2024-8926",
+                "CVE-2024-8927",
+                "CVE-2024-9026"
+            ]
+        },
         "8.2.0": {
             "releaseDate": "2022-12-08T00:00:00+0000",
             "patchedCves": [
@@ -3232,6 +3242,16 @@
             "releaseDate": "2024-08-29T00:00:00+0000",
             "patchedCves": []
         },
+        "8.2.24": {
+            "releaseDate": "2024-09-26T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2024-4577",
+                "CVE-2024-8925",
+                "CVE-2024-8926",
+                "CVE-2024-8927",
+                "CVE-2024-9026"
+            ]
+        },
         "8.3.0": {
             "releaseDate": "2023-11-23T00:00:00+0000",
             "patchedCves": []
@@ -3287,6 +3307,16 @@
         "8.3.11": {
             "releaseDate": "2024-08-29T00:00:00+0000",
             "patchedCves": []
+        },
+        "8.3.12": {
+            "releaseDate": "2024-09-26T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2024-4577",
+                "CVE-2024-8925",
+                "CVE-2024-8926",
+                "CVE-2024-8927",
+                "CVE-2024-9026"
+            ]
         }
     },
     "cves": {
