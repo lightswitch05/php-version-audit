@@ -1,11 +1,11 @@
 {
-    "lastUpdatedDate": "2024-10-08T02:26:05+0000",
+    "lastUpdatedDate": "2024-10-08T13:30:40+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
     "releasesCount": 502,
-    "cveCount": 348,
+    "cveCount": 352,
     "supportVersionsCount": 22,
     "latestVersion": "8.3.12",
     "latestVersions": {
@@ -5755,6 +5755,34 @@
             "publishedDate": "2024-06-09T19:15:00+0000",
             "lastModifiedDate": "2024-07-28T14:15:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, the fix for\u00a0CVE-2024-1874 does not work if the command name includes trailing spaces. Original issue:\u00a0when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell."
+        },
+        "CVE-2024-8925": {
+            "id": "CVE-2024-8925",
+            "baseScore": null,
+            "publishedDate": "2024-10-08T04:15:00+0000",
+            "lastModifiedDate": "2024-10-08T04:15:00+0000",
+            "description": "In PHP versions\u00a08.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, erroneous parsing of multipart form data contained in an HTTP POST request could lead to legitimate data not being processed. This could lead to malicious attacker able to control part of the submitted data being able to exclude portion of other data, potentially leading to erroneous application behavior."
+        },
+        "CVE-2024-8926": {
+            "id": "CVE-2024-8926",
+            "baseScore": null,
+            "publishedDate": "2024-10-08T04:15:00+0000",
+            "lastModifiedDate": "2024-10-08T04:15:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12,\u00a0when using a certain non-standard configurations of Windows codepages, the fixes for\u00a0 CVE-2024-4577 https://github.com/advisories/GHSA-vxpp-6299-mxw3 \u00a0may still be bypassed and the same command injection related to Windows \"Best Fit\" codepage behavior can be achieved. This\u00a0may allow a malicious user to pass options to PHP binary being run, and thus reveal the source code of scripts, run arbitrary PHP code on the server, etc."
+        },
+        "CVE-2024-8927": {
+            "id": "CVE-2024-8927",
+            "baseScore": null,
+            "publishedDate": "2024-10-08T04:15:00+0000",
+            "lastModifiedDate": "2024-10-08T04:15:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12,\u00a0HTTP_REDIRECT_STATUS variable is used to check whether or not CGI binary is being run by the HTTP server. However, in certain scenarios, the content of this variable can be controlled by the request submitter via HTTP headers, which can lead to\u00a0cgi.force_redirect option not being correctly applied. In certain configurations this may lead to arbitrary file inclusion in PHP."
+        },
+        "CVE-2024-9026": {
+            "id": "CVE-2024-9026",
+            "baseScore": null,
+            "publishedDate": "2024-10-08T04:15:00+0000",
+            "lastModifiedDate": "2024-10-08T04:15:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, when using PHP-FPM SAPI and it is\u00a0configured to catch workers output through catch_workers_output = yes,\u00a0it may be possible to pollute the final log or\u00a0remove up to 4 characters from the log messages by manipulating log message content. Additionally, if\u00a0PHP-FPM is configured to use syslog output, it may be possible to further remove log data using the same vulnerability."
         }
     }
 }
