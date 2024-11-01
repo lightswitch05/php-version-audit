@@ -5,8 +5,7 @@ COPY ./docker/docker-entrypoint.sh ./docker/docker-entrypoint.sh
 COPY ./src ./src
 COPY ./docs/rules-v1.json ./docs/rules-v1.json
 COPY php-version-audit .
-COPY ./composer.json .
-COPY ./composer.lock .
+COPY ./composer.* .
 RUN composer install            \
     --classmap-authoritative    \
     --no-dev                    \
