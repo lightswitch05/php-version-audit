@@ -30,6 +30,12 @@ services:
       dockerfile: ./docker/Dockerfile.dev
     environment:
       REQUIRE_VERSION_ARG: "false"
+    deploy:
+      resources:
+        limits:
+          memory: 4g
+        reservations:
+          memory: 4g
 
   phpstan:
     <<: *common
