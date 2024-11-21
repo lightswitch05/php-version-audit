@@ -23,7 +23,7 @@ final class NvdFeedParser
      */
     public static function run(array $cveIds): array
     {
-        ini_set('memory_limit', '1024M');
+        ini_set('memory_limit', '2048M');
         $feedNames = ['modified', 'recent'];
         $cvesById = array_flip($cveIds);
         $currentYear = (int) date('Y');
