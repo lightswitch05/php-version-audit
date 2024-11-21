@@ -3,6 +3,7 @@ WORKDIR /opt/php-version-audit
 
 RUN apk --update --no-cache add libzip-dev autoconf g++ make linux-headers && \
     cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" && \
+    sed -i 's/memory_limit.*/memory_limit = 2048M/' "$PHP_INI_DIR/php.ini" && \
     pecl install -f xdebug && \
     docker-php-ext-enable xdebug && \
     pecl clear-cache && \
