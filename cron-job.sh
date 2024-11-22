@@ -13,7 +13,7 @@ git checkout master
 git pull
 
 # do actual update
-docker-compose run --rm php --entrypoint="./php-version-audit" --no-update --full-update
+docker compose run --rm php --entrypoint="./php-version-audit" --no-update --full-update
 
 COMMIT_MESSAGE="Automatic updates."
 LINES_ADDED=$(git diff --numstat docs/rules-v1.json | sed 's/^\([0-9]*\)\(.*\)/\1/g')
