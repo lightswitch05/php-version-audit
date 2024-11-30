@@ -1,13 +1,13 @@
 {
-    "lastUpdatedDate": "2024-11-21T02:25:17+0000",
+    "lastUpdatedDate": "2024-11-30T13:29:34+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
     "source": "https://www.github.developerdan.com/php-version-audit/rules-v1.json",
-    "releasesCount": 504,
-    "cveCount": 352,
-    "supportVersionsCount": 22,
-    "latestVersion": "8.3.13",
+    "releasesCount": 508,
+    "cveCount": 357,
+    "supportVersionsCount": 23,
+    "latestVersion": "8.4.1",
     "latestVersions": {
         "4": "4.4.9",
         "4.0": "4.0.6",
@@ -29,11 +29,12 @@
         "7.2": "7.2.34",
         "7.3": "7.3.33",
         "7.4": "7.4.33",
-        "8": "8.3.13",
+        "8": "8.4.1",
         "8.0": "8.0.30",
-        "8.1": "8.1.30",
-        "8.2": "8.2.25",
-        "8.3": "8.3.13"
+        "8.1": "8.1.31",
+        "8.2": "8.2.26",
+        "8.3": "8.3.14",
+        "8.4": "8.4.1"
     },
     "supportEndDates": {
         "3.0": {
@@ -123,6 +124,10 @@
         "8.3": {
             "active": "2025-12-31T00:00:00+0000",
             "security": "2027-12-31T00:00:00+0000"
+        },
+        "8.4": {
+            "active": "2026-12-31T00:00:00+0000",
+            "security": "2028-12-31T00:00:00+0000"
         }
     },
     "releases": {
@@ -3121,6 +3126,16 @@
                 "CVE-2024-9026"
             ]
         },
+        "8.1.31": {
+            "releaseDate": "2024-11-21T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2024-8929",
+                "CVE-2024-8932",
+                "CVE-2024-11233",
+                "CVE-2024-11234",
+                "CVE-2024-11236"
+            ]
+        },
         "8.2.0": {
             "releaseDate": "2022-12-08T00:00:00+0000",
             "patchedCves": [
@@ -3256,6 +3271,16 @@
             "releaseDate": "2024-10-24T00:00:00+0000",
             "patchedCves": []
         },
+        "8.2.26": {
+            "releaseDate": "2024-11-21T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2024-8929",
+                "CVE-2024-8932",
+                "CVE-2024-11233",
+                "CVE-2024-11234",
+                "CVE-2024-11236"
+            ]
+        },
         "8.3.0": {
             "releaseDate": "2023-11-23T00:00:00+0000",
             "patchedCves": []
@@ -3324,6 +3349,20 @@
         },
         "8.3.13": {
             "releaseDate": "2024-10-24T00:00:00+0000",
+            "patchedCves": []
+        },
+        "8.3.14": {
+            "releaseDate": "2024-11-21T00:00:00+0000",
+            "patchedCves": [
+                "CVE-2024-8929",
+                "CVE-2024-8932",
+                "CVE-2024-11233",
+                "CVE-2024-11234",
+                "CVE-2024-11236"
+            ]
+        },
+        "8.4.1": {
+            "releaseDate": "2024-11-21T00:00:00+0000",
             "patchedCves": []
         }
     },
@@ -3717,2051 +3756,2051 @@
             "id": "CVE-2013-1635",
             "baseScore": 7.5,
             "publishedDate": "2013-03-06T13:10:00+0000",
-            "lastModifiedDate": "2023-11-07T02:14:00+0000",
+            "lastModifiedDate": "2024-11-21T01:50:00+0000",
             "description": "ext/soap/soap.c in PHP before 5.3.22 and 5.4.x before 5.4.13 does not validate the relationship between the soap.wsdl_cache_dir directive and the open_basedir directive, which allows remote attackers to bypass intended access restrictions by triggering the creation of cached SOAP WSDL files in an arbitrary directory."
         },
         "CVE-2013-1643": {
             "id": "CVE-2013-1643",
             "baseScore": 5,
             "publishedDate": "2013-03-06T13:10:00+0000",
-            "lastModifiedDate": "2023-11-07T02:14:00+0000",
+            "lastModifiedDate": "2024-11-21T01:50:00+0000",
             "description": "The SOAP parser in PHP before 5.3.23 and 5.4.x before 5.4.13 allows remote attackers to read arbitrary files via a SOAP WSDL file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions.  NOTE: this vulnerability exists because of an incorrect fix for CVE-2013-1824."
         },
         "CVE-2013-1824": {
             "id": "CVE-2013-1824",
             "baseScore": 4.3,
             "publishedDate": "2013-09-16T13:02:00+0000",
-            "lastModifiedDate": "2023-02-13T04:41:00+0000",
+            "lastModifiedDate": "2024-11-21T01:50:00+0000",
             "description": "The SOAP parser in PHP before 5.3.22 and 5.4.x before 5.4.12 allows remote attackers to read arbitrary files via a SOAP WSDL file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions."
         },
         "CVE-2013-2110": {
             "id": "CVE-2013-2110",
             "baseScore": 5,
             "publishedDate": "2013-06-21T20:55:00+0000",
-            "lastModifiedDate": "2016-12-31T02:59:00+0000",
+            "lastModifiedDate": "2024-11-21T01:51:00+0000",
             "description": "Heap-based buffer overflow in the php_quot_print_encode function in ext/standard/quot_print.c in PHP before 5.3.26 and 5.4.x before 5.4.16 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a crafted argument to the quoted_printable_encode function."
         },
         "CVE-2013-4113": {
             "id": "CVE-2013-4113",
             "baseScore": 6.8,
             "publishedDate": "2013-07-13T13:10:00+0000",
-            "lastModifiedDate": "2023-11-07T02:16:00+0000",
+            "lastModifiedDate": "2024-11-21T01:54:00+0000",
             "description": "ext/xml/xml.c in PHP before 5.3.27 does not properly consider parsing depth, which allows remote attackers to cause a denial of service (heap memory corruption) or possibly have unspecified other impact via a crafted document that is processed by the xml_parse_into_struct function."
         },
         "CVE-2013-4248": {
             "id": "CVE-2013-4248",
             "baseScore": 4.3,
             "publishedDate": "2013-08-18T02:52:00+0000",
-            "lastModifiedDate": "2023-11-07T02:16:00+0000",
+            "lastModifiedDate": "2024-11-21T01:55:00+0000",
             "description": "The openssl_x509_parse function in openssl.c in the OpenSSL module in PHP before 5.4.18 and 5.5.x before 5.5.2 does not properly handle a '\\0' character in a domain name in the Subject Alternative Name field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408."
         },
         "CVE-2013-6420": {
             "id": "CVE-2013-6420",
             "baseScore": 7.5,
             "publishedDate": "2013-12-17T04:46:00+0000",
-            "lastModifiedDate": "2023-11-07T02:17:00+0000",
+            "lastModifiedDate": "2024-11-21T01:59:00+0000",
             "description": "The asn1_time_to_time_t function in ext/openssl/openssl.c in PHP before 5.3.28, 5.4.x before 5.4.23, and 5.5.x before 5.5.7 does not properly parse (1) notBefore and (2) notAfter timestamps in X.509 certificates, which allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted certificate that is not properly handled by the openssl_x509_parse function."
         },
         "CVE-2013-6712": {
             "id": "CVE-2013-6712",
             "baseScore": 5,
             "publishedDate": "2013-11-28T04:37:00+0000",
-            "lastModifiedDate": "2023-11-07T02:17:00+0000",
+            "lastModifiedDate": "2024-11-21T01:59:00+0000",
             "description": "The scan function in ext/date/lib/parse_iso_intervals.c in PHP through 5.5.6 does not properly restrict creation of DateInterval objects, which might allow remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted interval specification."
         },
         "CVE-2013-7226": {
             "id": "CVE-2013-7226",
             "baseScore": 6.8,
             "publishedDate": "2014-02-18T11:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:17:00+0000",
+            "lastModifiedDate": "2024-11-21T02:00:00+0000",
             "description": "Integer overflow in the gdImageCrop function in ext/gd/gd.c in PHP 5.5.x before 5.5.9 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via an imagecrop function call with a large x dimension value, leading to a heap-based buffer overflow."
         },
         "CVE-2013-7327": {
             "id": "CVE-2013-7327",
             "baseScore": 6.8,
             "publishedDate": "2014-02-18T11:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:18:00+0000",
+            "lastModifiedDate": "2024-11-21T02:00:00+0000",
             "description": "The gdImageCrop function in ext/gd/gd.c in PHP 5.5.x before 5.5.9 does not check return values, which allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via invalid imagecrop arguments that lead to use of a NULL pointer as a return value, a different vulnerability than CVE-2013-7226."
         },
         "CVE-2013-7345": {
             "id": "CVE-2013-7345",
             "baseScore": 5,
             "publishedDate": "2014-03-24T16:31:00+0000",
-            "lastModifiedDate": "2022-10-31T14:56:00+0000",
+            "lastModifiedDate": "2024-11-21T02:00:00+0000",
             "description": "The BEGIN regular expression in the awk script detector in magic/Magdir/commands in file before 5.15 uses multiple wildcards with unlimited repetitions, which allows context-dependent attackers to cause a denial of service (CPU consumption) via a crafted ASCII file that triggers a large amount of backtracking, as demonstrated via a file with many newline characters."
         },
         "CVE-2013-7456": {
             "id": "CVE-2013-7456",
             "baseScore": 7.6,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:01:00+0000",
             "description": "gd_interpolation.c in the GD Graphics Library (aka libgd) before 2.1.1, as used in PHP before 5.5.36, 5.6.x before 5.6.22, and 7.x before 7.0.7, allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via a crafted image that is mishandled by the imagescale function."
         },
         "CVE-2014-0185": {
             "id": "CVE-2014-0185",
             "baseScore": 7.2,
             "publishedDate": "2014-05-06T10:44:00+0000",
-            "lastModifiedDate": "2022-08-16T13:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:01:00+0000",
             "description": "sapi/fpm/fpm/fpm_unix.c in the FastCGI Process Manager (FPM) in PHP before 5.4.28 and 5.5.x before 5.5.12 uses 0666 permissions for the UNIX socket, which allows local users to gain privileges via a crafted FastCGI client."
         },
         "CVE-2014-0207": {
             "id": "CVE-2014-0207",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2022-09-28T20:39:00+0000",
+            "lastModifiedDate": "2024-11-21T02:01:00+0000",
             "description": "The cdf_read_short_sector function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, allows remote attackers to cause a denial of service (assertion failure and application exit) via a crafted CDF file."
         },
         "CVE-2014-0236": {
             "id": "CVE-2014-0236",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-02-13T00:37:00+0000",
+            "lastModifiedDate": "2024-11-21T02:01:00+0000",
             "description": "file before 5.18, as used in the Fileinfo component in PHP before 5.6.0, allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a zero root_storage value in a CDF file, related to cdf.c and readcdf.c."
         },
         "CVE-2014-0237": {
             "id": "CVE-2014-0237",
             "baseScore": 5,
             "publishedDate": "2014-06-01T04:29:00+0000",
-            "lastModifiedDate": "2023-01-19T15:44:00+0000",
+            "lastModifiedDate": "2024-11-21T02:01:00+0000",
             "description": "The cdf_unpack_summary_info function in cdf.c in the Fileinfo component in PHP before 5.4.29 and 5.5.x before 5.5.13 allows remote attackers to cause a denial of service (performance degradation) by triggering many file_printf calls."
         },
         "CVE-2014-0238": {
             "id": "CVE-2014-0238",
             "baseScore": 5,
             "publishedDate": "2014-06-01T04:29:00+0000",
-            "lastModifiedDate": "2022-10-31T14:54:00+0000",
+            "lastModifiedDate": "2024-11-21T02:01:00+0000",
             "description": "The cdf_read_property_info function in cdf.c in the Fileinfo component in PHP before 5.4.29 and 5.5.x before 5.5.13 allows remote attackers to cause a denial of service (infinite loop or out-of-bounds memory access) via a vector that (1) has zero length or (2) is too long."
         },
         "CVE-2014-1943": {
             "id": "CVE-2014-1943",
             "baseScore": 5,
             "publishedDate": "2014-02-18T19:55:00+0000",
-            "lastModifiedDate": "2022-10-31T15:00:00+0000",
+            "lastModifiedDate": "2024-11-21T02:05:00+0000",
             "description": "Fine Free file before 5.17 allows context-dependent attackers to cause a denial of service (infinite recursion, CPU consumption, and crash) via a crafted indirect offset value in the magic of a file."
         },
         "CVE-2014-2270": {
             "id": "CVE-2014-2270",
             "baseScore": 4.3,
             "publishedDate": "2014-03-14T15:55:00+0000",
-            "lastModifiedDate": "2022-10-28T23:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:05:00+0000",
             "description": "softmagic.c in file before 5.17 and libmagic allows context-dependent attackers to cause a denial of service (out-of-bounds memory access and crash) via crafted offsets in the softmagic of a PE executable."
         },
         "CVE-2014-2497": {
             "id": "CVE-2014-2497",
             "baseScore": 4.3,
             "publishedDate": "2014-03-21T14:55:00+0000",
-            "lastModifiedDate": "2022-09-28T20:39:00+0000",
+            "lastModifiedDate": "2024-11-21T02:06:00+0000",
             "description": "The gdImageCreateFromXpm function in gdxpm.c in libgd, as used in PHP 5.4.26 and earlier, allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted color table in an XPM file."
         },
         "CVE-2014-3478": {
             "id": "CVE-2014-3478",
             "baseScore": 5,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2016-11-28T19:11:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "Buffer overflow in the mconvert function in softmagic.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, allows remote attackers to cause a denial of service (application crash) via a crafted Pascal string in a FILE_PSTRING conversion."
         },
         "CVE-2014-3479": {
             "id": "CVE-2014-3479",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2022-10-28T23:26:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "The cdf_check_stream_offset function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, relies on incorrect sector-size data, which allows remote attackers to cause a denial of service (application crash) via a crafted stream offset in a CDF file."
         },
         "CVE-2014-3480": {
             "id": "CVE-2014-3480",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2022-10-28T23:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "The cdf_count_chain function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, does not properly validate sector-count data, which allows remote attackers to cause a denial of service (application crash) via a crafted CDF file."
         },
         "CVE-2014-3487": {
             "id": "CVE-2014-3487",
             "baseScore": 4.3,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2022-10-28T23:21:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "The cdf_read_property_info function in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, does not properly validate a stream offset, which allows remote attackers to cause a denial of service (application crash) via a crafted CDF file."
         },
         "CVE-2014-3515": {
             "id": "CVE-2014-3515",
             "baseScore": 7.5,
             "publishedDate": "2014-07-09T11:07:00+0000",
-            "lastModifiedDate": "2023-11-07T02:20:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "The SPL component in PHP before 5.4.30 and 5.5.x before 5.5.14 incorrectly anticipates that certain data structures will have the array data type after unserialization, which allows remote attackers to execute arbitrary code via a crafted string that triggers use of a Hashtable destructor, related to \"type confusion\" issues in (1) ArrayObject and (2) SPLObjectStorage."
         },
         "CVE-2014-3538": {
             "id": "CVE-2014-3538",
             "baseScore": 5,
             "publishedDate": "2014-07-03T14:55:00+0000",
-            "lastModifiedDate": "2023-01-19T16:34:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "file before 5.19 does not properly restrict the amount of data read during a regex search, which allows remote attackers to cause a denial of service (CPU consumption) via a crafted file that triggers backtracking during processing of an awk rule.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2013-7345."
         },
         "CVE-2014-3587": {
             "id": "CVE-2014-3587",
             "baseScore": 4.3,
             "publishedDate": "2014-08-23T01:55:00+0000",
-            "lastModifiedDate": "2018-01-05T02:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "Integer overflow in the cdf_read_property_info function in cdf.c in file through 5.19, as used in the Fileinfo component in PHP before 5.4.32 and 5.5.x before 5.5.16, allows remote attackers to cause a denial of service (application crash) via a crafted CDF file.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-1571."
         },
         "CVE-2014-3597": {
             "id": "CVE-2014-3597",
             "baseScore": 6.8,
             "publishedDate": "2014-08-23T01:55:00+0000",
-            "lastModifiedDate": "2017-01-07T03:00:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "Multiple buffer overflows in the php_parserr function in ext/standard/dns.c in PHP before 5.4.32 and 5.5.x before 5.5.16 allow remote DNS servers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted DNS record, related to the dns_get_record function and the dn_expand function.  NOTE: this issue exists because of an incomplete fix for CVE-2014-4049."
         },
         "CVE-2014-3622": {
             "id": "CVE-2014-3622",
             "baseScore": 9.8,
             "publishedDate": "2020-02-19T13:15:00+0000",
-            "lastModifiedDate": "2020-02-24T22:06:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "Use-after-free vulnerability in the add_post_var function in the Posthandler component in PHP 5.6.x before 5.6.1 might allow remote attackers to execute arbitrary code by leveraging a third-party filter extension that accesses a certain ksep value."
         },
         "CVE-2014-3668": {
             "id": "CVE-2014-3668",
             "baseScore": 5,
             "publishedDate": "2014-10-29T10:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:20:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "Buffer overflow in the date_from_ISO8601 function in the mkgmtime implementation in libxmlrpc/xmlrpc.c in the XMLRPC extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) via (1) a crafted first argument to the xmlrpc_set_type function or (2) a crafted argument to the xmlrpc_decode function, related to an out-of-bounds read operation."
         },
         "CVE-2014-3669": {
             "id": "CVE-2014-3669",
             "baseScore": 7.5,
             "publishedDate": "2014-10-29T10:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:20:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "Integer overflow in the object_custom function in ext/standard/var_unserializer.c in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via an argument to the unserialize function that triggers calculation of a large length value."
         },
         "CVE-2014-3670": {
             "id": "CVE-2014-3670",
             "baseScore": 6.8,
             "publishedDate": "2014-10-29T10:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:20:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "The exif_ifd_make_value function in exif.c in the EXIF extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 operates on floating-point arrays incorrectly, which allows remote attackers to cause a denial of service (heap memory corruption and application crash) or possibly execute arbitrary code via a crafted JPEG image with TIFF thumbnail data that is improperly handled by the exif_thumbnail function."
         },
         "CVE-2014-3710": {
             "id": "CVE-2014-3710",
             "baseScore": 5,
             "publishedDate": "2014-11-05T11:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:20:00+0000",
+            "lastModifiedDate": "2024-11-21T02:08:00+0000",
             "description": "The donote function in readelf.c in file through 5.20, as used in the Fileinfo component in PHP 5.4.34, does not ensure that sufficient note headers are present, which allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted ELF file."
         },
         "CVE-2014-3981": {
             "id": "CVE-2014-3981",
             "baseScore": 3.3,
             "publishedDate": "2014-06-08T18:55:00+0000",
-            "lastModifiedDate": "2023-11-07T02:20:00+0000",
+            "lastModifiedDate": "2024-11-21T02:09:00+0000",
             "description": "acinclude.m4, as used in the configure script in PHP 5.5.13 and earlier, allows local users to overwrite arbitrary files via a symlink attack on the /tmp/phpglibccheck file."
         },
         "CVE-2014-4049": {
             "id": "CVE-2014-4049",
             "baseScore": 5.1,
             "publishedDate": "2014-06-18T19:55:00+0000",
-            "lastModifiedDate": "2022-08-29T20:05:00+0000",
+            "lastModifiedDate": "2024-11-21T02:09:00+0000",
             "description": "Heap-based buffer overflow in the php_parserr function in ext/standard/dns.c in PHP 5.6.0beta4 and earlier allows remote servers to cause a denial of service (crash) and possibly execute arbitrary code via a crafted DNS TXT record, related to the dns_get_record function."
         },
         "CVE-2014-4670": {
             "id": "CVE-2014-4670",
             "baseScore": 4.6,
             "publishedDate": "2014-07-10T11:06:00+0000",
-            "lastModifiedDate": "2017-01-07T03:00:00+0000",
+            "lastModifiedDate": "2024-11-21T02:10:00+0000",
             "description": "Use-after-free vulnerability in ext/spl/spl_dllist.c in the SPL component in PHP through 5.5.14 allows context-dependent attackers to cause a denial of service or possibly have unspecified other impact via crafted iterator usage within applications in certain web-hosting environments."
         },
         "CVE-2014-4698": {
             "id": "CVE-2014-4698",
             "baseScore": 4.6,
             "publishedDate": "2014-07-10T11:06:00+0000",
-            "lastModifiedDate": "2023-01-19T16:35:00+0000",
+            "lastModifiedDate": "2024-11-21T02:10:00+0000",
             "description": "Use-after-free vulnerability in ext/spl/spl_array.c in the SPL component in PHP through 5.5.14 allows context-dependent attackers to cause a denial of service or possibly have unspecified other impact via crafted ArrayIterator usage within applications in certain web-hosting environments."
         },
         "CVE-2014-4721": {
             "id": "CVE-2014-4721",
             "baseScore": 2.6,
             "publishedDate": "2014-07-06T23:55:00+0000",
-            "lastModifiedDate": "2023-01-19T16:14:00+0000",
+            "lastModifiedDate": "2024-11-21T02:10:00+0000",
             "description": "The phpinfo implementation in ext/standard/info.c in PHP before 5.4.30 and 5.5.x before 5.5.14 does not ensure use of the string data type for the PHP_AUTH_PW, PHP_AUTH_TYPE, PHP_AUTH_USER, and PHP_SELF variables, which might allow context-dependent attackers to obtain sensitive information from process memory by using the integer data type with crafted values, related to a \"type confusion\" vulnerability, as demonstrated by reading a private SSL key in an Apache HTTP Server web-hosting environment with mod_ssl and a PHP 5.3.x mod_php."
         },
         "CVE-2014-5120": {
             "id": "CVE-2014-5120",
             "baseScore": 6.4,
             "publishedDate": "2014-08-23T01:55:00+0000",
-            "lastModifiedDate": "2016-10-26T02:00:00+0000",
+            "lastModifiedDate": "2024-11-21T02:11:00+0000",
             "description": "gd_ctx.c in the GD component in PHP 5.4.x before 5.4.32 and 5.5.x before 5.5.16 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to overwrite arbitrary files via crafted input to an application that calls the (1) imagegd, (2) imagegd2, (3) imagegif, (4) imagejpeg, (5) imagepng, (6) imagewbmp, or (7) imagewebp function."
         },
         "CVE-2014-8142": {
             "id": "CVE-2014-8142",
             "baseScore": 7.5,
             "publishedDate": "2014-12-20T11:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:22:00+0000",
+            "lastModifiedDate": "2024-11-21T02:18:00+0000",
             "description": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.36, 5.5.x before 5.5.20, and 5.6.x before 5.6.4 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate keys within the serialized properties of an object, a different vulnerability than CVE-2004-1019."
         },
         "CVE-2014-9425": {
             "id": "CVE-2014-9425",
             "baseScore": 7.5,
             "publishedDate": "2014-12-31T02:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:20:00+0000",
             "description": "Double free vulnerability in the zend_ts_hash_graceful_destroy function in zend_ts_hash.c in the Zend Engine in PHP through 5.5.20 and 5.6.x through 5.6.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors."
         },
         "CVE-2014-9427": {
             "id": "CVE-2014-9427",
             "baseScore": 7.5,
             "publishedDate": "2015-01-03T02:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:20:00+0000",
             "description": "sapi/cgi/cgi_main.c in the CGI component in PHP through 5.4.36, 5.5.x through 5.5.20, and 5.6.x through 5.6.4, when mmap is used to read a .php file, does not properly consider the mapping's length during processing of an invalid file that begins with a # character and lacks a newline character, which causes an out-of-bounds read and might (1) allow remote attackers to obtain sensitive information from php-cgi process memory by leveraging the ability to upload a .php file or (2) trigger unexpected code execution if a valid PHP script is present in memory locations adjacent to the mapping."
         },
         "CVE-2014-9652": {
             "id": "CVE-2014-9652",
             "baseScore": 5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2017-07-01T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:21:00+0000",
             "description": "The mconvert function in softmagic.c in file before 5.21, as used in the Fileinfo component in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5, does not properly handle a certain string-length field during a copy of a truncated version of a Pascal string, which might allow remote attackers to cause a denial of service (out-of-bounds memory access and application crash) via a crafted file."
         },
         "CVE-2014-9705": {
             "id": "CVE-2014-9705",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:21:00+0000",
             "description": "Heap-based buffer overflow in the enchant_broker_request_dict function in ext/enchant/enchant.c in PHP before 5.4.38, 5.5.x before 5.5.22, and 5.6.x before 5.6.6 allows remote attackers to execute arbitrary code via vectors that trigger creation of multiple dictionaries."
         },
         "CVE-2014-9709": {
             "id": "CVE-2014-9709",
             "baseScore": 5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2022-11-09T03:04:00+0000",
+            "lastModifiedDate": "2024-11-21T02:21:00+0000",
             "description": "The GetCode_ function in gd_gif_in.c in GD 2.1.1 and earlier, as used in PHP before 5.5.21 and 5.6.x before 5.6.5, allows remote attackers to cause a denial of service (buffer over-read and application crash) via a crafted GIF image that is improperly handled by the gdImageCreateFromGif function."
         },
         "CVE-2014-9767": {
             "id": "CVE-2014-9767",
             "baseScore": 4.3,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:21:00+0000",
             "description": "Directory traversal vulnerability in the ZipArchive::extractTo function in ext/zip/php_zip.c in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13 and ext/zip/ext_zip.cpp in HHVM before 3.12.1 allows remote attackers to create arbitrary empty directories via a crafted ZIP archive."
         },
         "CVE-2015-0231": {
             "id": "CVE-2015-0231",
             "baseScore": 7.5,
             "publishedDate": "2015-01-27T20:03:00+0000",
-            "lastModifiedDate": "2016-12-31T02:59:00+0000",
+            "lastModifiedDate": "2024-11-21T02:22:00+0000",
             "description": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate numerical keys within the serialized properties of an object.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2014-8142."
         },
         "CVE-2015-0232": {
             "id": "CVE-2015-0232",
             "baseScore": 6.8,
             "publishedDate": "2015-01-27T20:04:00+0000",
-            "lastModifiedDate": "2023-11-07T02:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:22:00+0000",
             "description": "The exif_process_unicode function in ext/exif/exif.c in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code or cause a denial of service (uninitialized pointer free and application crash) via crafted EXIF data in a JPEG image."
         },
         "CVE-2015-0235": {
             "id": "CVE-2015-0235",
             "baseScore": 10,
             "publishedDate": "2015-01-28T19:59:00+0000",
-            "lastModifiedDate": "2024-02-14T01:17:00+0000",
+            "lastModifiedDate": "2024-11-21T02:22:00+0000",
             "description": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka \"GHOST.\""
         },
         "CVE-2015-0273": {
             "id": "CVE-2015-0273",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:22:00+0000",
             "description": "Multiple use-after-free vulnerabilities in ext/date/php_date.c in PHP before 5.4.38, 5.5.x before 5.5.22, and 5.6.x before 5.6.6 allow remote attackers to execute arbitrary code via crafted serialized input containing a (1) R or (2) r type specifier in (a) DateTimeZone data handled by the php_date_timezone_initialize_from_hash function or (b) DateTime data handled by the php_date_initialize_from_hash function."
         },
         "CVE-2015-1351": {
             "id": "CVE-2015-1351",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:24:00+0000",
+            "lastModifiedDate": "2024-11-21T02:25:00+0000",
             "description": "Use-after-free vulnerability in the _zend_shared_memdup function in zend_shared_alloc.c in the OPcache extension in PHP through 5.6.7 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors."
         },
         "CVE-2015-1352": {
             "id": "CVE-2015-1352",
             "baseScore": 5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:24:00+0000",
+            "lastModifiedDate": "2024-11-21T02:25:00+0000",
             "description": "The build_tablename function in pgsql.c in the PostgreSQL (aka pgsql) extension in PHP through 5.6.7 does not validate token extraction for table names, which allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted name."
         },
         "CVE-2015-2301": {
             "id": "CVE-2015-2301",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:27:00+0000",
             "description": "Use-after-free vulnerability in the phar_rename_archive function in phar_object.c in PHP before 5.5.22 and 5.6.x before 5.6.6 allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors that trigger an attempted renaming of a Phar archive to the name of an existing file."
         },
         "CVE-2015-2305": {
             "id": "CVE-2015-2305",
             "baseScore": 6.8,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:27:00+0000",
             "description": "Integer overflow in the regcomp implementation in the Henry Spencer BSD regex library (aka rxspencer) alpha3.8.g5 on 32-bit platforms, as used in NetBSD through 6.1.5 and other products, might allow context-dependent attackers to execute arbitrary code via a large regular expression that leads to a heap-based buffer overflow."
         },
         "CVE-2015-2325": {
             "id": "CVE-2015-2325",
             "baseScore": 7.8,
             "publishedDate": "2020-01-14T17:15:00+0000",
-            "lastModifiedDate": "2022-08-05T14:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:27:00+0000",
             "description": "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier."
         },
         "CVE-2015-2326": {
             "id": "CVE-2015-2326",
             "baseScore": 5.5,
             "publishedDate": "2020-01-14T17:15:00+0000",
-            "lastModifiedDate": "2023-01-19T16:38:00+0000",
+            "lastModifiedDate": "2024-11-21T02:27:00+0000",
             "description": "The pcre_compile2 function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code and cause a denial of service (out-of-bounds read) via regular expression with a group containing both a forward referencing subroutine call and a recursive back reference, as demonstrated by \"((?+1)(\\1))/\"."
         },
         "CVE-2015-2331": {
             "id": "CVE-2015-2331",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:27:00+0000",
             "description": "Integer overflow in the _zip_cdir_new function in zip_dirent.c in libzip 0.11.2 and earlier, as used in the ZIP extension in PHP before 5.4.39, 5.5.x before 5.5.23, and 5.6.x before 5.6.7 and other products, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a ZIP archive that contains many entries, leading to a heap-based buffer overflow."
         },
         "CVE-2015-2348": {
             "id": "CVE-2015-2348",
             "baseScore": 5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:27:00+0000",
             "description": "The move_uploaded_file implementation in ext/standard/basic_functions.c in PHP before 5.4.39, 5.5.x before 5.5.23, and 5.6.x before 5.6.7 truncates a pathname upon encountering a \\x00 character, which allows remote attackers to bypass intended extension restrictions and create files with unexpected names via a crafted second argument.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2006-7243."
         },
         "CVE-2015-2783": {
             "id": "CVE-2015-2783",
             "baseScore": 5.8,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:28:00+0000",
             "description": "ext/phar/phar.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allows remote attackers to obtain sensitive information from process memory or cause a denial of service (buffer over-read and application crash) via a crafted length value in conjunction with crafted serialized data in a phar archive, related to the phar_parse_metadata and phar_parse_pharfile functions."
         },
         "CVE-2015-2787": {
             "id": "CVE-2015-2787",
             "baseScore": 7.5,
             "publishedDate": "2015-03-30T10:59:00+0000",
-            "lastModifiedDate": "2018-10-30T16:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:28:00+0000",
             "description": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.39, 5.5.x before 5.5.23, and 5.6.x before 5.6.7 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages use of the unset function within an __wakeup function, a related issue to CVE-2015-0231."
         },
         "CVE-2015-3152": {
             "id": "CVE-2015-3152",
             "baseScore": 5.9,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2022-08-29T20:05:00+0000",
+            "lastModifiedDate": "2024-11-21T02:28:00+0000",
             "description": "Oracle MySQL before 5.7.3, Oracle MySQL Connector/C (aka libmysqlclient) before 6.1.3, and MariaDB before 5.5.44 use the --ssl option to mean that SSL is optional, which allows man-in-the-middle attackers to spoof servers via a cleartext-downgrade attack, aka a \"BACKRONYM\" attack."
         },
         "CVE-2015-3307": {
             "id": "CVE-2015-3307",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "The phar_parse_metadata function in ext/phar/phar.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allows remote attackers to cause a denial of service (heap metadata corruption) or possibly have unspecified other impact via a crafted tar archive."
         },
         "CVE-2015-3329": {
             "id": "CVE-2015-3329",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "Multiple stack-based buffer overflows in the phar_set_inode function in phar_internal.h in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allow remote attackers to execute arbitrary code via a crafted length value in a (1) tar, (2) phar, or (3) ZIP archive."
         },
         "CVE-2015-3330": {
             "id": "CVE-2015-3330",
             "baseScore": 6.8,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "The php_handler function in sapi/apache2handler/sapi_apache2.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8, when the Apache HTTP Server 2.4.x is used, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via pipelined HTTP requests that result in a \"deconfigured interpreter.\""
         },
         "CVE-2015-3411": {
             "id": "CVE-2015-3411",
             "baseScore": 6.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to read or write to arbitrary files via crafted input to an application that calls (1) a DOMDocument load method, (2) the xmlwriter_open_uri function, (3) the finfo_file function, or (4) the hash_hmac_file function, as demonstrated by a filename\\0.xml attack that bypasses an intended configuration in which client users may read only .xml files."
         },
         "CVE-2015-3412": {
             "id": "CVE-2015-3412",
             "baseScore": 5.3,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to read arbitrary files via crafted input to an application that calls the stream_resolve_include_path function in ext/standard/streamsfuncs.c, as demonstrated by a filename\\0.extension attack that bypasses an intended configuration in which client users may read files with only one specific extension."
         },
         "CVE-2015-3414": {
             "id": "CVE-2015-3414",
             "baseScore": 7.5,
             "publishedDate": "2015-04-24T17:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "SQLite before 3.8.9 does not properly implement the dequoting of collation-sequence names, which allows context-dependent attackers to cause a denial of service (uninitialized memory access and application crash) or possibly have unspecified other impact via a crafted COLLATE clause, as demonstrated by COLLATE\"\"\"\"\"\"\"\" at the end of a SELECT statement."
         },
         "CVE-2015-3415": {
             "id": "CVE-2015-3415",
             "baseScore": 7.5,
             "publishedDate": "2015-04-24T17:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "The sqlite3VdbeExec function in vdbe.c in SQLite before 3.8.9 does not properly implement comparison operators, which allows context-dependent attackers to cause a denial of service (invalid free operation) or possibly have unspecified other impact via a crafted CHECK clause, as demonstrated by CHECK(0&O>O) in a CREATE TABLE statement."
         },
         "CVE-2015-3416": {
             "id": "CVE-2015-3416",
             "baseScore": 7.5,
             "publishedDate": "2015-04-24T17:59:00+0000",
-            "lastModifiedDate": "2022-08-16T13:28:00+0000",
+            "lastModifiedDate": "2024-11-21T02:29:00+0000",
             "description": "The sqlite3VXPrintf function in printf.c in SQLite before 3.8.9 does not properly handle precision and width values during floating-point conversions, which allows context-dependent attackers to cause a denial of service (integer overflow and stack-based buffer overflow) or possibly have unspecified other impact via large integers in a crafted printf function call in a SELECT statement."
         },
         "CVE-2015-4021": {
             "id": "CVE-2015-4021",
             "baseScore": 5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "The phar_parse_tarfile function in ext/phar/tar.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 does not verify that the first character of a filename is different from the \\0 character, which allows remote attackers to cause a denial of service (integer underflow and memory corruption) via a crafted entry in a tar archive."
         },
         "CVE-2015-4022": {
             "id": "CVE-2015-4022",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "Integer overflow in the ftp_genlist function in ext/ftp/ftp.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 allows remote FTP servers to execute arbitrary code via a long reply to a LIST command, leading to a heap-based buffer overflow."
         },
         "CVE-2015-4024": {
             "id": "CVE-2015-4024",
             "baseScore": 5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-12-27T16:08:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "Algorithmic complexity vulnerability in the multipart_buffer_headers function in main/rfc1867.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 allows remote attackers to cause a denial of service (CPU consumption) via crafted form data that triggers an improper order-of-growth outcome."
         },
         "CVE-2015-4025": {
             "id": "CVE-2015-4025",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 truncates a pathname upon encountering a \\x00 character in certain situations, which allows remote attackers to bypass intended extension restrictions and access files or directories with unexpected names via a crafted argument to (1) set_include_path, (2) tempnam, (3) rmdir, or (4) readlink.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2006-7243."
         },
         "CVE-2015-4026": {
             "id": "CVE-2015-4026",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "The pcntl_exec implementation in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 truncates a pathname upon encountering a \\x00 character, which might allow remote attackers to bypass intended extension restrictions and execute files with unexpected names via a crafted first argument.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2006-7243."
         },
         "CVE-2015-4147": {
             "id": "CVE-2015-4147",
             "baseScore": 7.5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "The SoapClient::__call method in ext/soap/soap.c in PHP before 5.4.39, 5.5.x before 5.5.23, and 5.6.x before 5.6.7 does not verify that __default_headers is an array, which allows remote attackers to execute arbitrary code by providing crafted serialized data with an unexpected data type, related to a \"type confusion\" issue."
         },
         "CVE-2015-4148": {
             "id": "CVE-2015-4148",
             "baseScore": 5,
             "publishedDate": "2015-06-09T18:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:30:00+0000",
             "description": "The do_soap_call function in ext/soap/soap.c in PHP before 5.4.39, 5.5.x before 5.5.23, and 5.6.x before 5.6.7 does not verify that the uri property is a string, which allows remote attackers to obtain sensitive information by providing crafted serialized data with an int data type, related to a \"type confusion\" issue."
         },
         "CVE-2015-4598": {
             "id": "CVE-2015-4598",
             "baseScore": 6.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "PHP before 5.4.42, 5.5.x before 5.5.26, and 5.6.x before 5.6.10 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to read or write to arbitrary files via crafted input to an application that calls (1) a DOMDocument save method or (2) the GD imagepsloadfont function, as demonstrated by a filename\\0.html attack that bypasses an intended configuration in which client users may write to only .html files."
         },
         "CVE-2015-4599": {
             "id": "CVE-2015-4599",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "The SoapFault::__toString method in ext/soap/soap.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allows remote attackers to obtain sensitive information, cause a denial of service (application crash), or possibly execute arbitrary code via an unexpected data type, related to a \"type confusion\" issue."
         },
         "CVE-2015-4604": {
             "id": "CVE-2015-4604",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "The mget function in softmagic.c in file 5.x, as used in the Fileinfo component in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8, does not properly maintain a certain pointer relationship, which allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted string that is mishandled by a \"Python script text executable\" rule."
         },
         "CVE-2015-4605": {
             "id": "CVE-2015-4605",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "The mcopy function in softmagic.c in file 5.x, as used in the Fileinfo component in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8, does not properly restrict a certain offset value, which allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted string that is mishandled by a \"Python script text executable\" rule."
         },
         "CVE-2015-4642": {
             "id": "CVE-2015-4642",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "The escapeshellarg function in ext/standard/exec.c in PHP before 5.4.42, 5.5.x before 5.5.26, and 5.6.x before 5.6.10 on Windows allows remote attackers to execute arbitrary OS commands via a crafted string to an application that accepts command-line arguments for a call to the PHP system function."
         },
         "CVE-2015-4643": {
             "id": "CVE-2015-4643",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "Integer overflow in the ftp_genlist function in ext/ftp/ftp.c in PHP before 5.4.42, 5.5.x before 5.5.26, and 5.6.x before 5.6.10 allows remote FTP servers to execute arbitrary code via a long reply to a LIST command, leading to a heap-based buffer overflow.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2015-4022."
         },
         "CVE-2015-4644": {
             "id": "CVE-2015-4644",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:31:00+0000",
             "description": "The php_pgsql_meta_data function in pgsql.c in the PostgreSQL (aka pgsql) extension in PHP before 5.4.42, 5.5.x before 5.5.26, and 5.6.x before 5.6.10 does not validate token extraction for table names, which might allow remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted name.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2015-1352."
         },
         "CVE-2015-5589": {
             "id": "CVE-2015-5589",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:26:00+0000",
+            "lastModifiedDate": "2024-11-21T02:33:00+0000",
             "description": "The phar_convert_to_other function in ext/phar/phar_object.c in PHP before 5.4.43, 5.5.x before 5.5.27, and 5.6.x before 5.6.11 does not validate a file pointer before a close operation, which allows remote attackers to cause a denial of service (segmentation fault) or possibly have unspecified other impact via a crafted TAR archive that is mishandled in a Phar::convertToData call."
         },
         "CVE-2015-5590": {
             "id": "CVE-2015-5590",
             "baseScore": 7.3,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:26:00+0000",
+            "lastModifiedDate": "2024-11-21T02:33:00+0000",
             "description": "Stack-based buffer overflow in the phar_fix_filepath function in ext/phar/phar.c in PHP before 5.4.43, 5.5.x before 5.5.27, and 5.6.x before 5.6.11 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a large length value, as demonstrated by mishandling of an e-mail attachment by the imap PHP extension."
         },
         "CVE-2015-6831": {
             "id": "CVE-2015-6831",
             "baseScore": 7.3,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "Multiple use-after-free vulnerabilities in SPL in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allow remote attackers to execute arbitrary code via vectors involving (1) ArrayObject, (2) SplObjectStorage, and (3) SplDoublyLinkedList, which are mishandled during unserialization."
         },
         "CVE-2015-6832": {
             "id": "CVE-2015-6832",
             "baseScore": 7.3,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "Use-after-free vulnerability in the SPL unserialize implementation in ext/spl/spl_array.c in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allows remote attackers to execute arbitrary code via crafted serialized data that triggers misuse of an array field."
         },
         "CVE-2015-6833": {
             "id": "CVE-2015-6833",
             "baseScore": 7.5,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "Directory traversal vulnerability in the PharData class in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allows remote attackers to write to arbitrary files via a .. (dot dot) in a ZIP archive entry that is mishandled during an extractTo call."
         },
         "CVE-2015-6834": {
             "id": "CVE-2015-6834",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "Multiple use-after-free vulnerabilities in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13 allow remote attackers to execute arbitrary code via vectors related to (1) the Serializable interface, (2) the SplObjectStorage class, and (3) the SplDoublyLinkedList class, which are mishandled during unserialization."
         },
         "CVE-2015-6835": {
             "id": "CVE-2015-6835",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "The session deserializer in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13 mishandles multiple php_var_unserialize calls, which allow remote attackers to execute arbitrary code or cause a denial of service (use-after-free) via crafted session content."
         },
         "CVE-2015-6836": {
             "id": "CVE-2015-6836",
             "baseScore": 7.3,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "The SoapClient __call method in ext/soap/soap.c in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13 does not properly manage headers, which allows remote attackers to execute arbitrary code via crafted serialized data that triggers a \"type confusion\" in the serialize_function_call function."
         },
         "CVE-2015-6837": {
             "id": "CVE-2015-6837",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "The xsl_ext_function_php function in ext/xsl/xsltprocessor.c in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13, when libxml2 before 2.9.2 is used, does not consider the possibility of a NULL valuePop return value before proceeding with a free operation during initial error checking, which allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted XML document, a different vulnerability than CVE-2015-6838."
         },
         "CVE-2015-6838": {
             "id": "CVE-2015-6838",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:35:00+0000",
             "description": "The xsl_ext_function_php function in ext/xsl/xsltprocessor.c in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13, when libxml2 before 2.9.2 is used, does not consider the possibility of a NULL valuePop return value before proceeding with a free operation after the principal argument loop, which allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted XML document, a different vulnerability than CVE-2015-6837."
         },
         "CVE-2015-7803": {
             "id": "CVE-2015-7803",
             "baseScore": 6.8,
             "publishedDate": "2015-12-11T12:00:00+0000",
-            "lastModifiedDate": "2023-11-07T02:28:00+0000",
+            "lastModifiedDate": "2024-11-21T02:37:00+0000",
             "description": "The phar_get_entry_data function in ext/phar/util.c in PHP before 5.5.30 and 5.6.x before 5.6.14 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a .phar file with a crafted TAR archive entry in which the Link indicator references a file that does not exist."
         },
         "CVE-2015-7804": {
             "id": "CVE-2015-7804",
             "baseScore": 6.8,
             "publishedDate": "2015-12-11T12:00:00+0000",
-            "lastModifiedDate": "2023-11-07T02:28:00+0000",
+            "lastModifiedDate": "2024-11-21T02:37:00+0000",
             "description": "Off-by-one error in the phar_parse_zipfile function in ext/phar/zip.c in PHP before 5.5.30 and 5.6.x before 5.6.14 allows remote attackers to cause a denial of service (uninitialized pointer dereference and application crash) by including the / filename in a .zip PHAR archive."
         },
         "CVE-2015-8383": {
             "id": "CVE-2015-8383",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "PCRE before 8.38 mishandles certain repeated conditional groups, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8386": {
             "id": "CVE-2015-8386",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "PCRE before 8.38 mishandles the interaction of lookbehind assertions and mutually recursive subpatterns, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8387": {
             "id": "CVE-2015-8387",
             "baseScore": 7.3,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "PCRE before 8.38 mishandles (?123) subroutine calls and related subroutine calls, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8389": {
             "id": "CVE-2015-8389",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "PCRE before 8.38 mishandles the /(?:|a|){100}x/ pattern and related patterns, which allows remote attackers to cause a denial of service (infinite recursion) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8390": {
             "id": "CVE-2015-8390",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "PCRE before 8.38 mishandles the [: and \\\\ substrings in character classes, which allows remote attackers to cause a denial of service (uninitialized memory read) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8391": {
             "id": "CVE-2015-8391",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "The pcre_compile function in pcre_compile.c in PCRE before 8.38 mishandles certain [: nesting, which allows remote attackers to cause a denial of service (CPU consumption) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8393": {
             "id": "CVE-2015-8393",
             "baseScore": 7.5,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "pcregrep in PCRE before 8.38 mishandles the -q option for binary files, which might allow remote attackers to obtain sensitive information via a crafted file, as demonstrated by a CGI script that sends stdout data to a client."
         },
         "CVE-2015-8394": {
             "id": "CVE-2015-8394",
             "baseScore": 9.8,
             "publishedDate": "2015-12-02T01:59:00+0000",
-            "lastModifiedDate": "2023-02-16T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "PCRE before 8.38 mishandles the (?(<digits>) and (?(R<digits>) conditions, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2015-8616": {
             "id": "CVE-2015-8616",
             "baseScore": 8.6,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2016-01-22T00:25:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "Use-after-free vulnerability in the Collator::sortWithSortKeys function in ext/intl/collator/collator_sort.c in PHP 7.x before 7.0.1 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact by leveraging the relationships between a key buffer and a destroyed array."
         },
         "CVE-2015-8617": {
             "id": "CVE-2015-8617",
             "baseScore": 9.8,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2017-09-10T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:38:00+0000",
             "description": "Format string vulnerability in the zend_throw_or_error function in Zend/zend_execute_API.c in PHP 7.x before 7.0.1 allows remote attackers to execute arbitrary code via format string specifiers in a string that is misused as a class name, leading to incorrect error handling."
         },
         "CVE-2015-8865": {
             "id": "CVE-2015-8865",
             "baseScore": 7.3,
             "publishedDate": "2016-05-20T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:28:00+0000",
+            "lastModifiedDate": "2024-11-21T02:39:00+0000",
             "description": "The file_check_mem function in funcs.c in file before 5.23, as used in the Fileinfo component in PHP before 5.5.34, 5.6.x before 5.6.20, and 7.x before 7.0.5, mishandles continuation-level jumps, which allows context-dependent attackers to cause a denial of service (buffer overflow and application crash) or possibly execute arbitrary code via a crafted magic file."
         },
         "CVE-2015-8866": {
             "id": "CVE-2015-8866",
             "baseScore": 9.6,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:28:00+0000",
+            "lastModifiedDate": "2024-11-21T02:39:00+0000",
             "description": "ext/libxml/libxml.c in PHP before 5.5.22 and 5.6.x before 5.6.6, when PHP-FPM is used, does not isolate each thread from libxml_disable_entity_loader changes in other threads, which allows remote attackers to conduct XML External Entity (XXE) and XML Entity Expansion (XEE) attacks via a crafted XML document, a related issue to CVE-2015-5161."
         },
         "CVE-2015-8867": {
             "id": "CVE-2015-8867",
             "baseScore": 7.5,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:28:00+0000",
+            "lastModifiedDate": "2024-11-21T02:39:00+0000",
             "description": "The openssl_random_pseudo_bytes function in ext/openssl/openssl.c in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 incorrectly relies on the deprecated RAND_pseudo_bytes function, which makes it easier for remote attackers to defeat cryptographic protection mechanisms via unspecified vectors."
         },
         "CVE-2015-8874": {
             "id": "CVE-2015-8874",
             "baseScore": 7.5,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2018-10-30T16:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:39:00+0000",
             "description": "Stack consumption vulnerability in GD in PHP before 5.6.12 allows remote attackers to cause a denial of service via a crafted imagefilltoborder call."
         },
         "CVE-2015-8879": {
             "id": "CVE-2015-8879",
             "baseScore": 7.5,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2022-08-29T20:43:00+0000",
+            "lastModifiedDate": "2024-11-21T02:39:00+0000",
             "description": "The odbc_bindcols function in ext/odbc/php_odbc.c in PHP before 5.6.12 mishandles driver behavior for SQL_WVARCHAR columns, which allows remote attackers to cause a denial of service (application crash) in opportunistic circumstances by leveraging use of the odbc_fetch_array function to access a certain type of Microsoft SQL Server table."
         },
         "CVE-2016-1283": {
             "id": "CVE-2016-1283",
             "baseScore": 9.8,
             "publishedDate": "2016-01-03T00:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:58:00+0000",
+            "lastModifiedDate": "2024-11-21T02:46:00+0000",
             "description": "The pcre_compile2 function in pcre_compile.c in PCRE 8.38 mishandles the /((?:F?+(?:^(?(R)a+\\\"){99}-))(?J)(?'R'(?'R'<((?'RR'(?'R'\\){97)?J)?J)(?'R'(?'R'\\){99|(:(?|(?'R')(\\k'R')|((?'R')))H'R'R)(H'R))))))/ pattern and related patterns with named subgroups, which allows remote attackers to cause a denial of service (heap-based buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror."
         },
         "CVE-2016-1903": {
             "id": "CVE-2016-1903",
             "baseScore": 9.1,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:47:00+0000",
             "description": "The gdImageRotateInterpolated function in ext/gd/libgd/gd_interpolation.c in PHP before 5.5.31, 5.6.x before 5.6.17, and 7.x before 7.0.2 allows remote attackers to obtain sensitive information or cause a denial of service (out-of-bounds read and application crash) via a large bgd_color argument to the imagerotate function."
         },
         "CVE-2016-1904": {
             "id": "CVE-2016-1904",
             "baseScore": 7.3,
             "publishedDate": "2016-01-19T05:59:00+0000",
-            "lastModifiedDate": "2016-12-07T18:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:47:00+0000",
             "description": "Multiple integer overflows in ext/standard/exec.c in PHP 7.x before 7.0.2 allow remote attackers to cause a denial of service or possibly have unspecified other impact via a long string to the (1) php_escape_shell_cmd or (2) php_escape_shell_arg function, leading to a heap-based buffer overflow."
         },
         "CVE-2016-2554": {
             "id": "CVE-2016-2554",
             "baseScore": 9.8,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:48:00+0000",
             "description": "Stack-based buffer overflow in ext/phar/tar.c in PHP before 5.5.32, 5.6.x before 5.6.18, and 7.x before 7.0.3 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a crafted TAR archive."
         },
         "CVE-2016-3074": {
             "id": "CVE-2016-3074",
             "baseScore": 9.8,
             "publishedDate": "2016-04-26T14:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:57:00+0000",
+            "lastModifiedDate": "2024-11-21T02:49:00+0000",
             "description": "Integer signedness error in GD Graphics Library 2.1.1 (aka libgd or libgd2) allows remote attackers to cause a denial of service (crash) or potentially execute arbitrary code via crafted compressed gd2 data, which triggers a heap-based buffer overflow."
         },
         "CVE-2016-3078": {
             "id": "CVE-2016-3078",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:57:00+0000",
+            "lastModifiedDate": "2024-11-21T02:49:00+0000",
             "description": "Multiple integer overflows in php_zip.c in the zip extension in PHP before 7.0.6 allow remote attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly have unspecified other impact via a crafted call to (1) getFromIndex or (2) getFromName in the ZipArchive class."
         },
         "CVE-2016-3185": {
             "id": "CVE-2016-3185",
             "baseScore": 7.1,
             "publishedDate": "2016-05-16T10:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:49:00+0000",
             "description": "The make_http_soap_request function in ext/soap/php_http.c in PHP before 5.4.44, 5.5.x before 5.5.28, 5.6.x before 5.6.12, and 7.x before 7.0.4 allows remote attackers to obtain sensitive information from process memory or cause a denial of service (type confusion and application crash) via crafted serialized _cookies data, related to the SoapClient::__call method in ext/soap/soap.c."
         },
         "CVE-2016-4070": {
             "id": "CVE-2016-4070",
             "baseScore": 7.5,
             "publishedDate": "2016-05-20T11:00:00+0000",
-            "lastModifiedDate": "2024-08-06T01:15:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "Integer overflow in the php_raw_url_encode function in ext/standard/url.c in PHP before 5.5.34, 5.6.x before 5.6.20, and 7.x before 7.0.5 allows remote attackers to cause a denial of service (application crash) via a long string to the rawurlencode function. NOTE: the vendor says \"Not sure if this qualifies as security issue (probably not)."
         },
         "CVE-2016-4071": {
             "id": "CVE-2016-4071",
             "baseScore": 9.8,
             "publishedDate": "2016-05-20T11:00:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "Format string vulnerability in the php_snmp_error function in ext/snmp/snmp.c in PHP before 5.5.34, 5.6.x before 5.6.20, and 7.x before 7.0.5 allows remote attackers to execute arbitrary code via format string specifiers in an SNMP::get call."
         },
         "CVE-2016-4072": {
             "id": "CVE-2016-4072",
             "baseScore": 9.8,
             "publishedDate": "2016-05-20T11:00:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "The Phar extension in PHP before 5.5.34, 5.6.x before 5.6.20, and 7.x before 7.0.5 allows remote attackers to execute arbitrary code via a crafted filename, as demonstrated by mishandling of \\0 characters by the phar_analyze_path function in ext/phar/phar.c."
         },
         "CVE-2016-4073": {
             "id": "CVE-2016-4073",
             "baseScore": 9.8,
             "publishedDate": "2016-05-20T11:00:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "Multiple integer overflows in the mbfl_strcut function in ext/mbstring/libmbfl/mbfl/mbfilter.c in PHP before 5.5.34, 5.6.x before 5.6.20, and 7.x before 7.0.5 allow remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted mb_strcut call."
         },
         "CVE-2016-4342": {
             "id": "CVE-2016-4342",
             "baseScore": 8.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2018-10-30T16:27:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "ext/phar/phar_object.c in PHP before 5.5.32, 5.6.x before 5.6.18, and 7.x before 7.0.3 mishandles zero-length uncompressed data, which allows remote attackers to cause a denial of service (heap memory corruption) or possibly have unspecified other impact via a crafted (1) TAR, (2) ZIP, or (3) PHAR archive."
         },
         "CVE-2016-4343": {
             "id": "CVE-2016-4343",
             "baseScore": 8.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "The phar_make_dirstream function in ext/phar/dirstream.c in PHP before 5.6.18 and 7.x before 7.0.3 mishandles zero-size ././@LongLink files, which allows remote attackers to cause a denial of service (uninitialized pointer dereference) or possibly have unspecified other impact via a crafted TAR archive."
         },
         "CVE-2016-4344": {
             "id": "CVE-2016-4344",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:56:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "Integer overflow in the xml_utf8_encode function in ext/xml/xml.c in PHP before 7.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a long argument to the utf8_encode function, leading to a heap-based buffer overflow."
         },
         "CVE-2016-4345": {
             "id": "CVE-2016-4345",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:56:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "Integer overflow in the php_filter_encode_url function in ext/filter/sanitizing_filters.c in PHP before 7.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a long string, leading to a heap-based buffer overflow."
         },
         "CVE-2016-4346": {
             "id": "CVE-2016-4346",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:56:00+0000",
+            "lastModifiedDate": "2024-11-21T02:51:00+0000",
             "description": "Integer overflow in the str_pad function in ext/standard/string.c in PHP before 7.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a long string, leading to a heap-based buffer overflow."
         },
         "CVE-2016-4473": {
             "id": "CVE-2016-4473",
             "baseScore": 9.8,
             "publishedDate": "2017-06-08T20:29:00+0000",
-            "lastModifiedDate": "2017-06-16T12:47:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "/ext/phar/phar_object.c in PHP 7.0.7 and 5.6.x allows remote attackers to execute arbitrary code.  NOTE: Introduced as part of an incomplete fix to CVE-2015-6833."
         },
         "CVE-2016-4537": {
             "id": "CVE-2016-4537",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The bcpowmod function in ext/bcmath/bcmath.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 accepts a negative integer for the scale argument, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via a crafted call."
         },
         "CVE-2016-4538": {
             "id": "CVE-2016-4538",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The bcpowmod function in ext/bcmath/bcmath.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 modifies certain data structures without considering whether they are copies of the _zero_, _one_, or _two_ global variable, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via a crafted call."
         },
         "CVE-2016-4539": {
             "id": "CVE-2016-4539",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The xml_parse_into_struct function in ext/xml/xml.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 allows remote attackers to cause a denial of service (buffer under-read and segmentation fault) or possibly have unspecified other impact via crafted XML data in the second argument, leading to a parser level of zero."
         },
         "CVE-2016-4540": {
             "id": "CVE-2016-4540",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The grapheme_stripos function in ext/intl/grapheme/grapheme_string.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via a negative offset."
         },
         "CVE-2016-4541": {
             "id": "CVE-2016-4541",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The grapheme_strpos function in ext/intl/grapheme/grapheme_string.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via a negative offset."
         },
         "CVE-2016-4542": {
             "id": "CVE-2016-4542",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The exif_process_IFD_TAG function in ext/exif/exif.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 does not properly construct spprintf arguments, which allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via crafted header data."
         },
         "CVE-2016-4543": {
             "id": "CVE-2016-4543",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The exif_process_IFD_in_JPEG function in ext/exif/exif.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 does not validate IFD sizes, which allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via crafted header data."
         },
         "CVE-2016-4544": {
             "id": "CVE-2016-4544",
             "baseScore": 9.8,
             "publishedDate": "2016-05-22T01:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:32:00+0000",
+            "lastModifiedDate": "2024-11-21T02:52:00+0000",
             "description": "The exif_process_TIFF_in_JPEG function in ext/exif/exif.c in PHP before 5.5.35, 5.6.x before 5.6.21, and 7.x before 7.0.6 does not validate TIFF start data, which allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via crafted header data."
         },
         "CVE-2016-5093": {
             "id": "CVE-2016-5093",
             "baseScore": 8.6,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:53:00+0000",
             "description": "The get_icu_value_internal function in ext/intl/locale/locale_methods.c in PHP before 5.5.36, 5.6.x before 5.6.22, and 7.x before 7.0.7 does not ensure the presence of a '\\0' character, which allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via a crafted locale_get_primary_language call."
         },
         "CVE-2016-5094": {
             "id": "CVE-2016-5094",
             "baseScore": 8.6,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:53:00+0000",
             "description": "Integer overflow in the php_html_entities function in ext/standard/html.c in PHP before 5.5.36 and 5.6.x before 5.6.22 allows remote attackers to cause a denial of service or possibly have unspecified other impact by triggering a large output string from the htmlspecialchars function."
         },
         "CVE-2016-5096": {
             "id": "CVE-2016-5096",
             "baseScore": 8.6,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:53:00+0000",
             "description": "Integer overflow in the fread function in ext/standard/file.c in PHP before 5.5.36 and 5.6.x before 5.6.22 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a large integer in the second argument."
         },
         "CVE-2016-5114": {
             "id": "CVE-2016-5114",
             "baseScore": 9.1,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:53:00+0000",
             "description": "sapi/fpm/fpm/fpm_log.c in PHP before 5.5.31, 5.6.x before 5.6.17, and 7.x before 7.0.2 misinterprets the semantics of the snprintf return value, which allows attackers to obtain sensitive information from process memory or cause a denial of service (out-of-bounds read and buffer overflow) via a long string, as demonstrated by a long URI in a configuration with custom REQUEST_URI logging."
         },
         "CVE-2016-5385": {
             "id": "CVE-2016-5385",
             "baseScore": 8.1,
             "publishedDate": "2016-07-19T02:00:00+0000",
-            "lastModifiedDate": "2023-02-12T23:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "PHP through 7.0.8 does not attempt to address RFC 3875 section 4.1.18 namespace conflicts and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary proxy server via a crafted Proxy header in an HTTP request, as demonstrated by (1) an application that makes a getenv('HTTP_PROXY') call or (2) a CGI configuration of PHP, aka an \"httpoxy\" issue."
         },
         "CVE-2016-5399": {
             "id": "CVE-2016-5399",
             "baseScore": 7.8,
             "publishedDate": "2017-04-21T20:59:00+0000",
-            "lastModifiedDate": "2023-02-12T23:23:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "The bzread function in ext/bz2/bz2.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 allows remote attackers to cause a denial of service (out-of-bounds write) or execute arbitrary code via a crafted bz2 archive."
         },
         "CVE-2016-5766": {
             "id": "CVE-2016-5766",
             "baseScore": 8.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2019-04-22T17:48:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "Integer overflow in the _gd2GetHeader function in gd_gd2.c in the GD Graphics Library (aka libgd) before 2.2.3, as used in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8, allows remote attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly have unspecified other impact via crafted chunk dimensions in an image."
         },
         "CVE-2016-5767": {
             "id": "CVE-2016-5767",
             "baseScore": 8.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "Integer overflow in the gdImageCreate function in gd.c in the GD Graphics Library (aka libgd) before 2.0.34RC1, as used in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8, allows remote attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly have unspecified other impact via a crafted image dimensions."
         },
         "CVE-2016-5768": {
             "id": "CVE-2016-5768",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "Double free vulnerability in the _php_mb_regex_ereg_replace_exec function in php_mbregex.c in the mbstring extension in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8 allows remote attackers to execute arbitrary code or cause a denial of service (application crash) by leveraging a callback exception."
         },
         "CVE-2016-5769": {
             "id": "CVE-2016-5769",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2016-11-28T20:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "Multiple integer overflows in mcrypt.c in the mcrypt extension in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8 allow remote attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly have unspecified other impact via a crafted length value, related to the (1) mcrypt_generic and (2) mdecrypt_generic functions."
         },
         "CVE-2016-5770": {
             "id": "CVE-2016-5770",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:54:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "Integer overflow in the SplFileObject::fread function in spl_directory.c in the SPL extension in PHP before 5.5.37 and 5.6.x before 5.6.23 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a large integer argument, a related issue to CVE-2016-5096."
         },
         "CVE-2016-5771": {
             "id": "CVE-2016-5771",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:52:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "spl_array.c in the SPL extension in PHP before 5.5.37 and 5.6.x before 5.6.23 improperly interacts with the unserialize implementation and garbage collection, which allows remote attackers to execute arbitrary code or cause a denial of service (use-after-free and application crash) via crafted serialized data."
         },
         "CVE-2016-5772": {
             "id": "CVE-2016-5772",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:49:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "Double free vulnerability in the php_wddx_process_data function in wddx.c in the WDDX extension in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via crafted XML data that is mishandled in a wddx_deserialize call."
         },
         "CVE-2016-5773": {
             "id": "CVE-2016-5773",
             "baseScore": 9.8,
             "publishedDate": "2016-08-07T10:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:54:00+0000",
             "description": "php_zip.c in the zip extension in PHP before 5.5.37, 5.6.x before 5.6.23, and 7.x before 7.0.8 improperly interacts with the unserialize implementation and garbage collection, which allows remote attackers to execute arbitrary code or cause a denial of service (use-after-free and application crash) via crafted serialized data containing a ZipArchive object."
         },
         "CVE-2016-6207": {
             "id": "CVE-2016-6207",
             "baseScore": 6.5,
             "publishedDate": "2016-08-12T15:59:00+0000",
-            "lastModifiedDate": "2022-08-29T20:04:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "Integer overflow in the _gdContributionsAlloc function in gd_interpolation.c in GD Graphics Library (aka libgd) before 2.2.3 allows remote attackers to cause a denial of service (out-of-bounds memory write or memory consumption) via unspecified vectors."
         },
         "CVE-2016-6288": {
             "id": "CVE-2016-6288",
             "baseScore": 9.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "The php_url_parse_ex function in ext/standard/url.c in PHP before 5.5.38 allows remote attackers to cause a denial of service (buffer over-read) or possibly have unspecified other impact via vectors involving the smart_str data type."
         },
         "CVE-2016-6289": {
             "id": "CVE-2016-6289",
             "baseScore": 7.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "Integer overflow in the virtual_file_ex function in TSRM/tsrm_virtual_cwd.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 allows remote attackers to cause a denial of service (stack-based buffer overflow) or possibly have unspecified other impact via a crafted extract operation on a ZIP archive."
         },
         "CVE-2016-6290": {
             "id": "CVE-2016-6290",
             "baseScore": 9.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "ext/session/session.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 does not properly maintain a certain hash data structure, which allows remote attackers to cause a denial of service (use-after-free) or possibly have unspecified other impact via vectors related to session deserialization."
         },
         "CVE-2016-6291": {
             "id": "CVE-2016-6291",
             "baseScore": 9.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "The exif_process_IFD_in_MAKERNOTE function in ext/exif/exif.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 allows remote attackers to cause a denial of service (out-of-bounds array access and memory corruption), obtain sensitive information from process memory, or possibly have unspecified other impact via a crafted JPEG image."
         },
         "CVE-2016-6292": {
             "id": "CVE-2016-6292",
             "baseScore": 6.5,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "The exif_process_user_comment function in ext/exif/exif.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted JPEG image."
         },
         "CVE-2016-6294": {
             "id": "CVE-2016-6294",
             "baseScore": 9.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "The locale_accept_from_http function in ext/intl/locale/locale_methods.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 does not properly restrict calls to the ICU uloc_acceptLanguageFromHTTP function, which allows remote attackers to cause a denial of service (out-of-bounds read) or possibly have unspecified other impact via a call with a long argument."
         },
         "CVE-2016-6295": {
             "id": "CVE-2016-6295",
             "baseScore": 9.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "ext/snmp/snmp.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 improperly interacts with the unserialize implementation and garbage collection, which allows remote attackers to cause a denial of service (use-after-free and application crash) or possibly have unspecified other impact via crafted serialized data, a related issue to CVE-2016-5773."
         },
         "CVE-2016-6296": {
             "id": "CVE-2016-6296",
             "baseScore": 9.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "Integer signedness error in the simplestring_addn function in simplestring.c in xmlrpc-epi through 0.54.2, as used in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9, allows remote attackers to cause a denial of service (heap-based buffer overflow) or possibly have unspecified other impact via a long first argument to the PHP xmlrpc_encode_request function."
         },
         "CVE-2016-6297": {
             "id": "CVE-2016-6297",
             "baseScore": 8.8,
             "publishedDate": "2016-07-25T14:59:00+0000",
-            "lastModifiedDate": "2023-11-07T02:33:00+0000",
+            "lastModifiedDate": "2024-11-21T02:55:00+0000",
             "description": "Integer overflow in the php_stream_zip_opener function in ext/zip/zip_stream.c in PHP before 5.5.38, 5.6.x before 5.6.24, and 7.x before 7.0.9 allows remote attackers to cause a denial of service (stack-based buffer overflow) or possibly have unspecified other impact via a crafted zip:// URL."
         },
         "CVE-2016-7124": {
             "id": "CVE-2016-7124",
             "baseScore": 9.8,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/standard/var_unserializer.c in PHP before 5.6.25 and 7.x before 7.0.10 mishandles certain invalid objects, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via crafted serialized data that leads to a (1) __destruct call or (2) magic method call."
         },
         "CVE-2016-7125": {
             "id": "CVE-2016-7125",
             "baseScore": 7.5,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/session/session.c in PHP before 5.6.25 and 7.x before 7.0.10 skips invalid session names in a way that triggers incorrect parsing, which allows remote attackers to inject arbitrary-type session data by leveraging control of a session name, as demonstrated by object injection."
         },
         "CVE-2016-7126": {
             "id": "CVE-2016-7126",
             "baseScore": 9.8,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2020-11-16T19:43:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The imagetruecolortopalette function in ext/gd/gd.c in PHP before 5.6.25 and 7.x before 7.0.10 does not properly validate the number of colors, which allows remote attackers to cause a denial of service (select_colors allocation error and out-of-bounds write) or possibly have unspecified other impact via a large value in the third argument."
         },
         "CVE-2016-7127": {
             "id": "CVE-2016-7127",
             "baseScore": 9.8,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The imagegammacorrect function in ext/gd/gd.c in PHP before 5.6.25 and 7.x before 7.0.10 does not properly validate gamma values, which allows remote attackers to cause a denial of service (out-of-bounds write) or possibly have unspecified other impact by providing different signs for the second and third arguments."
         },
         "CVE-2016-7128": {
             "id": "CVE-2016-7128",
             "baseScore": 5.3,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The exif_process_IFD_in_TIFF function in ext/exif/exif.c in PHP before 5.6.25 and 7.x before 7.0.10 mishandles the case of a thumbnail offset that exceeds the file size, which allows remote attackers to obtain sensitive information from process memory via a crafted TIFF image."
         },
         "CVE-2016-7129": {
             "id": "CVE-2016-7129",
             "baseScore": 9.8,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The php_wddx_process_data function in ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (segmentation fault) or possibly have unspecified other impact via an invalid ISO 8601 time value, as demonstrated by a wddx_deserialize call that mishandles a dateTime element in a wddxPacket XML document."
         },
         "CVE-2016-7130": {
             "id": "CVE-2016-7130",
             "baseScore": 7.5,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2018-01-05T02:31:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The php_wddx_pop_element function in ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) or possibly have unspecified other impact via an invalid base64 binary value, as demonstrated by a wddx_deserialize call that mishandles a binary element in a wddxPacket XML document."
         },
         "CVE-2016-7131": {
             "id": "CVE-2016-7131",
             "baseScore": 7.5,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2020-11-16T19:41:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) or possibly have unspecified other impact via a malformed wddxPacket XML document that is mishandled in a wddx_deserialize call, as demonstrated by a tag that lacks a < (less than) character."
         },
         "CVE-2016-7132": {
             "id": "CVE-2016-7132",
             "baseScore": 7.5,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2020-11-16T19:26:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) or possibly have unspecified other impact via an invalid wddxPacket XML document that is mishandled in a wddx_deserialize call, as demonstrated by a stray element inside a boolean element, leading to incorrect pop processing."
         },
         "CVE-2016-7133": {
             "id": "CVE-2016-7133",
             "baseScore": 8.1,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2017-07-01T01:30:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "Zend/zend_alloc.c in PHP 7.x before 7.0.10, when open_basedir is enabled, mishandles huge realloc operations, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a long pathname."
         },
         "CVE-2016-7134": {
             "id": "CVE-2016-7134",
             "baseScore": 9.8,
             "publishedDate": "2016-09-12T01:59:00+0000",
-            "lastModifiedDate": "2017-08-16T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/curl/interface.c in PHP 7.x before 7.0.10 does not work around a libcurl integer overflow, which allows remote attackers to cause a denial of service (allocation error and heap-based buffer overflow) or possibly have unspecified other impact via a long string that is mishandled in a curl_escape call."
         },
         "CVE-2016-7411": {
             "id": "CVE-2016-7411",
             "baseScore": 9.8,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2017-07-30T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/standard/var_unserializer.re in PHP before 5.6.26 mishandles object-deserialization failures, which allows remote attackers to cause a denial of service (memory corruption) or possibly have unspecified other impact via an unserialize call that references a partially constructed object."
         },
         "CVE-2016-7412": {
             "id": "CVE-2016-7412",
             "baseScore": 8.1,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/mysqlnd/mysqlnd_wireprotocol.c in PHP before 5.6.26 and 7.x before 7.0.11 does not verify that a BIT field has the UNSIGNED_FLAG flag, which allows remote MySQL servers to cause a denial of service (heap-based buffer overflow) or possibly have unspecified other impact via crafted field metadata."
         },
         "CVE-2016-7413": {
             "id": "CVE-2016-7413",
             "baseScore": 9.8,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "Use-after-free vulnerability in the wddx_stack_destroy function in ext/wddx/wddx.c in PHP before 5.6.26 and 7.x before 7.0.11 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a wddxPacket XML document that lacks an end-tag for a recordset field element, leading to mishandling in a wddx_deserialize call."
         },
         "CVE-2016-7414": {
             "id": "CVE-2016-7414",
             "baseScore": 9.8,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The ZIP signature-verification feature in PHP before 5.6.26 and 7.x before 7.0.11 does not ensure that the uncompressed_filesize field is large enough, which allows remote attackers to cause a denial of service (out-of-bounds memory access) or possibly have unspecified other impact via a crafted PHAR archive, related to ext/phar/util.c and ext/phar/zip.c."
         },
         "CVE-2016-7416": {
             "id": "CVE-2016-7416",
             "baseScore": 7.5,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/intl/msgformat/msgformat_format.c in PHP before 5.6.26 and 7.x before 7.0.11 does not properly restrict the locale length provided to the Locale class in the ICU library, which allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a MessageFormatter::formatMessage call with a long first argument."
         },
         "CVE-2016-7417": {
             "id": "CVE-2016-7417",
             "baseScore": 9.8,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "ext/spl/spl_array.c in PHP before 5.6.26 and 7.x before 7.0.11 proceeds with SplArray unserialization without validating a return value and data type, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via crafted serialized data."
         },
         "CVE-2016-7418": {
             "id": "CVE-2016-7418",
             "baseScore": 7.5,
             "publishedDate": "2016-09-17T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:57:00+0000",
             "description": "The php_wddx_push_element function in ext/wddx/wddx.c in PHP before 5.6.26 and 7.x before 7.0.11 allows remote attackers to cause a denial of service (invalid pointer access and out-of-bounds read) or possibly have unspecified other impact via an incorrect boolean element in a wddxPacket XML document, leading to mishandling in a wddx_deserialize call."
         },
         "CVE-2016-7479": {
             "id": "CVE-2016-7479",
             "baseScore": 9.8,
             "publishedDate": "2017-01-12T00:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:58:00+0000",
             "description": "In all versions of PHP 7, during the unserialization process, resizing the 'properties' hash table of a serialized object may lead to use-after-free. A remote attacker may exploit this bug to gain arbitrary code execution."
         },
         "CVE-2016-9933": {
             "id": "CVE-2016-9933",
             "baseScore": 7.5,
             "publishedDate": "2017-01-04T20:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:02:00+0000",
             "description": "Stack consumption vulnerability in the gdImageFillToBorder function in gd.c in the GD Graphics Library (aka libgd) before 2.2.2, as used in PHP before 5.6.28 and 7.x before 7.0.13, allows remote attackers to cause a denial of service (segmentation violation) via a crafted imagefilltoborder call that triggers use of a negative color value."
         },
         "CVE-2016-9934": {
             "id": "CVE-2016-9934",
             "baseScore": 7.5,
             "publishedDate": "2017-01-04T20:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:02:00+0000",
             "description": "ext/wddx/wddx.c in PHP before 5.6.28 and 7.x before 7.0.13 allows remote attackers to cause a denial of service (NULL pointer dereference) via crafted serialized data in a wddxPacket XML document, as demonstrated by a PDORow string."
         },
         "CVE-2016-9935": {
             "id": "CVE-2016-9935",
             "baseScore": 9.8,
             "publishedDate": "2017-01-04T20:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:02:00+0000",
             "description": "The php_wddx_push_element function in ext/wddx/wddx.c in PHP before 5.6.29 and 7.x before 7.0.14 allows remote attackers to cause a denial of service (out-of-bounds read and memory corruption) or possibly have unspecified other impact via an empty boolean element in a wddxPacket XML document."
         },
         "CVE-2016-9936": {
             "id": "CVE-2016-9936",
             "baseScore": 9.8,
             "publishedDate": "2017-01-04T20:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:02:00+0000",
             "description": "The unserialize implementation in ext/standard/var.c in PHP 7.x before 7.0.14 allows remote attackers to cause a denial of service (use-after-free) or possibly have unspecified other impact via crafted serialized data.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2015-6834."
         },
         "CVE-2016-10158": {
             "id": "CVE-2016-10158",
             "baseScore": 7.5,
             "publishedDate": "2017-01-24T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "The exif_convert_any_to_int function in ext/exif/exif.c in PHP before 5.6.30, 7.0.x before 7.0.15, and 7.1.x before 7.1.1 allows remote attackers to cause a denial of service (application crash) via crafted EXIF data that triggers an attempt to divide the minimum representable negative integer by -1."
         },
         "CVE-2016-10159": {
             "id": "CVE-2016-10159",
             "baseScore": 7.5,
             "publishedDate": "2017-01-24T21:59:00+0000",
-            "lastModifiedDate": "2022-08-29T20:43:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "Integer overflow in the phar_parse_pharfile function in ext/phar/phar.c in PHP before 5.6.30 and 7.0.x before 7.0.15 allows remote attackers to cause a denial of service (memory consumption or application crash) via a truncated manifest entry in a PHAR archive."
         },
         "CVE-2016-10160": {
             "id": "CVE-2016-10160",
             "baseScore": 9.8,
             "publishedDate": "2017-01-24T21:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:58:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "Off-by-one error in the phar_parse_pharfile function in ext/phar/phar.c in PHP before 5.6.30 and 7.0.x before 7.0.15 allows remote attackers to cause a denial of service (memory corruption) or possibly execute arbitrary code via a crafted PHAR archive with an alias mismatch."
         },
         "CVE-2016-10161": {
             "id": "CVE-2016-10161",
             "baseScore": 7.5,
             "publishedDate": "2017-01-24T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "The object_common1 function in ext/standard/var_unserializer.c in PHP before 5.6.30, 7.0.x before 7.0.15, and 7.1.x before 7.1.1 allows remote attackers to cause a denial of service (buffer over-read and application crash) via crafted serialized data that is mishandled in a finish_nested_data call."
         },
         "CVE-2016-10162": {
             "id": "CVE-2016-10162",
             "baseScore": 7.5,
             "publishedDate": "2017-01-24T21:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "The php_wddx_pop_element function in ext/wddx/wddx.c in PHP 7.0.x before 7.0.15 and 7.1.x before 7.1.1 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via an inapplicable class name in a wddxPacket XML document, leading to mishandling in a wddx_deserialize call."
         },
         "CVE-2016-10166": {
             "id": "CVE-2016-10166",
             "baseScore": 9.8,
             "publishedDate": "2017-03-15T15:59:00+0000",
-            "lastModifiedDate": "2017-11-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "Integer underflow in the _gdContributionsAlloc function in gd_interpolation.c in the GD Graphics Library (aka libgd) before 2.2.4 allows remote attackers to have unspecified impact via vectors related to decrementing the u variable."
         },
         "CVE-2016-10167": {
             "id": "CVE-2016-10167",
             "baseScore": 5.5,
             "publishedDate": "2017-03-15T15:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "The gdImageCreateFromGd2Ctx function in gd_gd2.c in the GD Graphics Library (aka libgd) before 2.2.4 allows remote attackers to cause a denial of service (application crash) via a crafted image file."
         },
         "CVE-2016-10168": {
             "id": "CVE-2016-10168",
             "baseScore": 7.8,
             "publishedDate": "2017-03-15T15:59:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T02:43:00+0000",
             "description": "Integer overflow in gd_io.c in the GD Graphics Library (aka libgd) before 2.2.4 allows remote attackers to have unspecified impact via vectors involving the number of horizontal and vertical chunks in an image."
         },
         "CVE-2017-5340": {
             "id": "CVE-2017-5340",
             "baseScore": 9.8,
             "publishedDate": "2017-01-11T06:59:00+0000",
-            "lastModifiedDate": "2022-07-20T16:46:00+0000",
+            "lastModifiedDate": "2024-11-21T03:27:00+0000",
             "description": "Zend/zend_hash.c in PHP before 7.0.15 and 7.1.x before 7.1.1 mishandles certain cases that require large array allocations, which allows remote attackers to execute arbitrary code or cause a denial of service (integer overflow, uninitialized memory access, and use of arbitrary destructor function pointers) via crafted serialized data."
         },
         "CVE-2017-7890": {
             "id": "CVE-2017-7890",
             "baseScore": 6.5,
             "publishedDate": "2017-08-02T19:29:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:32:00+0000",
             "description": "The GIF decoding function gdImageCreateFromGifCtx in gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.31 and 7.x before 7.1.7, does not zero colorMap arrays before use. A specially crafted GIF image could use the uninitialized tables to read ~700 bytes from the top of the stack, potentially disclosing sensitive information."
         },
         "CVE-2017-9224": {
             "id": "CVE-2017-9224",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2022-07-20T16:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:35:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A stack out-of-bounds read occurs in match_at() during regular expression searching. A logical error involving order of validation and access in match_at() could result in an out-of-bounds read from a stack buffer."
         },
         "CVE-2017-9226": {
             "id": "CVE-2017-9226",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2022-07-20T16:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:35:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A heap out-of-bounds write or read occurs in next_state_val() during regular expression compilation. Octal numbers larger than 0xff are not handled correctly in fetch_token() and fetch_token_in_cc(). A malformed regular expression containing an octal number in the form of '\\700' would produce an invalid code point value larger than 0xff in next_state_val(), resulting in an out-of-bounds write memory corruption."
         },
         "CVE-2017-9227": {
             "id": "CVE-2017-9227",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2022-07-20T16:34:00+0000",
+            "lastModifiedDate": "2024-11-21T03:35:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A stack out-of-bounds read occurs in mbc_enc_len() during regular expression searching. Invalid handling of reg->dmin in forward_search_range() could result in an invalid pointer dereference, as an out-of-bounds read from a stack buffer."
         },
         "CVE-2017-9228": {
             "id": "CVE-2017-9228",
             "baseScore": 9.8,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2022-07-20T16:34:00+0000",
+            "lastModifiedDate": "2024-11-21T03:35:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A heap out-of-bounds write occurs in bitset_set_range() during regular expression compilation due to an uninitialized variable from an incorrect state transition. An incorrect state transition in parse_char_class() could create an execution path that leaves a critical local variable uninitialized until it's used as an index, resulting in an out-of-bounds write memory corruption."
         },
         "CVE-2017-9229": {
             "id": "CVE-2017-9229",
             "baseScore": 7.5,
             "publishedDate": "2017-05-24T15:29:00+0000",
-            "lastModifiedDate": "2022-09-01T16:20:00+0000",
+            "lastModifiedDate": "2024-11-21T03:35:00+0000",
             "description": "An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through 2.4.1 and mbstring in PHP through 7.1.5. A SIGSEGV occurs in left_adjust_char_head() during regular expression compilation. Invalid handling of reg->dmax in forward_search_range() could result in an invalid pointer dereference, normally as an immediate denial-of-service condition."
         },
         "CVE-2017-11142": {
             "id": "CVE-2017-11142",
             "baseScore": 7.5,
             "publishedDate": "2017-07-10T14:29:00+0000",
-            "lastModifiedDate": "2018-01-14T02:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:07:00+0000",
             "description": "In PHP before 5.6.31, 7.x before 7.0.17, and 7.1.x before 7.1.3, remote attackers could cause a CPU consumption denial of service attack by injecting long form variables, related to main/php_variables.c."
         },
         "CVE-2017-11143": {
             "id": "CVE-2017-11143",
             "baseScore": 7.5,
             "publishedDate": "2017-07-10T14:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:07:00+0000",
             "description": "In PHP before 5.6.31, an invalid free in the WDDX deserialization of boolean parameters could be used by attackers able to inject XML for deserialization to crash the PHP interpreter, related to an invalid free for an empty boolean element in ext/wddx/wddx.c."
         },
         "CVE-2017-11144": {
             "id": "CVE-2017-11144",
             "baseScore": 7.5,
             "publishedDate": "2017-07-10T14:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:07:00+0000",
             "description": "In PHP before 5.6.31, 7.x before 7.0.21, and 7.1.x before 7.1.7, the openssl extension PEM sealing code did not check the return value of the OpenSSL sealing function, which could lead to a crash of the PHP interpreter, related to an interpretation conflict for a negative number in ext/openssl/openssl.c, and an OpenSSL documentation omission."
         },
         "CVE-2017-11145": {
             "id": "CVE-2017-11145",
             "baseScore": 7.5,
             "publishedDate": "2017-07-10T14:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:07:00+0000",
             "description": "In PHP before 5.6.31, 7.x before 7.0.21, and 7.1.x before 7.1.7, an error in the date extension's timelib_meridian parsing code could be used by attackers able to supply date strings to leak information from the interpreter, related to ext/date/lib/parse_date.c out-of-bounds reads affecting the php_parse_date function. NOTE: the correct fix is in the e8b7698f5ee757ce2c8bd10a192a491a498f891c commit, not the bd77ac90d3bdf31ce2a5251ad92e9e75 gist."
         },
         "CVE-2017-11147": {
             "id": "CVE-2017-11147",
             "baseScore": 9.1,
             "publishedDate": "2017-07-10T14:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:07:00+0000",
             "description": "In PHP before 5.6.30 and 7.x before 7.0.15, the PHAR archive handler could be used by attackers supplying malicious archive files to crash the PHP interpreter or potentially disclose information due to a buffer over-read in the phar_parse_pharfile function in ext/phar/phar.c."
         },
         "CVE-2017-11362": {
             "id": "CVE-2017-11362",
             "baseScore": 9.8,
             "publishedDate": "2017-07-17T13:18:00+0000",
-            "lastModifiedDate": "2019-05-22T16:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:07:00+0000",
             "description": "In PHP 7.x before 7.0.21 and 7.1.x before 7.1.7, ext/intl/msgformat/msgformat_parse.c does not restrict the locale length, which allows remote attackers to cause a denial of service (stack-based buffer overflow and application crash) or possibly have unspecified other impact within International Components for Unicode (ICU) for C/C++ via a long first argument to the msgfmt_parse_message function."
         },
         "CVE-2017-11628": {
             "id": "CVE-2017-11628",
             "baseScore": 7.8,
             "publishedDate": "2017-07-25T23:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:38:00+0000",
+            "lastModifiedDate": "2024-11-21T03:08:00+0000",
             "description": "In PHP before 5.6.31, 7.x before 7.0.21, and 7.1.x before 7.1.7, a stack-based buffer overflow in the zend_ini_do_op() function in Zend/zend_ini_parser.c could cause a denial of service or potentially allow executing code. NOTE: this is only relevant for PHP applications that accept untrusted input (instead of the system's php.ini file) for the parse_ini_string or parse_ini_file function, e.g., a web application for syntax validation of php.ini directives."
         },
         "CVE-2017-12932": {
             "id": "CVE-2017-12932",
             "baseScore": 9.8,
             "publishedDate": "2017-08-18T03:29:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:10:00+0000",
             "description": "ext/standard/var_unserializer.re in PHP 7.0.x through 7.0.22 and 7.1.x through 7.1.8 is prone to a heap use after free while unserializing untrusted data, related to improper use of the hash API for key deletion in a situation with an invalid array size. Exploitation of this issue can have an unspecified impact on the integrity of PHP."
         },
         "CVE-2017-12933": {
             "id": "CVE-2017-12933",
             "baseScore": 9.8,
             "publishedDate": "2017-08-18T03:29:00+0000",
-            "lastModifiedDate": "2019-10-03T00:03:00+0000",
+            "lastModifiedDate": "2024-11-21T03:10:00+0000",
             "description": "The finish_nested_data function in ext/standard/var_unserializer.re in PHP before 5.6.31, 7.0.x before 7.0.21, and 7.1.x before 7.1.7 is prone to a buffer over-read while unserializing untrusted data. Exploitation of this issue can have an unspecified impact on the integrity of PHP."
         },
         "CVE-2017-12934": {
             "id": "CVE-2017-12934",
             "baseScore": 7.5,
             "publishedDate": "2017-08-18T03:29:00+0000",
-            "lastModifiedDate": "2018-05-04T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T03:10:00+0000",
             "description": "ext/standard/var_unserializer.re in PHP 7.0.x before 7.0.21 and 7.1.x before 7.1.7 is prone to a heap use after free while unserializing untrusted data, related to the zval_get_type function in Zend/zend_types.h. Exploitation of this issue can have an unspecified impact on the integrity of PHP."
         },
         "CVE-2017-16642": {
             "id": "CVE-2017-16642",
             "baseScore": 7.5,
             "publishedDate": "2017-11-07T21:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:16:00+0000",
             "description": "In PHP before 5.6.32, 7.x before 7.0.25, and 7.1.x before 7.1.11, an error in the date extension's timelib_meridian handling of 'front of' and 'back of' directives could be used by attackers able to supply date strings to leak information from the interpreter, related to ext/date/lib/parse_date.c out-of-bounds reads affecting the php_parse_date function. NOTE: this is a different issue than CVE-2017-11145."
         },
         "CVE-2018-5711": {
             "id": "CVE-2018-5711",
             "baseScore": 5.5,
             "publishedDate": "2018-01-16T09:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:58:00+0000",
+            "lastModifiedDate": "2024-11-21T04:09:00+0000",
             "description": "gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1, has an integer signedness error that leads to an infinite loop via a crafted GIF file, as demonstrated by a call to the imagecreatefromgif or imagecreatefromstring PHP function. This is related to GetCode_ and gdImageCreateFromGifCtx."
         },
         "CVE-2018-5712": {
             "id": "CVE-2018-5712",
             "baseScore": 6.1,
             "publishedDate": "2018-01-16T09:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:09:00+0000",
             "description": "An issue was discovered in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1. There is Reflected XSS on the PHAR 404 error page via the URI of a request for a .phar file."
         },
         "CVE-2018-7584": {
             "id": "CVE-2018-7584",
             "baseScore": 9.8,
             "publishedDate": "2018-03-01T19:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:12:00+0000",
             "description": "In PHP through 5.6.33, 7.0.x before 7.0.28, 7.1.x through 7.1.14, and 7.2.x through 7.2.2, there is a stack-based buffer under-read while parsing an HTTP response in the php_stream_url_wrap_http_ex function in ext/standard/http_fopen_wrapper.c. This subsequently results in copying a large string."
         },
         "CVE-2018-10545": {
             "id": "CVE-2018-10545",
             "baseScore": 4.7,
             "publishedDate": "2018-04-29T21:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:41:00+0000",
             "description": "An issue was discovered in PHP before 5.6.35, 7.0.x before 7.0.29, 7.1.x before 7.1.16, and 7.2.x before 7.2.4. Dumpable FPM child processes allow bypassing opcache access controls because fpm_unix.c makes a PR_SET_DUMPABLE prctl call, allowing one user (in a multiuser environment) to obtain sensitive information from the process memory of a second user's PHP applications by running gcore on the PID of the PHP-FPM worker process."
         },
         "CVE-2018-10546": {
             "id": "CVE-2018-10546",
             "baseScore": 7.5,
             "publishedDate": "2018-04-29T21:29:00+0000",
-            "lastModifiedDate": "2019-10-03T00:03:00+0000",
+            "lastModifiedDate": "2024-11-21T03:41:00+0000",
             "description": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. An infinite loop exists in ext/iconv/iconv.c because the iconv stream filter does not reject invalid multibyte sequences."
         },
         "CVE-2018-10547": {
             "id": "CVE-2018-10547",
             "baseScore": 6.1,
             "publishedDate": "2018-04-29T21:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:41:00+0000",
             "description": "An issue was discovered in ext/phar/phar_object.c in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. There is Reflected XSS on the PHAR 403 and 404 error pages via request data of a request for a .phar file. NOTE: this vulnerability exists because of an incomplete fix for CVE-2018-5712."
         },
         "CVE-2018-10548": {
             "id": "CVE-2018-10548",
             "baseScore": 7.5,
             "publishedDate": "2018-04-29T21:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:41:00+0000",
             "description": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. ext/ldap/ldap.c allows remote LDAP servers to cause a denial of service (NULL pointer dereference and application crash) because of mishandling of the ldap_get_dn return value."
         },
         "CVE-2018-10549": {
             "id": "CVE-2018-10549",
             "baseScore": 8.8,
             "publishedDate": "2018-04-29T21:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:41:00+0000",
             "description": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. exif_read_data in ext/exif/exif.c has an out-of-bounds read for crafted JPEG data because exif_iif_add_value mishandles the case of a MakerNote that lacks a final '\\0' character."
         },
         "CVE-2018-12882": {
             "id": "CVE-2018-12882",
             "baseScore": 9.8,
             "publishedDate": "2018-06-26T03:29:00+0000",
-            "lastModifiedDate": "2019-03-12T11:46:00+0000",
+            "lastModifiedDate": "2024-11-21T03:46:00+0000",
             "description": "exif_read_from_impl in ext/exif/exif.c in PHP 7.2.x through 7.2.7 allows attackers to trigger a use-after-free (in exif_read_from_file) because it closes a stream that it is not responsible for closing. The vulnerable code is reachable through the PHP exif_read_data function."
         },
         "CVE-2018-14851": {
             "id": "CVE-2018-14851",
             "baseScore": 5.5,
             "publishedDate": "2018-08-02T19:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:49:00+0000",
             "description": "exif_process_IFD_in_MAKERNOTE in ext/exif/exif.c in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8 allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted JPEG file."
         },
         "CVE-2018-14883": {
             "id": "CVE-2018-14883",
             "baseScore": 7.5,
             "publishedDate": "2018-08-03T13:29:00+0000",
-            "lastModifiedDate": "2020-08-24T17:37:00+0000",
+            "lastModifiedDate": "2024-11-21T03:50:00+0000",
             "description": "An issue was discovered in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. An Integer Overflow leads to a heap-based buffer over-read in exif_thumbnail_extract of exif.c."
         },
         "CVE-2018-14884": {
             "id": "CVE-2018-14884",
             "baseScore": 7.5,
             "publishedDate": "2018-08-03T13:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:50:00+0000",
             "description": "An issue was discovered in PHP 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1. Inappropriately parsing an HTTP response leads to a segmentation fault because http_header_value in ext/standard/http_fopen_wrapper.c can be a NULL value that is mishandled in an atoi call."
         },
         "CVE-2018-15132": {
             "id": "CVE-2018-15132",
             "baseScore": 7.5,
             "publishedDate": "2018-08-07T15:29:00+0000",
-            "lastModifiedDate": "2019-03-08T13:30:00+0000",
+            "lastModifiedDate": "2024-11-21T03:50:00+0000",
             "description": "An issue was discovered in ext/standard/link_win32.c in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. The linkinfo function on Windows doesn't implement the open_basedir check. This could be abused to find files on paths outside of the allowed directories."
         },
         "CVE-2018-17082": {
             "id": "CVE-2018-17082",
             "baseScore": 6.1,
             "publishedDate": "2018-09-16T15:29:00+0000",
-            "lastModifiedDate": "2019-08-19T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T03:53:00+0000",
             "description": "The Apache2 component in PHP before 5.6.38, 7.0.x before 7.0.32, 7.1.x before 7.1.22, and 7.2.x before 7.2.10 allows XSS via the body of a \"Transfer-Encoding: chunked\" request, because the bucket brigade is mishandled in the php_handler function in sapi/apache2handler/sapi_apache2.c."
         },
         "CVE-2018-19518": {
             "id": "CVE-2018-19518",
             "baseScore": 7.5,
             "publishedDate": "2018-11-25T10:29:00+0000",
-            "lastModifiedDate": "2023-11-07T02:55:00+0000",
+            "lastModifiedDate": "2024-11-21T03:58:00+0000",
             "description": "University of Washington IMAP Toolkit 2007f on UNIX, as used in imap_open() in PHP and other products, launches an rsh command (by means of the imap_rimap function in c-client/imap4r1.c and the tcp_aopen function in osdep/unix/tcp_unix.c) without preventing argument injection, which might allow remote attackers to execute arbitrary OS commands if the IMAP server name is untrusted input (e.g., entered by a user of a web application) and if rsh has been replaced by a program with different argument semantics. For example, if rsh is a link to ssh (as seen on Debian and Ubuntu systems), then the attack can use an IMAP server name containing a \"-oProxyCommand\" argument."
         },
         "CVE-2018-20783": {
             "id": "CVE-2018-20783",
             "baseScore": 7.5,
             "publishedDate": "2019-02-21T19:29:00+0000",
-            "lastModifiedDate": "2019-05-22T15:29:00+0000",
+            "lastModifiedDate": "2024-11-21T04:02:00+0000",
             "description": "In PHP before 5.6.39, 7.x before 7.0.33, 7.1.x before 7.1.25, and 7.2.x before 7.2.13, a buffer over-read in PHAR reading functions may allow an attacker to read allocated or unallocated memory past the actual data when trying to parse a .phar file. This is related to phar_parse_pharfile in ext/phar/phar.c."
         },
         "CVE-2019-6977": {
             "id": "CVE-2019-6977",
             "baseScore": 8.8,
             "publishedDate": "2019-01-27T02:29:00+0000",
-            "lastModifiedDate": "2023-11-07T03:13:00+0000",
+            "lastModifiedDate": "2024-11-21T04:47:00+0000",
             "description": "gdImageColorMatch in gd_color_match.c in the GD Graphics Library (aka LibGD) 2.2.5, as used in the imagecolormatch function in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1, has a heap-based buffer overflow. This can be exploited by an attacker who is able to trigger imagecolormatch calls with crafted image data."
         },
         "CVE-2019-9020": {
             "id": "CVE-2019-9020",
             "baseScore": 9.8,
             "publishedDate": "2019-02-22T23:29:00+0000",
-            "lastModifiedDate": "2019-06-18T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:50:00+0000",
             "description": "An issue was discovered in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1. Invalid input to the function xmlrpc_decode() can lead to an invalid memory access (heap out of bounds read or read after free). This is related to xml_elem_parse_buf in ext/xmlrpc/libxmlrpc/xml_element.c."
         },
         "CVE-2019-9021": {
             "id": "CVE-2019-9021",
             "baseScore": 9.8,
             "publishedDate": "2019-02-22T23:29:00+0000",
-            "lastModifiedDate": "2019-06-18T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:50:00+0000",
             "description": "An issue was discovered in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1. A heap-based buffer over-read in PHAR reading functions in the PHAR extension may allow an attacker to read allocated or unallocated memory past the actual data when trying to parse the file name, a different vulnerability than CVE-2018-20783. This is related to phar_detect_phar_fname_ext in ext/phar/phar.c."
         },
         "CVE-2019-9022": {
             "id": "CVE-2019-9022",
             "baseScore": 7.5,
             "publishedDate": "2019-02-22T23:29:00+0000",
-            "lastModifiedDate": "2019-06-18T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:50:00+0000",
             "description": "An issue was discovered in PHP 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.2. dns_get_record misparses a DNS response, which can allow a hostile DNS server to cause PHP to misuse memcpy, leading to read operations going past the buffer allocated for DNS data. This affects php_parserr in ext/standard/dns.c for DNS_CAA and DNS_ANY queries."
         },
         "CVE-2019-9023": {
             "id": "CVE-2019-9023",
             "baseScore": 9.8,
             "publishedDate": "2019-02-22T23:29:00+0000",
-            "lastModifiedDate": "2019-06-18T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:50:00+0000",
             "description": "An issue was discovered in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1. A number of heap-based buffer over-read instances are present in mbstring regular expression functions when supplied with invalid multibyte data. These occur in ext/mbstring/oniguruma/regcomp.c, ext/mbstring/oniguruma/regexec.c, ext/mbstring/oniguruma/regparse.c, ext/mbstring/oniguruma/enc/unicode.c, and ext/mbstring/oniguruma/src/utf32_be.c when a multibyte regular expression pattern contains invalid multibyte sequences."
         },
         "CVE-2019-9024": {
             "id": "CVE-2019-9024",
             "baseScore": 7.5,
             "publishedDate": "2019-02-22T23:29:00+0000",
-            "lastModifiedDate": "2019-06-18T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T04:50:00+0000",
             "description": "An issue was discovered in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1. xmlrpc_decode() can allow a hostile XMLRPC server to cause PHP to read memory outside of allocated areas in base64_decode_xmlrpc in ext/xmlrpc/libxmlrpc/base64.c."
         },
         "CVE-2019-9025": {
             "id": "CVE-2019-9025",
             "baseScore": 9.8,
             "publishedDate": "2019-02-22T23:29:00+0000",
-            "lastModifiedDate": "2021-07-21T11:39:00+0000",
+            "lastModifiedDate": "2024-11-21T04:50:00+0000",
             "description": "An issue was discovered in PHP 7.3.x before 7.3.1. An invalid multibyte string supplied as an argument to the mb_split() function in ext/mbstring/php_mbregex.c can cause PHP to execute memcpy() with a negative argument, which could read and write past buffers allocated for the data."
         },
         "CVE-2019-9637": {
             "id": "CVE-2019-9637",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2019-06-03T15:29:00+0000",
+            "lastModifiedDate": "2024-11-21T04:52:00+0000",
             "description": "An issue was discovered in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. Due to the way rename() across filesystems is implemented, it is possible that file being renamed is briefly available with wrong permissions while the rename is ongoing, thus enabling unauthorized users to access the data."
         },
         "CVE-2019-9638": {
             "id": "CVE-2019-9638",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2022-04-05T20:40:00+0000",
+            "lastModifiedDate": "2024-11-21T04:52:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an uninitialized read in exif_process_IFD_in_MAKERNOTE because of mishandling the maker_note->offset relationship to value_len."
         },
         "CVE-2019-9639": {
             "id": "CVE-2019-9639",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2022-04-05T20:48:00+0000",
+            "lastModifiedDate": "2024-11-21T04:52:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an uninitialized read in exif_process_IFD_in_MAKERNOTE because of mishandling the data_len variable."
         },
         "CVE-2019-9640": {
             "id": "CVE-2019-9640",
             "baseScore": 7.5,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2022-04-05T20:48:00+0000",
+            "lastModifiedDate": "2024-11-21T04:52:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an Invalid Read in exif_process_SOFn."
         },
         "CVE-2019-9641": {
             "id": "CVE-2019-9641",
             "baseScore": 9.8,
             "publishedDate": "2019-03-09T00:29:00+0000",
-            "lastModifiedDate": "2022-04-05T20:49:00+0000",
+            "lastModifiedDate": "2024-11-21T04:52:00+0000",
             "description": "An issue was discovered in the EXIF component in PHP before 7.1.27, 7.2.x before 7.2.16, and 7.3.x before 7.3.3. There is an uninitialized read in exif_process_IFD_in_TIFF."
         },
         "CVE-2019-11034": {
             "id": "CVE-2019-11034",
             "baseScore": 9.1,
             "publishedDate": "2019-04-18T17:29:00+0000",
-            "lastModifiedDate": "2020-10-02T13:33:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When processing certain files, PHP EXIF extension in versions 7.1.x below 7.1.28, 7.2.x below 7.2.17 and 7.3.x below 7.3.4 can be caused to read past allocated buffer in exif_process_IFD_TAG function. This may lead to information disclosure or crash."
         },
         "CVE-2019-11035": {
             "id": "CVE-2019-11035",
             "baseScore": 9.1,
             "publishedDate": "2019-04-18T17:29:00+0000",
-            "lastModifiedDate": "2020-10-02T13:13:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When processing certain files, PHP EXIF extension in versions 7.1.x below 7.1.28, 7.2.x below 7.2.17 and 7.3.x below 7.3.4 can be caused to read past allocated buffer in exif_iif_add_value function. This may lead to information disclosure or crash."
         },
         "CVE-2019-11036": {
             "id": "CVE-2019-11036",
             "baseScore": 9.1,
             "publishedDate": "2019-05-03T20:29:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When processing certain files, PHP EXIF extension in versions 7.1.x below 7.1.29, 7.2.x below 7.2.18 and 7.3.x below 7.3.5 can be caused to read past allocated buffer in exif_process_IFD_TAG function. This may lead to information disclosure or crash."
         },
         "CVE-2019-11038": {
             "id": "CVE-2019-11038",
             "baseScore": 5.3,
             "publishedDate": "2019-06-19T00:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When using the gdImageCreateFromXbm() function in the GD Graphics Library (aka LibGD) 2.2.5, as used in the PHP GD extension in PHP versions 7.1.x below 7.1.30, 7.2.x below 7.2.19 and 7.3.x below 7.3.6, it is possible to supply data that will cause the function to use the value of uninitialized variable. This may lead to disclosing contents of the stack that has been left there by previous code."
         },
         "CVE-2019-11039": {
             "id": "CVE-2019-11039",
             "baseScore": 9.1,
             "publishedDate": "2019-06-19T00:15:00+0000",
-            "lastModifiedDate": "2020-10-16T12:57:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "Function iconv_mime_decode_headers() in PHP versions 7.1.x below 7.1.30, 7.2.x below 7.2.19 and 7.3.x below 7.3.6 may perform out-of-buffer read due to integer overflow when parsing MIME headers. This may lead to information disclosure or crash."
         },
         "CVE-2019-11040": {
             "id": "CVE-2019-11040",
             "baseScore": 9.1,
             "publishedDate": "2019-06-19T00:15:00+0000",
-            "lastModifiedDate": "2020-10-16T12:57:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.30, 7.2.x below 7.2.19 and 7.3.x below 7.3.6 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11041": {
             "id": "CVE-2019-11041",
             "baseScore": 7.1,
             "publishedDate": "2019-08-09T20:15:00+0000",
-            "lastModifiedDate": "2023-02-28T15:13:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.31, 7.2.x below 7.2.21 and 7.3.x below 7.3.8 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11042": {
             "id": "CVE-2019-11042",
             "baseScore": 7.1,
             "publishedDate": "2019-08-09T20:15:00+0000",
-            "lastModifiedDate": "2023-02-28T15:13:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.1.x below 7.1.31, 7.2.x below 7.2.21 and 7.3.x below 7.3.8 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11043": {
             "id": "CVE-2019-11043",
             "baseScore": 9.8,
             "publishedDate": "2019-10-28T15:15:00+0000",
-            "lastModifiedDate": "2024-07-16T17:52:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24 and 7.3.x below 7.3.11 in certain configurations of FPM setup it is possible to cause FPM module to write past allocated buffers into the space reserved for FCGI protocol data, thus opening the possibility of remote code execution."
         },
         "CVE-2019-11044": {
             "id": "CVE-2019-11044",
             "baseScore": 7.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 on Windows, PHP link() function accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11045": {
             "id": "CVE-2019-11045",
             "baseScore": 5.9,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP DirectoryIterator class accepts filenames with embedded \\0 byte and treats them as terminating at that byte. This could lead to security vulnerabilities, e.g. in applications checking paths that the code is allowed to access."
         },
         "CVE-2019-11046": {
             "id": "CVE-2019-11046",
             "baseScore": 5.3,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0, PHP bcmath extension functions on some systems, including Windows, can be tricked into reading beyond the allocated space by supplying it with string containing characters that are identified as numeric by the OS but aren't ASCII numbers. This can read to disclosure of the content of some memory locations."
         },
         "CVE-2019-11047": {
             "id": "CVE-2019-11047",
             "baseScore": 6.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-11048": {
             "id": "CVE-2019-11048",
             "baseScore": 5.3,
             "publishedDate": "2020-05-20T08:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.31, 7.3.x below 7.3.18 and 7.4.x below 7.4.6, when HTTP file uploads are allowed, supplying overly long filenames or field names could lead PHP engine to try to allocate oversized memory storage, hit the memory limit and stop processing the request, without cleaning up temporary files created by upload request. This potentially could lead to accumulation of uncleaned temporary files exhausting the disk space on the target server."
         },
         "CVE-2019-11049": {
             "id": "CVE-2019-11049",
             "baseScore": 9.8,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.13 and 7.4.0 on Windows, when supplying custom headers to mail() function, due to mistake introduced in commit 78f4b4a2dcf92ddbccea1bb95f8390a18ac3342e, if the header is supplied in lowercase, this can result in double-freeing certain memory locations."
         },
         "CVE-2019-11050": {
             "id": "CVE-2019-11050",
             "baseScore": 6.5,
             "publishedDate": "2019-12-23T03:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:02:00+0000",
+            "lastModifiedDate": "2024-11-21T04:20:00+0000",
             "description": "When PHP EXIF extension is parsing EXIF information from an image, e.g. via exif_read_data() function, in PHP versions 7.2.x below 7.2.26, 7.3.x below 7.3.13 and 7.4.0 it is possible to supply it with data what will cause it to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2019-13224": {
             "id": "CVE-2019-13224",
             "baseScore": 9.8,
             "publishedDate": "2019-07-10T14:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:03:00+0000",
+            "lastModifiedDate": "2024-11-21T04:24:00+0000",
             "description": "A use-after-free in onig_new_deluxe() in regext.c in Oniguruma 6.9.2 allows attackers to potentially cause information disclosure, denial of service, or possibly code execution by providing a crafted regular expression. The attacker provides a pair of a regex pattern and a string, with a multi-byte encoding that gets handled by onig_new_deluxe(). Oniguruma issues often affect Ruby, as well as common optional libraries for PHP and Rust."
         },
         "CVE-2020-7059": {
             "id": "CVE-2020-7059",
             "baseScore": 9.1,
             "publishedDate": "2020-02-10T08:15:00+0000",
-            "lastModifiedDate": "2022-07-01T12:42:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "When using fgetss() function to read data with stripping tags, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause this function to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2020-7060": {
             "id": "CVE-2020-7060",
             "baseScore": 9.1,
             "publishedDate": "2020-02-10T08:15:00+0000",
-            "lastModifiedDate": "2022-07-01T12:33:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "When using certain mbstring functions to convert multibyte encodings, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause function mbfl_filt_conv_big5_wchar to read past the allocated buffer. This may lead to information disclosure or crash."
         },
         "CVE-2020-7061": {
             "id": "CVE-2020-7061",
             "baseScore": 9.1,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2022-05-16T19:42:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.15 and 7.4.x below 7.4.3, while extracting PHAR files on Windows using phar extension, certain content inside PHAR file could lead to one-byte read past the allocated buffer. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7062": {
             "id": "CVE-2020-7062",
             "baseScore": 7.5,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2022-01-01T19:30:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when using file upload functionality, if upload progress tracking is enabled, but session.upload_progress.cleanup is set to 0 (disabled), and the file upload fails, the upload procedure would try to clean up data that does not exist and encounter null pointer dereference, which would likely lead to a crash."
         },
         "CVE-2020-7063": {
             "id": "CVE-2020-7063",
             "baseScore": 5.3,
             "publishedDate": "2020-02-27T21:15:00+0000",
-            "lastModifiedDate": "2022-05-08T23:50:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.28, 7.3.x below 7.3.15 and 7.4.x below 7.4.3, when creating PHAR archive using PharData::buildFromIterator() function, the files are added with default permissions (0666, or all access) even if the original files on the filesystem were with more restrictive permissions. This may result in files having more lax permissions than intended when such archive is extracted."
         },
         "CVE-2020-7064": {
             "id": "CVE-2020-7064",
             "baseScore": 5.4,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2022-08-29T20:04:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.9, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while parsing EXIF data with exif_read_data() function, it is possible for malicious data to cause PHP to read one byte of uninitialized memory. This could potentially lead to information disclosure or crash."
         },
         "CVE-2020-7065": {
             "id": "CVE-2020-7065",
             "baseScore": 8.8,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2021-12-02T22:09:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using mb_strtolower() function with UTF-32LE encoding, certain invalid strings could cause PHP to overwrite stack-allocated buffer. This could lead to memory corruption, crashes and potentially code execution."
         },
         "CVE-2020-7066": {
             "id": "CVE-2020-7066",
             "baseScore": 4.3,
             "publishedDate": "2020-04-01T04:15:00+0000",
-            "lastModifiedDate": "2022-05-08T23:51:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.29, 7.3.x below 7.3.16 and 7.4.x below 7.4.4, while using get_headers() with user-supplied URL, if the URL contains zero (\\0) character, the URL will be silently truncated at it. This may cause some software to make incorrect assumptions about the target of the get_headers() and possibly send some information to a wrong server."
         },
         "CVE-2020-7067": {
             "id": "CVE-2020-7067",
             "baseScore": 7.5,
             "publishedDate": "2020-04-27T21:15:00+0000",
-            "lastModifiedDate": "2022-05-16T19:57:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.30, 7.3.x below 7.3.17 and 7.4.x below 7.4.5, if PHP is compiled with EBCDIC support (uncommon), urldecode() function can be made to access locations past the allocated memory, due to erroneously using signed numbers as array indexes."
         },
         "CVE-2020-7068": {
             "id": "CVE-2020-7068",
             "baseScore": 3.6,
             "publishedDate": "2020-09-09T18:15:00+0000",
-            "lastModifiedDate": "2022-07-01T12:18:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.33, 7.3.x below 7.3.21 and 7.4.x below 7.4.9, while processing PHAR files using phar extension, phar_parse_zipfile could be tricked into accessing freed memory, which could lead to a crash or information disclosure."
         },
         "CVE-2020-7069": {
             "id": "CVE-2020-7069",
             "baseScore": 6.5,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:25:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when AES-CCM mode is used with openssl_encrypt() function with 12 bytes IV, only first 7 bytes of the IV is actually used. This can lead to both decreased security and incorrect encryption data."
         },
         "CVE-2020-7070": {
             "id": "CVE-2020-7070",
             "baseScore": 5.3,
             "publishedDate": "2020-10-02T15:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:25:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.2.x below 7.2.34, 7.3.x below 7.3.23 and 7.4.x below 7.4.11, when PHP is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead to cookies with prefixes like __Host confused with cookies that decode to such prefix, thus leading to an attacker being able to forge cookie which is supposed to be secure. See also CVE-2020-8184 for more information."
         },
         "CVE-2020-7071": {
             "id": "CVE-2020-7071",
             "baseScore": 5.3,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2022-08-29T20:05:00+0000",
+            "lastModifiedDate": "2024-11-21T05:36:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.26, 7.4.x below 7.4.14 and 8.0.0, when validating URL with functions like filter_var($url, FILTER_VALIDATE_URL), PHP will accept an URL with invalid password as valid URL. This may lead to functions that rely on URL being valid to mis-parse the URL and produce wrong data as components of the URL."
         },
         "CVE-2021-21702": {
             "id": "CVE-2021-21702",
             "baseScore": 7.5,
             "publishedDate": "2021-02-15T04:15:00+0000",
-            "lastModifiedDate": "2021-12-10T17:58:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.27, 7.4.x below 7.4.15 and 8.0.x below 8.0.2, when using SOAP extension to connect to a SOAP server, a malicious SOAP server could return malformed XML data as a response that would cause PHP to access a null pointer and thus cause a crash."
         },
         "CVE-2021-21703": {
             "id": "CVE-2021-21703",
             "baseScore": 7,
             "publishedDate": "2021-10-25T06:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:30:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.3.x up to and including 7.3.31, 7.4.x below 7.4.25 and 8.0.x below 8.0.12, when running PHP FPM SAPI with main FPM daemon process running as root and child worker processes running as lower-privileged users, it is possible for the child processes to access memory shared with the main process and write to it, modifying it in a way that would cause the root process to conduct invalid memory reads and writes, which can be used to escalate privileges from local unprivileged user to the root user."
         },
         "CVE-2021-21704": {
             "id": "CVE-2021-21704",
             "baseScore": 5.9,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2022-10-25T14:58:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.29, 7.4.x below 7.4.21 and 8.0.x below 8.0.8, when using Firebird PDO driver extension, a malicious database server could cause crashes in various database functions, such as getAttribute(), execute(), fetch() and others by returning invalid response data that is not parsed correctly by the driver. This can result in crashes, denial of service or potentially memory corruption."
         },
         "CVE-2021-21705": {
             "id": "CVE-2021-21705",
             "baseScore": 5.3,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2022-10-29T02:50:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.29, 7.4.x below 7.4.21 and 8.0.x below 8.0.8, when using URL validation functionality via filter_var() function with FILTER_VALIDATE_URL parameter, an URL with invalid password field can be accepted as valid. This can lead to the code incorrectly parsing the URL and potentially leading to other security implications - like contacting a wrong server or making a wrong access decision."
         },
         "CVE-2021-21706": {
             "id": "CVE-2021-21706",
             "baseScore": 6.5,
             "publishedDate": "2021-10-04T04:15:00+0000",
-            "lastModifiedDate": "2021-11-03T20:24:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.31, 7.4.x below 7.4.24 and 8.0.x below 8.0.11, in Microsoft Windows environment, ZipArchive::extractTo may be tricked into writing a file outside target directory when extracting a ZIP file, thus potentially causing files to be created or overwritten, subject to OS permissions."
         },
         "CVE-2021-21707": {
             "id": "CVE-2021-21707",
             "baseScore": 5.3,
             "publishedDate": "2021-11-29T07:15:00+0000",
-            "lastModifiedDate": "2023-02-16T03:07:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.3.x below 7.3.33, 7.4.x below 7.4.26 and 8.0.x below 8.0.13, certain XML parsing functions, like simplexml_load_file(), URL-decode the filename passed to them. If that filename contains URL-encoded NUL character, this may cause the function to interpret this as the end of the filename, thus interpreting the filename differently from what the user intended, which may lead it to reading a different file than intended."
         },
         "CVE-2021-21708": {
             "id": "CVE-2021-21708",
             "baseScore": 9.8,
             "publishedDate": "2022-02-27T08:15:00+0000",
-            "lastModifiedDate": "2022-10-07T14:31:00+0000",
+            "lastModifiedDate": "2024-11-21T05:48:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.28, 8.0.x below 8.0.16, and 8.1.x below 8.1.3, when using filter functions with FILTER_VALIDATE_FLOAT filter and min/max limits, if the filter fails, there is a possibility to trigger use of allocated memory after free, which can result it crashes, and potentially in overwrite of other memory chunks and RCE. This issue affects: code that uses FILTER_VALIDATE_FLOAT with min/max limits."
         },
         "CVE-2022-31625": {
             "id": "CVE-2022-31625",
             "baseScore": 8.1,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:47:00+0000",
+            "lastModifiedDate": "2024-11-21T07:04:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when using Postgres database extension, supplying invalid parameters to the parametrized query may lead to PHP attempting to free memory using uninitialized data as pointers. This could lead to RCE vulnerability or denial of service."
         },
         "CVE-2022-31626": {
             "id": "CVE-2022-31626",
             "baseScore": 8.8,
             "publishedDate": "2022-06-16T06:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:47:00+0000",
+            "lastModifiedDate": "2024-11-21T07:04:00+0000",
             "description": "In PHP versions 7.4.x below 7.4.30, 8.0.x below 8.0.20, and 8.1.x below 8.1.7, when pdo_mysql extension with mysqlnd driver, if the third party is allowed to supply host to connect to and the password for the connection, password of excessive length can trigger a buffer overflow in PHP, which can lead to a remote code execution vulnerability."
         },
         "CVE-2022-31627": {
             "id": "CVE-2022-31627",
             "baseScore": 9.8,
             "publishedDate": "2022-07-28T06:15:00+0000",
-            "lastModifiedDate": "2022-10-25T19:45:00+0000",
+            "lastModifiedDate": "2024-11-21T07:04:00+0000",
             "description": "In PHP versions 8.1.x below 8.1.8, when fileinfo functions, such as finfo_buffer, due to incorrect patch applied to the third party code from libmagic, incorrect function may be used to free allocated memory, which may lead to heap corruption."
         },
         "CVE-2022-31628": {
             "id": "CVE-2022-31628",
             "baseScore": 5.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2023-11-07T03:47:00+0000",
+            "lastModifiedDate": "2024-11-21T07:04:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the phar uncompressor code would recursively uncompress \"quines\" gzip files, resulting in an infinite loop."
         },
         "CVE-2022-31629": {
             "id": "CVE-2022-31629",
             "baseScore": 6.5,
             "publishedDate": "2022-09-28T23:15:00+0000",
-            "lastModifiedDate": "2024-10-29T15:35:00+0000",
+            "lastModifiedDate": "2024-11-21T07:04:00+0000",
             "description": "In PHP versions before 7.4.31, 8.0.24 and 8.1.11, the vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a `__Host-` or `__Secure-` cookie by PHP applications."
         },
         "CVE-2022-31630": {
             "id": "CVE-2022-31630",
             "baseScore": 7.1,
             "publishedDate": "2022-11-14T07:15:00+0000",
-            "lastModifiedDate": "2024-04-02T03:15:00+0000",
+            "lastModifiedDate": "2024-11-21T07:04:00+0000",
             "description": "In PHP versions prior to 7.4.33, 8.0.25 and 8.1.12, when using imageloadfont() function in gd extension, it is possible to supply a specially crafted font file, such as if the loaded font is used with imagechar() function, the read outside allocated buffer will be used. This can lead to crashes or disclosure of confidential information.\u00a0"
         },
         "CVE-2022-37454": {
             "id": "CVE-2022-37454",
             "baseScore": 9.8,
             "publishedDate": "2022-10-21T06:15:00+0000",
-            "lastModifiedDate": "2023-05-03T11:15:00+0000",
+            "lastModifiedDate": "2024-11-21T07:15:00+0000",
             "description": "The Keccak XKCP SHA-3 reference implementation before fdc6fef has an integer overflow and resultant buffer overflow that allows attackers to execute arbitrary code or eliminate expected cryptographic properties. This occurs in the sponge function interface."
         },
         "CVE-2023-0567": {
             "id": "CVE-2023-0567",
             "baseScore": 6.2,
             "publishedDate": "2023-03-01T08:15:00+0000",
-            "lastModifiedDate": "2024-08-01T16:35:00+0000",
+            "lastModifiedDate": "2024-11-21T07:37:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, password_verify() function may accept some invalid Blowfish hashes as valid. If such invalid hash ever ends up in the password database, it may lead to an application allowing any password for this entry as valid.\u00a0\n\n"
         },
         "CVE-2023-0568": {
             "id": "CVE-2023-0568",
             "baseScore": 8.1,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2023-05-17T20:15:00+0000",
+            "lastModifiedDate": "2024-11-21T07:37:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification.\u00a0"
         },
         "CVE-2023-0662": {
             "id": "CVE-2023-0662",
             "baseScore": 7.5,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2023-05-17T20:15:00+0000",
+            "lastModifiedDate": "2024-11-21T07:37:00+0000",
             "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space.\u00a0"
         },
         "CVE-2023-3247": {
             "id": "CVE-2023-3247",
             "baseScore": 4.3,
             "publishedDate": "2023-07-22T05:15:00+0000",
-            "lastModifiedDate": "2023-08-01T16:38:00+0000",
+            "lastModifiedDate": "2024-11-21T08:16:00+0000",
             "description": "In PHP versions 8.0.* before 8.0.29, 8.1.* before 8.1.20, 8.2.* before 8.2.7 when using SOAP HTTP Digest Authentication, random value generator was not checked for failure, and was using narrower range of values than it should have. In case of random generator failure, it could lead to a disclosure of 31 bits of uninitialized memory from the client to the server, and it also made easier to a malicious server to guess the client's nonce.\u00a0\n\n"
         },
         "CVE-2023-3823": {
             "id": "CVE-2023-3823",
             "baseScore": 7.5,
             "publishedDate": "2023-08-11T06:15:00+0000",
-            "lastModifiedDate": "2023-10-27T18:58:00+0000",
+            "lastModifiedDate": "2024-11-21T08:18:00+0000",
             "description": "In PHP versions 8.0.* before 8.0.30, 8.1.* before 8.1.22, and 8.2.* before 8.2.8 various XML functions rely on libxml global state to track configuration variables, like whether external entities are loaded. This state is assumed to be unchanged unless the user explicitly changes it by calling appropriate function. However, since the state is process-global, other modules - such as\u00a0ImageMagick - may also use this library within the same process, and change that global state for their internal purposes, and leave it in a state where external entities loading is enabled. This can lead to the situation where external XML is parsed with external entities loaded, which can lead to disclosure of any local files accessible to PHP. This vulnerable state may persist in the same process across many requests, until the process is shut down.\u00a0\n\n"
         },
         "CVE-2023-3824": {
             "id": "CVE-2023-3824",
             "baseScore": 9.8,
             "publishedDate": "2023-08-11T06:15:00+0000",
-            "lastModifiedDate": "2023-10-27T18:58:00+0000",
+            "lastModifiedDate": "2024-11-21T08:18:00+0000",
             "description": "In PHP version 8.0.* before 8.0.30,\u00a0 8.1.* before 8.1.22, and 8.2.* before 8.2.8, when loading phar file, while reading PHAR directory entries, insufficient length checking may lead to a stack buffer overflow, leading potentially to memory corruption or RCE.\u00a0\n\n"
         },
         "CVE-2024-1874": {
             "id": "CVE-2024-1874",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-06-13T04:15:00+0000",
+            "lastModifiedDate": "2024-11-21T08:51:00+0000",
             "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell.\u00a0\n\n"
         },
         "CVE-2024-2756": {
             "id": "CVE-2024-2756",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-06-10T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T09:10:00+0000",
             "description": "Due to an incomplete fix to  CVE-2022-31629 https://github.com/advisories/GHSA-c43m-486j-j32p , network and same-site attackers can set a standard insecure cookie in the victim's browser which is treated as a __Host-\u00a0or __Secure-\u00a0cookie by PHP applications.\u00a0\n"
         },
         "CVE-2024-2757": {
             "id": "CVE-2024-2757",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-07-03T01:53:00+0000",
+            "lastModifiedDate": "2024-11-21T09:10:00+0000",
             "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function.\u00a0\n\n"
         },
         "CVE-2024-3096": {
             "id": "CVE-2024-3096",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-06-10T18:15:00+0000",
+            "lastModifiedDate": "2024-11-21T09:28:00+0000",
             "description": "In PHP\u00a0 version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if\u00a0a password stored with password_hash() starts with a null byte (\\x00), testing a blank string as the password via password_verify() will incorrectly return true.\n\n"
         },
         "CVE-2024-4577": {
             "id": "CVE-2024-4577",
             "baseScore": 9.8,
             "publishedDate": "2024-06-09T20:15:00+0000",
-            "lastModifiedDate": "2024-08-14T19:23:00+0000",
+            "lastModifiedDate": "2024-11-21T09:43:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, when using Apache and PHP-CGI on Windows, if the system is set up to use certain code pages, Windows may use \"Best-Fit\" behavior to replace characters in command line given to\u00a0Win32 API functions. PHP CGI module may misinterpret those characters as PHP options, which may allow a malicious user to pass options to PHP binary being run, and thus reveal the source code of scripts, run arbitrary PHP code on the server, etc."
         },
         "CVE-2024-5458": {
             "id": "CVE-2024-5458",
             "baseScore": 5.3,
             "publishedDate": "2024-06-09T19:15:00+0000",
-            "lastModifiedDate": "2024-07-28T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T09:47:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, due to a code logic error, filtering functions such as filter_var when validating URLs\u00a0(FILTER_VALIDATE_URL) for certain types of URLs the function will result in invalid user information (username + password part of URLs) being treated as valid user information. This may lead to the downstream code accepting invalid URLs as valid and parsing them incorrectly."
         },
         "CVE-2024-5585": {
             "id": "CVE-2024-5585",
             "baseScore": 8.8,
             "publishedDate": "2024-06-09T19:15:00+0000",
-            "lastModifiedDate": "2024-07-28T14:15:00+0000",
+            "lastModifiedDate": "2024-11-21T09:47:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, the fix for\u00a0CVE-2024-1874 does not work if the command name includes trailing spaces. Original issue:\u00a0when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell."
         },
         "CVE-2024-8925": {
@@ -5785,12 +5824,47 @@
             "lastModifiedDate": "2024-10-16T18:28:00+0000",
             "description": "In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12,\u00a0HTTP_REDIRECT_STATUS variable is used to check whether or not CGI binary is being run by the HTTP server. However, in certain scenarios, the content of this variable can be controlled by the request submitter via HTTP headers, which can lead to\u00a0cgi.force_redirect option not being correctly applied. In certain configurations this may lead to arbitrary file inclusion in PHP."
         },
+        "CVE-2024-8929": {
+            "id": "CVE-2024-8929",
+            "baseScore": null,
+            "publishedDate": "2024-11-22T07:15:00+0000",
+            "lastModifiedDate": "2024-11-22T07:15:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, a hostile MySQL server can cause the client to disclose the content of its heap containing data from other SQL requests and possible other data belonging to different users of the same server."
+        },
+        "CVE-2024-8932": {
+            "id": "CVE-2024-8932",
+            "baseScore": null,
+            "publishedDate": "2024-11-22T06:15:00+0000",
+            "lastModifiedDate": "2024-11-22T06:15:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, uncontrolled long string inputs to ldap_escape()\u00a0function on 32-bit systems can cause an integer overflow, resulting in an out-of-bounds write."
+        },
         "CVE-2024-9026": {
             "id": "CVE-2024-9026",
             "baseScore": 3.3,
             "publishedDate": "2024-10-08T04:15:00+0000",
             "lastModifiedDate": "2024-10-16T18:30:00+0000",
             "description": "In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, when using PHP-FPM SAPI and it is\u00a0configured to catch workers output through catch_workers_output = yes,\u00a0it may be possible to pollute the final log or\u00a0remove up to 4 characters from the log messages by manipulating log message content. Additionally, if\u00a0PHP-FPM is configured to use syslog output, it may be possible to further remove log data using the same vulnerability."
+        },
+        "CVE-2024-11233": {
+            "id": "CVE-2024-11233",
+            "baseScore": 8.2,
+            "publishedDate": "2024-11-24T02:15:00+0000",
+            "lastModifiedDate": "2024-11-26T18:26:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, due to an error in\u00a0convert.quoted-printable-decode filter certain data can lead to buffer overread by one byte, which can in certain circumstances lead to crashes or disclose content of other memory areas."
+        },
+        "CVE-2024-11234": {
+            "id": "CVE-2024-11234",
+            "baseScore": 7.2,
+            "publishedDate": "2024-11-24T01:15:00+0000",
+            "lastModifiedDate": "2024-11-26T19:06:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, when using streams with configured proxy and \"request_fulluri\" option, the URI is not properly sanitized which can lead to HTTP request smuggling and allow the attacker to use the proxy to perform arbitrary HTTP requests originating from the server, thus potentially gaining access to resources not normally available to the external user."
+        },
+        "CVE-2024-11236": {
+            "id": "CVE-2024-11236",
+            "baseScore": 9.8,
+            "publishedDate": "2024-11-24T01:15:00+0000",
+            "lastModifiedDate": "2024-11-26T18:29:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, uncontrolled long string inputs to ldap_escape()\u00a0function on 32-bit systems can cause an integer overflow, resulting in an out-of-bounds write."
         }
     }
 }
