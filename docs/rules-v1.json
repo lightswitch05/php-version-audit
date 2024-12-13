@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2024-12-13T02:39:11+0000",
+    "lastUpdatedDate": "2024-12-13T13:34:05+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -3378,77 +3378,77 @@
             "id": "CVE-2007-0455",
             "baseScore": 7.5,
             "publishedDate": "2007-01-30T17:28:00+0000",
-            "lastModifiedDate": "2022-07-21T15:17:00+0000",
+            "lastModifiedDate": "2024-11-21T00:25:00+0000",
             "description": "Buffer overflow in the gdImageStringFTEx function in gdft.c in GD Graphics Library 2.0.33 and earlier allows remote attackers to cause a denial of service (application crash) and possibly execute arbitrary code via a crafted string with a JIS encoded font."
         },
         "CVE-2007-1001": {
             "id": "CVE-2007-1001",
             "baseScore": 6.8,
             "publishedDate": "2007-04-06T00:19:00+0000",
-            "lastModifiedDate": "2018-10-30T16:25:00+0000",
+            "lastModifiedDate": "2024-11-21T00:27:00+0000",
             "description": "Multiple integer overflows in the (1) createwbmp and (2) readwbmp functions in wbmp.c in the GD library (libgd) in PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 allow context-dependent attackers to execute arbitrary code via Wireless Bitmap (WBMP) images with large width or height values."
         },
         "CVE-2007-1887": {
             "id": "CVE-2007-1887",
             "baseScore": 7.5,
             "publishedDate": "2007-04-06T01:19:00+0000",
-            "lastModifiedDate": "2022-07-21T15:12:00+0000",
+            "lastModifiedDate": "2024-11-21T00:29:00+0000",
             "description": "Buffer overflow in the sqlite_decode_binary function in the bundled sqlite library in PHP 4 before 4.4.5 and PHP 5 before 5.2.1 allows context-dependent attackers to execute arbitrary code via an empty value of the in parameter, as demonstrated by calling the sqlite_udf_decode_binary function with a 0x01 character."
         },
         "CVE-2007-1900": {
             "id": "CVE-2007-1900",
             "baseScore": 5,
             "publishedDate": "2007-04-10T18:19:00+0000",
-            "lastModifiedDate": "2017-10-11T01:32:00+0000",
+            "lastModifiedDate": "2024-11-21T00:29:00+0000",
             "description": "CRLF injection vulnerability in the FILTER_VALIDATE_EMAIL filter in ext/filter in PHP 5.2.0 and 5.2.1 allows context-dependent attackers to inject arbitrary e-mail headers via an e-mail address with a '\\n' character, which causes a regular expression to ignore the subsequent part of the address string."
         },
         "CVE-2007-2756": {
             "id": "CVE-2007-2756",
             "baseScore": 4.3,
             "publishedDate": "2007-05-18T18:30:00+0000",
-            "lastModifiedDate": "2017-10-11T01:32:00+0000",
+            "lastModifiedDate": "2024-11-21T00:31:00+0000",
             "description": "The gdPngReadData function in libgd 2.0.34 allows user-assisted attackers to cause a denial of service (CPU consumption) via a crafted PNG image with truncated data, which causes an infinite loop in the png_read_info function in libpng."
         },
         "CVE-2007-2872": {
             "id": "CVE-2007-2872",
             "baseScore": 6.8,
             "publishedDate": "2007-06-04T17:30:00+0000",
-            "lastModifiedDate": "2023-02-13T02:17:00+0000",
+            "lastModifiedDate": "2024-11-21T00:31:00+0000",
             "description": "Multiple integer overflows in the chunk_split function in PHP 5 before 5.2.3 and PHP 4 before 4.4.8 allow remote attackers to cause a denial of service (crash) or execute arbitrary code via the (1) chunks, (2) srclen, and (3) chunklen arguments."
         },
         "CVE-2007-3378": {
             "id": "CVE-2007-3378",
             "baseScore": 6.8,
             "publishedDate": "2007-06-29T18:30:00+0000",
-            "lastModifiedDate": "2020-09-18T19:15:00+0000",
+            "lastModifiedDate": "2024-11-21T00:33:00+0000",
             "description": "The (1) session_save_path, (2) ini_set, and (3) error_log functions in PHP 4.4.7 and earlier, and PHP 5 5.2.3 and earlier, when invoked from a .htaccess file, allow remote attackers to bypass safe_mode and open_basedir restrictions and possibly execute arbitrary commands, as demonstrated using (a) php_value, (b) php_flag, and (c) directives in .htaccess."
         },
         "CVE-2007-3806": {
             "id": "CVE-2007-3806",
             "baseScore": 6.8,
             "publishedDate": "2007-07-17T00:30:00+0000",
-            "lastModifiedDate": "2017-09-29T01:29:00+0000",
+            "lastModifiedDate": "2024-11-21T00:34:00+0000",
             "description": "The glob function in PHP 5.2.3 allows context-dependent attackers to cause a denial of service and possibly execute arbitrary code via an invalid value of the flags parameter, probably related to memory corruption or an invalid read on win32 platforms, and possibly related to lack of initialization for a glob structure."
         },
         "CVE-2007-4783": {
             "id": "CVE-2007-4783",
             "baseScore": 5,
             "publishedDate": "2007-09-10T21:17:00+0000",
-            "lastModifiedDate": "2018-10-15T21:38:00+0000",
+            "lastModifiedDate": "2024-11-21T00:36:00+0000",
             "description": "The iconv_substr function in PHP 5.2.4 and earlier allows context-dependent attackers to cause (1) a denial of service (application crash) via a long string in the charset parameter, probably also requiring a long string in the str parameter; or (2) a denial of service (temporary application hang) via a long string in the str parameter.  NOTE: this might not be a vulnerability in most web server environments that support multiple threads, unless these issues can be demonstrated for code execution."
         },
         "CVE-2007-4840": {
             "id": "CVE-2007-4840",
             "baseScore": 5,
             "publishedDate": "2007-09-12T20:17:00+0000",
-            "lastModifiedDate": "2018-10-15T21:38:00+0000",
+            "lastModifiedDate": "2024-11-21T00:36:00+0000",
             "description": "PHP 5.2.4 and earlier allows context-dependent attackers to cause a denial of service (application crash) via (1) a long string in the out_charset parameter to the iconv function; or a long string in the charset parameter to the (2) iconv_mime_decode_headers, (3) iconv_mime_decode, or (4) iconv_strlen function.  NOTE: this might not be a vulnerability in most web server environments that support multiple threads, unless these issues can be demonstrated for code execution."
         },
         "CVE-2007-4887": {
             "id": "CVE-2007-4887",
             "baseScore": 4.3,
             "publishedDate": "2007-09-14T00:17:00+0000",
-            "lastModifiedDate": "2018-10-15T21:38:00+0000",
+            "lastModifiedDate": "2024-11-21T00:36:00+0000",
             "description": "The dl function in PHP 5.2.4 and earlier allows context-dependent attackers to cause a denial of service (application crash) via a long string in the library parameter.  NOTE: there are limited usage scenarios under which this would be a vulnerability."
         },
         "CVE-2008-0599": {
