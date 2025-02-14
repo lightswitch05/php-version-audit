@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2025-02-14T02:19:21+0000",
+    "lastUpdatedDate": "2025-02-14T13:29:27+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5737,7 +5737,7 @@
             "id": "CVE-2022-31631",
             "baseScore": null,
             "publishedDate": "2025-02-12T22:15:00+0000",
-            "lastModifiedDate": "2025-02-12T23:15:00+0000",
+            "lastModifiedDate": "2025-02-13T16:15:00+0000",
             "description": "In PHP versions 8.0.* before 8.0.27, 8.1.* before 8.1.15, 8.2.* before 8.2.2 when using PDO::quote() function to quote user-supplied data for SQLite, supplying an overly long string may cause the driver to incorrectly quote the data, which may further lead to SQL injection vulnerabilities."
         },
         "CVE-2022-37454": {
@@ -5758,15 +5758,15 @@
             "id": "CVE-2023-0568",
             "baseScore": 8.1,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2024-11-21T07:37:00+0000",
-            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification.\u00a0"
+            "lastModifiedDate": "2025-02-13T17:15:00+0000",
+            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the allocated buffer being overwritten with NUL value, which might lead to unauthorized data access or modification."
         },
         "CVE-2023-0662": {
             "id": "CVE-2023-0662",
             "baseScore": 7.5,
             "publishedDate": "2023-02-16T07:15:00+0000",
-            "lastModifiedDate": "2024-11-21T07:37:00+0000",
-            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space.\u00a0"
+            "lastModifiedDate": "2025-02-13T17:15:00+0000",
+            "description": "In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by exhausting CPU resources or disk space."
         },
         "CVE-2023-3247": {
             "id": "CVE-2023-3247",
@@ -5779,43 +5779,43 @@
             "id": "CVE-2023-3823",
             "baseScore": 7.5,
             "publishedDate": "2023-08-11T06:15:00+0000",
-            "lastModifiedDate": "2024-11-21T08:18:00+0000",
-            "description": "In PHP versions 8.0.* before 8.0.30, 8.1.* before 8.1.22, and 8.2.* before 8.2.8 various XML functions rely on libxml global state to track configuration variables, like whether external entities are loaded. This state is assumed to be unchanged unless the user explicitly changes it by calling appropriate function. However, since the state is process-global, other modules - such as\u00a0ImageMagick - may also use this library within the same process, and change that global state for their internal purposes, and leave it in a state where external entities loading is enabled. This can lead to the situation where external XML is parsed with external entities loaded, which can lead to disclosure of any local files accessible to PHP. This vulnerable state may persist in the same process across many requests, until the process is shut down.\u00a0\n\n"
+            "lastModifiedDate": "2025-02-13T17:16:00+0000",
+            "description": "In PHP versions 8.0.* before 8.0.30, 8.1.* before 8.1.22, and 8.2.* before 8.2.8 various XML functions rely on libxml global state to track configuration variables, like whether external entities are loaded. This state is assumed to be unchanged unless the user explicitly changes it by calling appropriate function. However, since the state is process-global, other modules - such as\u00a0ImageMagick - may also use this library within the same process, and change that global state for their internal purposes, and leave it in a state where external entities loading is enabled. This can lead to the situation where external XML is parsed with external entities loaded, which can lead to disclosure of any local files accessible to PHP. This vulnerable state may persist in the same process across many requests, until the process is shut down."
         },
         "CVE-2023-3824": {
             "id": "CVE-2023-3824",
             "baseScore": 9.8,
             "publishedDate": "2023-08-11T06:15:00+0000",
-            "lastModifiedDate": "2024-11-21T08:18:00+0000",
-            "description": "In PHP version 8.0.* before 8.0.30,\u00a0 8.1.* before 8.1.22, and 8.2.* before 8.2.8, when loading phar file, while reading PHAR directory entries, insufficient length checking may lead to a stack buffer overflow, leading potentially to memory corruption or RCE.\u00a0\n\n"
+            "lastModifiedDate": "2025-02-13T17:16:00+0000",
+            "description": "In PHP version 8.0.* before 8.0.30,\u00a0 8.1.* before 8.1.22, and 8.2.* before 8.2.8, when loading phar file, while reading PHAR directory entries, insufficient length checking may lead to a stack buffer overflow, leading potentially to memory corruption or RCE."
         },
         "CVE-2024-1874": {
             "id": "CVE-2024-1874",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-11-21T08:51:00+0000",
-            "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell.\u00a0\n\n"
+            "lastModifiedDate": "2025-02-13T18:16:00+0000",
+            "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell."
         },
         "CVE-2024-2756": {
             "id": "CVE-2024-2756",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-11-21T09:10:00+0000",
-            "description": "Due to an incomplete fix to  CVE-2022-31629 https://github.com/advisories/GHSA-c43m-486j-j32p , network and same-site attackers can set a standard insecure cookie in the victim's browser which is treated as a __Host-\u00a0or __Secure-\u00a0cookie by PHP applications.\u00a0\n"
+            "lastModifiedDate": "2025-02-13T18:17:00+0000",
+            "description": "Due to an incomplete fix to  CVE-2022-31629 https://github.com/advisories/GHSA-c43m-486j-j32p , network and same-site attackers can set a standard insecure cookie in the victim's browser which is treated as a __Host-\u00a0or __Secure-\u00a0cookie by PHP applications."
         },
         "CVE-2024-2757": {
             "id": "CVE-2024-2757",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-11-21T09:10:00+0000",
-            "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function.\u00a0\n\n"
+            "lastModifiedDate": "2025-02-13T18:17:00+0000",
+            "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function."
         },
         "CVE-2024-3096": {
             "id": "CVE-2024-3096",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2024-11-21T09:28:00+0000",
-            "description": "In PHP\u00a0 version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if\u00a0a password stored with password_hash() starts with a null byte (\\x00), testing a blank string as the password via password_verify() will incorrectly return true.\n\n"
+            "lastModifiedDate": "2025-02-13T18:18:00+0000",
+            "description": "In PHP\u00a0 version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if\u00a0a password stored with password_hash() starts with a null byte (\\x00), testing a blank string as the password via password_verify() will incorrectly return true."
         },
         "CVE-2024-4577": {
             "id": "CVE-2024-4577",
