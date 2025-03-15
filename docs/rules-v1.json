@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2025-03-15T02:22:30+0000",
+    "lastUpdatedDate": "2025-03-15T13:28:40+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5870,7 +5870,7 @@
             "id": "CVE-2024-5458",
             "baseScore": 5.3,
             "publishedDate": "2024-06-09T19:15:00+0000",
-            "lastModifiedDate": "2024-11-21T09:47:00+0000",
+            "lastModifiedDate": "2025-03-14T15:15:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, due to a code logic error, filtering functions such as filter_var when validating URLs\u00a0(FILTER_VALIDATE_URL) for certain types of URLs the function will result in invalid user information (username + password part of URLs) being treated as valid user information. This may lead to the downstream code accepting invalid URLs as valid and parsing them incorrectly."
         },
         "CVE-2024-5585": {
