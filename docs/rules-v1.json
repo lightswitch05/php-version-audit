@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2025-03-22T02:24:23+0000",
+    "lastUpdatedDate": "2025-03-22T13:27:35+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -5863,7 +5863,7 @@
             "id": "CVE-2024-4577",
             "baseScore": 9.8,
             "publishedDate": "2024-06-09T20:15:00+0000",
-            "lastModifiedDate": "2025-03-14T02:15:00+0000",
+            "lastModifiedDate": "2025-03-21T20:18:00+0000",
             "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, when using Apache and PHP-CGI on Windows, if the system is set up to use certain code pages, Windows may use \"Best-Fit\" behavior to replace characters in command line given to\u00a0Win32 API functions. PHP CGI module may misinterpret those characters as PHP options, which may allow a malicious user to pass options to PHP binary being run, and thus reveal the source code of scripts, run arbitrary PHP code on the server, etc."
         },
         "CVE-2024-5458": {
