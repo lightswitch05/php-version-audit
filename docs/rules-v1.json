@@ -1,5 +1,5 @@
 {
-    "lastUpdatedDate": "2025-06-19T02:52:14+0000",
+    "lastUpdatedDate": "2025-06-19T13:38:57+0000",
     "name": "PHP Version Audit",
     "website": "https://github.com/lightswitch05/php-version-audit",
     "licence": "https://github.com/lightswitch05/php-version-audit/blob/master/LICENSE",
@@ -4039,7 +4039,7 @@
             "id": "CVE-2024-1874",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2025-02-13T18:16:00+0000",
+            "lastModifiedDate": "2025-06-18T21:12:00+0000",
             "description": "In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can supply arguments that would execute arbitrary commands in Windows shell."
         },
         "CVE-2024-2756": {
@@ -4053,14 +4053,14 @@
             "id": "CVE-2024-2757",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2025-02-13T18:17:00+0000",
+            "lastModifiedDate": "2025-06-18T21:11:00+0000",
             "description": "In PHP 8.3.* before 8.3.5, function\u00a0mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application that uses this function."
         },
         "CVE-2024-3096": {
             "id": "CVE-2024-3096",
             "baseScore": null,
             "publishedDate": "2024-04-29T04:15:00+0000",
-            "lastModifiedDate": "2025-02-13T18:18:00+0000",
+            "lastModifiedDate": "2025-06-18T21:10:00+0000",
             "description": "In PHP\u00a0 version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if\u00a0a password stored with password_hash() starts with a null byte (\\x00), testing a blank string as the password via password_verify() will incorrectly return true."
         },
         "CVE-2024-4577": {
